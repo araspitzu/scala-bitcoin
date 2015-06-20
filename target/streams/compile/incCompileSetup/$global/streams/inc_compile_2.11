@@ -1,0 +1,873 @@
+format version: 5
+output mode:
+1 items
+0 -> single
+output directories:
+1 items
+output dir -> /home/andrea/scala-bitcoin/target/scala-2.11/classes
+compile options:
+4 items
+0 -> -unchecked
+1 -> -deprecation
+2 -> -encoding
+3 -> utf8
+javac options:
+0 items
+compiler version:
+1 items
+0 -> 2.11.6
+compile order:
+1 items
+0 -> Mixed
+name hashing:
+1 items
+0 -> true
+products:
+86 items
+/home/andrea/scala-bitcoin/src/main/scala/Core.scala -> /home/andrea/scala-bitcoin/target/scala-2.11/classes/Core$.class
+/home/andrea/scala-bitcoin/src/main/scala/Core.scala -> /home/andrea/scala-bitcoin/target/scala-2.11/classes/Core.class
+/home/andrea/scala-bitcoin/src/main/scala/Service/TransactionService.scala -> /home/andrea/scala-bitcoin/target/scala-2.11/classes/Service/TransactionService.class
+/home/andrea/scala-bitcoin/src/main/scala/actors/WorkerActor.scala -> /home/andrea/scala-bitcoin/target/scala-2.11/classes/actors/WorkerActor$$anonfun$receive$1.class
+/home/andrea/scala-bitcoin/src/main/scala/actors/WorkerActor.scala -> /home/andrea/scala-bitcoin/target/scala-2.11/classes/actors/WorkerActor.class
+/home/andrea/scala-bitcoin/src/main/scala/domain/CompactNumber.scala -> /home/andrea/scala-bitcoin/target/scala-2.11/classes/domain/CompactBigInt$.class
+/home/andrea/scala-bitcoin/src/main/scala/domain/CompactNumber.scala -> /home/andrea/scala-bitcoin/target/scala-2.11/classes/domain/CompactBigInt.class
+/home/andrea/scala-bitcoin/src/main/scala/domain/CompactNumber.scala -> /home/andrea/scala-bitcoin/target/scala-2.11/classes/domain/CompactInt$.class
+/home/andrea/scala-bitcoin/src/main/scala/domain/CompactNumber.scala -> /home/andrea/scala-bitcoin/target/scala-2.11/classes/domain/CompactInt.class
+/home/andrea/scala-bitcoin/src/main/scala/domain/CompactNumber.scala -> /home/andrea/scala-bitcoin/target/scala-2.11/classes/domain/CompactLong$.class
+/home/andrea/scala-bitcoin/src/main/scala/domain/CompactNumber.scala -> /home/andrea/scala-bitcoin/target/scala-2.11/classes/domain/CompactLong.class
+/home/andrea/scala-bitcoin/src/main/scala/domain/CompactNumber.scala -> /home/andrea/scala-bitcoin/target/scala-2.11/classes/domain/CompactNumber.class
+/home/andrea/scala-bitcoin/src/main/scala/domain/Transaction.scala -> /home/andrea/scala-bitcoin/target/scala-2.11/classes/domain/Transaction$.class
+/home/andrea/scala-bitcoin/src/main/scala/domain/Transaction.scala -> /home/andrea/scala-bitcoin/target/scala-2.11/classes/domain/Transaction.class
+/home/andrea/scala-bitcoin/src/main/scala/encoding/Parsing.scala -> /home/andrea/scala-bitcoin/target/scala-2.11/classes/encoding/Parsing$.class
+/home/andrea/scala-bitcoin/src/main/scala/encoding/Parsing.scala -> /home/andrea/scala-bitcoin/target/scala-2.11/classes/encoding/Parsing$MyTransaction$.class
+/home/andrea/scala-bitcoin/src/main/scala/encoding/Parsing.scala -> /home/andrea/scala-bitcoin/target/scala-2.11/classes/encoding/Parsing$MyTransaction.class
+/home/andrea/scala-bitcoin/src/main/scala/encoding/Parsing.scala -> /home/andrea/scala-bitcoin/target/scala-2.11/classes/encoding/Parsing$MyTransactionIsReadable$.class
+/home/andrea/scala-bitcoin/src/main/scala/encoding/Parsing.scala -> /home/andrea/scala-bitcoin/target/scala-2.11/classes/encoding/Parsing$ParseFailure$.class
+/home/andrea/scala-bitcoin/src/main/scala/encoding/Parsing.scala -> /home/andrea/scala-bitcoin/target/scala-2.11/classes/encoding/Parsing$ParseFailure.class
+/home/andrea/scala-bitcoin/src/main/scala/encoding/Parsing.scala -> /home/andrea/scala-bitcoin/target/scala-2.11/classes/encoding/Parsing$ParseResult.class
+/home/andrea/scala-bitcoin/src/main/scala/encoding/Parsing.scala -> /home/andrea/scala-bitcoin/target/scala-2.11/classes/encoding/Parsing$ParseSuccess$.class
+/home/andrea/scala-bitcoin/src/main/scala/encoding/Parsing.scala -> /home/andrea/scala-bitcoin/target/scala-2.11/classes/encoding/Parsing$ParseSuccess.class
+/home/andrea/scala-bitcoin/src/main/scala/encoding/Parsing.scala -> /home/andrea/scala-bitcoin/target/scala-2.11/classes/encoding/Parsing$ReadBytes.class
+/home/andrea/scala-bitcoin/src/main/scala/encoding/Parsing.scala -> /home/andrea/scala-bitcoin/target/scala-2.11/classes/encoding/Parsing$SerializeBytes$$anonfun$map$1.class
+/home/andrea/scala-bitcoin/src/main/scala/encoding/Parsing.scala -> /home/andrea/scala-bitcoin/target/scala-2.11/classes/encoding/Parsing$SerializeBytes$.class
+/home/andrea/scala-bitcoin/src/main/scala/encoding/Parsing.scala -> /home/andrea/scala-bitcoin/target/scala-2.11/classes/encoding/Parsing$SerializeBytes.class
+/home/andrea/scala-bitcoin/src/main/scala/encoding/Parsing.scala -> /home/andrea/scala-bitcoin/target/scala-2.11/classes/encoding/Parsing$SerializeBytesNonno$.class
+/home/andrea/scala-bitcoin/src/main/scala/encoding/Parsing.scala -> /home/andrea/scala-bitcoin/target/scala-2.11/classes/encoding/Parsing$WriteBytes.class
+/home/andrea/scala-bitcoin/src/main/scala/encoding/Parsing.scala -> /home/andrea/scala-bitcoin/target/scala-2.11/classes/encoding/Parsing.class
+/home/andrea/scala-bitcoin/src/main/scala/encoding/TransactionParsers.scala -> /home/andrea/scala-bitcoin/target/scala-2.11/classes/encoding/BinaryParsers$$anonfun$bytes$1.class
+/home/andrea/scala-bitcoin/src/main/scala/encoding/TransactionParsers.scala -> /home/andrea/scala-bitcoin/target/scala-2.11/classes/encoding/BinaryParsers$$anonfun$toInt$1.class
+/home/andrea/scala-bitcoin/src/main/scala/encoding/TransactionParsers.scala -> /home/andrea/scala-bitcoin/target/scala-2.11/classes/encoding/BinaryParsers$$anonfun$toLong$1.class
+/home/andrea/scala-bitcoin/src/main/scala/encoding/TransactionParsers.scala -> /home/andrea/scala-bitcoin/target/scala-2.11/classes/encoding/BinaryParsers$$anonfun$u1$1.class
+/home/andrea/scala-bitcoin/src/main/scala/encoding/TransactionParsers.scala -> /home/andrea/scala-bitcoin/target/scala-2.11/classes/encoding/BinaryParsers$$anonfun$u2$1.class
+/home/andrea/scala-bitcoin/src/main/scala/encoding/TransactionParsers.scala -> /home/andrea/scala-bitcoin/target/scala-2.11/classes/encoding/BinaryParsers$$anonfun$u4$1.class
+/home/andrea/scala-bitcoin/src/main/scala/encoding/TransactionParsers.scala -> /home/andrea/scala-bitcoin/target/scala-2.11/classes/encoding/BinaryParsers$$anonfun$u4f$1.class
+/home/andrea/scala-bitcoin/src/main/scala/encoding/TransactionParsers.scala -> /home/andrea/scala-bitcoin/target/scala-2.11/classes/encoding/BinaryParsers$$anonfun$u8$1.class
+/home/andrea/scala-bitcoin/src/main/scala/encoding/TransactionParsers.scala -> /home/andrea/scala-bitcoin/target/scala-2.11/classes/encoding/BinaryParsers$$anonfun$u8d$1.class
+/home/andrea/scala-bitcoin/src/main/scala/encoding/TransactionParsers.scala -> /home/andrea/scala-bitcoin/target/scala-2.11/classes/encoding/BinaryParsers$class.class
+/home/andrea/scala-bitcoin/src/main/scala/encoding/TransactionParsers.scala -> /home/andrea/scala-bitcoin/target/scala-2.11/classes/encoding/BinaryParsers.class
+/home/andrea/scala-bitcoin/src/main/scala/encoding/TransactionParsers.scala -> /home/andrea/scala-bitcoin/target/scala-2.11/classes/encoding/ByteOffsetPosition$.class
+/home/andrea/scala-bitcoin/src/main/scala/encoding/TransactionParsers.scala -> /home/andrea/scala-bitcoin/target/scala-2.11/classes/encoding/ByteOffsetPosition.class
+/home/andrea/scala-bitcoin/src/main/scala/encoding/TransactionParsers.scala -> /home/andrea/scala-bitcoin/target/scala-2.11/classes/encoding/ByteReader$$anonfun$source$1.class
+/home/andrea/scala-bitcoin/src/main/scala/encoding/TransactionParsers.scala -> /home/andrea/scala-bitcoin/target/scala-2.11/classes/encoding/ByteReader.class
+/home/andrea/scala-bitcoin/src/main/scala/encoding/TransactionParsers.scala -> /home/andrea/scala-bitcoin/target/scala-2.11/classes/encoding/ParsersUtil$$anonfun$anyElem$1.class
+/home/andrea/scala-bitcoin/src/main/scala/encoding/TransactionParsers.scala -> /home/andrea/scala-bitcoin/target/scala-2.11/classes/encoding/ParsersUtil$$anonfun$elemExcept$1.class
+/home/andrea/scala-bitcoin/src/main/scala/encoding/TransactionParsers.scala -> /home/andrea/scala-bitcoin/target/scala-2.11/classes/encoding/ParsersUtil$$anonfun$elemOf$1.class
+/home/andrea/scala-bitcoin/src/main/scala/encoding/TransactionParsers.scala -> /home/andrea/scala-bitcoin/target/scala-2.11/classes/encoding/ParsersUtil$$anonfun$take$1.class
+/home/andrea/scala-bitcoin/src/main/scala/encoding/TransactionParsers.scala -> /home/andrea/scala-bitcoin/target/scala-2.11/classes/encoding/ParsersUtil$$anonfun$takeUntil$1$$anonfun$apply$1.class
+/home/andrea/scala-bitcoin/src/main/scala/encoding/TransactionParsers.scala -> /home/andrea/scala-bitcoin/target/scala-2.11/classes/encoding/ParsersUtil$$anonfun$takeUntil$1$$anonfun$apply$2.class
+/home/andrea/scala-bitcoin/src/main/scala/encoding/TransactionParsers.scala -> /home/andrea/scala-bitcoin/target/scala-2.11/classes/encoding/ParsersUtil$$anonfun$takeUntil$1.class
+/home/andrea/scala-bitcoin/src/main/scala/encoding/TransactionParsers.scala -> /home/andrea/scala-bitcoin/target/scala-2.11/classes/encoding/ParsersUtil$$anonfun$takeWhile$1.class
+/home/andrea/scala-bitcoin/src/main/scala/encoding/TransactionParsers.scala -> /home/andrea/scala-bitcoin/target/scala-2.11/classes/encoding/ParsersUtil$class.class
+/home/andrea/scala-bitcoin/src/main/scala/encoding/TransactionParsers.scala -> /home/andrea/scala-bitcoin/target/scala-2.11/classes/encoding/ParsersUtil.class
+/home/andrea/scala-bitcoin/src/main/scala/playground/FutureMonad.scala -> /home/andrea/scala-bitcoin/target/scala-2.11/classes/playground/FutureMonad$.class
+/home/andrea/scala-bitcoin/src/main/scala/playground/FutureMonad.scala -> /home/andrea/scala-bitcoin/target/scala-2.11/classes/playground/FutureMonad.class
+/home/andrea/scala-bitcoin/src/main/scala/playground/RabbitFactorMonad.scala -> /home/andrea/scala-bitcoin/target/scala-2.11/classes/playground/RabbitFactorMonad$$anonfun$provaFor$1$$anonfun$apply$2$$anonfun$apply$1.class
+/home/andrea/scala-bitcoin/src/main/scala/playground/RabbitFactorMonad.scala -> /home/andrea/scala-bitcoin/target/scala-2.11/classes/playground/RabbitFactorMonad$$anonfun$provaFor$1$$anonfun$apply$2.class
+/home/andrea/scala-bitcoin/src/main/scala/playground/RabbitFactorMonad.scala -> /home/andrea/scala-bitcoin/target/scala-2.11/classes/playground/RabbitFactorMonad$$anonfun$provaFor$1.class
+/home/andrea/scala-bitcoin/src/main/scala/playground/RabbitFactorMonad.scala -> /home/andrea/scala-bitcoin/target/scala-2.11/classes/playground/RabbitFactorMonad$$anonfun$provaFor$2$$anonfun$apply$3$$anonfun$apply$4.class
+/home/andrea/scala-bitcoin/src/main/scala/playground/RabbitFactorMonad.scala -> /home/andrea/scala-bitcoin/target/scala-2.11/classes/playground/RabbitFactorMonad$$anonfun$provaFor$2$$anonfun$apply$3.class
+/home/andrea/scala-bitcoin/src/main/scala/playground/RabbitFactorMonad.scala -> /home/andrea/scala-bitcoin/target/scala-2.11/classes/playground/RabbitFactorMonad$$anonfun$provaFor$2.class
+/home/andrea/scala-bitcoin/src/main/scala/playground/RabbitFactorMonad.scala -> /home/andrea/scala-bitcoin/target/scala-2.11/classes/playground/RabbitFactorMonad$.class
+/home/andrea/scala-bitcoin/src/main/scala/playground/RabbitFactorMonad.scala -> /home/andrea/scala-bitcoin/target/scala-2.11/classes/playground/RabbitFactorMonad$RFactor$$anonfun$map$1.class
+/home/andrea/scala-bitcoin/src/main/scala/playground/RabbitFactorMonad.scala -> /home/andrea/scala-bitcoin/target/scala-2.11/classes/playground/RabbitFactorMonad$RFactor$.class
+/home/andrea/scala-bitcoin/src/main/scala/playground/RabbitFactorMonad.scala -> /home/andrea/scala-bitcoin/target/scala-2.11/classes/playground/RabbitFactorMonad$RFactor.class
+/home/andrea/scala-bitcoin/src/main/scala/playground/RabbitFactorMonad.scala -> /home/andrea/scala-bitcoin/target/scala-2.11/classes/playground/RabbitFactorMonad$RFactor1$$anonfun$flatMap$1.class
+/home/andrea/scala-bitcoin/src/main/scala/playground/RabbitFactorMonad.scala -> /home/andrea/scala-bitcoin/target/scala-2.11/classes/playground/RabbitFactorMonad$RFactor1$.class
+/home/andrea/scala-bitcoin/src/main/scala/playground/RabbitFactorMonad.scala -> /home/andrea/scala-bitcoin/target/scala-2.11/classes/playground/RabbitFactorMonad$RFactor1.class
+/home/andrea/scala-bitcoin/src/main/scala/playground/RabbitFactorMonad.scala -> /home/andrea/scala-bitcoin/target/scala-2.11/classes/playground/RabbitFactorMonad.class
+/home/andrea/scala-bitcoin/src/main/scala/playground/SpirePlayground.scala -> /home/andrea/scala-bitcoin/target/scala-2.11/classes/playground/SpirePlayground$.class
+/home/andrea/scala-bitcoin/src/main/scala/playground/SpirePlayground.scala -> /home/andrea/scala-bitcoin/target/scala-2.11/classes/playground/SpirePlayground.class
+/home/andrea/scala-bitcoin/src/main/scala/playground/TypeClassPlayground.scala -> /home/andrea/scala-bitcoin/target/scala-2.11/classes/playground/TypeClassPlayground$.class
+/home/andrea/scala-bitcoin/src/main/scala/playground/TypeClassPlayground.scala -> /home/andrea/scala-bitcoin/target/scala-2.11/classes/playground/TypeClassPlayground$Expellable.class
+/home/andrea/scala-bitcoin/src/main/scala/playground/TypeClassPlayground.scala -> /home/andrea/scala-bitcoin/target/scala-2.11/classes/playground/TypeClassPlayground$Expelt$.class
+/home/andrea/scala-bitcoin/src/main/scala/playground/TypeClassPlayground.scala -> /home/andrea/scala-bitcoin/target/scala-2.11/classes/playground/TypeClassPlayground$Expelt.class
+/home/andrea/scala-bitcoin/src/main/scala/playground/TypeClassPlayground.scala -> /home/andrea/scala-bitcoin/target/scala-2.11/classes/playground/TypeClassPlayground$Pee$$anonfun$1.class
+/home/andrea/scala-bitcoin/src/main/scala/playground/TypeClassPlayground.scala -> /home/andrea/scala-bitcoin/target/scala-2.11/classes/playground/TypeClassPlayground$Pee$.class
+/home/andrea/scala-bitcoin/src/main/scala/playground/TypeClassPlayground.scala -> /home/andrea/scala-bitcoin/target/scala-2.11/classes/playground/TypeClassPlayground$Pee.class
+/home/andrea/scala-bitcoin/src/main/scala/playground/TypeClassPlayground.scala -> /home/andrea/scala-bitcoin/target/scala-2.11/classes/playground/TypeClassPlayground$PeeIsExpellable$.class
+/home/andrea/scala-bitcoin/src/main/scala/playground/TypeClassPlayground.scala -> /home/andrea/scala-bitcoin/target/scala-2.11/classes/playground/TypeClassPlayground$Shit$$anonfun$2.class
+/home/andrea/scala-bitcoin/src/main/scala/playground/TypeClassPlayground.scala -> /home/andrea/scala-bitcoin/target/scala-2.11/classes/playground/TypeClassPlayground$Shit$.class
+/home/andrea/scala-bitcoin/src/main/scala/playground/TypeClassPlayground.scala -> /home/andrea/scala-bitcoin/target/scala-2.11/classes/playground/TypeClassPlayground$Shit.class
+/home/andrea/scala-bitcoin/src/main/scala/playground/TypeClassPlayground.scala -> /home/andrea/scala-bitcoin/target/scala-2.11/classes/playground/TypeClassPlayground$ShitIsExpellable$.class
+/home/andrea/scala-bitcoin/src/main/scala/playground/TypeClassPlayground.scala -> /home/andrea/scala-bitcoin/target/scala-2.11/classes/playground/TypeClassPlayground.class
+binary dependencies:
+23 items
+/home/andrea/scala-bitcoin/src/main/scala/Core.scala -> /home/andrea/.ivy2/cache/org.scala-lang/scala-library/jars/scala-library-2.11.6.jar
+/home/andrea/scala-bitcoin/src/main/scala/Core.scala -> /usr/lib/jvm/java-7-oracle/jre/lib/rt.jar
+/home/andrea/scala-bitcoin/src/main/scala/Service/TransactionService.scala -> /home/andrea/.ivy2/cache/org.scala-lang/scala-library/jars/scala-library-2.11.6.jar
+/home/andrea/scala-bitcoin/src/main/scala/Service/TransactionService.scala -> /usr/lib/jvm/java-7-oracle/jre/lib/rt.jar
+/home/andrea/scala-bitcoin/src/main/scala/actors/WorkerActor.scala -> /home/andrea/.ivy2/cache/com.typesafe.akka/akka-actor_2.11/jars/akka-actor_2.11-2.3.9.jar
+/home/andrea/scala-bitcoin/src/main/scala/actors/WorkerActor.scala -> /home/andrea/.ivy2/cache/org.scala-lang/scala-library/jars/scala-library-2.11.6.jar
+/home/andrea/scala-bitcoin/src/main/scala/actors/WorkerActor.scala -> /usr/lib/jvm/java-7-oracle/jre/lib/rt.jar
+/home/andrea/scala-bitcoin/src/main/scala/domain/CompactNumber.scala -> /home/andrea/.ivy2/cache/org.scala-lang/scala-library/jars/scala-library-2.11.6.jar
+/home/andrea/scala-bitcoin/src/main/scala/domain/CompactNumber.scala -> /usr/lib/jvm/java-7-oracle/jre/lib/rt.jar
+/home/andrea/scala-bitcoin/src/main/scala/domain/Transaction.scala -> /home/andrea/.ivy2/cache/org.scala-lang/scala-library/jars/scala-library-2.11.6.jar
+/home/andrea/scala-bitcoin/src/main/scala/domain/Transaction.scala -> /usr/lib/jvm/java-7-oracle/jre/lib/rt.jar
+/home/andrea/scala-bitcoin/src/main/scala/encoding/Parsing.scala -> /home/andrea/.ivy2/cache/org.scala-lang/scala-library/jars/scala-library-2.11.6.jar
+/home/andrea/scala-bitcoin/src/main/scala/encoding/Parsing.scala -> /usr/lib/jvm/java-7-oracle/jre/lib/rt.jar
+/home/andrea/scala-bitcoin/src/main/scala/encoding/TransactionParsers.scala -> /home/andrea/.ivy2/cache/org.scala-lang.modules/scala-parser-combinators_2.11/bundles/scala-parser-combinators_2.11-1.0.4.jar
+/home/andrea/scala-bitcoin/src/main/scala/encoding/TransactionParsers.scala -> /home/andrea/.ivy2/cache/org.scala-lang/scala-library/jars/scala-library-2.11.6.jar
+/home/andrea/scala-bitcoin/src/main/scala/encoding/TransactionParsers.scala -> /usr/lib/jvm/java-7-oracle/jre/lib/rt.jar
+/home/andrea/scala-bitcoin/src/main/scala/playground/FutureMonad.scala -> /usr/lib/jvm/java-7-oracle/jre/lib/rt.jar
+/home/andrea/scala-bitcoin/src/main/scala/playground/RabbitFactorMonad.scala -> /home/andrea/.ivy2/cache/org.scala-lang/scala-library/jars/scala-library-2.11.6.jar
+/home/andrea/scala-bitcoin/src/main/scala/playground/RabbitFactorMonad.scala -> /usr/lib/jvm/java-7-oracle/jre/lib/rt.jar
+/home/andrea/scala-bitcoin/src/main/scala/playground/SpirePlayground.scala -> /home/andrea/.ivy2/cache/org.spire-math/spire_2.11/jars/spire_2.11-0.10.1.jar
+/home/andrea/scala-bitcoin/src/main/scala/playground/SpirePlayground.scala -> /usr/lib/jvm/java-7-oracle/jre/lib/rt.jar
+/home/andrea/scala-bitcoin/src/main/scala/playground/TypeClassPlayground.scala -> /home/andrea/.ivy2/cache/org.scala-lang/scala-library/jars/scala-library-2.11.6.jar
+/home/andrea/scala-bitcoin/src/main/scala/playground/TypeClassPlayground.scala -> /usr/lib/jvm/java-7-oracle/jre/lib/rt.jar
+direct source dependencies:
+0 items
+direct external dependencies:
+0 items
+public inherited source dependencies:
+0 items
+public inherited external dependencies:
+0 items
+member reference internal dependencies:
+2 items
+/home/andrea/scala-bitcoin/src/main/scala/Service/TransactionService.scala -> /home/andrea/scala-bitcoin/src/main/scala/domain/Transaction.scala
+/home/andrea/scala-bitcoin/src/main/scala/domain/Transaction.scala -> /home/andrea/scala-bitcoin/src/main/scala/encoding/Parsing.scala
+member reference external dependencies:
+0 items
+inheritance internal dependencies:
+0 items
+inheritance external dependencies:
+0 items
+class names:
+86 items
+/home/andrea/scala-bitcoin/src/main/scala/Core.scala -> Core
+/home/andrea/scala-bitcoin/src/main/scala/Core.scala -> Core$
+/home/andrea/scala-bitcoin/src/main/scala/Service/TransactionService.scala -> Service.TransactionService
+/home/andrea/scala-bitcoin/src/main/scala/actors/WorkerActor.scala -> actors.WorkerActor
+/home/andrea/scala-bitcoin/src/main/scala/actors/WorkerActor.scala -> actors.WorkerActor$$anonfun$receive$1
+/home/andrea/scala-bitcoin/src/main/scala/domain/CompactNumber.scala -> domain.CompactBigInt
+/home/andrea/scala-bitcoin/src/main/scala/domain/CompactNumber.scala -> domain.CompactBigInt$
+/home/andrea/scala-bitcoin/src/main/scala/domain/CompactNumber.scala -> domain.CompactInt
+/home/andrea/scala-bitcoin/src/main/scala/domain/CompactNumber.scala -> domain.CompactInt$
+/home/andrea/scala-bitcoin/src/main/scala/domain/CompactNumber.scala -> domain.CompactLong
+/home/andrea/scala-bitcoin/src/main/scala/domain/CompactNumber.scala -> domain.CompactLong$
+/home/andrea/scala-bitcoin/src/main/scala/domain/CompactNumber.scala -> domain.CompactNumber
+/home/andrea/scala-bitcoin/src/main/scala/domain/Transaction.scala -> domain.Transaction
+/home/andrea/scala-bitcoin/src/main/scala/domain/Transaction.scala -> domain.Transaction$
+/home/andrea/scala-bitcoin/src/main/scala/encoding/Parsing.scala -> encoding.Parsing
+/home/andrea/scala-bitcoin/src/main/scala/encoding/Parsing.scala -> encoding.Parsing$
+/home/andrea/scala-bitcoin/src/main/scala/encoding/Parsing.scala -> encoding.Parsing$MyTransaction
+/home/andrea/scala-bitcoin/src/main/scala/encoding/Parsing.scala -> encoding.Parsing$MyTransaction$
+/home/andrea/scala-bitcoin/src/main/scala/encoding/Parsing.scala -> encoding.Parsing$MyTransactionIsReadable$
+/home/andrea/scala-bitcoin/src/main/scala/encoding/Parsing.scala -> encoding.Parsing$ParseFailure
+/home/andrea/scala-bitcoin/src/main/scala/encoding/Parsing.scala -> encoding.Parsing$ParseFailure$
+/home/andrea/scala-bitcoin/src/main/scala/encoding/Parsing.scala -> encoding.Parsing$ParseResult
+/home/andrea/scala-bitcoin/src/main/scala/encoding/Parsing.scala -> encoding.Parsing$ParseSuccess
+/home/andrea/scala-bitcoin/src/main/scala/encoding/Parsing.scala -> encoding.Parsing$ParseSuccess$
+/home/andrea/scala-bitcoin/src/main/scala/encoding/Parsing.scala -> encoding.Parsing$ReadBytes
+/home/andrea/scala-bitcoin/src/main/scala/encoding/Parsing.scala -> encoding.Parsing$SerializeBytes
+/home/andrea/scala-bitcoin/src/main/scala/encoding/Parsing.scala -> encoding.Parsing$SerializeBytes$
+/home/andrea/scala-bitcoin/src/main/scala/encoding/Parsing.scala -> encoding.Parsing$SerializeBytes$$anonfun$map$1
+/home/andrea/scala-bitcoin/src/main/scala/encoding/Parsing.scala -> encoding.Parsing$SerializeBytesNonno$
+/home/andrea/scala-bitcoin/src/main/scala/encoding/Parsing.scala -> encoding.Parsing$WriteBytes
+/home/andrea/scala-bitcoin/src/main/scala/encoding/TransactionParsers.scala -> encoding.BinaryParsers
+/home/andrea/scala-bitcoin/src/main/scala/encoding/TransactionParsers.scala -> encoding.BinaryParsers$$anonfun$bytes$1
+/home/andrea/scala-bitcoin/src/main/scala/encoding/TransactionParsers.scala -> encoding.BinaryParsers$$anonfun$toInt$1
+/home/andrea/scala-bitcoin/src/main/scala/encoding/TransactionParsers.scala -> encoding.BinaryParsers$$anonfun$toLong$1
+/home/andrea/scala-bitcoin/src/main/scala/encoding/TransactionParsers.scala -> encoding.BinaryParsers$$anonfun$u1$1
+/home/andrea/scala-bitcoin/src/main/scala/encoding/TransactionParsers.scala -> encoding.BinaryParsers$$anonfun$u2$1
+/home/andrea/scala-bitcoin/src/main/scala/encoding/TransactionParsers.scala -> encoding.BinaryParsers$$anonfun$u4$1
+/home/andrea/scala-bitcoin/src/main/scala/encoding/TransactionParsers.scala -> encoding.BinaryParsers$$anonfun$u4f$1
+/home/andrea/scala-bitcoin/src/main/scala/encoding/TransactionParsers.scala -> encoding.BinaryParsers$$anonfun$u8$1
+/home/andrea/scala-bitcoin/src/main/scala/encoding/TransactionParsers.scala -> encoding.BinaryParsers$$anonfun$u8d$1
+/home/andrea/scala-bitcoin/src/main/scala/encoding/TransactionParsers.scala -> encoding.BinaryParsers$class
+/home/andrea/scala-bitcoin/src/main/scala/encoding/TransactionParsers.scala -> encoding.ByteOffsetPosition
+/home/andrea/scala-bitcoin/src/main/scala/encoding/TransactionParsers.scala -> encoding.ByteOffsetPosition$
+/home/andrea/scala-bitcoin/src/main/scala/encoding/TransactionParsers.scala -> encoding.ByteReader
+/home/andrea/scala-bitcoin/src/main/scala/encoding/TransactionParsers.scala -> encoding.ByteReader$$anonfun$source$1
+/home/andrea/scala-bitcoin/src/main/scala/encoding/TransactionParsers.scala -> encoding.ParsersUtil
+/home/andrea/scala-bitcoin/src/main/scala/encoding/TransactionParsers.scala -> encoding.ParsersUtil$$anonfun$anyElem$1
+/home/andrea/scala-bitcoin/src/main/scala/encoding/TransactionParsers.scala -> encoding.ParsersUtil$$anonfun$elemExcept$1
+/home/andrea/scala-bitcoin/src/main/scala/encoding/TransactionParsers.scala -> encoding.ParsersUtil$$anonfun$elemOf$1
+/home/andrea/scala-bitcoin/src/main/scala/encoding/TransactionParsers.scala -> encoding.ParsersUtil$$anonfun$take$1
+/home/andrea/scala-bitcoin/src/main/scala/encoding/TransactionParsers.scala -> encoding.ParsersUtil$$anonfun$takeUntil$1
+/home/andrea/scala-bitcoin/src/main/scala/encoding/TransactionParsers.scala -> encoding.ParsersUtil$$anonfun$takeUntil$1$$anonfun$apply$1
+/home/andrea/scala-bitcoin/src/main/scala/encoding/TransactionParsers.scala -> encoding.ParsersUtil$$anonfun$takeUntil$1$$anonfun$apply$2
+/home/andrea/scala-bitcoin/src/main/scala/encoding/TransactionParsers.scala -> encoding.ParsersUtil$$anonfun$takeWhile$1
+/home/andrea/scala-bitcoin/src/main/scala/encoding/TransactionParsers.scala -> encoding.ParsersUtil$class
+/home/andrea/scala-bitcoin/src/main/scala/playground/FutureMonad.scala -> playground.FutureMonad
+/home/andrea/scala-bitcoin/src/main/scala/playground/FutureMonad.scala -> playground.FutureMonad$
+/home/andrea/scala-bitcoin/src/main/scala/playground/RabbitFactorMonad.scala -> playground.RabbitFactorMonad
+/home/andrea/scala-bitcoin/src/main/scala/playground/RabbitFactorMonad.scala -> playground.RabbitFactorMonad$
+/home/andrea/scala-bitcoin/src/main/scala/playground/RabbitFactorMonad.scala -> playground.RabbitFactorMonad$$anonfun$provaFor$1
+/home/andrea/scala-bitcoin/src/main/scala/playground/RabbitFactorMonad.scala -> playground.RabbitFactorMonad$$anonfun$provaFor$1$$anonfun$apply$2
+/home/andrea/scala-bitcoin/src/main/scala/playground/RabbitFactorMonad.scala -> playground.RabbitFactorMonad$$anonfun$provaFor$1$$anonfun$apply$2$$anonfun$apply$1
+/home/andrea/scala-bitcoin/src/main/scala/playground/RabbitFactorMonad.scala -> playground.RabbitFactorMonad$$anonfun$provaFor$2
+/home/andrea/scala-bitcoin/src/main/scala/playground/RabbitFactorMonad.scala -> playground.RabbitFactorMonad$$anonfun$provaFor$2$$anonfun$apply$3
+/home/andrea/scala-bitcoin/src/main/scala/playground/RabbitFactorMonad.scala -> playground.RabbitFactorMonad$$anonfun$provaFor$2$$anonfun$apply$3$$anonfun$apply$4
+/home/andrea/scala-bitcoin/src/main/scala/playground/RabbitFactorMonad.scala -> playground.RabbitFactorMonad$RFactor
+/home/andrea/scala-bitcoin/src/main/scala/playground/RabbitFactorMonad.scala -> playground.RabbitFactorMonad$RFactor$
+/home/andrea/scala-bitcoin/src/main/scala/playground/RabbitFactorMonad.scala -> playground.RabbitFactorMonad$RFactor$$anonfun$map$1
+/home/andrea/scala-bitcoin/src/main/scala/playground/RabbitFactorMonad.scala -> playground.RabbitFactorMonad$RFactor1
+/home/andrea/scala-bitcoin/src/main/scala/playground/RabbitFactorMonad.scala -> playground.RabbitFactorMonad$RFactor1$
+/home/andrea/scala-bitcoin/src/main/scala/playground/RabbitFactorMonad.scala -> playground.RabbitFactorMonad$RFactor1$$anonfun$flatMap$1
+/home/andrea/scala-bitcoin/src/main/scala/playground/SpirePlayground.scala -> playground.SpirePlayground
+/home/andrea/scala-bitcoin/src/main/scala/playground/SpirePlayground.scala -> playground.SpirePlayground$
+/home/andrea/scala-bitcoin/src/main/scala/playground/TypeClassPlayground.scala -> playground.TypeClassPlayground
+/home/andrea/scala-bitcoin/src/main/scala/playground/TypeClassPlayground.scala -> playground.TypeClassPlayground$
+/home/andrea/scala-bitcoin/src/main/scala/playground/TypeClassPlayground.scala -> playground.TypeClassPlayground$Expellable
+/home/andrea/scala-bitcoin/src/main/scala/playground/TypeClassPlayground.scala -> playground.TypeClassPlayground$Expelt
+/home/andrea/scala-bitcoin/src/main/scala/playground/TypeClassPlayground.scala -> playground.TypeClassPlayground$Expelt$
+/home/andrea/scala-bitcoin/src/main/scala/playground/TypeClassPlayground.scala -> playground.TypeClassPlayground$Pee
+/home/andrea/scala-bitcoin/src/main/scala/playground/TypeClassPlayground.scala -> playground.TypeClassPlayground$Pee$
+/home/andrea/scala-bitcoin/src/main/scala/playground/TypeClassPlayground.scala -> playground.TypeClassPlayground$Pee$$anonfun$1
+/home/andrea/scala-bitcoin/src/main/scala/playground/TypeClassPlayground.scala -> playground.TypeClassPlayground$PeeIsExpellable$
+/home/andrea/scala-bitcoin/src/main/scala/playground/TypeClassPlayground.scala -> playground.TypeClassPlayground$Shit
+/home/andrea/scala-bitcoin/src/main/scala/playground/TypeClassPlayground.scala -> playground.TypeClassPlayground$Shit$
+/home/andrea/scala-bitcoin/src/main/scala/playground/TypeClassPlayground.scala -> playground.TypeClassPlayground$Shit$$anonfun$2
+/home/andrea/scala-bitcoin/src/main/scala/playground/TypeClassPlayground.scala -> playground.TypeClassPlayground$ShitIsExpellable$
+used names:
+417 items
+/home/andrea/scala-bitcoin/src/main/scala/Core.scala -> <init>
+/home/andrea/scala-bitcoin/src/main/scala/Core.scala -> AnyRef
+/home/andrea/scala-bitcoin/src/main/scala/Core.scala -> Array
+/home/andrea/scala-bitcoin/src/main/scala/Core.scala -> Core
+/home/andrea/scala-bitcoin/src/main/scala/Core.scala -> Predef
+/home/andrea/scala-bitcoin/src/main/scala/Core.scala -> String
+/home/andrea/scala-bitcoin/src/main/scala/Core.scala -> scala
+/home/andrea/scala-bitcoin/src/main/scala/Service/TransactionService.scala -> <init>
+/home/andrea/scala-bitcoin/src/main/scala/Service/TransactionService.scala -> ???
+/home/andrea/scala-bitcoin/src/main/scala/Service/TransactionService.scala -> AnyRef
+/home/andrea/scala-bitcoin/src/main/scala/Service/TransactionService.scala -> Long
+/home/andrea/scala-bitcoin/src/main/scala/Service/TransactionService.scala -> Predef
+/home/andrea/scala-bitcoin/src/main/scala/Service/TransactionService.scala -> Service
+/home/andrea/scala-bitcoin/src/main/scala/Service/TransactionService.scala -> Transaction
+/home/andrea/scala-bitcoin/src/main/scala/Service/TransactionService.scala -> TransactionService
+/home/andrea/scala-bitcoin/src/main/scala/Service/TransactionService.scala -> domain
+/home/andrea/scala-bitcoin/src/main/scala/Service/TransactionService.scala -> scala
+/home/andrea/scala-bitcoin/src/main/scala/actors/WorkerActor.scala -> <init>
+/home/andrea/scala-bitcoin/src/main/scala/actors/WorkerActor.scala -> A1
+/home/andrea/scala-bitcoin/src/main/scala/actors/WorkerActor.scala -> Actor
+/home/andrea/scala-bitcoin/src/main/scala/actors/WorkerActor.scala -> B1
+/home/andrea/scala-bitcoin/src/main/scala/actors/WorkerActor.scala -> Bound
+/home/andrea/scala-bitcoin/src/main/scala/actors/WorkerActor.scala -> Function1
+/home/andrea/scala-bitcoin/src/main/scala/actors/WorkerActor.scala -> Tcp
+/home/andrea/scala-bitcoin/src/main/scala/actors/WorkerActor.scala -> WorkerActor
+/home/andrea/scala-bitcoin/src/main/scala/actors/WorkerActor.scala -> actor
+/home/andrea/scala-bitcoin/src/main/scala/actors/WorkerActor.scala -> actors
+/home/andrea/scala-bitcoin/src/main/scala/actors/WorkerActor.scala -> akka
+/home/andrea/scala-bitcoin/src/main/scala/actors/WorkerActor.scala -> asInstanceOf
+/home/andrea/scala-bitcoin/src/main/scala/actors/WorkerActor.scala -> io
+/home/andrea/scala-bitcoin/src/main/scala/actors/WorkerActor.scala -> isInstanceOf
+/home/andrea/scala-bitcoin/src/main/scala/actors/WorkerActor.scala -> localAddress
+/home/andrea/scala-bitcoin/src/main/scala/actors/WorkerActor.scala -> scala
+/home/andrea/scala-bitcoin/src/main/scala/actors/WorkerActor.scala -> unchecked
+/home/andrea/scala-bitcoin/src/main/scala/domain/CompactNumber.scala -> &&
+/home/andrea/scala-bitcoin/src/main/scala/domain/CompactNumber.scala -> <init>
+/home/andrea/scala-bitcoin/src/main/scala/domain/CompactNumber.scala -> ==
+/home/andrea/scala-bitcoin/src/main/scala/domain/CompactNumber.scala -> BigInt
+/home/andrea/scala-bitcoin/src/main/scala/domain/CompactNumber.scala -> BigIntIsIntegral
+/home/andrea/scala-bitcoin/src/main/scala/domain/CompactNumber.scala -> BigIntOrdering
+/home/andrea/scala-bitcoin/src/main/scala/domain/CompactNumber.scala -> CompactBigInt
+/home/andrea/scala-bitcoin/src/main/scala/domain/CompactNumber.scala -> CompactInt
+/home/andrea/scala-bitcoin/src/main/scala/domain/CompactNumber.scala -> CompactLong
+/home/andrea/scala-bitcoin/src/main/scala/domain/CompactNumber.scala -> CompactNumber
+/home/andrea/scala-bitcoin/src/main/scala/domain/CompactNumber.scala -> Int
+/home/andrea/scala-bitcoin/src/main/scala/domain/CompactNumber.scala -> IntIsIntegral
+/home/andrea/scala-bitcoin/src/main/scala/domain/CompactNumber.scala -> IntOrdering
+/home/andrea/scala-bitcoin/src/main/scala/domain/CompactNumber.scala -> Integral
+/home/andrea/scala-bitcoin/src/main/scala/domain/CompactNumber.scala -> Long
+/home/andrea/scala-bitcoin/src/main/scala/domain/CompactNumber.scala -> LongIsIntegral
+/home/andrea/scala-bitcoin/src/main/scala/domain/CompactNumber.scala -> LongOrdering
+/home/andrea/scala-bitcoin/src/main/scala/domain/CompactNumber.scala -> N
+/home/andrea/scala-bitcoin/src/main/scala/domain/CompactNumber.scala -> None
+/home/andrea/scala-bitcoin/src/main/scala/domain/CompactNumber.scala -> Numeric
+/home/andrea/scala-bitcoin/src/main/scala/domain/CompactNumber.scala -> Ordering
+/home/andrea/scala-bitcoin/src/main/scala/domain/CompactNumber.scala -> Product
+/home/andrea/scala-bitcoin/src/main/scala/domain/CompactNumber.scala -> RuntimeException
+/home/andrea/scala-bitcoin/src/main/scala/domain/CompactNumber.scala -> ScalaNumericConversions
+/home/andrea/scala-bitcoin/src/main/scala/domain/CompactNumber.scala -> ScalaRunTime
+/home/andrea/scala-bitcoin/src/main/scala/domain/CompactNumber.scala -> Serializable
+/home/andrea/scala-bitcoin/src/main/scala/domain/CompactNumber.scala -> ShortIsIntegral
+/home/andrea/scala-bitcoin/src/main/scala/domain/CompactNumber.scala -> ShortOrdering
+/home/andrea/scala-bitcoin/src/main/scala/domain/CompactNumber.scala -> Statics
+/home/andrea/scala-bitcoin/src/main/scala/domain/CompactNumber.scala -> StringContext
+/home/andrea/scala-bitcoin/src/main/scala/domain/CompactNumber.scala -> T
+/home/andrea/scala-bitcoin/src/main/scala/domain/CompactNumber.scala -> _hashCode
+/home/andrea/scala-bitcoin/src/main/scala/domain/CompactNumber.scala -> _toString
+/home/andrea/scala-bitcoin/src/main/scala/domain/CompactNumber.scala -> asInstanceOf
+/home/andrea/scala-bitcoin/src/main/scala/domain/CompactNumber.scala -> domain
+/home/andrea/scala-bitcoin/src/main/scala/domain/CompactNumber.scala -> eq
+/home/andrea/scala-bitcoin/src/main/scala/domain/CompactNumber.scala -> evidence
+/home/andrea/scala-bitcoin/src/main/scala/domain/CompactNumber.scala -> finalizeHash
+/home/andrea/scala-bitcoin/src/main/scala/domain/CompactNumber.scala -> isInstanceOf
+/home/andrea/scala-bitcoin/src/main/scala/domain/CompactNumber.scala -> longHash
+/home/andrea/scala-bitcoin/src/main/scala/domain/CompactNumber.scala -> math
+/home/andrea/scala-bitcoin/src/main/scala/domain/CompactNumber.scala -> mix
+/home/andrea/scala-bitcoin/src/main/scala/domain/CompactNumber.scala -> package
+/home/andrea/scala-bitcoin/src/main/scala/domain/CompactNumber.scala -> runtime
+/home/andrea/scala-bitcoin/src/main/scala/domain/CompactNumber.scala -> s
+/home/andrea/scala-bitcoin/src/main/scala/domain/CompactNumber.scala -> scala
+/home/andrea/scala-bitcoin/src/main/scala/domain/CompactNumber.scala -> that
+/home/andrea/scala-bitcoin/src/main/scala/domain/CompactNumber.scala -> toString
+/home/andrea/scala-bitcoin/src/main/scala/domain/CompactNumber.scala -> typedProductIterator
+/home/andrea/scala-bitcoin/src/main/scala/domain/CompactNumber.scala -> value
+/home/andrea/scala-bitcoin/src/main/scala/domain/CompactNumber.scala -> ||
+/home/andrea/scala-bitcoin/src/main/scala/domain/Transaction.scala -> &&
+/home/andrea/scala-bitcoin/src/main/scala/domain/Transaction.scala -> <init>
+/home/andrea/scala-bitcoin/src/main/scala/domain/Transaction.scala -> ==
+/home/andrea/scala-bitcoin/src/main/scala/domain/Transaction.scala -> AnyRef
+/home/andrea/scala-bitcoin/src/main/scala/domain/Transaction.scala -> Int
+/home/andrea/scala-bitcoin/src/main/scala/domain/Transaction.scala -> List
+/home/andrea/scala-bitcoin/src/main/scala/domain/Transaction.scala -> Long
+/home/andrea/scala-bitcoin/src/main/scala/domain/Transaction.scala -> None
+/home/andrea/scala-bitcoin/src/main/scala/domain/Transaction.scala -> ParseResult
+/home/andrea/scala-bitcoin/src/main/scala/domain/Transaction.scala -> ParseSuccess
+/home/andrea/scala-bitcoin/src/main/scala/domain/Transaction.scala -> Parsing
+/home/andrea/scala-bitcoin/src/main/scala/domain/Transaction.scala -> Product
+/home/andrea/scala-bitcoin/src/main/scala/domain/Transaction.scala -> ScalaRunTime
+/home/andrea/scala-bitcoin/src/main/scala/domain/Transaction.scala -> Serializable
+/home/andrea/scala-bitcoin/src/main/scala/domain/Transaction.scala -> SerializeBytes
+/home/andrea/scala-bitcoin/src/main/scala/domain/Transaction.scala -> Statics
+/home/andrea/scala-bitcoin/src/main/scala/domain/Transaction.scala -> Success
+/home/andrea/scala-bitcoin/src/main/scala/domain/Transaction.scala -> Transaction
+/home/andrea/scala-bitcoin/src/main/scala/domain/Transaction.scala -> _toString
+/home/andrea/scala-bitcoin/src/main/scala/domain/Transaction.scala -> anyHash
+/home/andrea/scala-bitcoin/src/main/scala/domain/Transaction.scala -> asInstanceOf
+/home/andrea/scala-bitcoin/src/main/scala/domain/Transaction.scala -> domain
+/home/andrea/scala-bitcoin/src/main/scala/domain/Transaction.scala -> encoding
+/home/andrea/scala-bitcoin/src/main/scala/domain/Transaction.scala -> eq
+/home/andrea/scala-bitcoin/src/main/scala/domain/Transaction.scala -> finalizeHash
+/home/andrea/scala-bitcoin/src/main/scala/domain/Transaction.scala -> isInstanceOf
+/home/andrea/scala-bitcoin/src/main/scala/domain/Transaction.scala -> lockTime
+/home/andrea/scala-bitcoin/src/main/scala/domain/Transaction.scala -> longHash
+/home/andrea/scala-bitcoin/src/main/scala/domain/Transaction.scala -> mix
+/home/andrea/scala-bitcoin/src/main/scala/domain/Transaction.scala -> nTxIn
+/home/andrea/scala-bitcoin/src/main/scala/domain/Transaction.scala -> nTxOut
+/home/andrea/scala-bitcoin/src/main/scala/domain/Transaction.scala -> package
+/home/andrea/scala-bitcoin/src/main/scala/domain/Transaction.scala -> runtime
+/home/andrea/scala-bitcoin/src/main/scala/domain/Transaction.scala -> scala
+/home/andrea/scala-bitcoin/src/main/scala/domain/Transaction.scala -> toString
+/home/andrea/scala-bitcoin/src/main/scala/domain/Transaction.scala -> txIn
+/home/andrea/scala-bitcoin/src/main/scala/domain/Transaction.scala -> txOut
+/home/andrea/scala-bitcoin/src/main/scala/domain/Transaction.scala -> typedProductIterator
+/home/andrea/scala-bitcoin/src/main/scala/domain/Transaction.scala -> util
+/home/andrea/scala-bitcoin/src/main/scala/domain/Transaction.scala -> version
+/home/andrea/scala-bitcoin/src/main/scala/domain/Transaction.scala -> ||
+/home/andrea/scala-bitcoin/src/main/scala/encoding/Parsing.scala -> &
+/home/andrea/scala-bitcoin/src/main/scala/encoding/Parsing.scala -> &&
+/home/andrea/scala-bitcoin/src/main/scala/encoding/Parsing.scala -> +
+/home/andrea/scala-bitcoin/src/main/scala/encoding/Parsing.scala -> <<
+/home/andrea/scala-bitcoin/src/main/scala/encoding/Parsing.scala -> <init>
+/home/andrea/scala-bitcoin/src/main/scala/encoding/Parsing.scala -> ==
+/home/andrea/scala-bitcoin/src/main/scala/encoding/Parsing.scala -> ???
+/home/andrea/scala-bitcoin/src/main/scala/encoding/Parsing.scala -> AbstractFunction2
+/home/andrea/scala-bitcoin/src/main/scala/encoding/Parsing.scala -> AnyRef
+/home/andrea/scala-bitcoin/src/main/scala/encoding/Parsing.scala -> Array
+/home/andrea/scala-bitcoin/src/main/scala/encoding/Parsing.scala -> Byte
+/home/andrea/scala-bitcoin/src/main/scala/encoding/Parsing.scala -> CompoundParsedItem
+/home/andrea/scala-bitcoin/src/main/scala/encoding/Parsing.scala -> Failure
+/home/andrea/scala-bitcoin/src/main/scala/encoding/Parsing.scala -> Function1
+/home/andrea/scala-bitcoin/src/main/scala/encoding/Parsing.scala -> Int
+/home/andrea/scala-bitcoin/src/main/scala/encoding/Parsing.scala -> MyTransaction
+/home/andrea/scala-bitcoin/src/main/scala/encoding/Parsing.scala -> MyTransactionIsReadable
+/home/andrea/scala-bitcoin/src/main/scala/encoding/Parsing.scala -> None
+/home/andrea/scala-bitcoin/src/main/scala/encoding/Parsing.scala -> Option
+/home/andrea/scala-bitcoin/src/main/scala/encoding/Parsing.scala -> ParseFailure
+/home/andrea/scala-bitcoin/src/main/scala/encoding/Parsing.scala -> ParseResult
+/home/andrea/scala-bitcoin/src/main/scala/encoding/Parsing.scala -> ParseSuccess
+/home/andrea/scala-bitcoin/src/main/scala/encoding/Parsing.scala -> Parsing
+/home/andrea/scala-bitcoin/src/main/scala/encoding/Parsing.scala -> Predef
+/home/andrea/scala-bitcoin/src/main/scala/encoding/Parsing.scala -> Product
+/home/andrea/scala-bitcoin/src/main/scala/encoding/Parsing.scala -> ReadBytes
+/home/andrea/scala-bitcoin/src/main/scala/encoding/Parsing.scala -> ScalaRunTime
+/home/andrea/scala-bitcoin/src/main/scala/encoding/Parsing.scala -> Serializable
+/home/andrea/scala-bitcoin/src/main/scala/encoding/Parsing.scala -> SerializeBytes
+/home/andrea/scala-bitcoin/src/main/scala/encoding/Parsing.scala -> SerializeBytesNonno
+/home/andrea/scala-bitcoin/src/main/scala/encoding/Parsing.scala -> Statics
+/home/andrea/scala-bitcoin/src/main/scala/encoding/Parsing.scala -> String
+/home/andrea/scala-bitcoin/src/main/scala/encoding/Parsing.scala -> Success
+/home/andrea/scala-bitcoin/src/main/scala/encoding/Parsing.scala -> T
+/home/andrea/scala-bitcoin/src/main/scala/encoding/Parsing.scala -> Throwable
+/home/andrea/scala-bitcoin/src/main/scala/encoding/Parsing.scala -> Try
+/home/andrea/scala-bitcoin/src/main/scala/encoding/Parsing.scala -> Tuple3
+/home/andrea/scala-bitcoin/src/main/scala/encoding/Parsing.scala -> U
+/home/andrea/scala-bitcoin/src/main/scala/encoding/Parsing.scala -> _hashCode
+/home/andrea/scala-bitcoin/src/main/scala/encoding/Parsing.scala -> _root_
+/home/andrea/scala-bitcoin/src/main/scala/encoding/Parsing.scala -> _toString
+/home/andrea/scala-bitcoin/src/main/scala/encoding/Parsing.scala -> anyHash
+/home/andrea/scala-bitcoin/src/main/scala/encoding/Parsing.scala -> apply
+/home/andrea/scala-bitcoin/src/main/scala/encoding/Parsing.scala -> asInstanceOf
+/home/andrea/scala-bitcoin/src/main/scala/encoding/Parsing.scala -> bytes
+/home/andrea/scala-bitcoin/src/main/scala/encoding/Parsing.scala -> comment
+/home/andrea/scala-bitcoin/src/main/scala/encoding/Parsing.scala -> encoding
+/home/andrea/scala-bitcoin/src/main/scala/encoding/Parsing.scala -> eq
+/home/andrea/scala-bitcoin/src/main/scala/encoding/Parsing.scala -> err
+/home/andrea/scala-bitcoin/src/main/scala/encoding/Parsing.scala -> f
+/home/andrea/scala-bitcoin/src/main/scala/encoding/Parsing.scala -> finalizeHash
+/home/andrea/scala-bitcoin/src/main/scala/encoding/Parsing.scala -> flatMap
+/home/andrea/scala-bitcoin/src/main/scala/encoding/Parsing.scala -> isInstanceOf
+/home/andrea/scala-bitcoin/src/main/scala/encoding/Parsing.scala -> mix
+/home/andrea/scala-bitcoin/src/main/scala/encoding/Parsing.scala -> number
+/home/andrea/scala-bitcoin/src/main/scala/encoding/Parsing.scala -> offset
+/home/andrea/scala-bitcoin/src/main/scala/encoding/Parsing.scala -> package
+/home/andrea/scala-bitcoin/src/main/scala/encoding/Parsing.scala -> parseResult
+/home/andrea/scala-bitcoin/src/main/scala/encoding/Parsing.scala -> r
+/home/andrea/scala-bitcoin/src/main/scala/encoding/Parsing.scala -> result
+/home/andrea/scala-bitcoin/src/main/scala/encoding/Parsing.scala -> runtime
+/home/andrea/scala-bitcoin/src/main/scala/encoding/Parsing.scala -> scala
+/home/andrea/scala-bitcoin/src/main/scala/encoding/Parsing.scala -> thr
+/home/andrea/scala-bitcoin/src/main/scala/encoding/Parsing.scala -> toString
+/home/andrea/scala-bitcoin/src/main/scala/encoding/Parsing.scala -> typedProductIterator
+/home/andrea/scala-bitcoin/src/main/scala/encoding/Parsing.scala -> util
+/home/andrea/scala-bitcoin/src/main/scala/encoding/Parsing.scala -> |
+/home/andrea/scala-bitcoin/src/main/scala/encoding/Parsing.scala -> ||
+/home/andrea/scala-bitcoin/src/main/scala/encoding/TransactionParsers.scala -> &
+/home/andrea/scala-bitcoin/src/main/scala/encoding/TransactionParsers.scala -> &&
+/home/andrea/scala-bitcoin/src/main/scala/encoding/TransactionParsers.scala -> +
+/home/andrea/scala-bitcoin/src/main/scala/encoding/TransactionParsers.scala -> -
+/home/andrea/scala-bitcoin/src/main/scala/encoding/TransactionParsers.scala -> <
+/home/andrea/scala-bitcoin/src/main/scala/encoding/TransactionParsers.scala -> <<
+/home/andrea/scala-bitcoin/src/main/scala/encoding/TransactionParsers.scala -> <=
+/home/andrea/scala-bitcoin/src/main/scala/encoding/TransactionParsers.scala -> <init>
+/home/andrea/scala-bitcoin/src/main/scala/encoding/TransactionParsers.scala -> <repeated>
+/home/andrea/scala-bitcoin/src/main/scala/encoding/TransactionParsers.scala -> ==
+/home/andrea/scala-bitcoin/src/main/scala/encoding/TransactionParsers.scala -> >=
+/home/andrea/scala-bitcoin/src/main/scala/encoding/TransactionParsers.scala -> AbstractFunction1
+/home/andrea/scala-bitcoin/src/main/scala/encoding/TransactionParsers.scala -> Array
+/home/andrea/scala-bitcoin/src/main/scala/encoding/TransactionParsers.scala -> BinaryParsers
+/home/andrea/scala-bitcoin/src/main/scala/encoding/TransactionParsers.scala -> Byte
+/home/andrea/scala-bitcoin/src/main/scala/encoding/TransactionParsers.scala -> ByteOffsetPosition
+/home/andrea/scala-bitcoin/src/main/scala/encoding/TransactionParsers.scala -> ByteReader
+/home/andrea/scala-bitcoin/src/main/scala/encoding/TransactionParsers.scala -> Char
+/home/andrea/scala-bitcoin/src/main/scala/encoding/TransactionParsers.scala -> CharArrayReader
+/home/andrea/scala-bitcoin/src/main/scala/encoding/TransactionParsers.scala -> ClassTag
+/home/andrea/scala-bitcoin/src/main/scala/encoding/TransactionParsers.scala -> Double
+/home/andrea/scala-bitcoin/src/main/scala/encoding/TransactionParsers.scala -> Elem
+/home/andrea/scala-bitcoin/src/main/scala/encoding/TransactionParsers.scala -> EofCh
+/home/andrea/scala-bitcoin/src/main/scala/encoding/TransactionParsers.scala -> Float
+/home/andrea/scala-bitcoin/src/main/scala/encoding/TransactionParsers.scala -> Input
+/home/andrea/scala-bitcoin/src/main/scala/encoding/TransactionParsers.scala -> Int
+/home/andrea/scala-bitcoin/src/main/scala/encoding/TransactionParsers.scala -> Long
+/home/andrea/scala-bitcoin/src/main/scala/encoding/TransactionParsers.scala -> None
+/home/andrea/scala-bitcoin/src/main/scala/encoding/TransactionParsers.scala -> ParseResult
+/home/andrea/scala-bitcoin/src/main/scala/encoding/TransactionParsers.scala -> Parser
+/home/andrea/scala-bitcoin/src/main/scala/encoding/TransactionParsers.scala -> Parsers
+/home/andrea/scala-bitcoin/src/main/scala/encoding/TransactionParsers.scala -> ParsersUtil
+/home/andrea/scala-bitcoin/src/main/scala/encoding/TransactionParsers.scala -> Position
+/home/andrea/scala-bitcoin/src/main/scala/encoding/TransactionParsers.scala -> Predef
+/home/andrea/scala-bitcoin/src/main/scala/encoding/TransactionParsers.scala -> Product
+/home/andrea/scala-bitcoin/src/main/scala/encoding/TransactionParsers.scala -> Reader
+/home/andrea/scala-bitcoin/src/main/scala/encoding/TransactionParsers.scala -> ScalaRunTime
+/home/andrea/scala-bitcoin/src/main/scala/encoding/TransactionParsers.scala -> Seq
+/home/andrea/scala-bitcoin/src/main/scala/encoding/TransactionParsers.scala -> Serializable
+/home/andrea/scala-bitcoin/src/main/scala/encoding/TransactionParsers.scala -> Statics
+/home/andrea/scala-bitcoin/src/main/scala/encoding/TransactionParsers.scala -> String
+/home/andrea/scala-bitcoin/src/main/scala/encoding/TransactionParsers.scala -> T
+/home/andrea/scala-bitcoin/src/main/scala/encoding/TransactionParsers.scala -> ^^
+/home/andrea/scala-bitcoin/src/main/scala/encoding/TransactionParsers.scala -> _root_
+/home/andrea/scala-bitcoin/src/main/scala/encoding/TransactionParsers.scala -> annotation
+/home/andrea/scala-bitcoin/src/main/scala/encoding/TransactionParsers.scala -> anyElem
+/home/andrea/scala-bitcoin/src/main/scala/encoding/TransactionParsers.scala -> apply
+/home/andrea/scala-bitcoin/src/main/scala/encoding/TransactionParsers.scala -> asInstanceOf
+/home/andrea/scala-bitcoin/src/main/scala/encoding/TransactionParsers.scala -> augmentString
+/home/andrea/scala-bitcoin/src/main/scala/encoding/TransactionParsers.scala -> b
+/home/andrea/scala-bitcoin/src/main/scala/encoding/TransactionParsers.scala -> byte
+/home/andrea/scala-bitcoin/src/main/scala/encoding/TransactionParsers.scala -> byteArrayOps
+/home/andrea/scala-bitcoin/src/main/scala/encoding/TransactionParsers.scala -> bytes
+/home/andrea/scala-bitcoin/src/main/scala/encoding/TransactionParsers.scala -> canBuildFrom
+/home/andrea/scala-bitcoin/src/main/scala/encoding/TransactionParsers.scala -> combinator
+/home/andrea/scala-bitcoin/src/main/scala/encoding/TransactionParsers.scala -> cond
+/home/andrea/scala-bitcoin/src/main/scala/encoding/TransactionParsers.scala -> contains
+/home/andrea/scala-bitcoin/src/main/scala/encoding/TransactionParsers.scala -> drop
+/home/andrea/scala-bitcoin/src/main/scala/encoding/TransactionParsers.scala -> elem
+/home/andrea/scala-bitcoin/src/main/scala/encoding/TransactionParsers.scala -> encoding
+/home/andrea/scala-bitcoin/src/main/scala/encoding/TransactionParsers.scala -> eq
+/home/andrea/scala-bitcoin/src/main/scala/encoding/TransactionParsers.scala -> finalizeHash
+/home/andrea/scala-bitcoin/src/main/scala/encoding/TransactionParsers.scala -> foldLeft
+/home/andrea/scala-bitcoin/src/main/scala/encoding/TransactionParsers.scala -> format
+/home/andrea/scala-bitcoin/src/main/scala/encoding/TransactionParsers.scala -> getBytes
+/home/andrea/scala-bitcoin/src/main/scala/encoding/TransactionParsers.scala -> in
+/home/andrea/scala-bitcoin/src/main/scala/encoding/TransactionParsers.scala -> input
+/home/andrea/scala-bitcoin/src/main/scala/encoding/TransactionParsers.scala -> intBitsToFloat
+/home/andrea/scala-bitcoin/src/main/scala/encoding/TransactionParsers.scala -> isInstanceOf
+/home/andrea/scala-bitcoin/src/main/scala/encoding/TransactionParsers.scala -> java
+/home/andrea/scala-bitcoin/src/main/scala/encoding/TransactionParsers.scala -> lang
+/home/andrea/scala-bitcoin/src/main/scala/encoding/TransactionParsers.scala -> length
+/home/andrea/scala-bitcoin/src/main/scala/encoding/TransactionParsers.scala -> longBitsToDouble
+/home/andrea/scala-bitcoin/src/main/scala/encoding/TransactionParsers.scala -> map
+/home/andrea/scala-bitcoin/src/main/scala/encoding/TransactionParsers.scala -> materializeClassTag
+/home/andrea/scala-bitcoin/src/main/scala/encoding/TransactionParsers.scala -> mix
+/home/andrea/scala-bitcoin/src/main/scala/encoding/TransactionParsers.scala -> n
+/home/andrea/scala-bitcoin/src/main/scala/encoding/TransactionParsers.scala -> not
+/home/andrea/scala-bitcoin/src/main/scala/encoding/TransactionParsers.scala -> offset
+/home/andrea/scala-bitcoin/src/main/scala/encoding/TransactionParsers.scala -> p
+/home/andrea/scala-bitcoin/src/main/scala/encoding/TransactionParsers.scala -> package
+/home/andrea/scala-bitcoin/src/main/scala/encoding/TransactionParsers.scala -> parse
+/home/andrea/scala-bitcoin/src/main/scala/encoding/TransactionParsers.scala -> parsing
+/home/andrea/scala-bitcoin/src/main/scala/encoding/TransactionParsers.scala -> reader
+/home/andrea/scala-bitcoin/src/main/scala/encoding/TransactionParsers.scala -> readerToByteReader
+/home/andrea/scala-bitcoin/src/main/scala/encoding/TransactionParsers.scala -> rep
+/home/andrea/scala-bitcoin/src/main/scala/encoding/TransactionParsers.scala -> repN
+/home/andrea/scala-bitcoin/src/main/scala/encoding/TransactionParsers.scala -> runtime
+/home/andrea/scala-bitcoin/src/main/scala/encoding/TransactionParsers.scala -> scala
+/home/andrea/scala-bitcoin/src/main/scala/encoding/TransactionParsers.scala -> source
+/home/andrea/scala-bitcoin/src/main/scala/encoding/TransactionParsers.scala -> str
+/home/andrea/scala-bitcoin/src/main/scala/encoding/TransactionParsers.scala -> tailrec
+/home/andrea/scala-bitcoin/src/main/scala/encoding/TransactionParsers.scala -> take
+/home/andrea/scala-bitcoin/src/main/scala/encoding/TransactionParsers.scala -> takeUntil
+/home/andrea/scala-bitcoin/src/main/scala/encoding/TransactionParsers.scala -> toArray
+/home/andrea/scala-bitcoin/src/main/scala/encoding/TransactionParsers.scala -> toByte
+/home/andrea/scala-bitcoin/src/main/scala/encoding/TransactionParsers.scala -> toChar
+/home/andrea/scala-bitcoin/src/main/scala/encoding/TransactionParsers.scala -> toInt
+/home/andrea/scala-bitcoin/src/main/scala/encoding/TransactionParsers.scala -> toLong
+/home/andrea/scala-bitcoin/src/main/scala/encoding/TransactionParsers.scala -> toString
+/home/andrea/scala-bitcoin/src/main/scala/encoding/TransactionParsers.scala -> typedProductIterator
+/home/andrea/scala-bitcoin/src/main/scala/encoding/TransactionParsers.scala -> u4
+/home/andrea/scala-bitcoin/src/main/scala/encoding/TransactionParsers.scala -> u8
+/home/andrea/scala-bitcoin/src/main/scala/encoding/TransactionParsers.scala -> unary_!
+/home/andrea/scala-bitcoin/src/main/scala/encoding/TransactionParsers.scala -> util
+/home/andrea/scala-bitcoin/src/main/scala/encoding/TransactionParsers.scala -> wrapByteArray
+/home/andrea/scala-bitcoin/src/main/scala/encoding/TransactionParsers.scala -> x
+/home/andrea/scala-bitcoin/src/main/scala/encoding/TransactionParsers.scala -> xs
+/home/andrea/scala-bitcoin/src/main/scala/encoding/TransactionParsers.scala -> ||
+/home/andrea/scala-bitcoin/src/main/scala/encoding/TransactionParsers.scala -> ~>
+/home/andrea/scala-bitcoin/src/main/scala/playground/FutureMonad.scala -> <init>
+/home/andrea/scala-bitcoin/src/main/scala/playground/FutureMonad.scala -> AnyRef
+/home/andrea/scala-bitcoin/src/main/scala/playground/FutureMonad.scala -> Callable
+/home/andrea/scala-bitcoin/src/main/scala/playground/FutureMonad.scala -> FutureMonad
+/home/andrea/scala-bitcoin/src/main/scala/playground/FutureMonad.scala -> concurrent
+/home/andrea/scala-bitcoin/src/main/scala/playground/FutureMonad.scala -> java
+/home/andrea/scala-bitcoin/src/main/scala/playground/FutureMonad.scala -> playground
+/home/andrea/scala-bitcoin/src/main/scala/playground/FutureMonad.scala -> scala
+/home/andrea/scala-bitcoin/src/main/scala/playground/FutureMonad.scala -> util
+/home/andrea/scala-bitcoin/src/main/scala/playground/RabbitFactorMonad.scala -> &&
+/home/andrea/scala-bitcoin/src/main/scala/playground/RabbitFactorMonad.scala -> *
+/home/andrea/scala-bitcoin/src/main/scala/playground/RabbitFactorMonad.scala -> +
+/home/andrea/scala-bitcoin/src/main/scala/playground/RabbitFactorMonad.scala -> <init>
+/home/andrea/scala-bitcoin/src/main/scala/playground/RabbitFactorMonad.scala -> ==
+/home/andrea/scala-bitcoin/src/main/scala/playground/RabbitFactorMonad.scala -> AnyRef
+/home/andrea/scala-bitcoin/src/main/scala/playground/RabbitFactorMonad.scala -> Function1
+/home/andrea/scala-bitcoin/src/main/scala/playground/RabbitFactorMonad.scala -> None
+/home/andrea/scala-bitcoin/src/main/scala/playground/RabbitFactorMonad.scala -> Predef
+/home/andrea/scala-bitcoin/src/main/scala/playground/RabbitFactorMonad.scala -> Product
+/home/andrea/scala-bitcoin/src/main/scala/playground/RabbitFactorMonad.scala -> RFactor
+/home/andrea/scala-bitcoin/src/main/scala/playground/RabbitFactorMonad.scala -> RFactor1
+/home/andrea/scala-bitcoin/src/main/scala/playground/RabbitFactorMonad.scala -> RabbitFactorMonad
+/home/andrea/scala-bitcoin/src/main/scala/playground/RabbitFactorMonad.scala -> ScalaRunTime
+/home/andrea/scala-bitcoin/src/main/scala/playground/RabbitFactorMonad.scala -> Serializable
+/home/andrea/scala-bitcoin/src/main/scala/playground/RabbitFactorMonad.scala -> StringContext
+/home/andrea/scala-bitcoin/src/main/scala/playground/RabbitFactorMonad.scala -> T
+/home/andrea/scala-bitcoin/src/main/scala/playground/RabbitFactorMonad.scala -> U
+/home/andrea/scala-bitcoin/src/main/scala/playground/RabbitFactorMonad.scala -> _hashCode
+/home/andrea/scala-bitcoin/src/main/scala/playground/RabbitFactorMonad.scala -> _root_
+/home/andrea/scala-bitcoin/src/main/scala/playground/RabbitFactorMonad.scala -> _toString
+/home/andrea/scala-bitcoin/src/main/scala/playground/RabbitFactorMonad.scala -> a
+/home/andrea/scala-bitcoin/src/main/scala/playground/RabbitFactorMonad.scala -> apply
+/home/andrea/scala-bitcoin/src/main/scala/playground/RabbitFactorMonad.scala -> asInstanceOf
+/home/andrea/scala-bitcoin/src/main/scala/playground/RabbitFactorMonad.scala -> b
+/home/andrea/scala-bitcoin/src/main/scala/playground/RabbitFactorMonad.scala -> eq
+/home/andrea/scala-bitcoin/src/main/scala/playground/RabbitFactorMonad.scala -> f
+/home/andrea/scala-bitcoin/src/main/scala/playground/RabbitFactorMonad.scala -> factor
+/home/andrea/scala-bitcoin/src/main/scala/playground/RabbitFactorMonad.scala -> flatMap
+/home/andrea/scala-bitcoin/src/main/scala/playground/RabbitFactorMonad.scala -> hiddenFactor
+/home/andrea/scala-bitcoin/src/main/scala/playground/RabbitFactorMonad.scala -> isInstanceOf
+/home/andrea/scala-bitcoin/src/main/scala/playground/RabbitFactorMonad.scala -> length
+/home/andrea/scala-bitcoin/src/main/scala/playground/RabbitFactorMonad.scala -> map
+/home/andrea/scala-bitcoin/src/main/scala/playground/RabbitFactorMonad.scala -> math
+/home/andrea/scala-bitcoin/src/main/scala/playground/RabbitFactorMonad.scala -> newValue
+/home/andrea/scala-bitcoin/src/main/scala/playground/RabbitFactorMonad.scala -> package
+/home/andrea/scala-bitcoin/src/main/scala/playground/RabbitFactorMonad.scala -> playground
+/home/andrea/scala-bitcoin/src/main/scala/playground/RabbitFactorMonad.scala -> println
+/home/andrea/scala-bitcoin/src/main/scala/playground/RabbitFactorMonad.scala -> random
+/home/andrea/scala-bitcoin/src/main/scala/playground/RabbitFactorMonad.scala -> runtime
+/home/andrea/scala-bitcoin/src/main/scala/playground/RabbitFactorMonad.scala -> s
+/home/andrea/scala-bitcoin/src/main/scala/playground/RabbitFactorMonad.scala -> scala
+/home/andrea/scala-bitcoin/src/main/scala/playground/RabbitFactorMonad.scala -> toInt
+/home/andrea/scala-bitcoin/src/main/scala/playground/RabbitFactorMonad.scala -> toString
+/home/andrea/scala-bitcoin/src/main/scala/playground/RabbitFactorMonad.scala -> typedProductIterator
+/home/andrea/scala-bitcoin/src/main/scala/playground/RabbitFactorMonad.scala -> value
+/home/andrea/scala-bitcoin/src/main/scala/playground/RabbitFactorMonad.scala -> x
+/home/andrea/scala-bitcoin/src/main/scala/playground/RabbitFactorMonad.scala -> z
+/home/andrea/scala-bitcoin/src/main/scala/playground/RabbitFactorMonad.scala -> ||
+/home/andrea/scala-bitcoin/src/main/scala/playground/SpirePlayground.scala -> <init>
+/home/andrea/scala-bitcoin/src/main/scala/playground/SpirePlayground.scala -> AnyRef
+/home/andrea/scala-bitcoin/src/main/scala/playground/SpirePlayground.scala -> Integral
+/home/andrea/scala-bitcoin/src/main/scala/playground/SpirePlayground.scala -> SpirePlayground
+/home/andrea/scala-bitcoin/src/main/scala/playground/SpirePlayground.scala -> math
+/home/andrea/scala-bitcoin/src/main/scala/playground/SpirePlayground.scala -> playground
+/home/andrea/scala-bitcoin/src/main/scala/playground/SpirePlayground.scala -> scala
+/home/andrea/scala-bitcoin/src/main/scala/playground/SpirePlayground.scala -> spire
+/home/andrea/scala-bitcoin/src/main/scala/playground/TypeClassPlayground.scala -> &&
+/home/andrea/scala-bitcoin/src/main/scala/playground/TypeClassPlayground.scala -> <init>
+/home/andrea/scala-bitcoin/src/main/scala/playground/TypeClassPlayground.scala -> ==
+/home/andrea/scala-bitcoin/src/main/scala/playground/TypeClassPlayground.scala -> AbstractFunction2
+/home/andrea/scala-bitcoin/src/main/scala/playground/TypeClassPlayground.scala -> AnyRef
+/home/andrea/scala-bitcoin/src/main/scala/playground/TypeClassPlayground.scala -> Double
+/home/andrea/scala-bitcoin/src/main/scala/playground/TypeClassPlayground.scala -> Expellable
+/home/andrea/scala-bitcoin/src/main/scala/playground/TypeClassPlayground.scala -> Expelt
+/home/andrea/scala-bitcoin/src/main/scala/playground/TypeClassPlayground.scala -> IndexedSeq
+/home/andrea/scala-bitcoin/src/main/scala/playground/TypeClassPlayground.scala -> None
+/home/andrea/scala-bitcoin/src/main/scala/playground/TypeClassPlayground.scala -> Pee
+/home/andrea/scala-bitcoin/src/main/scala/playground/TypeClassPlayground.scala -> PeeIsExpellable
+/home/andrea/scala-bitcoin/src/main/scala/playground/TypeClassPlayground.scala -> Predef
+/home/andrea/scala-bitcoin/src/main/scala/playground/TypeClassPlayground.scala -> Product
+/home/andrea/scala-bitcoin/src/main/scala/playground/TypeClassPlayground.scala -> ScalaRunTime
+/home/andrea/scala-bitcoin/src/main/scala/playground/TypeClassPlayground.scala -> Serializable
+/home/andrea/scala-bitcoin/src/main/scala/playground/TypeClassPlayground.scala -> Shit
+/home/andrea/scala-bitcoin/src/main/scala/playground/TypeClassPlayground.scala -> ShitIsExpellable
+/home/andrea/scala-bitcoin/src/main/scala/playground/TypeClassPlayground.scala -> Statics
+/home/andrea/scala-bitcoin/src/main/scala/playground/TypeClassPlayground.scala -> T
+/home/andrea/scala-bitcoin/src/main/scala/playground/TypeClassPlayground.scala -> TypeClassPlayground
+/home/andrea/scala-bitcoin/src/main/scala/playground/TypeClassPlayground.scala -> _toString
+/home/andrea/scala-bitcoin/src/main/scala/playground/TypeClassPlayground.scala -> asInstanceOf
+/home/andrea/scala-bitcoin/src/main/scala/playground/TypeClassPlayground.scala -> canBuildFrom
+/home/andrea/scala-bitcoin/src/main/scala/playground/TypeClassPlayground.scala -> doit
+/home/andrea/scala-bitcoin/src/main/scala/playground/TypeClassPlayground.scala -> doubleHash
+/home/andrea/scala-bitcoin/src/main/scala/playground/TypeClassPlayground.scala -> eq
+/home/andrea/scala-bitcoin/src/main/scala/playground/TypeClassPlayground.scala -> f
+/home/andrea/scala-bitcoin/src/main/scala/playground/TypeClassPlayground.scala -> finalizeHash
+/home/andrea/scala-bitcoin/src/main/scala/playground/TypeClassPlayground.scala -> immutable
+/home/andrea/scala-bitcoin/src/main/scala/playground/TypeClassPlayground.scala -> intWrapper
+/home/andrea/scala-bitcoin/src/main/scala/playground/TypeClassPlayground.scala -> isInstanceOf
+/home/andrea/scala-bitcoin/src/main/scala/playground/TypeClassPlayground.scala -> map
+/home/andrea/scala-bitcoin/src/main/scala/playground/TypeClassPlayground.scala -> mix
+/home/andrea/scala-bitcoin/src/main/scala/playground/TypeClassPlayground.scala -> out
+/home/andrea/scala-bitcoin/src/main/scala/playground/TypeClassPlayground.scala -> playground
+/home/andrea/scala-bitcoin/src/main/scala/playground/TypeClassPlayground.scala -> println
+/home/andrea/scala-bitcoin/src/main/scala/playground/TypeClassPlayground.scala -> runtime
+/home/andrea/scala-bitcoin/src/main/scala/playground/TypeClassPlayground.scala -> scala
+/home/andrea/scala-bitcoin/src/main/scala/playground/TypeClassPlayground.scala -> size
+/home/andrea/scala-bitcoin/src/main/scala/playground/TypeClassPlayground.scala -> stink
+/home/andrea/scala-bitcoin/src/main/scala/playground/TypeClassPlayground.scala -> to
+/home/andrea/scala-bitcoin/src/main/scala/playground/TypeClassPlayground.scala -> toInt
+/home/andrea/scala-bitcoin/src/main/scala/playground/TypeClassPlayground.scala -> toString
+/home/andrea/scala-bitcoin/src/main/scala/playground/TypeClassPlayground.scala -> typedProductIterator
+/home/andrea/scala-bitcoin/src/main/scala/playground/TypeClassPlayground.scala -> useToilet
+/home/andrea/scala-bitcoin/src/main/scala/playground/TypeClassPlayground.scala -> ||
+product stamps:
+86 items
+/home/andrea/scala-bitcoin/target/scala-2.11/classes/Core$.class -> lastModified(1432380662000)
+/home/andrea/scala-bitcoin/target/scala-2.11/classes/Core.class -> lastModified(1432380662000)
+/home/andrea/scala-bitcoin/target/scala-2.11/classes/Service/TransactionService.class -> lastModified(1432667149000)
+/home/andrea/scala-bitcoin/target/scala-2.11/classes/actors/WorkerActor$$anonfun$receive$1.class -> lastModified(1432561168000)
+/home/andrea/scala-bitcoin/target/scala-2.11/classes/actors/WorkerActor.class -> lastModified(1432561168000)
+/home/andrea/scala-bitcoin/target/scala-2.11/classes/domain/CompactBigInt$.class -> lastModified(1432583393000)
+/home/andrea/scala-bitcoin/target/scala-2.11/classes/domain/CompactBigInt.class -> lastModified(1432583393000)
+/home/andrea/scala-bitcoin/target/scala-2.11/classes/domain/CompactInt$.class -> lastModified(1432583393000)
+/home/andrea/scala-bitcoin/target/scala-2.11/classes/domain/CompactInt.class -> lastModified(1432583393000)
+/home/andrea/scala-bitcoin/target/scala-2.11/classes/domain/CompactLong$.class -> lastModified(1432583393000)
+/home/andrea/scala-bitcoin/target/scala-2.11/classes/domain/CompactLong.class -> lastModified(1432583393000)
+/home/andrea/scala-bitcoin/target/scala-2.11/classes/domain/CompactNumber.class -> lastModified(1432583393000)
+/home/andrea/scala-bitcoin/target/scala-2.11/classes/domain/Transaction$.class -> lastModified(1432667998000)
+/home/andrea/scala-bitcoin/target/scala-2.11/classes/domain/Transaction.class -> lastModified(1432667998000)
+/home/andrea/scala-bitcoin/target/scala-2.11/classes/encoding/BinaryParsers$$anonfun$bytes$1.class -> lastModified(1432380663000)
+/home/andrea/scala-bitcoin/target/scala-2.11/classes/encoding/BinaryParsers$$anonfun$toInt$1.class -> lastModified(1432380663000)
+/home/andrea/scala-bitcoin/target/scala-2.11/classes/encoding/BinaryParsers$$anonfun$toLong$1.class -> lastModified(1432380663000)
+/home/andrea/scala-bitcoin/target/scala-2.11/classes/encoding/BinaryParsers$$anonfun$u1$1.class -> lastModified(1432380663000)
+/home/andrea/scala-bitcoin/target/scala-2.11/classes/encoding/BinaryParsers$$anonfun$u2$1.class -> lastModified(1432380663000)
+/home/andrea/scala-bitcoin/target/scala-2.11/classes/encoding/BinaryParsers$$anonfun$u4$1.class -> lastModified(1432380663000)
+/home/andrea/scala-bitcoin/target/scala-2.11/classes/encoding/BinaryParsers$$anonfun$u4f$1.class -> lastModified(1432380663000)
+/home/andrea/scala-bitcoin/target/scala-2.11/classes/encoding/BinaryParsers$$anonfun$u8$1.class -> lastModified(1432380663000)
+/home/andrea/scala-bitcoin/target/scala-2.11/classes/encoding/BinaryParsers$$anonfun$u8d$1.class -> lastModified(1432380663000)
+/home/andrea/scala-bitcoin/target/scala-2.11/classes/encoding/BinaryParsers$class.class -> lastModified(1432380663000)
+/home/andrea/scala-bitcoin/target/scala-2.11/classes/encoding/BinaryParsers.class -> lastModified(1432380663000)
+/home/andrea/scala-bitcoin/target/scala-2.11/classes/encoding/ByteOffsetPosition$.class -> lastModified(1432380663000)
+/home/andrea/scala-bitcoin/target/scala-2.11/classes/encoding/ByteOffsetPosition.class -> lastModified(1432380663000)
+/home/andrea/scala-bitcoin/target/scala-2.11/classes/encoding/ByteReader$$anonfun$source$1.class -> lastModified(1432380663000)
+/home/andrea/scala-bitcoin/target/scala-2.11/classes/encoding/ByteReader.class -> lastModified(1432380663000)
+/home/andrea/scala-bitcoin/target/scala-2.11/classes/encoding/ParsersUtil$$anonfun$anyElem$1.class -> lastModified(1432380663000)
+/home/andrea/scala-bitcoin/target/scala-2.11/classes/encoding/ParsersUtil$$anonfun$elemExcept$1.class -> lastModified(1432380663000)
+/home/andrea/scala-bitcoin/target/scala-2.11/classes/encoding/ParsersUtil$$anonfun$elemOf$1.class -> lastModified(1432380663000)
+/home/andrea/scala-bitcoin/target/scala-2.11/classes/encoding/ParsersUtil$$anonfun$take$1.class -> lastModified(1432380663000)
+/home/andrea/scala-bitcoin/target/scala-2.11/classes/encoding/ParsersUtil$$anonfun$takeUntil$1$$anonfun$apply$1.class -> lastModified(1432380663000)
+/home/andrea/scala-bitcoin/target/scala-2.11/classes/encoding/ParsersUtil$$anonfun$takeUntil$1$$anonfun$apply$2.class -> lastModified(1432380663000)
+/home/andrea/scala-bitcoin/target/scala-2.11/classes/encoding/ParsersUtil$$anonfun$takeUntil$1.class -> lastModified(1432380663000)
+/home/andrea/scala-bitcoin/target/scala-2.11/classes/encoding/ParsersUtil$$anonfun$takeWhile$1.class -> lastModified(1432380663000)
+/home/andrea/scala-bitcoin/target/scala-2.11/classes/encoding/ParsersUtil$class.class -> lastModified(1432380663000)
+/home/andrea/scala-bitcoin/target/scala-2.11/classes/encoding/ParsersUtil.class -> lastModified(1432380663000)
+/home/andrea/scala-bitcoin/target/scala-2.11/classes/encoding/Parsing$.class -> lastModified(1432667997000)
+/home/andrea/scala-bitcoin/target/scala-2.11/classes/encoding/Parsing$MyTransaction$.class -> lastModified(1432667997000)
+/home/andrea/scala-bitcoin/target/scala-2.11/classes/encoding/Parsing$MyTransaction.class -> lastModified(1432667997000)
+/home/andrea/scala-bitcoin/target/scala-2.11/classes/encoding/Parsing$MyTransactionIsReadable$.class -> lastModified(1432667997000)
+/home/andrea/scala-bitcoin/target/scala-2.11/classes/encoding/Parsing$ParseFailure$.class -> lastModified(1432667997000)
+/home/andrea/scala-bitcoin/target/scala-2.11/classes/encoding/Parsing$ParseFailure.class -> lastModified(1432667997000)
+/home/andrea/scala-bitcoin/target/scala-2.11/classes/encoding/Parsing$ParseResult.class -> lastModified(1432667997000)
+/home/andrea/scala-bitcoin/target/scala-2.11/classes/encoding/Parsing$ParseSuccess$.class -> lastModified(1432667997000)
+/home/andrea/scala-bitcoin/target/scala-2.11/classes/encoding/Parsing$ParseSuccess.class -> lastModified(1432667997000)
+/home/andrea/scala-bitcoin/target/scala-2.11/classes/encoding/Parsing$ReadBytes.class -> lastModified(1432667997000)
+/home/andrea/scala-bitcoin/target/scala-2.11/classes/encoding/Parsing$SerializeBytes$$anonfun$map$1.class -> lastModified(1432667997000)
+/home/andrea/scala-bitcoin/target/scala-2.11/classes/encoding/Parsing$SerializeBytes$.class -> lastModified(1432667997000)
+/home/andrea/scala-bitcoin/target/scala-2.11/classes/encoding/Parsing$SerializeBytes.class -> lastModified(1432667997000)
+/home/andrea/scala-bitcoin/target/scala-2.11/classes/encoding/Parsing$SerializeBytesNonno$.class -> lastModified(1432667997000)
+/home/andrea/scala-bitcoin/target/scala-2.11/classes/encoding/Parsing$WriteBytes.class -> lastModified(1432667997000)
+/home/andrea/scala-bitcoin/target/scala-2.11/classes/encoding/Parsing.class -> lastModified(1432667997000)
+/home/andrea/scala-bitcoin/target/scala-2.11/classes/playground/FutureMonad$.class -> lastModified(1432558307000)
+/home/andrea/scala-bitcoin/target/scala-2.11/classes/playground/FutureMonad.class -> lastModified(1432558307000)
+/home/andrea/scala-bitcoin/target/scala-2.11/classes/playground/RabbitFactorMonad$$anonfun$provaFor$1$$anonfun$apply$2$$anonfun$apply$1.class -> lastModified(1432416628000)
+/home/andrea/scala-bitcoin/target/scala-2.11/classes/playground/RabbitFactorMonad$$anonfun$provaFor$1$$anonfun$apply$2.class -> lastModified(1432416628000)
+/home/andrea/scala-bitcoin/target/scala-2.11/classes/playground/RabbitFactorMonad$$anonfun$provaFor$1.class -> lastModified(1432416628000)
+/home/andrea/scala-bitcoin/target/scala-2.11/classes/playground/RabbitFactorMonad$$anonfun$provaFor$2$$anonfun$apply$3$$anonfun$apply$4.class -> lastModified(1432416628000)
+/home/andrea/scala-bitcoin/target/scala-2.11/classes/playground/RabbitFactorMonad$$anonfun$provaFor$2$$anonfun$apply$3.class -> lastModified(1432416628000)
+/home/andrea/scala-bitcoin/target/scala-2.11/classes/playground/RabbitFactorMonad$$anonfun$provaFor$2.class -> lastModified(1432416628000)
+/home/andrea/scala-bitcoin/target/scala-2.11/classes/playground/RabbitFactorMonad$.class -> lastModified(1432416628000)
+/home/andrea/scala-bitcoin/target/scala-2.11/classes/playground/RabbitFactorMonad$RFactor$$anonfun$map$1.class -> lastModified(1432416628000)
+/home/andrea/scala-bitcoin/target/scala-2.11/classes/playground/RabbitFactorMonad$RFactor$.class -> lastModified(1432416628000)
+/home/andrea/scala-bitcoin/target/scala-2.11/classes/playground/RabbitFactorMonad$RFactor.class -> lastModified(1432416628000)
+/home/andrea/scala-bitcoin/target/scala-2.11/classes/playground/RabbitFactorMonad$RFactor1$$anonfun$flatMap$1.class -> lastModified(1432416628000)
+/home/andrea/scala-bitcoin/target/scala-2.11/classes/playground/RabbitFactorMonad$RFactor1$.class -> lastModified(1432416628000)
+/home/andrea/scala-bitcoin/target/scala-2.11/classes/playground/RabbitFactorMonad$RFactor1.class -> lastModified(1432416628000)
+/home/andrea/scala-bitcoin/target/scala-2.11/classes/playground/RabbitFactorMonad.class -> lastModified(1432416628000)
+/home/andrea/scala-bitcoin/target/scala-2.11/classes/playground/SpirePlayground$.class -> lastModified(1432561168000)
+/home/andrea/scala-bitcoin/target/scala-2.11/classes/playground/SpirePlayground.class -> lastModified(1432561168000)
+/home/andrea/scala-bitcoin/target/scala-2.11/classes/playground/TypeClassPlayground$.class -> lastModified(1432562198000)
+/home/andrea/scala-bitcoin/target/scala-2.11/classes/playground/TypeClassPlayground$Expellable.class -> lastModified(1432562198000)
+/home/andrea/scala-bitcoin/target/scala-2.11/classes/playground/TypeClassPlayground$Expelt$.class -> lastModified(1432562198000)
+/home/andrea/scala-bitcoin/target/scala-2.11/classes/playground/TypeClassPlayground$Expelt.class -> lastModified(1432562198000)
+/home/andrea/scala-bitcoin/target/scala-2.11/classes/playground/TypeClassPlayground$Pee$$anonfun$1.class -> lastModified(1432562198000)
+/home/andrea/scala-bitcoin/target/scala-2.11/classes/playground/TypeClassPlayground$Pee$.class -> lastModified(1432562198000)
+/home/andrea/scala-bitcoin/target/scala-2.11/classes/playground/TypeClassPlayground$Pee.class -> lastModified(1432562198000)
+/home/andrea/scala-bitcoin/target/scala-2.11/classes/playground/TypeClassPlayground$PeeIsExpellable$.class -> lastModified(1432562198000)
+/home/andrea/scala-bitcoin/target/scala-2.11/classes/playground/TypeClassPlayground$Shit$$anonfun$2.class -> lastModified(1432562198000)
+/home/andrea/scala-bitcoin/target/scala-2.11/classes/playground/TypeClassPlayground$Shit$.class -> lastModified(1432562198000)
+/home/andrea/scala-bitcoin/target/scala-2.11/classes/playground/TypeClassPlayground$Shit.class -> lastModified(1432562198000)
+/home/andrea/scala-bitcoin/target/scala-2.11/classes/playground/TypeClassPlayground$ShitIsExpellable$.class -> lastModified(1432562198000)
+/home/andrea/scala-bitcoin/target/scala-2.11/classes/playground/TypeClassPlayground.class -> lastModified(1432562198000)
+source stamps:
+11 items
+/home/andrea/scala-bitcoin/src/main/scala/Core.scala -> hash(b9672c9b4d8ce2f26917c93bfd0284c1b0ca9532)
+/home/andrea/scala-bitcoin/src/main/scala/Service/TransactionService.scala -> hash(9603bb8c327adeb35c5641519674198e1bc082e1)
+/home/andrea/scala-bitcoin/src/main/scala/actors/WorkerActor.scala -> hash(bbe0482343fe804c97fd0ff0096b8ac682791694)
+/home/andrea/scala-bitcoin/src/main/scala/domain/CompactNumber.scala -> hash(162c8418f6ba610a9c121c144d9143ad54d491a3)
+/home/andrea/scala-bitcoin/src/main/scala/domain/Transaction.scala -> hash(aab4cb48f32e79539e0c3f9796d1b99487aded50)
+/home/andrea/scala-bitcoin/src/main/scala/encoding/Parsing.scala -> hash(b90b97093b94c78e30ab23d8490177701317a3ca)
+/home/andrea/scala-bitcoin/src/main/scala/encoding/TransactionParsers.scala -> hash(e95a93f8ae0b3fec66f3e72003b9a4d89d68c4cf)
+/home/andrea/scala-bitcoin/src/main/scala/playground/FutureMonad.scala -> hash(794411407edadc051e9da1c66503337eb51eb7e5)
+/home/andrea/scala-bitcoin/src/main/scala/playground/RabbitFactorMonad.scala -> hash(621a2db90e436e382d08a385ca0497d167203ab8)
+/home/andrea/scala-bitcoin/src/main/scala/playground/SpirePlayground.scala -> hash(c34511da59ee5b3f30232a3802b89ca8851ac3bb)
+/home/andrea/scala-bitcoin/src/main/scala/playground/TypeClassPlayground.scala -> hash(1f38e01e812bd21a3be3e94330c1aa6bc723838b)
+binary stamps:
+5 items
+/home/andrea/.ivy2/cache/com.typesafe.akka/akka-actor_2.11/jars/akka-actor_2.11-2.3.9.jar -> lastModified(1421734693000)
+/home/andrea/.ivy2/cache/org.scala-lang.modules/scala-parser-combinators_2.11/bundles/scala-parser-combinators_2.11-1.0.4.jar -> lastModified(1430402867000)
+/home/andrea/.ivy2/cache/org.scala-lang/scala-library/jars/scala-library-2.11.6.jar -> lastModified(1424912463000)
+/home/andrea/.ivy2/cache/org.spire-math/spire_2.11/jars/spire_2.11-0.10.1.jar -> lastModified(1431739159000)
+/usr/lib/jvm/java-7-oracle/jre/lib/rt.jar -> lastModified(1429301077000)
+class names:
+5 items
+/home/andrea/.ivy2/cache/com.typesafe.akka/akka-actor_2.11/jars/akka-actor_2.11-2.3.9.jar -> akka.util.CompactByteString$
+/home/andrea/.ivy2/cache/org.scala-lang.modules/scala-parser-combinators_2.11/bundles/scala-parser-combinators_2.11-1.0.4.jar -> scala.util.parsing.input.Reader
+/home/andrea/.ivy2/cache/org.scala-lang/scala-library/jars/scala-library-2.11.6.jar -> scala.Serializable
+/home/andrea/.ivy2/cache/org.spire-math/spire_2.11/jars/spire_2.11-0.10.1.jar -> spire.syntax.package$
+/usr/lib/jvm/java-7-oracle/jre/lib/rt.jar -> java.lang.Object
+internal apis:
+11 items
+/home/andrea/scala-bitcoin/src/main/scala/Core.scala -> 
+rO0ABXNyABB4c2J0aS5hcGkuU291cmNlFlpwRASfbtoCAAZJAAdhcGlIYXNoWgAIaGFzTWFjcm9MABhfaW50ZXJuYWxPbmx5X25hbWVIYXNoZXN0ACRMeHNidGkvYXBpL19pbnRlcm5hbE9ubHlfTmFtZUhhc2hlcztMAANhcGl0ABVMeHNidGkvYXBpL1NvdXJjZUFQSTtMAAtjb21waWxhdGlvbnQAF0x4c2J0aS9hcGkvQ29tcGlsYXRpb247WwAEaGFzaHQAAltCeHBK/BPMAHNyACJ4c2J0aS5hcGkuX2ludGVybmFsT25seV9OYW1lSGFzaGVzVNq+mfrU7EwCAAJbAA9pbXBsaWNpdE1lbWJlcnN0ACNbTHhzYnRpL2FwaS9faW50ZXJuYWxPbmx5X05hbWVIYXNoO1sADnJlZ3VsYXJNZW1iZXJzcQB+AAd4cHVyACNbTHhzYnRpLmFwaS5faW50ZXJuYWxPbmx5X05hbWVIYXNoO0lagLbdlov0AgAAeHAAAAAAdXEAfgAJAAAAFXNyACB4c2J0aS5hcGkuX2ludGVybmFsT25seV9OYW1lSGFzaFsO9SJ2OFfPAgACSQAEaGFzaEwABG5hbWV0ABJMamF2YS9sYW5nL1N0cmluZzt4cCc20sx0AAZub3RpZnlzcQB+AAxo6EJ2dAAEd2FpdHNxAH4ADF24U7h0AA0kYXNJbnN0YW5jZU9mc3EAfgAME8Gw8nQABmVxdWFsc3NxAH4ADK4xMeJ0AAxhc0luc3RhbmNlT2ZzcQB+AAzj5mc0dAAMc3luY2hyb25pemVkc3EAfgAMYvmJW3QADSRpc0luc3RhbmNlT2ZzcQB+AAxG614rdAAEbWFpbnNxAH4ADLUJcTF0AAlub3RpZnlBbGxzcQB+AAxnX5GGdAAMaXNJbnN0YW5jZU9mc3EAfgAMh8BCk3QAAj09c3EAfgAMrvSBnHQABWNsb25lc3EAfgAMbC2raHQACHRvU3RyaW5nc3EAfgAMaR5Rr3QAAiE9c3EAfgAMc3iUznQACGdldENsYXNzc3EAfgAMSDBYfXQAAm5lc3EAfgAMqxcAAXQAAmVxc3EAfgAMLNaeqXQABENvcmVzcQB+AAwKPO3LdAACIyNzcQB+AAz9kF09dAAIZmluYWxpemVzcQB+AAztNsT6dAAIaGFzaENvZGVzcgATeHNidGkuYXBpLlNvdXJjZUFQSblep/kpIzikAgACWwALZGVmaW5pdGlvbnN0ABdbTHhzYnRpL2FwaS9EZWZpbml0aW9uO1sACHBhY2thZ2VzdAAUW0x4c2J0aS9hcGkvUGFja2FnZTt4cHVyABdbTHhzYnRpLmFwaS5EZWZpbml0aW9uO4jJXOe0414OAgAAeHAAAAABc3IAE3hzYnRpLmFwaS5DbGFzc0xpa2WDNByh37CXbAIABEwADmRlZmluaXRpb25UeXBldAAaTHhzYnRpL2FwaS9EZWZpbml0aW9uVHlwZTtbABBzYXZlZEFubm90YXRpb25zdAATW0xqYXZhL2xhbmcvU3RyaW5nO0wACHNlbGZUeXBldAAQTHhzYnRpL2FwaS9MYXp5O0wACXN0cnVjdHVyZXEAfgBBeHIAIXhzYnRpLmFwaS5QYXJhbWV0ZXJpemVkRGVmaW5pdGlvbvkRbrHVUDziAgABWwAOdHlwZVBhcmFtZXRlcnN0ABpbTHhzYnRpL2FwaS9UeXBlUGFyYW1ldGVyO3hyABR4c2J0aS5hcGkuRGVmaW5pdGlvbocqG+hxQuNGAgAETAAGYWNjZXNzdAASTHhzYnRpL2FwaS9BY2Nlc3M7WwALYW5ub3RhdGlvbnN0ABdbTHhzYnRpL2FwaS9Bbm5vdGF0aW9uO0wACW1vZGlmaWVyc3QAFUx4c2J0aS9hcGkvTW9kaWZpZXJzO0wABG5hbWVxAH4ADXhwc3IAEHhzYnRpLmFwaS5QdWJsaWO6WD2ubC1gQgIAAHhyABB4c2J0aS5hcGkuQWNjZXNz3WKa+B1jMUgCAAB4cHVyABdbTHhzYnRpLmFwaS5Bbm5vdGF0aW9uO+uX6xkQ9o1IAgAAeHAAAAAAc3IAE3hzYnRpLmFwaS5Nb2RpZmllcnPHERMhaZzcJAIAAUIABWZsYWdzeHAAcQB+ADF1cgAaW0x4c2J0aS5hcGkuVHlwZVBhcmFtZXRlcjvZbSYPKJ3ytgIAAHhwAAAAAH5yABh4c2J0aS5hcGkuRGVmaW5pdGlvblR5cGUAAAAAAAAAABIAAHhyAA5qYXZhLmxhbmcuRW51bQAAAAAAAAAAEgAAeHB0AAZNb2R1bGV1cgATW0xqYXZhLmxhbmcuU3RyaW5nO63SVufpHXtHAgAAeHAAAAAAc3IAE3hzYnRpLlNhZmVMYXp5JEltcGxQAi6Tl5dAPwIAA1oACGJpdG1hcCQwTAACX3R0ABJMamF2YS9sYW5nL09iamVjdDtMAARldmFsdAARTHNjYWxhL0Z1bmN0aW9uMDt4cgAWeHNidGkuYXBpLkFic3RyYWN0TGF6edN3tQFfu+egAgAAeHABc3IAE3hzYnRpLmFwaS5FbXB0eVR5cGW8/Z5GSTuJJAIAAHhyABR4c2J0aS5hcGkuU2ltcGxlVHlwZXJ4YoghI79AAgAAeHIADnhzYnRpLmFwaS5UeXBlP2rZIRZJqsoCAAB4cHBzcQB+AFgBc3IAE3hzYnRpLmFwaS5TdHJ1Y3R1cmWpqvmAk2/YAAIAA0wACGRlY2xhcmVkcQB+AEFMAAlpbmhlcml0ZWRxAH4AQUwAB3BhcmVudHNxAH4AQXhxAH4AX3NxAH4AWAF1cQB+ADwAAAABc3IADXhzYnRpLmFwaS5EZWZSvp/ifLQ2aQIAAkwACnJldHVyblR5cGV0ABBMeHNidGkvYXBpL1R5cGU7WwAPdmFsdWVQYXJhbWV0ZXJzdAAaW0x4c2J0aS9hcGkvUGFyYW1ldGVyTGlzdDt4cQB+AEJxAH4AS3VxAH4ATAAAAABzcQB+AE4AcQB+AB11cQB+AFAAAAAAc3IAFHhzYnRpLmFwaS5Qcm9qZWN0aW9u89KNVOlFpC0CAAJMAAJpZHEAfgANTAAGcHJlZml4dAAWTHhzYnRpL2FwaS9TaW1wbGVUeXBlO3hxAH4AXnQABFVuaXRzcgATeHNidGkuYXBpLlNpbmdsZXRvbvynX/jPVuRGAgABTAAEcGF0aHQAEEx4c2J0aS9hcGkvUGF0aDt4cQB+AF5zcgAOeHNidGkuYXBpLlBhdGibPVwIzqUnhAIAAVsACmNvbXBvbmVudHN0ABpbTHhzYnRpL2FwaS9QYXRoQ29tcG9uZW50O3hwdXIAGltMeHNidGkuYXBpLlBhdGhDb21wb25lbnQ7Q9oJdC1nFnQCAAB4cAAAAAJzcgAMeHNidGkuYXBpLklkmDJsizdTxEACAAFMAAJpZHEAfgANeHIAF3hzYnRpLmFwaS5QYXRoQ29tcG9uZW50X5oiWy6Gn7wCAAB4cHQABXNjYWxhc3IADnhzYnRpLmFwaS5UaGlz2wntpsxaQFwCAAB4cQB+AHp1cgAaW0x4c2J0aS5hcGkuUGFyYW1ldGVyTGlzdDv10zod8rNw7gIAAHhwAAAAAXNyABd4c2J0aS5hcGkuUGFyYW1ldGVyTGlzdNbFvBxkSXTjAgACWgAKaXNJbXBsaWNpdFsACnBhcmFtZXRlcnN0ABxbTHhzYnRpL2FwaS9NZXRob2RQYXJhbWV0ZXI7eHAAdXIAHFtMeHNidGkuYXBpLk1ldGhvZFBhcmFtZXRlcjvPuMVdpd21bQIAAHhwAAAAAXNyABl4c2J0aS5hcGkuTWV0aG9kUGFyYW1ldGVyH0WuF9NJsOoCAARaAApoYXNEZWZhdWx0TAAIbW9kaWZpZXJ0AB1MeHNidGkvYXBpL1BhcmFtZXRlck1vZGlmaWVyO0wABG5hbWVxAH4ADUwAA3RwZXEAfgBneHAAfnIAG3hzYnRpLmFwaS5QYXJhbWV0ZXJNb2RpZmllcgAAAAAAAAAAEgAAeHEAfgBTdAAFUGxhaW50AARhcmdzc3IAF3hzYnRpLmFwaS5QYXJhbWV0ZXJpemVkFmzuaQPJu38CAAJMAAhiYXNlVHlwZXEAfgBuWwANdHlwZUFyZ3VtZW50c3QAEVtMeHNidGkvYXBpL1R5cGU7eHEAfgBec3EAfgBtdAAFQXJyYXlxAH4Ac3VyABFbTHhzYnRpLmFwaS5UeXBlO3T/pVp7+elBAgAAeHAAAAABc3EAfgBtdAAGU3RyaW5nc3EAfgBxc3EAfgB0dXEAfgB3AAAAA3NxAH4AeXQABGphdmFzcQB+AHl0AARsYW5ncQB+AH5wc3EAfgBYAXVxAH4APAAAAABwc3EAfgBYAXVxAH4AkgAAAAJzcQB+AG10AAZPYmplY3RxAH4AlnNxAH4AbXQAA0FueXEAfgBzcHB1cgAUW0x4c2J0aS5hcGkuUGFja2FnZTtbExk3cKcnoQIAAHhwAAAAAHNyABV4c2J0aS5hcGkuQ29tcGlsYXRpb27t+uDDauigQgIAAkoACXN0YXJ0VGltZVsAB291dHB1dHN0ABpbTHhzYnRpL2FwaS9PdXRwdXRTZXR0aW5nO3hwAAABTYCKSZx1cgAaW0x4c2J0aS5hcGkuT3V0cHV0U2V0dGluZzt/asLzp4elQgIAAHhwAAAAAXNyABd4c2J0aS5hcGkuT3V0cHV0U2V0dGluZ3rZmkd0+x17AgACTAAPb3V0cHV0RGlyZWN0b3J5cQB+AA1MAA9zb3VyY2VEaXJlY3RvcnlxAH4ADXhwdAA0L2hvbWUvYW5kcmVhL3NjYWxhLWJpdGNvaW4vdGFyZ2V0L3NjYWxhLTIuMTEvY2xhc3Nlc3QAAS91cgACW0Ks8xf4BghU4AIAAHhwAAAAFLlnLJtNjOLyaRfJO/0ChMGwypUy
+/home/andrea/scala-bitcoin/src/main/scala/Service/TransactionService.scala -> 
+rO0ABXNyABB4c2J0aS5hcGkuU291cmNlFlpwRASfbtoCAAZJAAdhcGlIYXNoWgAIaGFzTWFjcm9MABhfaW50ZXJuYWxPbmx5X25hbWVIYXNoZXN0ACRMeHNidGkvYXBpL19pbnRlcm5hbE9ubHlfTmFtZUhhc2hlcztMAANhcGl0ABVMeHNidGkvYXBpL1NvdXJjZUFQSTtMAAtjb21waWxhdGlvbnQAF0x4c2J0aS9hcGkvQ29tcGlsYXRpb247WwAEaGFzaHQAAltCeHCVb49kAHNyACJ4c2J0aS5hcGkuX2ludGVybmFsT25seV9OYW1lSGFzaGVzVNq+mfrU7EwCAAJbAA9pbXBsaWNpdE1lbWJlcnN0ACNbTHhzYnRpL2FwaS9faW50ZXJuYWxPbmx5X05hbWVIYXNoO1sADnJlZ3VsYXJNZW1iZXJzcQB+AAd4cHVyACNbTHhzYnRpLmFwaS5faW50ZXJuYWxPbmx5X05hbWVIYXNoO0lagLbdlov0AgAAeHAAAAAAdXEAfgAJAAAAF3NyACB4c2J0aS5hcGkuX2ludGVybmFsT25seV9OYW1lSGFzaFsO9SJ2OFfPAgACSQAEaGFzaEwABG5hbWV0ABJMamF2YS9sYW5nL1N0cmluZzt4cJ3hcYl0AAZub3RpZnlzcQB+AAxoXOS6dAAEd2FpdHNxAH4ADA7CCf90AA0kYXNJbnN0YW5jZU9mc3EAfgAMFIvF63QABmVxdWFsc3NxAH4ADBnx7Px0AAxhc0luc3RhbmNlT2ZzcQB+AAyYEJp6dAAMc3luY2hyb25pemVkc3EAfgAMaU57RnQADSRpc0luc3RhbmNlT2ZzcQB+AAywKndndAASVHJhbnNhY3Rpb25TZXJ2aWNlc3EAfgAMdbpj+XQACW5vdGlmeUFsbHNxAH4ADGnk4nN0AAxpc0luc3RhbmNlT2ZzcQB+AAxqOb6KdAAGPGluaXQ+c3EAfgAMRY880HQAAj09c3EAfgAMDCcqU3QABWNsb25lc3EAfgAMa9DjfXQACHRvU3RyaW5nc3EAfgAMsUruxXQAAiE9c3EAfgAMr7qIkXQAA2dldHNxAH4ADNt3gjF0AAhnZXRDbGFzc3NxAH4ADI24Cy90AARzYXZlc3EAfgAMBsPL8XQAAm5lc3EAfgAM1T48vnQAAmVxc3EAfgAMHqNwPnQAAiMjc3EAfgAMmZamZ3QACGZpbmFsaXplc3EAfgAM988zhHQACGhhc2hDb2Rlc3IAE3hzYnRpLmFwaS5Tb3VyY2VBUEm5Xqf5KSM4pAIAAlsAC2RlZmluaXRpb25zdAAXW0x4c2J0aS9hcGkvRGVmaW5pdGlvbjtbAAhwYWNrYWdlc3QAFFtMeHNidGkvYXBpL1BhY2thZ2U7eHB1cgAXW0x4c2J0aS5hcGkuRGVmaW5pdGlvbjuIyVzntONeDgIAAHhwAAAAAXNyABN4c2J0aS5hcGkuQ2xhc3NMaWtlgzQcod+wl2wCAARMAA5kZWZpbml0aW9uVHlwZXQAGkx4c2J0aS9hcGkvRGVmaW5pdGlvblR5cGU7WwAQc2F2ZWRBbm5vdGF0aW9uc3QAE1tMamF2YS9sYW5nL1N0cmluZztMAAhzZWxmVHlwZXQAEEx4c2J0aS9hcGkvTGF6eTtMAAlzdHJ1Y3R1cmVxAH4ARXhyACF4c2J0aS5hcGkuUGFyYW1ldGVyaXplZERlZmluaXRpb275EW6x1VA84gIAAVsADnR5cGVQYXJhbWV0ZXJzdAAaW0x4c2J0aS9hcGkvVHlwZVBhcmFtZXRlcjt4cgAUeHNidGkuYXBpLkRlZmluaXRpb26HKhvocULjRgIABEwABmFjY2Vzc3QAEkx4c2J0aS9hcGkvQWNjZXNzO1sAC2Fubm90YXRpb25zdAAXW0x4c2J0aS9hcGkvQW5ub3RhdGlvbjtMAAltb2RpZmllcnN0ABVMeHNidGkvYXBpL01vZGlmaWVycztMAARuYW1lcQB+AA14cHNyABB4c2J0aS5hcGkuUHVibGljulg9rmwtYEICAAB4cgAQeHNidGkuYXBpLkFjY2Vzc91imvgdYzFIAgAAeHB1cgAXW0x4c2J0aS5hcGkuQW5ub3RhdGlvbjvrl+sZEPaNSAIAAHhwAAAAAHNyABN4c2J0aS5hcGkuTW9kaWZpZXJzxxETIWmc3CQCAAFCAAVmbGFnc3hwAHQAGlNlcnZpY2UuVHJhbnNhY3Rpb25TZXJ2aWNldXIAGltMeHNidGkuYXBpLlR5cGVQYXJhbWV0ZXI72W0mDyid8rYCAAB4cAAAAAB+cgAYeHNidGkuYXBpLkRlZmluaXRpb25UeXBlAAAAAAAAAAASAAB4cgAOamF2YS5sYW5nLkVudW0AAAAAAAAAABIAAHhwdAAIQ2xhc3NEZWZ1cgATW0xqYXZhLmxhbmcuU3RyaW5nO63SVufpHXtHAgAAeHAAAAAAc3IAE3hzYnRpLlNhZmVMYXp5JEltcGxQAi6Tl5dAPwIAA1oACGJpdG1hcCQwTAACX3R0ABJMamF2YS9sYW5nL09iamVjdDtMAARldmFsdAARTHNjYWxhL0Z1bmN0aW9uMDt4cgAWeHNidGkuYXBpLkFic3RyYWN0TGF6edN3tQFfu+egAgAAeHABc3IAE3hzYnRpLmFwaS5FbXB0eVR5cGW8/Z5GSTuJJAIAAHhyABR4c2J0aS5hcGkuU2ltcGxlVHlwZXJ4YoghI79AAgAAeHIADnhzYnRpLmFwaS5UeXBlP2rZIRZJqsoCAAB4cHBzcQB+AF0Bc3IAE3hzYnRpLmFwaS5TdHJ1Y3R1cmWpqvmAk2/YAAIAA0wACGRlY2xhcmVkcQB+AEVMAAlpbmhlcml0ZWRxAH4ARUwAB3BhcmVudHNxAH4ARXhxAH4AZHNxAH4AXQF1cQB+AEAAAAAAcHNxAH4AXQF1cQB+AEAAAAAAcHNxAH4AXQF1cgARW0x4c2J0aS5hcGkuVHlwZTt0/6Vae/npQQIAAHhwAAAAAnNyABR4c2J0aS5hcGkuUHJvamVjdGlvbvPSjVTpRaQtAgACTAACaWRxAH4ADUwABnByZWZpeHQAFkx4c2J0aS9hcGkvU2ltcGxlVHlwZTt4cQB+AGN0AAZPYmplY3RzcgATeHNidGkuYXBpLlNpbmdsZXRvbvynX/jPVuRGAgABTAAEcGF0aHQAEEx4c2J0aS9hcGkvUGF0aDt4cQB+AGNzcgAOeHNidGkuYXBpLlBhdGibPVwIzqUnhAIAAVsACmNvbXBvbmVudHN0ABpbTHhzYnRpL2FwaS9QYXRoQ29tcG9uZW50O3hwdXIAGltMeHNidGkuYXBpLlBhdGhDb21wb25lbnQ7Q9oJdC1nFnQCAAB4cAAAAANzcgAMeHNidGkuYXBpLklkmDJsizdTxEACAAFMAAJpZHEAfgANeHIAF3hzYnRpLmFwaS5QYXRoQ29tcG9uZW50X5oiWy6Gn7wCAAB4cHQABGphdmFzcQB+AHx0AARsYW5nc3IADnhzYnRpLmFwaS5UaGlz2wntpsxaQFwCAAB4cQB+AH1zcQB+AHB0AANBbnlzcQB+AHRzcQB+AHd1cQB+AHoAAAACc3EAfgB8dAAFc2NhbGFxAH4Ag3BwdXIAFFtMeHNidGkuYXBpLlBhY2thZ2U7WxMZN3CnJ6ECAAB4cAAAAAFzcgAReHNidGkuYXBpLlBhY2thZ2V+WY/2rs45WAIAAUwABG5hbWVxAH4ADXhwdAAHU2VydmljZXNyABV4c2J0aS5hcGkuQ29tcGlsYXRpb27t+uDDauigQgIAAkoACXN0YXJ0VGltZVsAB291dHB1dHN0ABpbTHhzYnRpL2FwaS9PdXRwdXRTZXR0aW5nO3hwAAABTZGd0T11cgAaW0x4c2J0aS5hcGkuT3V0cHV0U2V0dGluZzt/asLzp4elQgIAAHhwAAAAAXNyABd4c2J0aS5hcGkuT3V0cHV0U2V0dGluZ3rZmkd0+x17AgACTAAPb3V0cHV0RGlyZWN0b3J5cQB+AA1MAA9zb3VyY2VEaXJlY3RvcnlxAH4ADXhwdAA0L2hvbWUvYW5kcmVhL3NjYWxhLWJpdGNvaW4vdGFyZ2V0L3NjYWxhLTIuMTEvY2xhc3Nlc3QAAS91cgACW0Ks8xf4BghU4AIAAHhwAAAAFJYDu4wyet6zXFZBUZZ0GY4bwILh
+/home/andrea/scala-bitcoin/src/main/scala/actors/WorkerActor.scala -> 
+rO0ABXNyABB4c2J0aS5hcGkuU291cmNlFlpwRASfbtoCAAZJAAdhcGlIYXNoWgAIaGFzTWFjcm9MABhfaW50ZXJuYWxPbmx5X25hbWVIYXNoZXN0ACRMeHNidGkvYXBpL19pbnRlcm5hbE9ubHlfTmFtZUhhc2hlcztMAANhcGl0ABVMeHNidGkvYXBpL1NvdXJjZUFQSTtMAAtjb21waWxhdGlvbnQAF0x4c2J0aS9hcGkvQ29tcGlsYXRpb247WwAEaGFzaHQAAltCeHCYZjGTAHNyACJ4c2J0aS5hcGkuX2ludGVybmFsT25seV9OYW1lSGFzaGVzVNq+mfrU7EwCAAJbAA9pbXBsaWNpdE1lbWJlcnN0ACNbTHhzYnRpL2FwaS9faW50ZXJuYWxPbmx5X05hbWVIYXNoO1sADnJlZ3VsYXJNZW1iZXJzcQB+AAd4cHVyACNbTHhzYnRpLmFwaS5faW50ZXJuYWxPbmx5X05hbWVIYXNoO0lagLbdlov0AgAAeHAAAAACc3IAIHhzYnRpLmFwaS5faW50ZXJuYWxPbmx5X05hbWVIYXNoWw71InY4V88CAAJJAARoYXNoTAAEbmFtZXQAEkxqYXZhL2xhbmcvU3RyaW5nO3hw5Owli3QABHNlbGZzcQB+AAu/5VBJdAAHY29udGV4dHVxAH4ACQAAACNzcQB+AAv5y2UCdAAGbm90aWZ5c3EAfgALKyJ6gHQAB1JlY2VpdmVzcQB+AAulgnePdAAEd2FpdHNxAH4ACzoojkR0AA0kYXNJbnN0YW5jZU9mc3EAfgALlWgtaXQABmVxdWFsc3NxAH4AC0tIbtR0AAxhc0luc3RhbmNlT2ZzcQB+AAvgF1RidAAMc3luY2hyb25pemVkc3EAfgALvKv7V3QADSRpc0luc3RhbmNlT2ZzcQB+AAvD0GZIdAAHcmVjZWl2ZXNxAH4AC3bF+Il0AApwcmVSZXN0YXJ0c3EAfgALxayF7HQADWFyb3VuZFJlY2VpdmVzcQB+AAtAWoxNdAALcG9zdFJlc3RhcnRzcQB+AAvToW1ydAAIcG9zdFN0b3BzcQB+AAvwDaGqdAAJbm90aWZ5QWxsc3EAfgAL4dUwFnQAEWFyb3VuZFBvc3RSZXN0YXJ0c3EAfgALMezqDnQADGlzSW5zdGFuY2VPZnNxAH4AC7stU8Z0ABBhcm91bmRQcmVSZXN0YXJ0c3EAfgAL7hyISXQADmFyb3VuZFBvc3RTdG9wc3EAfgALwuG7wnQABjxpbml0PnNxAH4ACzmmNp10AAhwcmVTdGFydHNxAH4AC08sw1Z0AAl1bmhhbmRsZWRzcQB+AAsfotn2dAACPT1zcQB+AAuJXNy+dAAFY2xvbmVzcQB+AAuEiLpJdAAGc2VuZGVyc3EAfgALRP93g3QACHRvU3RyaW5nc3EAfgALlit7tHQAAiE9c3EAfgALOALpFnQAC1dvcmtlckFjdG9yc3EAfgALyVK61HQACGdldENsYXNzc3EAfgALNZ32XnQAAm5lc3EAfgALyOb9t3QAEnN1cGVydmlzb3JTdHJhdGVneXNxAH4AC489Msp0AAJlcXNxAH4AC4o/r110AAIjI3NxAH4AC13GXSx0AAhmaW5hbGl6ZXNxAH4AC+Rw3i50AAhoYXNoQ29kZXNxAH4AC0tU7L90AA5hcm91bmRQcmVTdGFydHNyABN4c2J0aS5hcGkuU291cmNlQVBJuV6n+SkjOKQCAAJbAAtkZWZpbml0aW9uc3QAF1tMeHNidGkvYXBpL0RlZmluaXRpb247WwAIcGFja2FnZXN0ABRbTHhzYnRpL2FwaS9QYWNrYWdlO3hwdXIAF1tMeHNidGkuYXBpLkRlZmluaXRpb247iMlc57TjXg4CAAB4cAAAAAFzcgATeHNidGkuYXBpLkNsYXNzTGlrZYM0HKHfsJdsAgAETAAOZGVmaW5pdGlvblR5cGV0ABpMeHNidGkvYXBpL0RlZmluaXRpb25UeXBlO1sAEHNhdmVkQW5ub3RhdGlvbnN0ABNbTGphdmEvbGFuZy9TdHJpbmc7TAAIc2VsZlR5cGV0ABBMeHNidGkvYXBpL0xhenk7TAAJc3RydWN0dXJlcQB+AGF4cgAheHNidGkuYXBpLlBhcmFtZXRlcml6ZWREZWZpbml0aW9u+RFusdVQPOICAAFbAA50eXBlUGFyYW1ldGVyc3QAGltMeHNidGkvYXBpL1R5cGVQYXJhbWV0ZXI7eHIAFHhzYnRpLmFwaS5EZWZpbml0aW9uhyob6HFC40YCAARMAAZhY2Nlc3N0ABJMeHNidGkvYXBpL0FjY2VzcztbAAthbm5vdGF0aW9uc3QAF1tMeHNidGkvYXBpL0Fubm90YXRpb247TAAJbW9kaWZpZXJzdAAVTHhzYnRpL2FwaS9Nb2RpZmllcnM7TAAEbmFtZXEAfgAMeHBzcgAQeHNidGkuYXBpLlB1YmxpY7pYPa5sLWBCAgAAeHIAEHhzYnRpLmFwaS5BY2Nlc3PdYpr4HWMxSAIAAHhwdXIAF1tMeHNidGkuYXBpLkFubm90YXRpb24765frGRD2jUgCAAB4cAAAAABzcgATeHNidGkuYXBpLk1vZGlmaWVyc8cREyFpnNwkAgABQgAFZmxhZ3N4cAB0ABJhY3RvcnMuV29ya2VyQWN0b3J1cgAaW0x4c2J0aS5hcGkuVHlwZVBhcmFtZXRlcjvZbSYPKJ3ytgIAAHhwAAAAAH5yABh4c2J0aS5hcGkuRGVmaW5pdGlvblR5cGUAAAAAAAAAABIAAHhyAA5qYXZhLmxhbmcuRW51bQAAAAAAAAAAEgAAeHB0AAhDbGFzc0RlZnVyABNbTGphdmEubGFuZy5TdHJpbmc7rdJW5+kde0cCAAB4cAAAAABzcgATeHNidGkuU2FmZUxhenkkSW1wbFACLpOXl0A/AgADWgAIYml0bWFwJDBMAAJfdHQAEkxqYXZhL2xhbmcvT2JqZWN0O0wABGV2YWx0ABFMc2NhbGEvRnVuY3Rpb24wO3hyABZ4c2J0aS5hcGkuQWJzdHJhY3RMYXp503e1AV+756ACAAB4cABwc3IAIHhzYnRpLlNhZmVMYXp5JCRhbm9uZnVuJHN0cmljdCQxAAAAAAAAAAACAAFMAAd2YWx1ZSQxcQB+AHp4cHNyABN4c2J0aS5hcGkuRW1wdHlUeXBlvP2eRkk7iSQCAAB4cgAUeHNidGkuYXBpLlNpbXBsZVR5cGVyeGKIISO/QAIAAHhyAA54c2J0aS5hcGkuVHlwZT9q2SEWSarKAgAAeHBzcQB+AHkBc3IAE3hzYnRpLmFwaS5TdHJ1Y3R1cmWpqvmAk2/YAAIAA0wACGRlY2xhcmVkcQB+AGFMAAlpbmhlcml0ZWRxAH4AYUwAB3BhcmVudHNxAH4AYXhxAH4AgnNxAH4AeQF1cQB+AFwAAAAAcHNxAH4AeQF1cQB+AFwAAAAAcHNxAH4AeQF1cgARW0x4c2J0aS5hcGkuVHlwZTt0/6Vae/npQQIAAHhwAAAAA3NyABR4c2J0aS5hcGkuUHJvamVjdGlvbvPSjVTpRaQtAgACTAACaWRxAH4ADEwABnByZWZpeHQAFkx4c2J0aS9hcGkvU2ltcGxlVHlwZTt4cQB+AIF0AAVBY3RvcnNyABN4c2J0aS5hcGkuU2luZ2xldG9u/Kdf+M9W5EYCAAFMAARwYXRodAAQTHhzYnRpL2FwaS9QYXRoO3hxAH4AgXNyAA54c2J0aS5hcGkuUGF0aJs9XAjOpSeEAgABWwAKY29tcG9uZW50c3QAGltMeHNidGkvYXBpL1BhdGhDb21wb25lbnQ7eHB1cgAaW0x4c2J0aS5hcGkuUGF0aENvbXBvbmVudDtD2gl0LWcWdAIAAHhwAAAAA3NyAAx4c2J0aS5hcGkuSWSYMmyLN1PEQAIAAUwAAmlkcQB+AAx4cgAXeHNidGkuYXBpLlBhdGhDb21wb25lbnRfmiJbLoafvAIAAHhwdAAEYWtrYXNxAH4AmnQABWFjdG9yc3IADnhzYnRpLmFwaS5UaGlz2wntpsxaQFwCAAB4cQB+AJtzcQB+AI50AAZPYmplY3RzcQB+AJJzcQB+AJV1cQB+AJgAAAADc3EAfgCadAAEamF2YXNxAH4AmnQABGxhbmdxAH4AoXNxAH4AjnQAA0FueXNxAH4AknNxAH4AlXVxAH4AmAAAAAJzcQB+AJp0AAVzY2FsYXEAfgChcHB1cgAUW0x4c2J0aS5hcGkuUGFja2FnZTtbExk3cKcnoQIAAHhwAAAAAXNyABF4c2J0aS5hcGkuUGFja2FnZX5Zj/auzjlYAgABTAAEbmFtZXEAfgAMeHB0AAZhY3RvcnNzcgAVeHNidGkuYXBpLkNvbXBpbGF0aW9u7frgw2rooEICAAJKAAlzdGFydFRpbWVbAAdvdXRwdXRzdAAaW0x4c2J0aS9hcGkvT3V0cHV0U2V0dGluZzt4cAAAAU2LTKwUdXIAGltMeHNidGkuYXBpLk91dHB1dFNldHRpbmc7f2rC86eHpUICAAB4cAAAAAFzcgAXeHNidGkuYXBpLk91dHB1dFNldHRpbmd62ZpHdPsdewIAAkwAD291dHB1dERpcmVjdG9yeXEAfgAMTAAPc291cmNlRGlyZWN0b3J5cQB+AAx4cHQANC9ob21lL2FuZHJlYS9zY2FsYS1iaXRjb2luL3RhcmdldC9zY2FsYS0yLjExL2NsYXNzZXN0AAEvdXIAAltCrPMX+AYIVOACAAB4cAAAABS74EgjQ/6ATJf9D/AJa4rGgnkWlA==
+/home/andrea/scala-bitcoin/src/main/scala/domain/CompactNumber.scala -> 
+rO0ABXNyABB4c2J0aS5hcGkuU291cmNlFlpwRASfbtoCAAZJAAdhcGlIYXNoWgAIaGFzTWFjcm9MABhfaW50ZXJuYWxPbmx5X25hbWVIYXNoZXN0ACRMeHNidGkvYXBpL19pbnRlcm5hbE9ubHlfTmFtZUhhc2hlcztMAANhcGl0ABVMeHNidGkvYXBpL1NvdXJjZUFQSTtMAAtjb21waWxhdGlvbnQAF0x4c2J0aS9hcGkvQ29tcGlsYXRpb247WwAEaGFzaHQAAltCeHC8IlN1AHNyACJ4c2J0aS5hcGkuX2ludGVybmFsT25seV9OYW1lSGFzaGVzVNq+mfrU7EwCAAJbAA9pbXBsaWNpdE1lbWJlcnN0ACNbTHhzYnRpL2FwaS9faW50ZXJuYWxPbmx5X05hbWVIYXNoO1sADnJlZ3VsYXJNZW1iZXJzcQB+AAd4cHVyACNbTHhzYnRpLmFwaS5faW50ZXJuYWxPbmx5X05hbWVIYXNoO0lagLbdlov0AgAAeHAAAAACc3IAIHhzYnRpLmFwaS5faW50ZXJuYWxPbmx5X05hbWVIYXNoWw71InY4V88CAAJJAARoYXNoTAAEbmFtZXQAEkxqYXZhL2xhbmcvU3RyaW5nO3hw9dcBbHQADG1rTnVtZXJpY09wc3NxAH4AC0ygW/h0AA1ta09yZGVyaW5nT3BzdXEAfgAJAAAARHNxAH4AC91Tfvd0AAZub3RpZnlzcQB+AAtdQGmOdAAEd2FpdHNxAH4AC91qypx0AAEqc3EAfgALcv+MoXQAASVzcQB+AAs/bUpsdAANJGFzSW5zdGFuY2VPZnNxAH4ACwUUW+90AAVtaW51c3NxAH4AC2Byb0R0AAIvJXNxAH4AC3XKUeR0AAxwcm9kdWN0QXJpdHlzcQB+AAusP7vpdAAEcGx1c3NxAH4ACzaPdEt0AAZlcXVhbHNzcQB+AAtNtp4adAAEemVyb3NxAH4AC5Fm2cJ0AAxhc0luc3RhbmNlT2ZzcQB+AAuf9LRBdAAHdW5hcnlfLXNxAH4AC07AW/F0AAxzeW5jaHJvbml6ZWRzcQB+AAv/vVmqdAANJGlzSW5zdGFuY2VPZnNxAH4AC9XEEPF0AANtaW5zcQB+AAuHlJtOdAANQ29tcGFjdE51bWJlcnNxAH4ACwx7ezx0AAhjYW5FcXVhbHNxAH4AC/z+Ylt0AA1wcm9kdWN0UHJlZml4c3EAfgALDlbO0nQAB3RvRmxvYXRzcQB+AAuX9UyMdAAJbm90aWZ5QWxsc3EAfgALZGeAqHQABnRvTG9uZ3NxAH4ACwTxYoJ0AAEtc3EAfgAL/CKEonQADGlzSW5zdGFuY2VPZnNxAH4ACzwvBqp0AAdyZXZlcnNlc3EAfgAL/hrz7XQAC0NvbXBhY3RMb25nc3EAfgALoRJtF3QABjxpbml0PnNxAH4ACymJht10AANtYXhzcQB+AAuTdXUwdAACb25zcQB+AAunvZTSdAADcmVtc3EAfgALOmNbUHQAAj09c3EAfgALtBoTInQABXRvSW50c3EAfgALQUVpAHQABm5lZ2F0ZXNxAH4AC4Cszjh0AAdmcm9tSW50c3EAfgALQuQGrHQABWNsb25lc3EAfgALBA8wwXQADG9naWdpbmFsU2l6ZXNxAH4AC/u2VGl0AARsdGVxc3EAfgALjr6zM3QACnRyeUNvbXBhcmVzcQB+AAvWdRyHdAAFdGltZXNzcQB+AAsQrWLhdAAKQ29tcGFjdEludHNxAH4AC56pmCR0AARjb3B5c3EAfgALV94auXQAC0ludGVncmFsT3Bzc3EAfgAL/IGWfXQACHRvRG91Ymxlc3EAfgALytO+cnQACHRvU3RyaW5nc3EAfgALa32mynQABHF1b3RzcQB+AAuMMrzudAABK3NxAH4AC9/pzf90AAIhPXNxAH4ACyzkHxt0AAVlcXVpdnNxAH4AC7wTT/F0AAhnZXRDbGFzc3NxAH4AC5L6cmJ0AA5jb3B5JGRlZmF1bHQkMXNxAH4ACw5c6PJ0AANhYnNzcQB+AAvK9/bCdAACbmVzcQB+AAucYjnadAACbHRzcQB+AAuuAeMzdAACZ3RzcQB+AAtl+pcpdAADT3Bzc3EAfgAL40PCSnQABXZhbHVlc3EAfgALsim+jHQADUNvbXBhY3RCaWdJbnRzcQB+AAuLpc3cdAACZXFzcQB+AAt/LWzudAAHY29tcGFyZXNxAH4ACxexW/N0AA9wcm9kdWN0SXRlcmF0b3JzcQB+AAs0Fs+hdAABL3NxAH4AC68zudF0AANvbmVzcQB+AAsvPHJbdAAGc2lnbnVtc3EAfgALxxFkB3QAAiMjc3EAfgALB9vB1nQACGZpbmFsaXplc3EAfgALqqfe6nQADnByb2R1Y3RFbGVtZW50c3EAfgALV78JK3QACGhhc2hDb2Rlc3EAfgALLH0fEHQABGd0ZXFzcgATeHNidGkuYXBpLlNvdXJjZUFQSblep/kpIzikAgACWwALZGVmaW5pdGlvbnN0ABdbTHhzYnRpL2FwaS9EZWZpbml0aW9uO1sACHBhY2thZ2VzdAAUW0x4c2J0aS9hcGkvUGFja2FnZTt4cHVyABdbTHhzYnRpLmFwaS5EZWZpbml0aW9uO4jJXOe0414OAgAAeHAAAAAEc3IAE3hzYnRpLmFwaS5DbGFzc0xpa2WDNByh37CXbAIABEwADmRlZmluaXRpb25UeXBldAAaTHhzYnRpL2FwaS9EZWZpbml0aW9uVHlwZTtbABBzYXZlZEFubm90YXRpb25zdAATW0xqYXZhL2xhbmcvU3RyaW5nO0wACHNlbGZUeXBldAAQTHhzYnRpL2FwaS9MYXp5O0wACXN0cnVjdHVyZXEAfgCjeHIAIXhzYnRpLmFwaS5QYXJhbWV0ZXJpemVkRGVmaW5pdGlvbvkRbrHVUDziAgABWwAOdHlwZVBhcmFtZXRlcnN0ABpbTHhzYnRpL2FwaS9UeXBlUGFyYW1ldGVyO3hyABR4c2J0aS5hcGkuRGVmaW5pdGlvbocqG+hxQuNGAgAETAAGYWNjZXNzdAASTHhzYnRpL2FwaS9BY2Nlc3M7WwALYW5ub3RhdGlvbnN0ABdbTHhzYnRpL2FwaS9Bbm5vdGF0aW9uO0wACW1vZGlmaWVyc3QAFUx4c2J0aS9hcGkvTW9kaWZpZXJzO0wABG5hbWVxAH4ADHhwc3IAEHhzYnRpLmFwaS5QdWJsaWO6WD2ubC1gQgIAAHhyABB4c2J0aS5hcGkuQWNjZXNz3WKa+B1jMUgCAAB4cHVyABdbTHhzYnRpLmFwaS5Bbm5vdGF0aW9uO+uX6xkQ9o1IAgAAeHAAAAAAc3IAE3hzYnRpLmFwaS5Nb2RpZmllcnPHERMhaZzcJAIAAUIABWZsYWdzeHAJdAAUZG9tYWluLkNvbXBhY3ROdW1iZXJ1cgAaW0x4c2J0aS5hcGkuVHlwZVBhcmFtZXRlcjvZbSYPKJ3ytgIAAHhwAAAAAXNyABd4c2J0aS5hcGkuVHlwZVBhcmFtZXRlcmdpVdvjcpBrAgAGWwALYW5ub3RhdGlvbnNxAH4AqEwAAmlkcQB+AAxMAApsb3dlckJvdW5kdAAQTHhzYnRpL2FwaS9UeXBlO1sADnR5cGVQYXJhbWV0ZXJzcQB+AKVMAAp1cHBlckJvdW5kcQB+ALZMAAh2YXJpYW5jZXQAFEx4c2J0aS9hcGkvVmFyaWFuY2U7eHB1cQB+AK4AAAAAdAAWZG9tYWluLkNvbXBhY3ROdW1iZXIuTnNyABR4c2J0aS5hcGkuUHJvamVjdGlvbvPSjVTpRaQtAgACTAACaWRxAH4ADEwABnByZWZpeHQAFkx4c2J0aS9hcGkvU2ltcGxlVHlwZTt4cgAUeHNidGkuYXBpLlNpbXBsZVR5cGVyeGKIISO/QAIAAHhyAA54c2J0aS5hcGkuVHlwZT9q2SEWSarKAgAAeHB0AAdOb3RoaW5nc3IAE3hzYnRpLmFwaS5TaW5nbGV0b278p1/4z1bkRgIAAUwABHBhdGh0ABBMeHNidGkvYXBpL1BhdGg7eHEAfgC9c3IADnhzYnRpLmFwaS5QYXRomz1cCM6lJ4QCAAFbAApjb21wb25lbnRzdAAaW0x4c2J0aS9hcGkvUGF0aENvbXBvbmVudDt4cHVyABpbTHhzYnRpLmFwaS5QYXRoQ29tcG9uZW50O0PaCXQtZxZ0AgAAeHAAAAACc3IADHhzYnRpLmFwaS5JZJgybIs3U8RAAgABTAACaWRxAH4ADHhyABd4c2J0aS5hcGkuUGF0aENvbXBvbmVudF+aIlsuhp+8AgAAeHB0AAVzY2FsYXNyAA54c2J0aS5hcGkuVGhpc9sJ7abMWkBcAgAAeHEAfgDKdXEAfgCzAAAAAHNxAH4Au3QAA0FueXEAfgDDfnIAEnhzYnRpLmFwaS5WYXJpYW5jZQAAAAAAAAAAEgAAeHIADmphdmEubGFuZy5FbnVtAAAAAAAAAAASAAB4cHQACUludmFyaWFudH5yABh4c2J0aS5hcGkuRGVmaW5pdGlvblR5cGUAAAAAAAAAABIAAHhxAH4A03QACENsYXNzRGVmdXIAE1tMamF2YS5sYW5nLlN0cmluZzut0lbn6R17RwIAAHhwAAAAAHNyABN4c2J0aS5TYWZlTGF6eSRJbXBsUAIuk5eXQD8CAANaAAhiaXRtYXAkMEwAAl90dAASTGphdmEvbGFuZy9PYmplY3Q7TAAEZXZhbHQAEUxzY2FsYS9GdW5jdGlvbjA7eHIAFnhzYnRpLmFwaS5BYnN0cmFjdExhennTd7UBX7vnoAIAAHhwAHBzcgAgeHNidGkuU2FmZUxhenkkJGFub25mdW4kc3RyaWN0JDEAAAAAAAAAAAIAAUwAB3ZhbHVlJDFxAH4A3Hhwc3IAE3hzYnRpLmFwaS5FbXB0eVR5cGW8/Z5GSTuJJAIAAHhxAH4AvXNxAH4A2wBwc3EAfgDgc3IAE3hzYnRpLmFwaS5TdHJ1Y3R1cmWpqvmAk2/YAAIAA0wACGRlY2xhcmVkcQB+AKNMAAlpbmhlcml0ZWRxAH4Ao0wAB3BhcmVudHNxAH4Ao3hxAH4AvnNxAH4A2wBwc3EAfgDgdXEAfgCeAAAAAHNxAH4A2wBwc3EAfgDgdXEAfgCeAAAAAHNxAH4A2wBwc3EAfgDgdXIAEVtMeHNidGkuYXBpLlR5cGU7dP+lWnv56UECAAB4cAAAAApzcgAXeHNidGkuYXBpLlBhcmFtZXRlcml6ZWQWbO5pA8m7fwIAAkwACGJhc2VUeXBlcQB+ALxbAA10eXBlQXJndW1lbnRzdAARW0x4c2J0aS9hcGkvVHlwZTt4cQB+AL1zcQB+ALt0AAhJbnRlZ3JhbHNxAH4AwXNxAH4AxHVxAH4AxwAAAANzcQB+AMlxAH4AzHNxAH4AyXQABG1hdGhxAH4AznVxAH4A8AAAAAFzcgAWeHNidGkuYXBpLlBhcmFtZXRlclJlZj/Y4zkALHOwAgABTAACaWRxAH4ADHhxAH4AvXQAFmRvbWFpbi5Db21wYWN0TnVtYmVyLk5zcQB+APJzcQB+ALt0AAdOdW1lcmljcQB+APd1cQB+APAAAAABcQB+AP9zcQB+APJzcQB+ALt0AAhPcmRlcmluZ3EAfgD3dXEAfgDwAAAAAXEAfgD/c3EAfgDyc3EAfgC7dAAPUGFydGlhbE9yZGVyaW5ncQB+APd1cQB+APAAAAABcQB+AP9zcQB+APJzcQB+ALt0AAVFcXVpdnEAfgD3dXEAfgDwAAAAAXEAfgD/c3EAfgC7dAAMU2VyaWFsaXphYmxlc3EAfgDBc3EAfgDEdXEAfgDHAAAAAnNxAH4AyXEAfgDMcQB+AM5zcQB+ALtxAH4BEnNxAH4AwXNxAH4AxHVxAH4AxwAAAANzcQB+AMl0AARqYXZhc3EAfgDJdAACaW9xAH4AznNxAH4A8nNxAH4Au3QACkNvbXBhcmF0b3JzcQB+AMFzcQB+AMR1cQB+AMcAAAADc3EAfgDJcQB+ARxzcQB+AMl0AAR1dGlscQB+AM51cQB+APAAAAABcQB+AP9zcQB+ALt0AAZPYmplY3RzcQB+AMFzcQB+AMR1cQB+AMcAAAADc3EAfgDJcQB+ARxzcQB+AMl0AARsYW5ncQB+AM5zcQB+ALtxAH4A0XEAfgETc3EAfgCgcQB+AK11cQB+AK4AAAAAc3EAfgCwAHQAEWRvbWFpbi5Db21wYWN0SW50dXEAfgCzAAAAAHEAfgDXdXEAfgDZAAAAAHNxAH4A2wBwc3EAfgDgcQB+AONzcQB+ANsBc3EAfgDmc3EAfgDbAXVxAH4AngAAAABwc3EAfgDbAXVxAH4AngAAAABwc3EAfgDbAXVxAH4A8AAAAA9zcQB+ALt0AAdQcm9kdWN0c3EAfgDBc3EAfgDEdXEAfgDHAAAAAnNxAH4AyXEAfgDMcQB+AM5zcQB+ALt0AAZFcXVhbHNxAH4BRHNxAH4Au3QAC0ludE9yZGVyaW5nc3EAfgC7dAAIT3JkZXJpbmdzcQB+ALt0AARtYXRoc3EAfgC7cQB+AMxzcQB+AMFzcQB+AMR1cQB+AMcAAAABcQB+AM5zcQB+ALt0AA1JbnRJc0ludGVncmFsc3EAfgC7dAAHTnVtZXJpY3EAfgFOc3EAfgDyc3EAfgC7dAANQ29tcGFjdE51bWJlcnNxAH4AwXNxAH4AxHVxAH4AxwAAAAJzcQB+AMl0AAZkb21haW5xAH4AznVxAH4A8AAAAAFzcQB+ALt0AANJbnRxAH4BRHNxAH4A8nNxAH4Au3QACEludGVncmFsc3EAfgDBc3EAfgDEdXEAfgDHAAAAA3NxAH4AyXEAfgDMc3EAfgDJdAAEbWF0aHEAfgDOdXEAfgDwAAAAAXEAfgFhc3EAfgDyc3EAfgC7dAAHTnVtZXJpY3EAfgFmdXEAfgDwAAAAAXEAfgFhc3EAfgDyc3EAfgC7dAAIT3JkZXJpbmdxAH4BZnVxAH4A8AAAAAFxAH4BYXNxAH4A8nNxAH4Au3QAD1BhcnRpYWxPcmRlcmluZ3EAfgFmdXEAfgDwAAAAAXEAfgFhc3EAfgDyc3EAfgC7dAAFRXF1aXZxAH4BZnVxAH4A8AAAAAFxAH4BYXNxAH4Au3EAfgEScQB+AURzcQB+ALtxAH4BEnNxAH4AwXNxAH4AxHVxAH4AxwAAAANzcQB+AMlxAH4BHHNxAH4AyXQAAmlvcQB+AM5zcQB+APJzcQB+ALt0AApDb21wYXJhdG9yc3EAfgDBc3EAfgDEdXEAfgDHAAAAA3NxAH4AyXEAfgEcc3EAfgDJdAAEdXRpbHEAfgDOdXEAfgDwAAAAAXEAfgFhc3EAfgC7cQB+ASpzcQB+AMFzcQB+AMR1cQB+AMcAAAADc3EAfgDJcQB+ARxzcQB+AMlxAH4BMHEAfgDOc3EAfgC7cQB+ANFxAH4BRHBwc3EAfgCgcQB+AK11cQB+AK4AAAAAc3EAfgCwAHQAEmRvbWFpbi5Db21wYWN0TG9uZ3VxAH4AswAAAABxAH4A13VxAH4A2QAAAABzcQB+ANsAcHNxAH4A4HEAfgDjc3EAfgDbAXNxAH4A5nNxAH4A2wF1cQB+AJ4AAAAAcHNxAH4A2wF1cQB+AJ4AAAAAcHNxAH4A2wF1cQB+APAAAAAPc3EAfgC7cQB+AUNzcQB+AMFzcQB+AMR1cQB+AMcAAAACc3EAfgDJcQB+AMxxAH4AznNxAH4Au3QABkVxdWFsc3EAfgGnc3EAfgC7dAAMTG9uZ09yZGVyaW5nc3EAfgC7dAAIT3JkZXJpbmdzcQB+ALt0AARtYXRoc3EAfgC7cQB+AMxzcQB+AMFzcQB+AMR1cQB+AMcAAAABcQB+AM5zcQB+ALt0AA5Mb25nSXNJbnRlZ3JhbHNxAH4Au3QAB051bWVyaWNxAH4BsXNxAH4A8nNxAH4Au3QADUNvbXBhY3ROdW1iZXJzcQB+AMFzcQB+AMR1cQB+AMcAAAACc3EAfgDJdAAGZG9tYWlucQB+AM51cQB+APAAAAABc3EAfgC7dAAETG9uZ3EAfgGnc3EAfgDyc3EAfgC7dAAISW50ZWdyYWxzcQB+AMFzcQB+AMR1cQB+AMcAAAADc3EAfgDJcQB+AMxzcQB+AMl0AARtYXRocQB+AM51cQB+APAAAAABcQB+AcRzcQB+APJzcQB+ALt0AAdOdW1lcmljcQB+Acl1cQB+APAAAAABcQB+AcRzcQB+APJzcQB+ALt0AAhPcmRlcmluZ3EAfgHJdXEAfgDwAAAAAXEAfgHEc3EAfgDyc3EAfgC7dAAPUGFydGlhbE9yZGVyaW5ncQB+Acl1cQB+APAAAAABcQB+AcRzcQB+APJzcQB+ALt0AAVFcXVpdnEAfgHJdXEAfgDwAAAAAXEAfgHEc3EAfgC7cQB+ARJxAH4Bp3NxAH4Au3EAfgESc3EAfgDBc3EAfgDEdXEAfgDHAAAAA3NxAH4AyXEAfgEcc3EAfgDJdAACaW9xAH4AznNxAH4A8nNxAH4Au3QACkNvbXBhcmF0b3JzcQB+AMFzcQB+AMR1cQB+AMcAAAADc3EAfgDJcQB+ARxzcQB+AMl0AAR1dGlscQB+AM51cQB+APAAAAABcQB+AcRzcQB+ALtxAH4BKnNxAH4AwXNxAH4AxHVxAH4AxwAAAANzcQB+AMlxAH4BHHNxAH4AyXEAfgEwcQB+AM5zcQB+ALtxAH4A0XEAfgGncHBzcQB+AKBxAH4ArXVxAH4ArgAAAABzcQB+ALAAdAAUZG9tYWluLkNvbXBhY3RCaWdJbnR1cQB+ALMAAAAAcQB+ANd1cQB+ANkAAAAAc3EAfgDbAHBzcQB+AOBxAH4A43NxAH4A2wFzcQB+AOZzcQB+ANsBdXEAfgCeAAAAAHBzcQB+ANsBdXEAfgCeAAAAAHBzcQB+ANsBdXEAfgDwAAAAD3NxAH4Au3EAfgFDc3EAfgDBc3EAfgDEdXEAfgDHAAAAAnNxAH4AyXEAfgDMcQB+AM5zcQB+ALt0AAZFcXVhbHNxAH4CCnNxAH4Au3QADkJpZ0ludE9yZGVyaW5nc3EAfgC7dAAIT3JkZXJpbmdzcQB+ALt0AARtYXRoc3EAfgC7cQB+AMxzcQB+AMFzcQB+AMR1cQB+AMcAAAABcQB+AM5zcQB+ALt0ABBCaWdJbnRJc0ludGVncmFsc3EAfgC7dAAHTnVtZXJpY3EAfgIUc3EAfgDyc3EAfgC7dAANQ29tcGFjdE51bWJlcnNxAH4AwXNxAH4AxHVxAH4AxwAAAAJzcQB+AMl0AAZkb21haW5xAH4AznVxAH4A8AAAAAFzcQB+ALt0AAZCaWdJbnRzcQB+AMFzcQB+AMR1cQB+AMcAAAADc3EAfgDJcQB+AMxzcQB+AMl0AARtYXRocQB+AM5zcQB+APJzcQB+ALt0AAhJbnRlZ3JhbHEAfgIpdXEAfgDwAAAAAXEAfgInc3EAfgDyc3EAfgC7dAAHTnVtZXJpY3EAfgIpdXEAfgDwAAAAAXEAfgInc3EAfgDyc3EAfgC7dAAIT3JkZXJpbmdxAH4CKXVxAH4A8AAAAAFxAH4CJ3NxAH4A8nNxAH4Au3QAD1BhcnRpYWxPcmRlcmluZ3EAfgIpdXEAfgDwAAAAAXEAfgInc3EAfgDyc3EAfgC7dAAFRXF1aXZxAH4CKXVxAH4A8AAAAAFxAH4CJ3NxAH4Au3EAfgEScQB+AgpzcQB+ALtxAH4BEnNxAH4AwXNxAH4AxHVxAH4AxwAAAANzcQB+AMlxAH4BHHNxAH4AyXQAAmlvcQB+AM5zcQB+APJzcQB+ALt0AApDb21wYXJhdG9yc3EAfgDBc3EAfgDEdXEAfgDHAAAAA3NxAH4AyXEAfgEcc3EAfgDJdAAEdXRpbHEAfgDOdXEAfgDwAAAAAXEAfgInc3EAfgC7cQB+ASpzcQB+AMFzcQB+AMR1cQB+AMcAAAADc3EAfgDJcQB+ARxzcQB+AMlxAH4BMHEAfgDOc3EAfgC7cQB+ANFxAH4CCnBwdXIAFFtMeHNidGkuYXBpLlBhY2thZ2U7WxMZN3CnJ6ECAAB4cAAAAAFzcgAReHNidGkuYXBpLlBhY2thZ2V+WY/2rs45WAIAAUwABG5hbWVxAH4ADHhwdAAGZG9tYWluc3IAFXhzYnRpLmFwaS5Db21waWxhdGlvbu364MNq6KBCAgACSgAJc3RhcnRUaW1lWwAHb3V0cHV0c3QAGltMeHNidGkvYXBpL091dHB1dFNldHRpbmc7eHAAAAFNjJ/Bw3VyABpbTHhzYnRpLmFwaS5PdXRwdXRTZXR0aW5nO39qwvOnh6VCAgAAeHAAAAABc3IAF3hzYnRpLmFwaS5PdXRwdXRTZXR0aW5netmaR3T7HXsCAAJMAA9vdXRwdXREaXJlY3RvcnlxAH4ADEwAD3NvdXJjZURpcmVjdG9yeXEAfgAMeHB0ADQvaG9tZS9hbmRyZWEvc2NhbGEtYml0Y29pbi90YXJnZXQvc2NhbGEtMi4xMS9jbGFzc2VzdAABL3VyAAJbQqzzF/gGCFTgAgAAeHAAAAAUFiyEGPa6YQqcEhwUTZFDrVTUkaM=
+/home/andrea/scala-bitcoin/src/main/scala/domain/Transaction.scala -> 
+rO0ABXNyABB4c2J0aS5hcGkuU291cmNlFlpwRASfbtoCAAZJAAdhcGlIYXNoWgAIaGFzTWFjcm9MABhfaW50ZXJuYWxPbmx5X25hbWVIYXNoZXN0ACRMeHNidGkvYXBpL19pbnRlcm5hbE9ubHlfTmFtZUhhc2hlcztMAANhcGl0ABVMeHNidGkvYXBpL1NvdXJjZUFQSTtMAAtjb21waWxhdGlvbnQAF0x4c2J0aS9hcGkvQ29tcGlsYXRpb247WwAEaGFzaHQAAltCeHDjFpnQAHNyACJ4c2J0aS5hcGkuX2ludGVybmFsT25seV9OYW1lSGFzaGVzVNq+mfrU7EwCAAJbAA9pbXBsaWNpdE1lbWJlcnN0ACNbTHhzYnRpL2FwaS9faW50ZXJuYWxPbmx5X05hbWVIYXNoO1sADnJlZ3VsYXJNZW1iZXJzcQB+AAd4cHVyACNbTHhzYnRpLmFwaS5faW50ZXJuYWxPbmx5X05hbWVIYXNoO0lagLbdlov0AgAAeHAAAAAAdXEAfgAJAAAAKnNyACB4c2J0aS5hcGkuX2ludGVybmFsT25seV9OYW1lSGFzaFsO9SJ2OFfPAgACSQAEaGFzaEwABG5hbWV0ABJMamF2YS9sYW5nL1N0cmluZzt4cGROmiN0AAZub3RpZnlzcQB+AAws/8UadAAHdW5hcHBseXNxAH4ADCu0Sdt0AAR3YWl0c3EAfgAMMzKMuHQAC1RyYW5zYWN0aW9uc3EAfgAMDh7k8HQADmNvcHkkZGVmYXVsdCQyc3EAfgAMiPsG9nQADSRhc0luc3RhbmNlT2ZzcQB+AAxra1wFdAAOY29weSRkZWZhdWx0JDVzcQB+AAwU5r4qdAAMcHJvZHVjdEFyaXR5c3EAfgAM9JOnz3QABmVxdWFsc3NxAH4ADEQtQDV0AAZuVHhPdXRzcQB+AAwspGUAdAAMYXNJbnN0YW5jZU9mc3EAfgAM4n07kXQADHN5bmNocm9uaXplZHNxAH4ADH9xwqh0AA0kaXNJbnN0YW5jZU9mc3EAfgAMOs40fXQACGNhbkVxdWFsc3EAfgAMRC5YcnQADmNvcHkkZGVmYXVsdCQ0c3EAfgAMJA+S1XQADXByb2R1Y3RQcmVmaXhzcQB+AAycMytgdAAJbm90aWZ5QWxsc3EAfgAM3haqfXQAC3JlYWRSZXNvbHZlc3EAfgAM/r6r8nQABW5UeEluc3EAfgAMARC7G3QADGlzSW5zdGFuY2VPZnNxAH4ADF1Nkt90AAd2ZXJzaW9uc3EAfgAMQLz5JXQABjxpbml0PnNxAH4ADEaDc4x0AAVhcHBseXNxAH4ADJoKaQF0AAI9PXNxAH4ADBYUa1h0AAVjbG9uZXNxAH4ADPoFjm10AAR0eEluc3EAfgAM3Wy9r3QADmNvcHkkZGVmYXVsdCQzc3EAfgAMnjt7BHQABGNvcHlzcQB+AAxyJH+ddAAIdG9TdHJpbmdzcQB+AAwuJqvkdAAFdHhPdXRzcQB+AAwXu+D2dAAIbG9ja1RpbWVzcQB+AAx/5du7dAACIT1zcQB+AAzYfS4gdAAIZ2V0Q2xhc3NzcQB+AAyxvfJpdAAOY29weSRkZWZhdWx0JDFzcQB+AAzSjKAadAAOY29weSRkZWZhdWx0JDZzcQB+AAzCaMCPdAACbmVzcQB+AAwNFY4/dAACZXFzcQB+AAwhDpYYdAAPcHJvZHVjdEl0ZXJhdG9yc3EAfgAMi7czbXQAAiMjc3EAfgAMysw+YXQACGZpbmFsaXplc3EAfgAMy2L9B3QADnByb2R1Y3RFbGVtZW50c3EAfgAMnoyLkHQACGhhc2hDb2Rlc3IAE3hzYnRpLmFwaS5Tb3VyY2VBUEm5Xqf5KSM4pAIAAlsAC2RlZmluaXRpb25zdAAXW0x4c2J0aS9hcGkvRGVmaW5pdGlvbjtbAAhwYWNrYWdlc3QAFFtMeHNidGkvYXBpL1BhY2thZ2U7eHB1cgAXW0x4c2J0aS5hcGkuRGVmaW5pdGlvbjuIyVzntONeDgIAAHhwAAAAAnNyABN4c2J0aS5hcGkuQ2xhc3NMaWtlgzQcod+wl2wCAARMAA5kZWZpbml0aW9uVHlwZXQAGkx4c2J0aS9hcGkvRGVmaW5pdGlvblR5cGU7WwAQc2F2ZWRBbm5vdGF0aW9uc3QAE1tMamF2YS9sYW5nL1N0cmluZztMAAhzZWxmVHlwZXQAEEx4c2J0aS9hcGkvTGF6eTtMAAlzdHJ1Y3R1cmVxAH4Aa3hyACF4c2J0aS5hcGkuUGFyYW1ldGVyaXplZERlZmluaXRpb275EW6x1VA84gIAAVsADnR5cGVQYXJhbWV0ZXJzdAAaW0x4c2J0aS9hcGkvVHlwZVBhcmFtZXRlcjt4cgAUeHNidGkuYXBpLkRlZmluaXRpb26HKhvocULjRgIABEwABmFjY2Vzc3QAEkx4c2J0aS9hcGkvQWNjZXNzO1sAC2Fubm90YXRpb25zdAAXW0x4c2J0aS9hcGkvQW5ub3RhdGlvbjtMAAltb2RpZmllcnN0ABVMeHNidGkvYXBpL01vZGlmaWVycztMAARuYW1lcQB+AA14cHNyABB4c2J0aS5hcGkuUHVibGljulg9rmwtYEICAAB4cgAQeHNidGkuYXBpLkFjY2Vzc91imvgdYzFIAgAAeHB1cgAXW0x4c2J0aS5hcGkuQW5ub3RhdGlvbjvrl+sZEPaNSAIAAHhwAAAAAHNyABN4c2J0aS5hcGkuTW9kaWZpZXJzxxETIWmc3CQCAAFCAAVmbGFnc3hwAHQAEmRvbWFpbi5UcmFuc2FjdGlvbnVyABpbTHhzYnRpLmFwaS5UeXBlUGFyYW1ldGVyO9ltJg8onfK2AgAAeHAAAAAAfnIAGHhzYnRpLmFwaS5EZWZpbml0aW9uVHlwZQAAAAAAAAAAEgAAeHIADmphdmEubGFuZy5FbnVtAAAAAAAAAAASAAB4cHQACENsYXNzRGVmdXIAE1tMamF2YS5sYW5nLlN0cmluZzut0lbn6R17RwIAAHhwAAAAAHNyABN4c2J0aS5TYWZlTGF6eSRJbXBsUAIuk5eXQD8CAANaAAhiaXRtYXAkMEwAAl90dAASTGphdmEvbGFuZy9PYmplY3Q7TAAEZXZhbHQAEUxzY2FsYS9GdW5jdGlvbjA7eHIAFnhzYnRpLmFwaS5BYnN0cmFjdExhennTd7UBX7vnoAIAAHhwAXNyABN4c2J0aS5hcGkuRW1wdHlUeXBlvP2eRkk7iSQCAAB4cgAUeHNidGkuYXBpLlNpbXBsZVR5cGVyeGKIISO/QAIAAHhyAA54c2J0aS5hcGkuVHlwZT9q2SEWSarKAgAAeHBwc3EAfgCDAXNyABN4c2J0aS5hcGkuU3RydWN0dXJlqar5gJNv2AACAANMAAhkZWNsYXJlZHEAfgBrTAAJaW5oZXJpdGVkcQB+AGtMAAdwYXJlbnRzcQB+AGt4cQB+AIpzcQB+AIMBdXEAfgBmAAAAAHBzcQB+AIMBdXEAfgBmAAAAAHBzcQB+AIMBdXIAEVtMeHNidGkuYXBpLlR5cGU7dP+lWnv56UECAAB4cAAAAAZzcgAUeHNidGkuYXBpLlByb2plY3Rpb27z0o1U6UWkLQIAAkwAAmlkcQB+AA1MAAZwcmVmaXh0ABZMeHNidGkvYXBpL1NpbXBsZVR5cGU7eHEAfgCJdAAMU2VyaWFsaXphYmxlc3IAE3hzYnRpLmFwaS5TaW5nbGV0b278p1/4z1bkRgIAAUwABHBhdGh0ABBMeHNidGkvYXBpL1BhdGg7eHEAfgCJc3IADnhzYnRpLmFwaS5QYXRomz1cCM6lJ4QCAAFbAApjb21wb25lbnRzdAAaW0x4c2J0aS9hcGkvUGF0aENvbXBvbmVudDt4cHVyABpbTHhzYnRpLmFwaS5QYXRoQ29tcG9uZW50O0PaCXQtZxZ0AgAAeHAAAAACc3IADHhzYnRpLmFwaS5JZJgybIs3U8RAAgABTAACaWRxAH4ADXhyABd4c2J0aS5hcGkuUGF0aENvbXBvbmVudF+aIlsuhp+8AgAAeHB0AAVzY2FsYXNyAA54c2J0aS5hcGkuVGhpc9sJ7abMWkBcAgAAeHEAfgCjc3EAfgCWcQB+AJlzcQB+AJpzcQB+AJ11cQB+AKAAAAADc3EAfgCidAAEamF2YXNxAH4AonQAAmlvcQB+AKdzcQB+AJZ0AAdQcm9kdWN0cQB+AJxzcQB+AJZ0AAZFcXVhbHNxAH4AnHNxAH4AlnQABk9iamVjdHNxAH4AmnNxAH4AnXVxAH4AoAAAAANzcQB+AKJxAH4ArXNxAH4AonQABGxhbmdxAH4Ap3NxAH4AlnQAA0FueXEAfgCccHBzcQB+AGhxAH4AdXVxAH4AdgAAAABzcQB+AHgAdAASZG9tYWluLlRyYW5zYWN0aW9udXEAfgB7AAAAAH5xAH4AfXQABk1vZHVsZXVxAH4AgQAAAABzcQB+AIMBcQB+AItwc3EAfgCDAXNxAH4AjXNxAH4AgwF1cQB+AGYAAAAAcHNxAH4AgwF1cQB+AGYAAAAAcHNxAH4AgwF1cQB+AJQAAAAEc3EAfgCWcQB+AJlzcQB+AJpzcQB+AJ11cQB+AKAAAAACc3EAfgCicQB+AKVxAH4Ap3NxAH4AlnEAfgCZc3EAfgCac3EAfgCddXEAfgCgAAAAA3NxAH4AonEAfgCtc3EAfgCidAACaW9xAH4Ap3NxAH4AlnEAfgC1c3EAfgCac3EAfgCddXEAfgCgAAAAA3NxAH4AonEAfgCtc3EAfgCicQB+ALtxAH4Ap3NxAH4AlnEAfgC9cQB+ANBwcHVyABRbTHhzYnRpLmFwaS5QYWNrYWdlO1sTGTdwpyehAgAAeHAAAAABc3IAEXhzYnRpLmFwaS5QYWNrYWdlflmP9q7OOVgCAAFMAARuYW1lcQB+AA14cHQABmRvbWFpbnNyABV4c2J0aS5hcGkuQ29tcGlsYXRpb27t+uDDauigQgIAAkoACXN0YXJ0VGltZVsAB291dHB1dHN0ABpbTHhzYnRpL2FwaS9PdXRwdXRTZXR0aW5nO3hwAAABTZGqxDx1cgAaW0x4c2J0aS5hcGkuT3V0cHV0U2V0dGluZzt/asLzp4elQgIAAHhwAAAAAXNyABd4c2J0aS5hcGkuT3V0cHV0U2V0dGluZ3rZmkd0+x17AgACTAAPb3V0cHV0RGlyZWN0b3J5cQB+AA1MAA9zb3VyY2VEaXJlY3RvcnlxAH4ADXhwdAA0L2hvbWUvYW5kcmVhL3NjYWxhLWJpdGNvaW4vdGFyZ2V0L3NjYWxhLTIuMTEvY2xhc3Nlc3QAAS91cgACW0Ks8xf4BghU4AIAAHhwAAAAFKq0y0jzLnlTngw/l5bRuZSHre1Q
+/home/andrea/scala-bitcoin/src/main/scala/encoding/Parsing.scala -> 
+rO0ABXNyABB4c2J0aS5hcGkuU291cmNlFlpwRASfbtoCAAZJAAdhcGlIYXNoWgAIaGFzTWFjcm9MABhfaW50ZXJuYWxPbmx5X25hbWVIYXNoZXN0ACRMeHNidGkvYXBpL19pbnRlcm5hbE9ubHlfTmFtZUhhc2hlcztMAANhcGl0ABVMeHNidGkvYXBpL1NvdXJjZUFQSTtMAAtjb21waWxhdGlvbnQAF0x4c2J0aS9hcGkvQ29tcGlsYXRpb247WwAEaGFzaHQAAltCeHBeL6rsAHNyACJ4c2J0aS5hcGkuX2ludGVybmFsT25seV9OYW1lSGFzaGVzVNq+mfrU7EwCAAJbAA9pbXBsaWNpdE1lbWJlcnN0ACNbTHhzYnRpL2FwaS9faW50ZXJuYWxPbmx5X05hbWVIYXNoO1sADnJlZ3VsYXJNZW1iZXJzcQB+AAd4cHVyACNbTHhzYnRpLmFwaS5faW50ZXJuYWxPbmx5X05hbWVIYXNoO0lagLbdlov0AgAAeHAAAAABc3IAIHhzYnRpLmFwaS5faW50ZXJuYWxPbmx5X05hbWVIYXNoWw71InY4V88CAAJJAARoYXNoTAAEbmFtZXQAEkxqYXZhL2xhbmcvU3RyaW5nO3hwcaiFoHQAF015VHJhbnNhY3Rpb25Jc1JlYWRhYmxldXEAfgAJAAAAN3NxAH4AC5Y5YnR0AAZub3RpZnlzcQB+AAvMco6udAAEcmVhZHNxAH4AC4ZwejR0AAZudW1iZXJzcQB+AAvR7KnvdAAHdW5hcHBseXNxAH4AC2XCCxZ0AAdjdXJyaWVkc3EAfgALnnf9HXQADFBhcnNlRmFpbHVyZXNxAH4AC3EqqE50AAR3YWl0c3EAfgALQe2SAnQADXBhcnNlVWludDMyTEVzcQB+AAufba+fdAAOY29weSRkZWZhdWx0JDJzcQB+AAuanJWldAANJGFzSW5zdGFuY2VPZnNxAH4AC82z07J0AAdQYXJzaW5nc3EAfgAL5Gf+E3QAC1BhcnNlUmVzdWx0c3EAfgALrEkzKHQADU15VHJhbnNhY3Rpb25zcQB+AAuPjcOOdAAOU2VyaWFsaXplQnl0ZXNzcQB+AAsN7nsodAADbWFwc3EAfgAL+1UK1HQADHByb2R1Y3RBcml0eXNxAH4AC65q61p0AAZlcXVhbHNzcQB+AAsSSdRWdAAMYXNJbnN0YW5jZU9mc3EAfgALzkeKqXQABnJlc3VsdHNxAH4AC2/1/FR0AAxzeW5jaHJvbml6ZWRzcQB+AAt3HQ5pdAAMUGFyc2VTdWNjZXNzc3EAfgALqwli+XQADSRpc0luc3RhbmNlT2ZzcQB+AAsG+ARgdAAGdHVwbGVkc3EAfgALzK4yBnQACGNhbkVxdWFsc3EAfgALXLn5LXQADXByb2R1Y3RQcmVmaXhzcQB+AAvqBjxwdAAJbm90aWZ5QWxsc3EAfgALQdCcW3QAC3JlYWRSZXNvbHZlc3EAfgALr6QaxXQADGlzSW5zdGFuY2VPZnNxAH4AC1vTFC10AAY8aW5pdD5zcQB+AAt3UF0+dAAJUmVhZEJ5dGVzc3EAfgALOlqKHXQABWFwcGx5c3EAfgALMfjU9nQAB2ZsYXRNYXBzcQB+AAumfAzWdAACPT1zcQB+AAulYJNzdAAFY2xvbmVzcQB+AAsQvzMGdAAHY29tbWVudHNxAH4AC7ZZned0AARjb3B5c3EAfgALhbHJT3QAC3BhcnNlVWludDE2c3EAfgALMCsqH3QACHRvU3RyaW5nc3EAfgALDjAwC3QAA2VycnNxAH4ACzCZe7p0AAIhPXNxAH4ACytL8aV0AAN0aHJzcQB+AAt0azAxdAAIZ2V0Q2xhc3NzcQB+AAvzNp/ndAAKV3JpdGVCeXRlc3NxAH4AC8tl7+N0AA5jb3B5JGRlZmF1bHQkMXNxAH4AC8gvHlZ0ABNTZXJpYWxpemVCeXRlc05vbm5vc3EAfgAL5/4xKHQAAm5lc3EAfgALjYRiMnQAEkNvbXBvdW5kUGFyc2VkSXRlbXNxAH4AC8iaHat0AAJlcXNxAH4ACyQa7Ht0AA9wcm9kdWN0SXRlcmF0b3JzcQB+AAv0FnBQdAAFd3JpdGVzcQB+AAvqQrxbdAALcGFyc2VSZXN1bHRzcQB+AAs+UYN/dAACIyNzcQB+AAtS3nysdAAIZmluYWxpemVzcQB+AAsqC71kdAAOcHJvZHVjdEVsZW1lbnRzcQB+AAs+b8kldAAIaGFzaENvZGVzcgATeHNidGkuYXBpLlNvdXJjZUFQSblep/kpIzikAgACWwALZGVmaW5pdGlvbnN0ABdbTHhzYnRpL2FwaS9EZWZpbml0aW9uO1sACHBhY2thZ2VzdAAUW0x4c2J0aS9hcGkvUGFja2FnZTt4cHVyABdbTHhzYnRpLmFwaS5EZWZpbml0aW9uO4jJXOe0414OAgAAeHAAAAABc3IAE3hzYnRpLmFwaS5DbGFzc0xpa2WDNByh37CXbAIABEwADmRlZmluaXRpb25UeXBldAAaTHhzYnRpL2FwaS9EZWZpbml0aW9uVHlwZTtbABBzYXZlZEFubm90YXRpb25zdAATW0xqYXZhL2xhbmcvU3RyaW5nO0wACHNlbGZUeXBldAAQTHhzYnRpL2FwaS9MYXp5O0wACXN0cnVjdHVyZXEAfgCHeHIAIXhzYnRpLmFwaS5QYXJhbWV0ZXJpemVkRGVmaW5pdGlvbvkRbrHVUDziAgABWwAOdHlwZVBhcmFtZXRlcnN0ABpbTHhzYnRpL2FwaS9UeXBlUGFyYW1ldGVyO3hyABR4c2J0aS5hcGkuRGVmaW5pdGlvbocqG+hxQuNGAgAETAAGYWNjZXNzdAASTHhzYnRpL2FwaS9BY2Nlc3M7WwALYW5ub3RhdGlvbnN0ABdbTHhzYnRpL2FwaS9Bbm5vdGF0aW9uO0wACW1vZGlmaWVyc3QAFUx4c2J0aS9hcGkvTW9kaWZpZXJzO0wABG5hbWVxAH4ADHhwc3IAEHhzYnRpLmFwaS5QdWJsaWO6WD2ubC1gQgIAAHhyABB4c2J0aS5hcGkuQWNjZXNz3WKa+B1jMUgCAAB4cHVyABdbTHhzYnRpLmFwaS5Bbm5vdGF0aW9uO+uX6xkQ9o1IAgAAeHAAAAAAc3IAE3hzYnRpLmFwaS5Nb2RpZmllcnPHERMhaZzcJAIAAUIABWZsYWdzeHAAdAAQZW5jb2RpbmcuUGFyc2luZ3VyABpbTHhzYnRpLmFwaS5UeXBlUGFyYW1ldGVyO9ltJg8onfK2AgAAeHAAAAAAfnIAGHhzYnRpLmFwaS5EZWZpbml0aW9uVHlwZQAAAAAAAAAAEgAAeHIADmphdmEubGFuZy5FbnVtAAAAAAAAAAASAAB4cHQABk1vZHVsZXVyABNbTGphdmEubGFuZy5TdHJpbmc7rdJW5+kde0cCAAB4cAAAAABzcgATeHNidGkuU2FmZUxhenkkSW1wbFACLpOXl0A/AgADWgAIYml0bWFwJDBMAAJfdHQAEkxqYXZhL2xhbmcvT2JqZWN0O0wABGV2YWx0ABFMc2NhbGEvRnVuY3Rpb24wO3hyABZ4c2J0aS5hcGkuQWJzdHJhY3RMYXp503e1AV+756ACAAB4cABwc3IAIHhzYnRpLlNhZmVMYXp5JCRhbm9uZnVuJHN0cmljdCQxAAAAAAAAAAACAAFMAAd2YWx1ZSQxcQB+AKB4cHNyABN4c2J0aS5hcGkuRW1wdHlUeXBlvP2eRkk7iSQCAAB4cgAUeHNidGkuYXBpLlNpbXBsZVR5cGVyeGKIISO/QAIAAHhyAA54c2J0aS5hcGkuVHlwZT9q2SEWSarKAgAAeHBzcQB+AJ8AcHNxAH4ApHNyABN4c2J0aS5hcGkuU3RydWN0dXJlqar5gJNv2AACAANMAAhkZWNsYXJlZHEAfgCHTAAJaW5oZXJpdGVkcQB+AIdMAAdwYXJlbnRzcQB+AId4cQB+AKhzcQB+AJ8AcHNxAH4ApHVxAH4AggAAAABzcQB+AJ8AcHNxAH4ApHVxAH4AggAAAABzcQB+AJ8AcHNxAH4ApHVyABFbTHhzYnRpLmFwaS5UeXBlO3T/pVp7+elBAgAAeHAAAAACc3IAFHhzYnRpLmFwaS5Qcm9qZWN0aW9u89KNVOlFpC0CAAJMAAJpZHEAfgAMTAAGcHJlZml4dAAWTHhzYnRpL2FwaS9TaW1wbGVUeXBlO3hxAH4Ap3QABk9iamVjdHNyABN4c2J0aS5hcGkuU2luZ2xldG9u/Kdf+M9W5EYCAAFMAARwYXRodAAQTHhzYnRpL2FwaS9QYXRoO3hxAH4Ap3NyAA54c2J0aS5hcGkuUGF0aJs9XAjOpSeEAgABWwAKY29tcG9uZW50c3QAGltMeHNidGkvYXBpL1BhdGhDb21wb25lbnQ7eHB1cgAaW0x4c2J0aS5hcGkuUGF0aENvbXBvbmVudDtD2gl0LWcWdAIAAHhwAAAAA3NyAAx4c2J0aS5hcGkuSWSYMmyLN1PEQAIAAUwAAmlkcQB+AAx4cgAXeHNidGkuYXBpLlBhdGhDb21wb25lbnRfmiJbLoafvAIAAHhwdAAEamF2YXNxAH4AxHQABGxhbmdzcgAOeHNidGkuYXBpLlRoaXPbCe2mzFpAXAIAAHhxAH4AxXNxAH4AuHQAA0FueXNxAH4AvHNxAH4Av3VxAH4AwgAAAAJzcQB+AMR0AAVzY2FsYXEAfgDLdXIAFFtMeHNidGkuYXBpLlBhY2thZ2U7WxMZN3CnJ6ECAAB4cAAAAAFzcgAReHNidGkuYXBpLlBhY2thZ2V+WY/2rs45WAIAAUwABG5hbWVxAH4ADHhwdAAIZW5jb2RpbmdzcgAVeHNidGkuYXBpLkNvbXBpbGF0aW9u7frgw2rooEICAAJKAAlzdGFydFRpbWVbAAdvdXRwdXRzdAAaW0x4c2J0aS9hcGkvT3V0cHV0U2V0dGluZzt4cAAAAU2Rqr4xdXIAGltMeHNidGkuYXBpLk91dHB1dFNldHRpbmc7f2rC86eHpUICAAB4cAAAAAFzcgAXeHNidGkuYXBpLk91dHB1dFNldHRpbmd62ZpHdPsdewIAAkwAD291dHB1dERpcmVjdG9yeXEAfgAMTAAPc291cmNlRGlyZWN0b3J5cQB+AAx4cHQANC9ob21lL2FuZHJlYS9zY2FsYS1iaXRjb2luL3RhcmdldC9zY2FsYS0yLjExL2NsYXNzZXN0AAEvdXIAAltCrPMX+AYIVOACAAB4cAAAABS5C5cJO5THjjCrI9hJAXdwExejyg==
+/home/andrea/scala-bitcoin/src/main/scala/encoding/TransactionParsers.scala -> 
+rO0ABXNyABB4c2J0aS5hcGkuU291cmNlFlpwRASfbtoCAAZJAAdhcGlIYXNoWgAIaGFzTWFjcm9MABhfaW50ZXJuYWxPbmx5X25hbWVIYXNoZXN0ACRMeHNidGkvYXBpL19pbnRlcm5hbE9ubHlfTmFtZUhhc2hlcztMAANhcGl0ABVMeHNidGkvYXBpL1NvdXJjZUFQSTtMAAtjb21waWxhdGlvbnQAF0x4c2J0aS9hcGkvQ29tcGlsYXRpb247WwAEaGFzaHQAAltCeHB7YN0eAHNyACJ4c2J0aS5hcGkuX2ludGVybmFsT25seV9OYW1lSGFzaGVzVNq+mfrU7EwCAAJbAA9pbXBsaWNpdE1lbWJlcnN0ACNbTHhzYnRpL2FwaS9faW50ZXJuYWxPbmx5X05hbWVIYXNoO1sADnJlZ3VsYXJNZW1iZXJzcQB+AAd4cHVyACNbTHhzYnRpLmFwaS5faW50ZXJuYWxPbmx5X05hbWVIYXNoO0lagLbdlov0AgAAeHAAAAACc3IAIHhzYnRpLmFwaS5faW50ZXJuYWxPbmx5X05hbWVIYXNoWw71InY4V88CAAJJAARoYXNoTAAEbmFtZXQAEkxqYXZhL2xhbmcvU3RyaW5nO3hwrulFyXQAEnJlYWRlclRvQnl0ZVJlYWRlcnNxAH4AC/V5/x50AAZhY2NlcHR1cQB+AAkAAACLc3EAfgAL6wBN5XQAEHdpdGhFcnJvck1lc3NhZ2VzcQB+AAuN+f99dAAKd2l0aEZpbHRlcnNxAH4ACz5ykel0AAJeXnNxAH4AC2WPnZR0AA9mbGF0TWFwV2l0aE5leHRzcQB+AAsTzJeLdAAGbm90aWZ5c3EAfgALARwBHXQAB2ZhaWx1cmVzcQB+AAu0xrDYdAAHdW5hcHBseXNxAH4AC4/MGXN0AAdjdXJyaWVkc3EAfgAL8rFeNHQABG5hbWVzcQB+AAtb0wdcdAADfHx8c3EAfgALHu92EHQAB3N1Y2Nlc3NzcQB+AAsMt15udAAGc291cmNlc3EAfgALX2o9gnQAC1BhcnNlcnNVdGlsc3EAfgALbSfklXQABHdhaXRzcQB+AAteOml9dAABKnNxAH4AC78UHNR0AAZhY2NlcHRzcQB+AAs4t6yydAAOY29weSRkZWZhdWx0JDJzcQB+AAvsvYbNdAAJdGFrZVdoaWxlc3EAfgALywzJFHQADSRhc0luc3RhbmNlT2ZzcQB+AAv9j/RhdAADb3B0c3EAfgALVtZSvXQACmVsZW1FeGNlcHRzcQB+AAsxuB0sdAAKbWFwUGFydGlhbHNxAH4AC5r+IO10AAZjb21taXRzcQB+AAtSlKA2dAAPZmlsdGVyV2l0aEVycm9yc3EAfgALMm5Q+HQAB2NvbXBvc2VzcQB+AAvafZIqdAALUGFyc2VSZXN1bHRzcQB+AAs7JicCdAAJdGFrZVVudGlsc3EAfgAL0wjWinQAA21hcHNxAH4AC2nwJG50AAdhbnlFbGVtc3EAfgALgjSRC3QADHByb2R1Y3RBcml0eXNxAH4AC1n0dkR0AAZlcXVhbHNzcQB+AAutgyAWdAAEbGluZXNxAH4AC2dI6Fx0AApwb3NpdGlvbmVkc3EAfgALO2BrCXQABUVycm9yc3EAfgALNO3ZGHQABHJlcE5zcQB+AAveY57sdAACdTFzcQB+AAviiC3odAAEcmVzdHNxAH4ACwy8odF0AAxhc0luc3RhbmNlT2ZzcQB+AAsk7E61dAABPHNxAH4AC1z4zsd0AAZyZXN1bHRzcQB+AAuhwS7XdAACdTRzcQB+AAsT2/xDdAADcG9zc3EAfgALYH6pxHQADUJpbmFyeVBhcnNlcnNzcQB+AAsWWDahdAAMc3luY2hyb25pemVkc3EAfgALa+6nrnQACU5vU3VjY2Vzc3NxAH4AC13WTMp0AAZwaHJhc2VzcQB+AAvtQoNDdAANJGlzSW5zdGFuY2VPZnNxAH4ACxmDDY10AAdhbmRUaGVuc3EAfgALIGJoLnQAAn4+c3EAfgALqDfyiHQABnR1cGxlZHNxAH4ACySlIX10AAZlbGVtT2ZzcQB+AAuhwlNOdAABfHNxAH4ACwqNzwV0AAhjYW5FcXVhbHNxAH4AC3/JK8Z0AARyZXAxc3EAfgALwqkYSXQAAj4+c3EAfgALtb9LTXQADXByb2R1Y3RQcmVmaXhzcQB+AAupL2XbdAAGJHRpbGRlc3EAfgAL3Zekp3QACW5vdGlmeUFsbHNxAH4AC6n0J5V0AAtyZWFkUmVzb2x2ZXNxAH4AC3w/kql0AAVuYW1lZHNxAH4AC+uR4Mh0AAJfMnNxAH4AC19zRZ90AAZ0b0xvbmdzcQB+AAuuU2eCdAAHRmFpbHVyZXNxAH4AC9SeEjp0AARkcm9wc3EAfgALcjOBZXQAA15eXnNxAH4AC/aDhcR0AAxpc0luc3RhbmNlT2ZzcQB+AAttDSwVdAAGYnl0ZUF0c3EAfgAL4sfwm3QABmZpbHRlcnNxAH4AC+PWUsl0AApCeXRlUmVhZGVyc3EAfgALntlBhHQABWJ5dGVzc3EAfgALBJITi3QAEkJ5dGVPZmZzZXRQb3NpdGlvbnNxAH4AC0vwoaZ0AAxsaW5lQ29udGVudHNzcQB+AAtRlTUVdAAGPGluaXQ+c3EAfgALYHjM8nQABm9mZnNldHNxAH4AC00bTBB0AARFbGVtc3EAfgALgLIPDnQAAnU4c3EAfgALR35V63QABUlucHV0c3EAfgALtTwd4XQAB3JlcDFzZXBzcQB+AAvUa61AdAAFYXBwbHlzcQB+AAtVQlYPdAAKc3VjY2Vzc2Z1bHNxAH4AC2ELthx0AAdmbGF0TWFwc3EAfgALn3TnSnQACWdldE9yRWxzZXNxAH4AC79+uex0AAR0YWtlc3EAfgALnsXpTXQABXBhcnNlc3EAfgALDDFoQXQABWF0RW5kc3EAfgALd3vbqHQAAj09c3EAfgAL5SBV63QABXRvSW50c3EAfgALGm1cDXQAC2FjY2VwdE1hdGNoc3EAfgALcsVXPnQABWNsb25lc3EAfgALgpSbpHQAAl8xc3EAfgALsPSk4HQAA25vdHNxAH4AC88vu/N0AAYkaW5pdCRzcQB+AAukoEd3dAABP3NxAH4ACymX0GZ0AAJeP3NxAH4AC0Sho8d0AARuZXh0c3EAfgALN0tob3QACGFjY2VwdElmc3EAfgALYGiLcXQABm1rTGlzdHNxAH4AC/36QfZ0AAVmaXJzdHNxAH4ACzA2OFV0AApsb25nU3RyaW5nc3EAfgALWZlocHQABGNvcHlzcQB+AAtQ5U2+dAAGY29sdW1uc3EAfgALjg4PeHQACHRvU3RyaW5nc3EAfgALAFIi6nQAA2VycnNxAH4ACzVvgHF0AANtc2dzcQB+AAuQW3q+dAAGbGVuZ3Roc3EAfgAL9umpo3QAAStzcQB+AAvKs2uRdAACIT1zcQB+AAvOlQ8YdAAEaW50b3NxAH4ACyxJ4ol0AANnZXRzcQB+AAsG6gs+dAASd2l0aEZhaWx1cmVNZXNzYWdlc3EAfgALKozpCHQACGdldENsYXNzc3EAfgALyyOfynQABWd1YXJkc3EAfgALq16IsHQADmNvcHkkZGVmYXVsdCQxc3EAfgALPednOXQAB2NoYWlubDFzcQB+AAsUOkGOdAAGUGFyc2Vyc3EAfgALJ0qB73QAB1N1Y2Nlc3NzcQB+AAuHRDSAdAADcmVwc3EAfgAL/QQF03QAAnUyc3EAfgALDIm+kHQAB2lzRW1wdHlzcQB+AAsVi+5/dAACbmVzcQB+AAsG01B+dAACPH5zcQB+AAtKiV+TdAAEYnl0ZXNxAH4AC/NG3Vh0AAF+c3EAfgALM5JfFnQACk9uY2VQYXJzZXJzcQB+AAvNQy7PdAAEZWxlbXNxAH4AC6AqEbN0AAlhY2NlcHRTZXFzcQB+AAsdTfRadAACZXFzcQB+AAua4EnPdAADdThkc3EAfgALbZ4FEHQAD3Byb2R1Y3RJdGVyYXRvcnNxAH4AC1r7NUp0AAN1NGZzcQB+AAvYgLuLdAADbG9nc3EAfgALFRjP7HQABnJlcHNlcHNxAH4AC6kvYB50AAJ+IXNxAH4AC3cSrc10AAIjI3NxAH4AC3O2NCx0AAhmaW5hbGl6ZXNxAH4ACy9Yr+B0AA5wcm9kdWN0RWxlbWVudHNxAH4AC+oPLFB0AAhoYXNoQ29kZXNxAH4AC0+kK3x0AAdjaGFpbnIxc3EAfgALHRc6inQABmFwcGVuZHNyABN4c2J0aS5hcGkuU291cmNlQVBJuV6n+SkjOKQCAAJbAAtkZWZpbml0aW9uc3QAF1tMeHNidGkvYXBpL0RlZmluaXRpb247WwAIcGFja2FnZXN0ABRbTHhzYnRpL2FwaS9QYWNrYWdlO3hwdXIAF1tMeHNidGkuYXBpLkRlZmluaXRpb247iMlc57TjXg4CAAB4cAAAAARzcgATeHNidGkuYXBpLkNsYXNzTGlrZYM0HKHfsJdsAgAETAAOZGVmaW5pdGlvblR5cGV0ABpMeHNidGkvYXBpL0RlZmluaXRpb25UeXBlO1sAEHNhdmVkQW5ub3RhdGlvbnN0ABNbTGphdmEvbGFuZy9TdHJpbmc7TAAIc2VsZlR5cGV0ABBMeHNidGkvYXBpL0xhenk7TAAJc3RydWN0dXJlcQB+ATF4cgAheHNidGkuYXBpLlBhcmFtZXRlcml6ZWREZWZpbml0aW9u+RFusdVQPOICAAFbAA50eXBlUGFyYW1ldGVyc3QAGltMeHNidGkvYXBpL1R5cGVQYXJhbWV0ZXI7eHIAFHhzYnRpLmFwaS5EZWZpbml0aW9uhyob6HFC40YCAARMAAZhY2Nlc3N0ABJMeHNidGkvYXBpL0FjY2VzcztbAAthbm5vdGF0aW9uc3QAF1tMeHNidGkvYXBpL0Fubm90YXRpb247TAAJbW9kaWZpZXJzdAAVTHhzYnRpL2FwaS9Nb2RpZmllcnM7TAAEbmFtZXEAfgAMeHBzcgAQeHNidGkuYXBpLlB1YmxpY7pYPa5sLWBCAgAAeHIAEHhzYnRpLmFwaS5BY2Nlc3PdYpr4HWMxSAIAAHhwdXIAF1tMeHNidGkuYXBpLkFubm90YXRpb24765frGRD2jUgCAAB4cAAAAABzcgATeHNidGkuYXBpLk1vZGlmaWVyc8cREyFpnNwkAgABQgAFZmxhZ3N4cAF0ABRlbmNvZGluZy5QYXJzZXJzVXRpbHVyABpbTHhzYnRpLmFwaS5UeXBlUGFyYW1ldGVyO9ltJg8onfK2AgAAeHAAAAAAfnIAGHhzYnRpLmFwaS5EZWZpbml0aW9uVHlwZQAAAAAAAAAAEgAAeHIADmphdmEubGFuZy5FbnVtAAAAAAAAAAASAAB4cHQABVRyYWl0dXIAE1tMamF2YS5sYW5nLlN0cmluZzut0lbn6R17RwIAAHhwAAAAAXQAGnNjYWxhLmFubm90YXRpb24ubWlncmF0aW9uc3IAE3hzYnRpLlNhZmVMYXp5JEltcGxQAi6Tl5dAPwIAA1oACGJpdG1hcCQwTAACX3R0ABJMamF2YS9sYW5nL09iamVjdDtMAARldmFsdAARTHNjYWxhL0Z1bmN0aW9uMDt4cgAWeHNidGkuYXBpLkFic3RyYWN0TGF6edN3tQFfu+egAgAAeHABc3IAE3hzYnRpLmFwaS5FbXB0eVR5cGW8/Z5GSTuJJAIAAHhyABR4c2J0aS5hcGkuU2ltcGxlVHlwZXJ4YoghI79AAgAAeHIADnhzYnRpLmFwaS5UeXBlP2rZIRZJqsoCAAB4cHBzcQB+AUoBc3IAE3hzYnRpLmFwaS5TdHJ1Y3R1cmWpqvmAk2/YAAIAA0wACGRlY2xhcmVkcQB+ATFMAAlpbmhlcml0ZWRxAH4BMUwAB3BhcmVudHNxAH4BMXhxAH4BUXNxAH4BSgF1cQB+ASwAAAAAcHNxAH4BSgF1cQB+ASwAAAAAcHNxAH4BSgF1cgARW0x4c2J0aS5hcGkuVHlwZTt0/6Vae/npQQIAAHhwAAAAA3NyABR4c2J0aS5hcGkuUHJvamVjdGlvbvPSjVTpRaQtAgACTAACaWRxAH4ADEwABnByZWZpeHQAFkx4c2J0aS9hcGkvU2ltcGxlVHlwZTt4cQB+AVB0AAdQYXJzZXJzc3IAE3hzYnRpLmFwaS5TaW5nbGV0b278p1/4z1bkRgIAAUwABHBhdGh0ABBMeHNidGkvYXBpL1BhdGg7eHEAfgFQc3IADnhzYnRpLmFwaS5QYXRomz1cCM6lJ4QCAAFbAApjb21wb25lbnRzdAAaW0x4c2J0aS9hcGkvUGF0aENvbXBvbmVudDt4cHVyABpbTHhzYnRpLmFwaS5QYXRoQ29tcG9uZW50O0PaCXQtZxZ0AgAAeHAAAAAFc3IADHhzYnRpLmFwaS5JZJgybIs3U8RAAgABTAACaWRxAH4ADHhyABd4c2J0aS5hcGkuUGF0aENvbXBvbmVudF+aIlsuhp+8AgAAeHB0AAVzY2FsYXNxAH4BaXQABHV0aWxzcQB+AWl0AAdwYXJzaW5nc3EAfgFpdAAKY29tYmluYXRvcnNyAA54c2J0aS5hcGkuVGhpc9sJ7abMWkBcAgAAeHEAfgFqc3EAfgFddAAGT2JqZWN0c3EAfgFhc3EAfgFkdXEAfgFnAAAAA3NxAH4BaXQABGphdmFzcQB+AWl0AARsYW5ncQB+AXRzcQB+AV10AANBbnlzcQB+AWFzcQB+AWR1cQB+AWcAAAACc3EAfgFpcQB+AWxxAH4BdHBwc3EAfgEucQB+ATt1cQB+ATwAAAAAc3EAfgE+AHQAG2VuY29kaW5nLkJ5dGVPZmZzZXRQb3NpdGlvbnVxAH4BQQAAAAB+cQB+AUN0AAhDbGFzc0RlZnVxAH4BRwAAAABzcQB+AUoBcQB+AVJwc3EAfgFKAXNxAH4BVHNxAH4BSgF1cQB+ASwAAAAAcHNxAH4BSgF1cQB+ASwAAAAAcHNxAH4BSgF1cQB+AVsAAAAHc3EAfgFddAAMU2VyaWFsaXphYmxlc3EAfgFhc3EAfgFkdXEAfgFnAAAAAnNxAH4BaXEAfgFscQB+AXRzcQB+AV1xAH4BlnNxAH4BYXNxAH4BZHVxAH4BZwAAAANzcQB+AWlxAH4Be3NxAH4BaXQAAmlvcQB+AXRzcQB+AV10AAdQcm9kdWN0cQB+AZdzcQB+AV10AAZFcXVhbHNxAH4Bl3NxAH4BXXQACFBvc2l0aW9uc3EAfgFhc3EAfgFkdXEAfgFnAAAABXNxAH4BaXEAfgFsc3EAfgFpdAAEdXRpbHNxAH4BaXQAB3BhcnNpbmdzcQB+AWl0AAVpbnB1dHEAfgF0c3EAfgFdcQB+AXZzcQB+AWFzcQB+AWR1cQB+AWcAAAADc3EAfgFpcQB+AXtzcQB+AWlxAH4BfXEAfgF0c3EAfgFdcQB+AX9xAH4Bl3Bwc3EAfgEucQB+ATt1cQB+ATwAAAAAc3EAfgE+AHQAE2VuY29kaW5nLkJ5dGVSZWFkZXJ1cQB+AUEAAAAAcQB+AYl1cQB+AUcAAAAAc3EAfgFKAXEAfgFScHNxAH4BSgFzcQB+AVRzcQB+AUoBdXEAfgEsAAAAAHBzcQB+AUoBdXEAfgEsAAAAAHBzcQB+AUoBdXEAfgFbAAAAA3NyABd4c2J0aS5hcGkuUGFyYW1ldGVyaXplZBZs7mkDybt/AgACTAAIYmFzZVR5cGVxAH4BXlsADXR5cGVBcmd1bWVudHN0ABFbTHhzYnRpL2FwaS9UeXBlO3hxAH4BUHNxAH4BXXQABlJlYWRlcnNxAH4BYXNxAH4BZHVxAH4BZwAAAAVzcQB+AWlxAH4BbHNxAH4BaXQABHV0aWxzcQB+AWl0AAdwYXJzaW5nc3EAfgFpdAAFaW5wdXRxAH4BdHVxAH4BWwAAAAFzcQB+AV10AARCeXRlc3EAfgFhc3EAfgFkdXEAfgFnAAAAAnNxAH4BaXEAfgFscQB+AXRzcQB+AV1xAH4BdnNxAH4BYXNxAH4BZHVxAH4BZwAAAANzcQB+AWlxAH4Be3NxAH4BaXEAfgF9cQB+AXRzcQB+AV1xAH4Bf3EAfgHacHBzcQB+AS5xAH4BO3VxAH4BPAAAAABzcQB+AT4BdAAWZW5jb2RpbmcuQmluYXJ5UGFyc2Vyc3VxAH4BQQAAAABxAH4BRXVxAH4BRwAAAAF0ABpzY2FsYS5hbm5vdGF0aW9uLm1pZ3JhdGlvbnNxAH4BSgFxAH4BUnBzcQB+AUoBc3EAfgFUc3EAfgFKAXVxAH4BLAAAAABwc3EAfgFKAXVxAH4BLAAAAABwc3EAfgFKAXVxAH4BWwAAAARzcQB+AV10AAtQYXJzZXJzVXRpbHNxAH4BYXNxAH4BZHVxAH4BZwAAAAJzcQB+AWl0AAhlbmNvZGluZ3EAfgF0c3EAfgFddAAHUGFyc2Vyc3NxAH4BYXNxAH4BZHVxAH4BZwAAAAVzcQB+AWlxAH4BbHNxAH4BaXQABHV0aWxzcQB+AWl0AAdwYXJzaW5nc3EAfgFpdAAKY29tYmluYXRvcnEAfgF0c3EAfgFdcQB+AXZzcQB+AWFzcQB+AWR1cQB+AWcAAAADc3EAfgFpcQB+AXtzcQB+AWlxAH4BfXEAfgF0c3EAfgFdcQB+AX9zcQB+AWFzcQB+AWR1cQB+AWcAAAACc3EAfgFpcQB+AWxxAH4BdHBwdXIAFFtMeHNidGkuYXBpLlBhY2thZ2U7WxMZN3CnJ6ECAAB4cAAAAAFzcgAReHNidGkuYXBpLlBhY2thZ2V+WY/2rs45WAIAAUwABG5hbWVxAH4ADHhwdAAIZW5jb2RpbmdzcgAVeHNidGkuYXBpLkNvbXBpbGF0aW9u7frgw2rooEICAAJKAAlzdGFydFRpbWVbAAdvdXRwdXRzdAAaW0x4c2J0aS9hcGkvT3V0cHV0U2V0dGluZzt4cAAAAU2AikmcdXIAGltMeHNidGkuYXBpLk91dHB1dFNldHRpbmc7f2rC86eHpUICAAB4cAAAAAFzcgAXeHNidGkuYXBpLk91dHB1dFNldHRpbmd62ZpHdPsdewIAAkwAD291dHB1dERpcmVjdG9yeXEAfgAMTAAPc291cmNlRGlyZWN0b3J5cQB+AAx4cHQANC9ob21lL2FuZHJlYS9zY2FsYS1iaXRjb2luL3RhcmdldC9zY2FsYS0yLjExL2NsYXNzZXN0AAEvdXIAAltCrPMX+AYIVOACAAB4cAAAABTpWpP4rgs/7Gbz5yADuaTYnWjEzw==
+/home/andrea/scala-bitcoin/src/main/scala/playground/FutureMonad.scala -> 
+rO0ABXNyABB4c2J0aS5hcGkuU291cmNlFlpwRASfbtoCAAZJAAdhcGlIYXNoWgAIaGFzTWFjcm9MABhfaW50ZXJuYWxPbmx5X25hbWVIYXNoZXN0ACRMeHNidGkvYXBpL19pbnRlcm5hbE9ubHlfTmFtZUhhc2hlcztMAANhcGl0ABVMeHNidGkvYXBpL1NvdXJjZUFQSTtMAAtjb21waWxhdGlvbnQAF0x4c2J0aS9hcGkvQ29tcGlsYXRpb247WwAEaGFzaHQAAltCeHBofD6FAHNyACJ4c2J0aS5hcGkuX2ludGVybmFsT25seV9OYW1lSGFzaGVzVNq+mfrU7EwCAAJbAA9pbXBsaWNpdE1lbWJlcnN0ACNbTHhzYnRpL2FwaS9faW50ZXJuYWxPbmx5X05hbWVIYXNoO1sADnJlZ3VsYXJNZW1iZXJzcQB+AAd4cHVyACNbTHhzYnRpLmFwaS5faW50ZXJuYWxPbmx5X05hbWVIYXNoO0lagLbdlov0AgAAeHAAAAAAdXEAfgAJAAAAFHNyACB4c2J0aS5hcGkuX2ludGVybmFsT25seV9OYW1lSGFzaFsO9SJ2OFfPAgACSQAEaGFzaEwABG5hbWV0ABJMamF2YS9sYW5nL1N0cmluZzt4cDAckax0AAZub3RpZnlzcQB+AAwv8jMwdAAEd2FpdHNxAH4ADJAdA/J0AA0kYXNJbnN0YW5jZU9mc3EAfgAMu0cVqnQABmVxdWFsc3NxAH4ADHQtj6J0AAxhc0luc3RhbmNlT2ZzcQB+AAz/LFVydAAMc3luY2hyb25pemVkc3EAfgAMxplpl3QADSRpc0luc3RhbmNlT2ZzcQB+AAwMl7SudAAJbm90aWZ5QWxsc3EAfgAMNe7QBXQADGlzSW5zdGFuY2VPZnNxAH4ADAbTJSt0AAI9PXNxAH4ADGX3piF0AAVjbG9uZXNxAH4ADOPD7MZ0AAh0b1N0cmluZ3NxAH4ADMYbv6R0AAtGdXR1cmVNb25hZHNxAH4ADIuPf2x0AAIhPXNxAH4ADHCsNjF0AAhnZXRDbGFzc3NxAH4ADFo09FV0AAJuZXNxAH4ADMFRg/R0AAJlcXNxAH4ADDFfpVp0AAIjI3NxAH4ADKvf8m90AAhmaW5hbGl6ZXNxAH4ADK9zHmF0AAhoYXNoQ29kZXNyABN4c2J0aS5hcGkuU291cmNlQVBJuV6n+SkjOKQCAAJbAAtkZWZpbml0aW9uc3QAF1tMeHNidGkvYXBpL0RlZmluaXRpb247WwAIcGFja2FnZXN0ABRbTHhzYnRpL2FwaS9QYWNrYWdlO3hwdXIAF1tMeHNidGkuYXBpLkRlZmluaXRpb247iMlc57TjXg4CAAB4cAAAAAFzcgATeHNidGkuYXBpLkNsYXNzTGlrZYM0HKHfsJdsAgAETAAOZGVmaW5pdGlvblR5cGV0ABpMeHNidGkvYXBpL0RlZmluaXRpb25UeXBlO1sAEHNhdmVkQW5ub3RhdGlvbnN0ABNbTGphdmEvbGFuZy9TdHJpbmc7TAAIc2VsZlR5cGV0ABBMeHNidGkvYXBpL0xhenk7TAAJc3RydWN0dXJlcQB+AD94cgAheHNidGkuYXBpLlBhcmFtZXRlcml6ZWREZWZpbml0aW9u+RFusdVQPOICAAFbAA50eXBlUGFyYW1ldGVyc3QAGltMeHNidGkvYXBpL1R5cGVQYXJhbWV0ZXI7eHIAFHhzYnRpLmFwaS5EZWZpbml0aW9uhyob6HFC40YCAARMAAZhY2Nlc3N0ABJMeHNidGkvYXBpL0FjY2VzcztbAAthbm5vdGF0aW9uc3QAF1tMeHNidGkvYXBpL0Fubm90YXRpb247TAAJbW9kaWZpZXJzdAAVTHhzYnRpL2FwaS9Nb2RpZmllcnM7TAAEbmFtZXEAfgANeHBzcgAQeHNidGkuYXBpLlB1YmxpY7pYPa5sLWBCAgAAeHIAEHhzYnRpLmFwaS5BY2Nlc3PdYpr4HWMxSAIAAHhwdXIAF1tMeHNidGkuYXBpLkFubm90YXRpb24765frGRD2jUgCAAB4cAAAAABzcgATeHNidGkuYXBpLk1vZGlmaWVyc8cREyFpnNwkAgABQgAFZmxhZ3N4cAB0ABZwbGF5Z3JvdW5kLkZ1dHVyZU1vbmFkdXIAGltMeHNidGkuYXBpLlR5cGVQYXJhbWV0ZXI72W0mDyid8rYCAAB4cAAAAAB+cgAYeHNidGkuYXBpLkRlZmluaXRpb25UeXBlAAAAAAAAAAASAAB4cgAOamF2YS5sYW5nLkVudW0AAAAAAAAAABIAAHhwdAAGTW9kdWxldXIAE1tMamF2YS5sYW5nLlN0cmluZzut0lbn6R17RwIAAHhwAAAAAHNyABN4c2J0aS5TYWZlTGF6eSRJbXBsUAIuk5eXQD8CAANaAAhiaXRtYXAkMEwAAl90dAASTGphdmEvbGFuZy9PYmplY3Q7TAAEZXZhbHQAEUxzY2FsYS9GdW5jdGlvbjA7eHIAFnhzYnRpLmFwaS5BYnN0cmFjdExhennTd7UBX7vnoAIAAHhwAHBzcgAgeHNidGkuU2FmZUxhenkkJGFub25mdW4kc3RyaWN0JDEAAAAAAAAAAAIAAUwAB3ZhbHVlJDFxAH4AWHhwc3IAE3hzYnRpLmFwaS5FbXB0eVR5cGW8/Z5GSTuJJAIAAHhyABR4c2J0aS5hcGkuU2ltcGxlVHlwZXJ4YoghI79AAgAAeHIADnhzYnRpLmFwaS5UeXBlP2rZIRZJqsoCAAB4cHNxAH4AVwFzcgATeHNidGkuYXBpLlN0cnVjdHVyZamq+YCTb9gAAgADTAAIZGVjbGFyZWRxAH4AP0wACWluaGVyaXRlZHEAfgA/TAAHcGFyZW50c3EAfgA/eHEAfgBgc3EAfgBXAXVxAH4AOgAAAABwc3EAfgBXAXVxAH4AOgAAAABwc3EAfgBXAXVyABFbTHhzYnRpLmFwaS5UeXBlO3T/pVp7+elBAgAAeHAAAAACc3IAFHhzYnRpLmFwaS5Qcm9qZWN0aW9u89KNVOlFpC0CAAJMAAJpZHEAfgANTAAGcHJlZml4dAAWTHhzYnRpL2FwaS9TaW1wbGVUeXBlO3hxAH4AX3QABk9iamVjdHNyABN4c2J0aS5hcGkuU2luZ2xldG9u/Kdf+M9W5EYCAAFMAARwYXRodAAQTHhzYnRpL2FwaS9QYXRoO3hxAH4AX3NyAA54c2J0aS5hcGkuUGF0aJs9XAjOpSeEAgABWwAKY29tcG9uZW50c3QAGltMeHNidGkvYXBpL1BhdGhDb21wb25lbnQ7eHB1cgAaW0x4c2J0aS5hcGkuUGF0aENvbXBvbmVudDtD2gl0LWcWdAIAAHhwAAAAA3NyAAx4c2J0aS5hcGkuSWSYMmyLN1PEQAIAAUwAAmlkcQB+AA14cgAXeHNidGkuYXBpLlBhdGhDb21wb25lbnRfmiJbLoafvAIAAHhwdAAEamF2YXNxAH4AeHQABGxhbmdzcgAOeHNidGkuYXBpLlRoaXPbCe2mzFpAXAIAAHhxAH4AeXNxAH4AbHQAA0FueXNxAH4AcHNxAH4Ac3VxAH4AdgAAAAJzcQB+AHh0AAVzY2FsYXEAfgB/cHB1cgAUW0x4c2J0aS5hcGkuUGFja2FnZTtbExk3cKcnoQIAAHhwAAAAAXNyABF4c2J0aS5hcGkuUGFja2FnZX5Zj/auzjlYAgABTAAEbmFtZXEAfgANeHB0AApwbGF5Z3JvdW5kc3IAFXhzYnRpLmFwaS5Db21waWxhdGlvbu364MNq6KBCAgACSgAJc3RhcnRUaW1lWwAHb3V0cHV0c3QAGltMeHNidGkvYXBpL091dHB1dFNldHRpbmc7eHAAAAFNiyEFR3VyABpbTHhzYnRpLmFwaS5PdXRwdXRTZXR0aW5nO39qwvOnh6VCAgAAeHAAAAABc3IAF3hzYnRpLmFwaS5PdXRwdXRTZXR0aW5netmaR3T7HXsCAAJMAA9vdXRwdXREaXJlY3RvcnlxAH4ADUwAD3NvdXJjZURpcmVjdG9yeXEAfgANeHB0ADQvaG9tZS9hbmRyZWEvc2NhbGEtYml0Y29pbi90YXJnZXQvc2NhbGEtMi4xMS9jbGFzc2VzdAABL3VyAAJbQqzzF/gGCFTgAgAAeHAAAAAUeUQRQH7a3AUenaHGZQMzfrUet+U=
+/home/andrea/scala-bitcoin/src/main/scala/playground/RabbitFactorMonad.scala -> 
+rO0ABXNyABB4c2J0aS5hcGkuU291cmNlFlpwRASfbtoCAAZJAAdhcGlIYXNoWgAIaGFzTWFjcm9MABhfaW50ZXJuYWxPbmx5X25hbWVIYXNoZXN0ACRMeHNidGkvYXBpL19pbnRlcm5hbE9ubHlfTmFtZUhhc2hlcztMAANhcGl0ABVMeHNidGkvYXBpL1NvdXJjZUFQSTtMAAtjb21waWxhdGlvbnQAF0x4c2J0aS9hcGkvQ29tcGlsYXRpb247WwAEaGFzaHQAAltCeHA+9EvSAHNyACJ4c2J0aS5hcGkuX2ludGVybmFsT25seV9OYW1lSGFzaGVzVNq+mfrU7EwCAAJbAA9pbXBsaWNpdE1lbWJlcnN0ACNbTHhzYnRpL2FwaS9faW50ZXJuYWxPbmx5X05hbWVIYXNoO1sADnJlZ3VsYXJNZW1iZXJzcQB+AAd4cHVyACNbTHhzYnRpLmFwaS5faW50ZXJuYWxPbmx5X05hbWVIYXNoO0lagLbdlov0AgAAeHAAAAAAdXEAfgAJAAAAJXNyACB4c2J0aS5hcGkuX2ludGVybmFsT25seV9OYW1lSGFzaFsO9SJ2OFfPAgACSQAEaGFzaEwABG5hbWV0ABJMamF2YS9sYW5nL1N0cmluZzt4cPaPWZZ0AAZub3RpZnlzcQB+AAyzThkadAAHdW5hcHBseXNxAH4ADO9BBpl0AAR3YWl0c3EAfgAMSAZ26XQADSRhc0luc3RhbmNlT2ZzcQB+AAzqr2YldAAIcHJvdmFGb3JzcQB+AAxkV5w+dAADbWFwc3EAfgAMdaUylnQADHByb2R1Y3RBcml0eXNxAH4ADFAdYCR0AAZlcXVhbHNzcQB+AAwdlOoZdAAMYXNJbnN0YW5jZU9mc3EAfgAM+Bpi63QADHN5bmNocm9uaXplZHNxAH4ADEVhjiB0AA0kaXNJbnN0YW5jZU9mc3EAfgAMcNt1a3QACGNhbkVxdWFsc3EAfgAMlsvna3QADXByb2R1Y3RQcmVmaXhzcQB+AAzV9YKEdAAJbm90aWZ5QWxsc3EAfgAMQRq6g3QAC3JlYWRSZXNvbHZlc3EAfgAMGyjps3QADGlzSW5zdGFuY2VPZnNxAH4ADJH175h0AAY8aW5pdD5zcQB+AAzQ7lV4dAAHUkZhY3RvcnNxAH4ADFI1eZN0AAhSRmFjdG9yMXNxAH4ADP9LZ4J0AAVhcHBseXNxAH4ADGmHVA50ABFSYWJiaXRGYWN0b3JNb25hZHNxAH4ADPlmDKd0AAdmbGF0TWFwc3EAfgAMXuf8t3QAAj09c3EAfgAMCVwg6nQABWNsb25lc3EAfgAMj6Jn3XQABGNvcHlzcQB+AAxVSJpxdAAIdG9TdHJpbmdzcQB+AAz2kyPIdAACIT1zcQB+AAw8xjFpdAAIZ2V0Q2xhc3NzcQB+AAwUahZydAAOY29weSRkZWZhdWx0JDFzcQB+AAzBcV0JdAACbmVzcQB+AAz+R6gPdAAFdmFsdWVzcQB+AAxMYg9wdAACZXFzcQB+AAxO8KaqdAAPcHJvZHVjdEl0ZXJhdG9yc3EAfgAMhF7VhnQAAiMjc3EAfgAMwzk1yXQACGZpbmFsaXplc3EAfgAMabgNt3QADnByb2R1Y3RFbGVtZW50c3EAfgAM2t6ygHQACGhhc2hDb2Rlc3IAE3hzYnRpLmFwaS5Tb3VyY2VBUEm5Xqf5KSM4pAIAAlsAC2RlZmluaXRpb25zdAAXW0x4c2J0aS9hcGkvRGVmaW5pdGlvbjtbAAhwYWNrYWdlc3QAFFtMeHNidGkvYXBpL1BhY2thZ2U7eHB1cgAXW0x4c2J0aS5hcGkuRGVmaW5pdGlvbjuIyVzntONeDgIAAHhwAAAAAXNyABN4c2J0aS5hcGkuQ2xhc3NMaWtlgzQcod+wl2wCAARMAA5kZWZpbml0aW9uVHlwZXQAGkx4c2J0aS9hcGkvRGVmaW5pdGlvblR5cGU7WwAQc2F2ZWRBbm5vdGF0aW9uc3QAE1tMamF2YS9sYW5nL1N0cmluZztMAAhzZWxmVHlwZXQAEEx4c2J0aS9hcGkvTGF6eTtMAAlzdHJ1Y3R1cmVxAH4AYXhyACF4c2J0aS5hcGkuUGFyYW1ldGVyaXplZERlZmluaXRpb275EW6x1VA84gIAAVsADnR5cGVQYXJhbWV0ZXJzdAAaW0x4c2J0aS9hcGkvVHlwZVBhcmFtZXRlcjt4cgAUeHNidGkuYXBpLkRlZmluaXRpb26HKhvocULjRgIABEwABmFjY2Vzc3QAEkx4c2J0aS9hcGkvQWNjZXNzO1sAC2Fubm90YXRpb25zdAAXW0x4c2J0aS9hcGkvQW5ub3RhdGlvbjtMAAltb2RpZmllcnN0ABVMeHNidGkvYXBpL01vZGlmaWVycztMAARuYW1lcQB+AA14cHNyABB4c2J0aS5hcGkuUHVibGljulg9rmwtYEICAAB4cgAQeHNidGkuYXBpLkFjY2Vzc91imvgdYzFIAgAAeHB1cgAXW0x4c2J0aS5hcGkuQW5ub3RhdGlvbjvrl+sZEPaNSAIAAHhwAAAAAHNyABN4c2J0aS5hcGkuTW9kaWZpZXJzxxETIWmc3CQCAAFCAAVmbGFnc3hwAHQAHHBsYXlncm91bmQuUmFiYml0RmFjdG9yTW9uYWR1cgAaW0x4c2J0aS5hcGkuVHlwZVBhcmFtZXRlcjvZbSYPKJ3ytgIAAHhwAAAAAH5yABh4c2J0aS5hcGkuRGVmaW5pdGlvblR5cGUAAAAAAAAAABIAAHhyAA5qYXZhLmxhbmcuRW51bQAAAAAAAAAAEgAAeHB0AAZNb2R1bGV1cgATW0xqYXZhLmxhbmcuU3RyaW5nO63SVufpHXtHAgAAeHAAAAAAc3IAE3hzYnRpLlNhZmVMYXp5JEltcGxQAi6Tl5dAPwIAA1oACGJpdG1hcCQwTAACX3R0ABJMamF2YS9sYW5nL09iamVjdDtMAARldmFsdAARTHNjYWxhL0Z1bmN0aW9uMDt4cgAWeHNidGkuYXBpLkFic3RyYWN0TGF6edN3tQFfu+egAgAAeHABc3IAE3hzYnRpLmFwaS5FbXB0eVR5cGW8/Z5GSTuJJAIAAHhyABR4c2J0aS5hcGkuU2ltcGxlVHlwZXJ4YoghI79AAgAAeHIADnhzYnRpLmFwaS5UeXBlP2rZIRZJqsoCAAB4cHBzcQB+AHkBc3IAE3hzYnRpLmFwaS5TdHJ1Y3R1cmWpqvmAk2/YAAIAA0wACGRlY2xhcmVkcQB+AGFMAAlpbmhlcml0ZWRxAH4AYUwAB3BhcmVudHNxAH4AYXhxAH4AgHNxAH4AeQF1cQB+AFwAAAAAcHNxAH4AeQF1cQB+AFwAAAAAcHNxAH4AeQF1cgARW0x4c2J0aS5hcGkuVHlwZTt0/6Vae/npQQIAAHhwAAAAAnNyABR4c2J0aS5hcGkuUHJvamVjdGlvbvPSjVTpRaQtAgACTAACaWRxAH4ADUwABnByZWZpeHQAFkx4c2J0aS9hcGkvU2ltcGxlVHlwZTt4cQB+AH90AAZPYmplY3RzcgATeHNidGkuYXBpLlNpbmdsZXRvbvynX/jPVuRGAgABTAAEcGF0aHQAEEx4c2J0aS9hcGkvUGF0aDt4cQB+AH9zcgAOeHNidGkuYXBpLlBhdGibPVwIzqUnhAIAAVsACmNvbXBvbmVudHN0ABpbTHhzYnRpL2FwaS9QYXRoQ29tcG9uZW50O3hwdXIAGltMeHNidGkuYXBpLlBhdGhDb21wb25lbnQ7Q9oJdC1nFnQCAAB4cAAAAANzcgAMeHNidGkuYXBpLklkmDJsizdTxEACAAFMAAJpZHEAfgANeHIAF3hzYnRpLmFwaS5QYXRoQ29tcG9uZW50X5oiWy6Gn7wCAAB4cHQABGphdmFzcQB+AJh0AARsYW5nc3IADnhzYnRpLmFwaS5UaGlz2wntpsxaQFwCAAB4cQB+AJlzcQB+AIx0AANBbnlzcQB+AJBzcQB+AJN1cQB+AJYAAAACc3EAfgCYdAAFc2NhbGFxAH4An3BwdXIAFFtMeHNidGkuYXBpLlBhY2thZ2U7WxMZN3CnJ6ECAAB4cAAAAAFzcgAReHNidGkuYXBpLlBhY2thZ2V+WY/2rs45WAIAAUwABG5hbWVxAH4ADXhwdAAKcGxheWdyb3VuZHNyABV4c2J0aS5hcGkuQ29tcGlsYXRpb27t+uDDauigQgIAAkoACXN0YXJ0VGltZVsAB291dHB1dHN0ABpbTHhzYnRpL2FwaS9PdXRwdXRTZXR0aW5nO3hwAAABTYKvIJt1cgAaW0x4c2J0aS5hcGkuT3V0cHV0U2V0dGluZzt/asLzp4elQgIAAHhwAAAAAXNyABd4c2J0aS5hcGkuT3V0cHV0U2V0dGluZ3rZmkd0+x17AgACTAAPb3V0cHV0RGlyZWN0b3J5cQB+AA1MAA9zb3VyY2VEaXJlY3RvcnlxAH4ADXhwdAA0L2hvbWUvYW5kcmVhL3NjYWxhLWJpdGNvaW4vdGFyZ2V0L3NjYWxhLTIuMTEvY2xhc3Nlc3QAAS91cgACW0Ks8xf4BghU4AIAAHhwAAAAFGIaLbkOQ244LQijhcoEl9FnIDq4
+/home/andrea/scala-bitcoin/src/main/scala/playground/SpirePlayground.scala -> 
+rO0ABXNyABB4c2J0aS5hcGkuU291cmNlFlpwRASfbtoCAAZJAAdhcGlIYXNoWgAIaGFzTWFjcm9MABhfaW50ZXJuYWxPbmx5X25hbWVIYXNoZXN0ACRMeHNidGkvYXBpL19pbnRlcm5hbE9ubHlfTmFtZUhhc2hlcztMAANhcGl0ABVMeHNidGkvYXBpL1NvdXJjZUFQSTtMAAtjb21waWxhdGlvbnQAF0x4c2J0aS9hcGkvQ29tcGlsYXRpb247WwAEaGFzaHQAAltCeHCzmdmCAHNyACJ4c2J0aS5hcGkuX2ludGVybmFsT25seV9OYW1lSGFzaGVzVNq+mfrU7EwCAAJbAA9pbXBsaWNpdE1lbWJlcnN0ACNbTHhzYnRpL2FwaS9faW50ZXJuYWxPbmx5X05hbWVIYXNoO1sADnJlZ3VsYXJNZW1iZXJzcQB+AAd4cHVyACNbTHhzYnRpLmFwaS5faW50ZXJuYWxPbmx5X05hbWVIYXNoO0lagLbdlov0AgAAeHAAAAAAdXEAfgAJAAAAFHNyACB4c2J0aS5hcGkuX2ludGVybmFsT25seV9OYW1lSGFzaFsO9SJ2OFfPAgACSQAEaGFzaEwABG5hbWV0ABJMamF2YS9sYW5nL1N0cmluZzt4cFE03y90AAZub3RpZnlzcQB+AAxV3RI1dAAEd2FpdHNxAH4ADJFQS9t0AA0kYXNJbnN0YW5jZU9mc3EAfgAMeC9rZnQABmVxdWFsc3NxAH4ADH4n/OZ0AAxhc0luc3RhbmNlT2ZzcQB+AAycHQWTdAAMc3luY2hyb25pemVkc3EAfgAMwvTMuXQAD1NwaXJlUGxheWdyb3VuZHNxAH4ADCfZObN0AA0kaXNJbnN0YW5jZU9mc3EAfgAMjck1cXQACW5vdGlmeUFsbHNxAH4ADB68Rot0AAxpc0luc3RhbmNlT2ZzcQB+AAyyVyGRdAACPT1zcQB+AAxk2dxAdAAFY2xvbmVzcQB+AAxkD1uBdAAIdG9TdHJpbmdzcQB+AAyGqD+rdAACIT1zcQB+AAxFABkBdAAIZ2V0Q2xhc3NzcQB+AAyOouFadAACbmVzcQB+AAwZ3gmVdAACZXFzcQB+AAwCZiEKdAACIyNzcQB+AAwIOZkNdAAIZmluYWxpemVzcQB+AAz45oDHdAAIaGFzaENvZGVzcgATeHNidGkuYXBpLlNvdXJjZUFQSblep/kpIzikAgACWwALZGVmaW5pdGlvbnN0ABdbTHhzYnRpL2FwaS9EZWZpbml0aW9uO1sACHBhY2thZ2VzdAAUW0x4c2J0aS9hcGkvUGFja2FnZTt4cHVyABdbTHhzYnRpLmFwaS5EZWZpbml0aW9uO4jJXOe0414OAgAAeHAAAAABc3IAE3hzYnRpLmFwaS5DbGFzc0xpa2WDNByh37CXbAIABEwADmRlZmluaXRpb25UeXBldAAaTHhzYnRpL2FwaS9EZWZpbml0aW9uVHlwZTtbABBzYXZlZEFubm90YXRpb25zdAATW0xqYXZhL2xhbmcvU3RyaW5nO0wACHNlbGZUeXBldAAQTHhzYnRpL2FwaS9MYXp5O0wACXN0cnVjdHVyZXEAfgA/eHIAIXhzYnRpLmFwaS5QYXJhbWV0ZXJpemVkRGVmaW5pdGlvbvkRbrHVUDziAgABWwAOdHlwZVBhcmFtZXRlcnN0ABpbTHhzYnRpL2FwaS9UeXBlUGFyYW1ldGVyO3hyABR4c2J0aS5hcGkuRGVmaW5pdGlvbocqG+hxQuNGAgAETAAGYWNjZXNzdAASTHhzYnRpL2FwaS9BY2Nlc3M7WwALYW5ub3RhdGlvbnN0ABdbTHhzYnRpL2FwaS9Bbm5vdGF0aW9uO0wACW1vZGlmaWVyc3QAFUx4c2J0aS9hcGkvTW9kaWZpZXJzO0wABG5hbWVxAH4ADXhwc3IAEHhzYnRpLmFwaS5QdWJsaWO6WD2ubC1gQgIAAHhyABB4c2J0aS5hcGkuQWNjZXNz3WKa+B1jMUgCAAB4cHVyABdbTHhzYnRpLmFwaS5Bbm5vdGF0aW9uO+uX6xkQ9o1IAgAAeHAAAAAAc3IAE3hzYnRpLmFwaS5Nb2RpZmllcnPHERMhaZzcJAIAAUIABWZsYWdzeHAAdAAacGxheWdyb3VuZC5TcGlyZVBsYXlncm91bmR1cgAaW0x4c2J0aS5hcGkuVHlwZVBhcmFtZXRlcjvZbSYPKJ3ytgIAAHhwAAAAAH5yABh4c2J0aS5hcGkuRGVmaW5pdGlvblR5cGUAAAAAAAAAABIAAHhyAA5qYXZhLmxhbmcuRW51bQAAAAAAAAAAEgAAeHB0AAZNb2R1bGV1cgATW0xqYXZhLmxhbmcuU3RyaW5nO63SVufpHXtHAgAAeHAAAAAAc3IAE3hzYnRpLlNhZmVMYXp5JEltcGxQAi6Tl5dAPwIAA1oACGJpdG1hcCQwTAACX3R0ABJMamF2YS9sYW5nL09iamVjdDtMAARldmFsdAARTHNjYWxhL0Z1bmN0aW9uMDt4cgAWeHNidGkuYXBpLkFic3RyYWN0TGF6edN3tQFfu+egAgAAeHAAcHNyACB4c2J0aS5TYWZlTGF6eSQkYW5vbmZ1biRzdHJpY3QkMQAAAAAAAAAAAgABTAAHdmFsdWUkMXEAfgBYeHBzcgATeHNidGkuYXBpLkVtcHR5VHlwZbz9nkZJO4kkAgAAeHIAFHhzYnRpLmFwaS5TaW1wbGVUeXBlcnhiiCEjv0ACAAB4cgAOeHNidGkuYXBpLlR5cGU/atkhFkmqygIAAHhwc3EAfgBXAXNyABN4c2J0aS5hcGkuU3RydWN0dXJlqar5gJNv2AACAANMAAhkZWNsYXJlZHEAfgA/TAAJaW5oZXJpdGVkcQB+AD9MAAdwYXJlbnRzcQB+AD94cQB+AGBzcQB+AFcBdXEAfgA6AAAAAHBzcQB+AFcBdXEAfgA6AAAAAHBzcQB+AFcBdXIAEVtMeHNidGkuYXBpLlR5cGU7dP+lWnv56UECAAB4cAAAAAJzcgAUeHNidGkuYXBpLlByb2plY3Rpb27z0o1U6UWkLQIAAkwAAmlkcQB+AA1MAAZwcmVmaXh0ABZMeHNidGkvYXBpL1NpbXBsZVR5cGU7eHEAfgBfdAAGT2JqZWN0c3IAE3hzYnRpLmFwaS5TaW5nbGV0b278p1/4z1bkRgIAAUwABHBhdGh0ABBMeHNidGkvYXBpL1BhdGg7eHEAfgBfc3IADnhzYnRpLmFwaS5QYXRomz1cCM6lJ4QCAAFbAApjb21wb25lbnRzdAAaW0x4c2J0aS9hcGkvUGF0aENvbXBvbmVudDt4cHVyABpbTHhzYnRpLmFwaS5QYXRoQ29tcG9uZW50O0PaCXQtZxZ0AgAAeHAAAAADc3IADHhzYnRpLmFwaS5JZJgybIs3U8RAAgABTAACaWRxAH4ADXhyABd4c2J0aS5hcGkuUGF0aENvbXBvbmVudF+aIlsuhp+8AgAAeHB0AARqYXZhc3EAfgB4dAAEbGFuZ3NyAA54c2J0aS5hcGkuVGhpc9sJ7abMWkBcAgAAeHEAfgB5c3EAfgBsdAADQW55c3EAfgBwc3EAfgBzdXEAfgB2AAAAAnNxAH4AeHQABXNjYWxhcQB+AH9wcHVyABRbTHhzYnRpLmFwaS5QYWNrYWdlO1sTGTdwpyehAgAAeHAAAAABc3IAEXhzYnRpLmFwaS5QYWNrYWdlflmP9q7OOVgCAAFMAARuYW1lcQB+AA14cHQACnBsYXlncm91bmRzcgAVeHNidGkuYXBpLkNvbXBpbGF0aW9u7frgw2rooEICAAJKAAlzdGFydFRpbWVbAAdvdXRwdXRzdAAaW0x4c2J0aS9hcGkvT3V0cHV0U2V0dGluZzt4cAAAAU2LTKwUdXIAGltMeHNidGkuYXBpLk91dHB1dFNldHRpbmc7f2rC86eHpUICAAB4cAAAAAFzcgAXeHNidGkuYXBpLk91dHB1dFNldHRpbmd62ZpHdPsdewIAAkwAD291dHB1dERpcmVjdG9yeXEAfgANTAAPc291cmNlRGlyZWN0b3J5cQB+AA14cHQANC9ob21lL2FuZHJlYS9zY2FsYS1iaXRjb2luL3RhcmdldC9zY2FsYS0yLjExL2NsYXNzZXN0AAEvdXIAAltCrPMX+AYIVOACAAB4cAAAABTDRRHaWe5bPzAjKjgCuJyohRrDuw==
+/home/andrea/scala-bitcoin/src/main/scala/playground/TypeClassPlayground.scala -> 
+rO0ABXNyABB4c2J0aS5hcGkuU291cmNlFlpwRASfbtoCAAZJAAdhcGlIYXNoWgAIaGFzTWFjcm9MABhfaW50ZXJuYWxPbmx5X25hbWVIYXNoZXN0ACRMeHNidGkvYXBpL19pbnRlcm5hbE9ubHlfTmFtZUhhc2hlcztMAANhcGl0ABVMeHNidGkvYXBpL1NvdXJjZUFQSTtMAAtjb21waWxhdGlvbnQAF0x4c2J0aS9hcGkvQ29tcGlsYXRpb247WwAEaGFzaHQAAltCeHC9BStLAHNyACJ4c2J0aS5hcGkuX2ludGVybmFsT25seV9OYW1lSGFzaGVzVNq+mfrU7EwCAAJbAA9pbXBsaWNpdE1lbWJlcnN0ACNbTHhzYnRpL2FwaS9faW50ZXJuYWxPbmx5X05hbWVIYXNoO1sADnJlZ3VsYXJNZW1iZXJzcQB+AAd4cHVyACNbTHhzYnRpLmFwaS5faW50ZXJuYWxPbmx5X05hbWVIYXNoO0lagLbdlov0AgAAeHAAAAACc3IAIHhzYnRpLmFwaS5faW50ZXJuYWxPbmx5X05hbWVIYXNoWw71InY4V88CAAJJAARoYXNoTAAEbmFtZXQAEkxqYXZhL2xhbmcvU3RyaW5nO3hwOv8B6HQAD1BlZUlzRXhwZWxsYWJsZXNxAH4AC0t5vEh0ABBTaGl0SXNFeHBlbGxhYmxldXEAfgAJAAAAL3NxAH4AC1Gh8Ld0AAZub3RpZnlzcQB+AAuIeB79dAAHdW5hcHBseXNxAH4AC8lGd9h0AAdjdXJyaWVkc3EAfgALkohMfXQABHdhaXRzcQB+AAtl2rAUdAAOY29weSRkZWZhdWx0JDJzcQB+AAsAS+/XdAANJGFzSW5zdGFuY2VPZnNxAH4AC8xlNnZ0AARzaXplc3EAfgALfAiDO3QAEDxpbml0PiRkZWZhdWx0JDFzcQB+AAvWTZ9vdAAMcHJvZHVjdEFyaXR5c3EAfgALdrxJ3XQABmVxdWFsc3NxAH4AC0O+p4p0ABNUeXBlQ2xhc3NQbGF5Z3JvdW5kc3EAfgALDPkkAHQACkV4cGVsbGFibGVzcQB+AAvB7fzMdAAMYXNJbnN0YW5jZU9mc3EAfgALObg+TXQADHN5bmNocm9uaXplZHNxAH4ACzmN1xl0AA0kaXNJbnN0YW5jZU9mc3EAfgALx69lY3QABnR1cGxlZHNxAH4AC4Bd1MV0AAhjYW5FcXVhbHNxAH4AC7AKVD50AA1wcm9kdWN0UHJlZml4c3EAfgAL99dMV3QACW5vdGlmeUFsbHNxAH4AC+J+8rF0AAtyZWFkUmVzb2x2ZXNxAH4ACwtsk2h0AAZFeHBlbHRzcQB+AAt37Yp0dAAMaXNJbnN0YW5jZU9mc3EAfgALmu/VhnQACGxldHNEb0l0c3EAfgALJiUVBXQABGRvaXRzcQB+AAsXhX72dAAFc3RpbmtzcQB+AAtK4Q0xdAAGPGluaXQ+c3EAfgALS2gmGHQAD2FwcGx5JGRlZmF1bHQkMnNxAH4AC4nCIRp0AAVhcHBseXNxAH4AC53p4TV0AAI9PXNxAH4AC+6HikB0AANQZWVzcQB+AAvNWpQjdAAFY2xvbmVzcQB+AAtljHhRdAAEU2hpdHNxAH4AC42p/j10AARjb3B5c3EAfgALd0OdOHQAD2FwcGx5JGRlZmF1bHQkMXNxAH4ACzfJQaZ0AAh0b1N0cmluZ3NxAH4AC1KYZWF0AAIhPXNxAH4AC1nM3O10AAhnZXRDbGFzc3NxAH4ACy54c7Z0AA5jb3B5JGRlZmF1bHQkMXNxAH4ACzVurDt0AAJuZXNxAH4AC6lW7dx0AAl1c2VUb2lsZXRzcQB+AAucDRaAdAAQPGluaXQ+JGRlZmF1bHQkMnNxAH4AC/MpfYt0AAJlcXNxAH4AC1h/MOt0AA9wcm9kdWN0SXRlcmF0b3JzcQB+AAvO0EoddAACIyNzcQB+AAtHNhejdAAIZmluYWxpemVzcQB+AAtq6OHPdAAOcHJvZHVjdEVsZW1lbnRzcQB+AAvZ08TzdAAIaGFzaENvZGVzcgATeHNidGkuYXBpLlNvdXJjZUFQSblep/kpIzikAgACWwALZGVmaW5pdGlvbnN0ABdbTHhzYnRpL2FwaS9EZWZpbml0aW9uO1sACHBhY2thZ2VzdAAUW0x4c2J0aS9hcGkvUGFja2FnZTt4cHVyABdbTHhzYnRpLmFwaS5EZWZpbml0aW9uO4jJXOe0414OAgAAeHAAAAABc3IAE3hzYnRpLmFwaS5DbGFzc0xpa2WDNByh37CXbAIABEwADmRlZmluaXRpb25UeXBldAAaTHhzYnRpL2FwaS9EZWZpbml0aW9uVHlwZTtbABBzYXZlZEFubm90YXRpb25zdAATW0xqYXZhL2xhbmcvU3RyaW5nO0wACHNlbGZUeXBldAAQTHhzYnRpL2FwaS9MYXp5O0wACXN0cnVjdHVyZXEAfgB5eHIAIXhzYnRpLmFwaS5QYXJhbWV0ZXJpemVkRGVmaW5pdGlvbvkRbrHVUDziAgABWwAOdHlwZVBhcmFtZXRlcnN0ABpbTHhzYnRpL2FwaS9UeXBlUGFyYW1ldGVyO3hyABR4c2J0aS5hcGkuRGVmaW5pdGlvbocqG+hxQuNGAgAETAAGYWNjZXNzdAASTHhzYnRpL2FwaS9BY2Nlc3M7WwALYW5ub3RhdGlvbnN0ABdbTHhzYnRpL2FwaS9Bbm5vdGF0aW9uO0wACW1vZGlmaWVyc3QAFUx4c2J0aS9hcGkvTW9kaWZpZXJzO0wABG5hbWVxAH4ADHhwc3IAEHhzYnRpLmFwaS5QdWJsaWO6WD2ubC1gQgIAAHhyABB4c2J0aS5hcGkuQWNjZXNz3WKa+B1jMUgCAAB4cHVyABdbTHhzYnRpLmFwaS5Bbm5vdGF0aW9uO+uX6xkQ9o1IAgAAeHAAAAAAc3IAE3hzYnRpLmFwaS5Nb2RpZmllcnPHERMhaZzcJAIAAUIABWZsYWdzeHAAdAAecGxheWdyb3VuZC5UeXBlQ2xhc3NQbGF5Z3JvdW5kdXIAGltMeHNidGkuYXBpLlR5cGVQYXJhbWV0ZXI72W0mDyid8rYCAAB4cAAAAAB+cgAYeHNidGkuYXBpLkRlZmluaXRpb25UeXBlAAAAAAAAAAASAAB4cgAOamF2YS5sYW5nLkVudW0AAAAAAAAAABIAAHhwdAAGTW9kdWxldXIAE1tMamF2YS5sYW5nLlN0cmluZzut0lbn6R17RwIAAHhwAAAAAHNyABN4c2J0aS5TYWZlTGF6eSRJbXBsUAIuk5eXQD8CAANaAAhiaXRtYXAkMEwAAl90dAASTGphdmEvbGFuZy9PYmplY3Q7TAAEZXZhbHQAEUxzY2FsYS9GdW5jdGlvbjA7eHIAFnhzYnRpLmFwaS5BYnN0cmFjdExhennTd7UBX7vnoAIAAHhwAXNyABN4c2J0aS5hcGkuRW1wdHlUeXBlvP2eRkk7iSQCAAB4cgAUeHNidGkuYXBpLlNpbXBsZVR5cGVyeGKIISO/QAIAAHhyAA54c2J0aS5hcGkuVHlwZT9q2SEWSarKAgAAeHBwc3EAfgCRAXNyABN4c2J0aS5hcGkuU3RydWN0dXJlqar5gJNv2AACAANMAAhkZWNsYXJlZHEAfgB5TAAJaW5oZXJpdGVkcQB+AHlMAAdwYXJlbnRzcQB+AHl4cQB+AJhzcQB+AJEBdXEAfgB0AAAAAHBzcQB+AJEBdXEAfgB0AAAAAHBzcQB+AJEBdXIAEVtMeHNidGkuYXBpLlR5cGU7dP+lWnv56UECAAB4cAAAAAJzcgAUeHNidGkuYXBpLlByb2plY3Rpb27z0o1U6UWkLQIAAkwAAmlkcQB+AAxMAAZwcmVmaXh0ABZMeHNidGkvYXBpL1NpbXBsZVR5cGU7eHEAfgCXdAAGT2JqZWN0c3IAE3hzYnRpLmFwaS5TaW5nbGV0b278p1/4z1bkRgIAAUwABHBhdGh0ABBMeHNidGkvYXBpL1BhdGg7eHEAfgCXc3IADnhzYnRpLmFwaS5QYXRomz1cCM6lJ4QCAAFbAApjb21wb25lbnRzdAAaW0x4c2J0aS9hcGkvUGF0aENvbXBvbmVudDt4cHVyABpbTHhzYnRpLmFwaS5QYXRoQ29tcG9uZW50O0PaCXQtZxZ0AgAAeHAAAAADc3IADHhzYnRpLmFwaS5JZJgybIs3U8RAAgABTAACaWRxAH4ADHhyABd4c2J0aS5hcGkuUGF0aENvbXBvbmVudF+aIlsuhp+8AgAAeHB0AARqYXZhc3EAfgCwdAAEbGFuZ3NyAA54c2J0aS5hcGkuVGhpc9sJ7abMWkBcAgAAeHEAfgCxc3EAfgCkdAADQW55c3EAfgCoc3EAfgCrdXEAfgCuAAAAAnNxAH4AsHQABXNjYWxhcQB+ALdwcHVyABRbTHhzYnRpLmFwaS5QYWNrYWdlO1sTGTdwpyehAgAAeHAAAAABc3IAEXhzYnRpLmFwaS5QYWNrYWdlflmP9q7OOVgCAAFMAARuYW1lcQB+AAx4cHQACnBsYXlncm91bmRzcgAVeHNidGkuYXBpLkNvbXBpbGF0aW9u7frgw2rooEICAAJKAAlzdGFydFRpbWVbAAdvdXRwdXRzdAAaW0x4c2J0aS9hcGkvT3V0cHV0U2V0dGluZzt4cAAAAU2LXGAqdXIAGltMeHNidGkuYXBpLk91dHB1dFNldHRpbmc7f2rC86eHpUICAAB4cAAAAAFzcgAXeHNidGkuYXBpLk91dHB1dFNldHRpbmd62ZpHdPsdewIAAkwAD291dHB1dERpcmVjdG9yeXEAfgAMTAAPc291cmNlRGlyZWN0b3J5cQB+AAx4cHQANC9ob21lL2FuZHJlYS9zY2FsYS1iaXRjb2luL3RhcmdldC9zY2FsYS0yLjExL2NsYXNzZXN0AAEvdXIAAltCrPMX+AYIVOACAAB4cAAAABQfOOAegSvSGjvj6UMwwaprxyODiw==
+external apis:
+0 items
+source infos:
+11 items
+/home/andrea/scala-bitcoin/src/main/scala/Core.scala -> 
+AAAAAAAAAAA=
+/home/andrea/scala-bitcoin/src/main/scala/Service/TransactionService.scala -> 
+AAAAAAAAAAA=
+/home/andrea/scala-bitcoin/src/main/scala/actors/WorkerActor.scala -> 
+AAAAAQAAAQAAAAwAMCAgICBjYXNlIGIgQCBCb3VuZChsb2NhbEFkZHJlc3MpID0+IGxvY2FsQWRkcmVzcwEAAADFAQAAACQBACQgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICABAEIvaG9tZS9hbmRyZWEvc2NhbGEtYml0Y29pbi9zcmMvbWFpbi9zY2FsYS9hY3RvcnMvV29ya2VyQWN0b3Iuc2NhbGEBAEIvaG9tZS9hbmRyZWEvc2NhbGEtYml0Y29pbi9zcmMvbWFpbi9zY2FsYS9hY3RvcnMvV29ya2VyQWN0b3Iuc2NhbGEAX2EgcHVyZSBleHByZXNzaW9uIGRvZXMgbm90aGluZyBpbiBzdGF0ZW1lbnQgcG9zaXRpb247IHlvdSBtYXkgYmUgb21pdHRpbmcgbmVjZXNzYXJ5IHBhcmVudGhlc2VzAQAAAAA=
+/home/andrea/scala-bitcoin/src/main/scala/domain/CompactNumber.scala -> 
+AAAAAAAAAAA=
+/home/andrea/scala-bitcoin/src/main/scala/domain/Transaction.scala -> 
+AAAAAAAAAAA=
+/home/andrea/scala-bitcoin/src/main/scala/encoding/Parsing.scala -> 
+AAAAAAAAAAA=
+/home/andrea/scala-bitcoin/src/main/scala/encoding/TransactionParsers.scala -> 
+AAAAAAAAAAA=
+/home/andrea/scala-bitcoin/src/main/scala/playground/FutureMonad.scala -> 
+AAAAAAAAAAA=
+/home/andrea/scala-bitcoin/src/main/scala/playground/RabbitFactorMonad.scala -> 
+AAAAAAAAAAA=
+/home/andrea/scala-bitcoin/src/main/scala/playground/SpirePlayground.scala -> 
+AAAAAAAAAAA=
+/home/andrea/scala-bitcoin/src/main/scala/playground/TypeClassPlayground.scala -> 
+AAAAAAAAAAA=
+compilations:
+44 items
+00 -> rO0ABXNyABV4c2J0aS5hcGkuQ29tcGlsYXRpb27t+uDDauigQgIAAkoACXN0YXJ0VGltZVsAB291dHB1dHN0ABpbTHhzYnRpL2FwaS9PdXRwdXRTZXR0aW5nO3hwAAABTV1nNil1cgAaW0x4c2J0aS5hcGkuT3V0cHV0U2V0dGluZzt/asLzp4elQgIAAHhwAAAAAXNyABd4c2J0aS5hcGkuT3V0cHV0U2V0dGluZ3rZmkd0+x17AgACTAAPb3V0cHV0RGlyZWN0b3J5dAASTGphdmEvbGFuZy9TdHJpbmc7TAAPc291cmNlRGlyZWN0b3J5cQB+AAZ4cHQANC9ob21lL2FuZHJlYS9zY2FsYS1iaXRjb2luL3RhcmdldC9zY2FsYS0yLjExL2NsYXNzZXN0AAEv
+01 -> rO0ABXNyABV4c2J0aS5hcGkuQ29tcGlsYXRpb27t+uDDauigQgIAAkoACXN0YXJ0VGltZVsAB291dHB1dHN0ABpbTHhzYnRpL2FwaS9PdXRwdXRTZXR0aW5nO3hwAAABTYCKSZx1cgAaW0x4c2J0aS5hcGkuT3V0cHV0U2V0dGluZzt/asLzp4elQgIAAHhwAAAAAXNyABd4c2J0aS5hcGkuT3V0cHV0U2V0dGluZ3rZmkd0+x17AgACTAAPb3V0cHV0RGlyZWN0b3J5dAASTGphdmEvbGFuZy9TdHJpbmc7TAAPc291cmNlRGlyZWN0b3J5cQB+AAZ4cHQANC9ob21lL2FuZHJlYS9zY2FsYS1iaXRjb2luL3RhcmdldC9zY2FsYS0yLjExL2NsYXNzZXN0AAEv
+02 -> rO0ABXNyABV4c2J0aS5hcGkuQ29tcGlsYXRpb27t+uDDauigQgIAAkoACXN0YXJ0VGltZVsAB291dHB1dHN0ABpbTHhzYnRpL2FwaS9PdXRwdXRTZXR0aW5nO3hwAAABTYCbjA51cgAaW0x4c2J0aS5hcGkuT3V0cHV0U2V0dGluZzt/asLzp4elQgIAAHhwAAAAAXNyABd4c2J0aS5hcGkuT3V0cHV0U2V0dGluZ3rZmkd0+x17AgACTAAPb3V0cHV0RGlyZWN0b3J5dAASTGphdmEvbGFuZy9TdHJpbmc7TAAPc291cmNlRGlyZWN0b3J5cQB+AAZ4cHQANC9ob21lL2FuZHJlYS9zY2FsYS1iaXRjb2luL3RhcmdldC9zY2FsYS0yLjExL2NsYXNzZXN0AAEv
+03 -> rO0ABXNyABV4c2J0aS5hcGkuQ29tcGlsYXRpb27t+uDDauigQgIAAkoACXN0YXJ0VGltZVsAB291dHB1dHN0ABpbTHhzYnRpL2FwaS9PdXRwdXRTZXR0aW5nO3hwAAABTYCfrRV1cgAaW0x4c2J0aS5hcGkuT3V0cHV0U2V0dGluZzt/asLzp4elQgIAAHhwAAAAAXNyABd4c2J0aS5hcGkuT3V0cHV0U2V0dGluZ3rZmkd0+x17AgACTAAPb3V0cHV0RGlyZWN0b3J5dAASTGphdmEvbGFuZy9TdHJpbmc7TAAPc291cmNlRGlyZWN0b3J5cQB+AAZ4cHQANC9ob21lL2FuZHJlYS9zY2FsYS1iaXRjb2luL3RhcmdldC9zY2FsYS0yLjExL2NsYXNzZXN0AAEv
+04 -> rO0ABXNyABV4c2J0aS5hcGkuQ29tcGlsYXRpb27t+uDDauigQgIAAkoACXN0YXJ0VGltZVsAB291dHB1dHN0ABpbTHhzYnRpL2FwaS9PdXRwdXRTZXR0aW5nO3hwAAABTYChQeJ1cgAaW0x4c2J0aS5hcGkuT3V0cHV0U2V0dGluZzt/asLzp4elQgIAAHhwAAAAAXNyABd4c2J0aS5hcGkuT3V0cHV0U2V0dGluZ3rZmkd0+x17AgACTAAPb3V0cHV0RGlyZWN0b3J5dAASTGphdmEvbGFuZy9TdHJpbmc7TAAPc291cmNlRGlyZWN0b3J5cQB+AAZ4cHQANC9ob21lL2FuZHJlYS9zY2FsYS1iaXRjb2luL3RhcmdldC9zY2FsYS0yLjExL2NsYXNzZXN0AAEv
+05 -> rO0ABXNyABV4c2J0aS5hcGkuQ29tcGlsYXRpb27t+uDDauigQgIAAkoACXN0YXJ0VGltZVsAB291dHB1dHN0ABpbTHhzYnRpL2FwaS9PdXRwdXRTZXR0aW5nO3hwAAABTYCib151cgAaW0x4c2J0aS5hcGkuT3V0cHV0U2V0dGluZzt/asLzp4elQgIAAHhwAAAAAXNyABd4c2J0aS5hcGkuT3V0cHV0U2V0dGluZ3rZmkd0+x17AgACTAAPb3V0cHV0RGlyZWN0b3J5dAASTGphdmEvbGFuZy9TdHJpbmc7TAAPc291cmNlRGlyZWN0b3J5cQB+AAZ4cHQANC9ob21lL2FuZHJlYS9zY2FsYS1iaXRjb2luL3RhcmdldC9zY2FsYS0yLjExL2NsYXNzZXN0AAEv
+06 -> rO0ABXNyABV4c2J0aS5hcGkuQ29tcGlsYXRpb27t+uDDauigQgIAAkoACXN0YXJ0VGltZVsAB291dHB1dHN0ABpbTHhzYnRpL2FwaS9PdXRwdXRTZXR0aW5nO3hwAAABTYClxM91cgAaW0x4c2J0aS5hcGkuT3V0cHV0U2V0dGluZzt/asLzp4elQgIAAHhwAAAAAXNyABd4c2J0aS5hcGkuT3V0cHV0U2V0dGluZ3rZmkd0+x17AgACTAAPb3V0cHV0RGlyZWN0b3J5dAASTGphdmEvbGFuZy9TdHJpbmc7TAAPc291cmNlRGlyZWN0b3J5cQB+AAZ4cHQANC9ob21lL2FuZHJlYS9zY2FsYS1iaXRjb2luL3RhcmdldC9zY2FsYS0yLjExL2NsYXNzZXN0AAEv
+07 -> rO0ABXNyABV4c2J0aS5hcGkuQ29tcGlsYXRpb27t+uDDauigQgIAAkoACXN0YXJ0VGltZVsAB291dHB1dHN0ABpbTHhzYnRpL2FwaS9PdXRwdXRTZXR0aW5nO3hwAAABTYCm29d1cgAaW0x4c2J0aS5hcGkuT3V0cHV0U2V0dGluZzt/asLzp4elQgIAAHhwAAAAAXNyABd4c2J0aS5hcGkuT3V0cHV0U2V0dGluZ3rZmkd0+x17AgACTAAPb3V0cHV0RGlyZWN0b3J5dAASTGphdmEvbGFuZy9TdHJpbmc7TAAPc291cmNlRGlyZWN0b3J5cQB+AAZ4cHQANC9ob21lL2FuZHJlYS9zY2FsYS1iaXRjb2luL3RhcmdldC9zY2FsYS0yLjExL2NsYXNzZXN0AAEv
+08 -> rO0ABXNyABV4c2J0aS5hcGkuQ29tcGlsYXRpb27t+uDDauigQgIAAkoACXN0YXJ0VGltZVsAB291dHB1dHN0ABpbTHhzYnRpL2FwaS9PdXRwdXRTZXR0aW5nO3hwAAABTYDp80l1cgAaW0x4c2J0aS5hcGkuT3V0cHV0U2V0dGluZzt/asLzp4elQgIAAHhwAAAAAXNyABd4c2J0aS5hcGkuT3V0cHV0U2V0dGluZ3rZmkd0+x17AgACTAAPb3V0cHV0RGlyZWN0b3J5dAASTGphdmEvbGFuZy9TdHJpbmc7TAAPc291cmNlRGlyZWN0b3J5cQB+AAZ4cHQANC9ob21lL2FuZHJlYS9zY2FsYS1iaXRjb2luL3RhcmdldC9zY2FsYS0yLjExL2NsYXNzZXN0AAEv
+09 -> rO0ABXNyABV4c2J0aS5hcGkuQ29tcGlsYXRpb27t+uDDauigQgIAAkoACXN0YXJ0VGltZVsAB291dHB1dHN0ABpbTHhzYnRpL2FwaS9PdXRwdXRTZXR0aW5nO3hwAAABTYDqugp1cgAaW0x4c2J0aS5hcGkuT3V0cHV0U2V0dGluZzt/asLzp4elQgIAAHhwAAAAAXNyABd4c2J0aS5hcGkuT3V0cHV0U2V0dGluZ3rZmkd0+x17AgACTAAPb3V0cHV0RGlyZWN0b3J5dAASTGphdmEvbGFuZy9TdHJpbmc7TAAPc291cmNlRGlyZWN0b3J5cQB+AAZ4cHQANC9ob21lL2FuZHJlYS9zY2FsYS1iaXRjb2luL3RhcmdldC9zY2FsYS0yLjExL2NsYXNzZXN0AAEv
+10 -> rO0ABXNyABV4c2J0aS5hcGkuQ29tcGlsYXRpb27t+uDDauigQgIAAkoACXN0YXJ0VGltZVsAB291dHB1dHN0ABpbTHhzYnRpL2FwaS9PdXRwdXRTZXR0aW5nO3hwAAABTYDrI1x1cgAaW0x4c2J0aS5hcGkuT3V0cHV0U2V0dGluZzt/asLzp4elQgIAAHhwAAAAAXNyABd4c2J0aS5hcGkuT3V0cHV0U2V0dGluZ3rZmkd0+x17AgACTAAPb3V0cHV0RGlyZWN0b3J5dAASTGphdmEvbGFuZy9TdHJpbmc7TAAPc291cmNlRGlyZWN0b3J5cQB+AAZ4cHQANC9ob21lL2FuZHJlYS9zY2FsYS1iaXRjb2luL3RhcmdldC9zY2FsYS0yLjExL2NsYXNzZXN0AAEv
+11 -> rO0ABXNyABV4c2J0aS5hcGkuQ29tcGlsYXRpb27t+uDDauigQgIAAkoACXN0YXJ0VGltZVsAB291dHB1dHN0ABpbTHhzYnRpL2FwaS9PdXRwdXRTZXR0aW5nO3hwAAABTYEw/BN1cgAaW0x4c2J0aS5hcGkuT3V0cHV0U2V0dGluZzt/asLzp4elQgIAAHhwAAAAAXNyABd4c2J0aS5hcGkuT3V0cHV0U2V0dGluZ3rZmkd0+x17AgACTAAPb3V0cHV0RGlyZWN0b3J5dAASTGphdmEvbGFuZy9TdHJpbmc7TAAPc291cmNlRGlyZWN0b3J5cQB+AAZ4cHQANC9ob21lL2FuZHJlYS9zY2FsYS1iaXRjb2luL3RhcmdldC9zY2FsYS0yLjExL2NsYXNzZXN0AAEv
+12 -> rO0ABXNyABV4c2J0aS5hcGkuQ29tcGlsYXRpb27t+uDDauigQgIAAkoACXN0YXJ0VGltZVsAB291dHB1dHN0ABpbTHhzYnRpL2FwaS9PdXRwdXRTZXR0aW5nO3hwAAABTYFfeAl1cgAaW0x4c2J0aS5hcGkuT3V0cHV0U2V0dGluZzt/asLzp4elQgIAAHhwAAAAAXNyABd4c2J0aS5hcGkuT3V0cHV0U2V0dGluZ3rZmkd0+x17AgACTAAPb3V0cHV0RGlyZWN0b3J5dAASTGphdmEvbGFuZy9TdHJpbmc7TAAPc291cmNlRGlyZWN0b3J5cQB+AAZ4cHQANC9ob21lL2FuZHJlYS9zY2FsYS1iaXRjb2luL3RhcmdldC9zY2FsYS0yLjExL2NsYXNzZXN0AAEv
+13 -> rO0ABXNyABV4c2J0aS5hcGkuQ29tcGlsYXRpb27t+uDDauigQgIAAkoACXN0YXJ0VGltZVsAB291dHB1dHN0ABpbTHhzYnRpL2FwaS9PdXRwdXRTZXR0aW5nO3hwAAABTYFg/Gp1cgAaW0x4c2J0aS5hcGkuT3V0cHV0U2V0dGluZzt/asLzp4elQgIAAHhwAAAAAXNyABd4c2J0aS5hcGkuT3V0cHV0U2V0dGluZ3rZmkd0+x17AgACTAAPb3V0cHV0RGlyZWN0b3J5dAASTGphdmEvbGFuZy9TdHJpbmc7TAAPc291cmNlRGlyZWN0b3J5cQB+AAZ4cHQANC9ob21lL2FuZHJlYS9zY2FsYS1iaXRjb2luL3RhcmdldC9zY2FsYS0yLjExL2NsYXNzZXN0AAEv
+14 -> rO0ABXNyABV4c2J0aS5hcGkuQ29tcGlsYXRpb27t+uDDauigQgIAAkoACXN0YXJ0VGltZVsAB291dHB1dHN0ABpbTHhzYnRpL2FwaS9PdXRwdXRTZXR0aW5nO3hwAAABTYFlTCZ1cgAaW0x4c2J0aS5hcGkuT3V0cHV0U2V0dGluZzt/asLzp4elQgIAAHhwAAAAAXNyABd4c2J0aS5hcGkuT3V0cHV0U2V0dGluZ3rZmkd0+x17AgACTAAPb3V0cHV0RGlyZWN0b3J5dAASTGphdmEvbGFuZy9TdHJpbmc7TAAPc291cmNlRGlyZWN0b3J5cQB+AAZ4cHQANC9ob21lL2FuZHJlYS9zY2FsYS1iaXRjb2luL3RhcmdldC9zY2FsYS0yLjExL2NsYXNzZXN0AAEv
+15 -> rO0ABXNyABV4c2J0aS5hcGkuQ29tcGlsYXRpb27t+uDDauigQgIAAkoACXN0YXJ0VGltZVsAB291dHB1dHN0ABpbTHhzYnRpL2FwaS9PdXRwdXRTZXR0aW5nO3hwAAABTYFm3gl1cgAaW0x4c2J0aS5hcGkuT3V0cHV0U2V0dGluZzt/asLzp4elQgIAAHhwAAAAAXNyABd4c2J0aS5hcGkuT3V0cHV0U2V0dGluZ3rZmkd0+x17AgACTAAPb3V0cHV0RGlyZWN0b3J5dAASTGphdmEvbGFuZy9TdHJpbmc7TAAPc291cmNlRGlyZWN0b3J5cQB+AAZ4cHQANC9ob21lL2FuZHJlYS9zY2FsYS1iaXRjb2luL3RhcmdldC9zY2FsYS0yLjExL2NsYXNzZXN0AAEv
+16 -> rO0ABXNyABV4c2J0aS5hcGkuQ29tcGlsYXRpb27t+uDDauigQgIAAkoACXN0YXJ0VGltZVsAB291dHB1dHN0ABpbTHhzYnRpL2FwaS9PdXRwdXRTZXR0aW5nO3hwAAABTYFpgad1cgAaW0x4c2J0aS5hcGkuT3V0cHV0U2V0dGluZzt/asLzp4elQgIAAHhwAAAAAXNyABd4c2J0aS5hcGkuT3V0cHV0U2V0dGluZ3rZmkd0+x17AgACTAAPb3V0cHV0RGlyZWN0b3J5dAASTGphdmEvbGFuZy9TdHJpbmc7TAAPc291cmNlRGlyZWN0b3J5cQB+AAZ4cHQANC9ob21lL2FuZHJlYS9zY2FsYS1iaXRjb2luL3RhcmdldC9zY2FsYS0yLjExL2NsYXNzZXN0AAEv
+17 -> rO0ABXNyABV4c2J0aS5hcGkuQ29tcGlsYXRpb27t+uDDauigQgIAAkoACXN0YXJ0VGltZVsAB291dHB1dHN0ABpbTHhzYnRpL2FwaS9PdXRwdXRTZXR0aW5nO3hwAAABTYFw5sl1cgAaW0x4c2J0aS5hcGkuT3V0cHV0U2V0dGluZzt/asLzp4elQgIAAHhwAAAAAXNyABd4c2J0aS5hcGkuT3V0cHV0U2V0dGluZ3rZmkd0+x17AgACTAAPb3V0cHV0RGlyZWN0b3J5dAASTGphdmEvbGFuZy9TdHJpbmc7TAAPc291cmNlRGlyZWN0b3J5cQB+AAZ4cHQANC9ob21lL2FuZHJlYS9zY2FsYS1iaXRjb2luL3RhcmdldC9zY2FsYS0yLjExL2NsYXNzZXN0AAEv
+18 -> rO0ABXNyABV4c2J0aS5hcGkuQ29tcGlsYXRpb27t+uDDauigQgIAAkoACXN0YXJ0VGltZVsAB291dHB1dHN0ABpbTHhzYnRpL2FwaS9PdXRwdXRTZXR0aW5nO3hwAAABTYFxeXh1cgAaW0x4c2J0aS5hcGkuT3V0cHV0U2V0dGluZzt/asLzp4elQgIAAHhwAAAAAXNyABd4c2J0aS5hcGkuT3V0cHV0U2V0dGluZ3rZmkd0+x17AgACTAAPb3V0cHV0RGlyZWN0b3J5dAASTGphdmEvbGFuZy9TdHJpbmc7TAAPc291cmNlRGlyZWN0b3J5cQB+AAZ4cHQANC9ob21lL2FuZHJlYS9zY2FsYS1iaXRjb2luL3RhcmdldC9zY2FsYS0yLjExL2NsYXNzZXN0AAEv
+19 -> rO0ABXNyABV4c2J0aS5hcGkuQ29tcGlsYXRpb27t+uDDauigQgIAAkoACXN0YXJ0VGltZVsAB291dHB1dHN0ABpbTHhzYnRpL2FwaS9PdXRwdXRTZXR0aW5nO3hwAAABTYFyaq91cgAaW0x4c2J0aS5hcGkuT3V0cHV0U2V0dGluZzt/asLzp4elQgIAAHhwAAAAAXNyABd4c2J0aS5hcGkuT3V0cHV0U2V0dGluZ3rZmkd0+x17AgACTAAPb3V0cHV0RGlyZWN0b3J5dAASTGphdmEvbGFuZy9TdHJpbmc7TAAPc291cmNlRGlyZWN0b3J5cQB+AAZ4cHQANC9ob21lL2FuZHJlYS9zY2FsYS1iaXRjb2luL3RhcmdldC9zY2FsYS0yLjExL2NsYXNzZXN0AAEv
+20 -> rO0ABXNyABV4c2J0aS5hcGkuQ29tcGlsYXRpb27t+uDDauigQgIAAkoACXN0YXJ0VGltZVsAB291dHB1dHN0ABpbTHhzYnRpL2FwaS9PdXRwdXRTZXR0aW5nO3hwAAABTYFzP1V1cgAaW0x4c2J0aS5hcGkuT3V0cHV0U2V0dGluZzt/asLzp4elQgIAAHhwAAAAAXNyABd4c2J0aS5hcGkuT3V0cHV0U2V0dGluZ3rZmkd0+x17AgACTAAPb3V0cHV0RGlyZWN0b3J5dAASTGphdmEvbGFuZy9TdHJpbmc7TAAPc291cmNlRGlyZWN0b3J5cQB+AAZ4cHQANC9ob21lL2FuZHJlYS9zY2FsYS1iaXRjb2luL3RhcmdldC9zY2FsYS0yLjExL2NsYXNzZXN0AAEv
+21 -> rO0ABXNyABV4c2J0aS5hcGkuQ29tcGlsYXRpb27t+uDDauigQgIAAkoACXN0YXJ0VGltZVsAB291dHB1dHN0ABpbTHhzYnRpL2FwaS9PdXRwdXRTZXR0aW5nO3hwAAABTYHozcx1cgAaW0x4c2J0aS5hcGkuT3V0cHV0U2V0dGluZzt/asLzp4elQgIAAHhwAAAAAXNyABd4c2J0aS5hcGkuT3V0cHV0U2V0dGluZ3rZmkd0+x17AgACTAAPb3V0cHV0RGlyZWN0b3J5dAASTGphdmEvbGFuZy9TdHJpbmc7TAAPc291cmNlRGlyZWN0b3J5cQB+AAZ4cHQANC9ob21lL2FuZHJlYS9zY2FsYS1iaXRjb2luL3RhcmdldC9zY2FsYS0yLjExL2NsYXNzZXN0AAEv
+22 -> rO0ABXNyABV4c2J0aS5hcGkuQ29tcGlsYXRpb27t+uDDauigQgIAAkoACXN0YXJ0VGltZVsAB291dHB1dHN0ABpbTHhzYnRpL2FwaS9PdXRwdXRTZXR0aW5nO3hwAAABTYIM9gB1cgAaW0x4c2J0aS5hcGkuT3V0cHV0U2V0dGluZzt/asLzp4elQgIAAHhwAAAAAXNyABd4c2J0aS5hcGkuT3V0cHV0U2V0dGluZ3rZmkd0+x17AgACTAAPb3V0cHV0RGlyZWN0b3J5dAASTGphdmEvbGFuZy9TdHJpbmc7TAAPc291cmNlRGlyZWN0b3J5cQB+AAZ4cHQANC9ob21lL2FuZHJlYS9zY2FsYS1iaXRjb2luL3RhcmdldC9zY2FsYS0yLjExL2NsYXNzZXN0AAEv
+23 -> rO0ABXNyABV4c2J0aS5hcGkuQ29tcGlsYXRpb27t+uDDauigQgIAAkoACXN0YXJ0VGltZVsAB291dHB1dHN0ABpbTHhzYnRpL2FwaS9PdXRwdXRTZXR0aW5nO3hwAAABTYINSr51cgAaW0x4c2J0aS5hcGkuT3V0cHV0U2V0dGluZzt/asLzp4elQgIAAHhwAAAAAXNyABd4c2J0aS5hcGkuT3V0cHV0U2V0dGluZ3rZmkd0+x17AgACTAAPb3V0cHV0RGlyZWN0b3J5dAASTGphdmEvbGFuZy9TdHJpbmc7TAAPc291cmNlRGlyZWN0b3J5cQB+AAZ4cHQANC9ob21lL2FuZHJlYS9zY2FsYS1iaXRjb2luL3RhcmdldC9zY2FsYS0yLjExL2NsYXNzZXN0AAEv
+24 -> rO0ABXNyABV4c2J0aS5hcGkuQ29tcGlsYXRpb27t+uDDauigQgIAAkoACXN0YXJ0VGltZVsAB291dHB1dHN0ABpbTHhzYnRpL2FwaS9PdXRwdXRTZXR0aW5nO3hwAAABTYKvIJt1cgAaW0x4c2J0aS5hcGkuT3V0cHV0U2V0dGluZzt/asLzp4elQgIAAHhwAAAAAXNyABd4c2J0aS5hcGkuT3V0cHV0U2V0dGluZ3rZmkd0+x17AgACTAAPb3V0cHV0RGlyZWN0b3J5dAASTGphdmEvbGFuZy9TdHJpbmc7TAAPc291cmNlRGlyZWN0b3J5cQB+AAZ4cHQANC9ob21lL2FuZHJlYS9zY2FsYS1iaXRjb2luL3RhcmdldC9zY2FsYS0yLjExL2NsYXNzZXN0AAEv
+25 -> rO0ABXNyABV4c2J0aS5hcGkuQ29tcGlsYXRpb27t+uDDauigQgIAAkoACXN0YXJ0VGltZVsAB291dHB1dHN0ABpbTHhzYnRpL2FwaS9PdXRwdXRTZXR0aW5nO3hwAAABTYKy92V1cgAaW0x4c2J0aS5hcGkuT3V0cHV0U2V0dGluZzt/asLzp4elQgIAAHhwAAAAAXNyABd4c2J0aS5hcGkuT3V0cHV0U2V0dGluZ3rZmkd0+x17AgACTAAPb3V0cHV0RGlyZWN0b3J5dAASTGphdmEvbGFuZy9TdHJpbmc7TAAPc291cmNlRGlyZWN0b3J5cQB+AAZ4cHQANC9ob21lL2FuZHJlYS9zY2FsYS1iaXRjb2luL3RhcmdldC9zY2FsYS0yLjExL2NsYXNzZXN0AAEv
+26 -> rO0ABXNyABV4c2J0aS5hcGkuQ29tcGlsYXRpb27t+uDDauigQgIAAkoACXN0YXJ0VGltZVsAB291dHB1dHN0ABpbTHhzYnRpL2FwaS9PdXRwdXRTZXR0aW5nO3hwAAABTYgLlXF1cgAaW0x4c2J0aS5hcGkuT3V0cHV0U2V0dGluZzt/asLzp4elQgIAAHhwAAAAAXNyABd4c2J0aS5hcGkuT3V0cHV0U2V0dGluZ3rZmkd0+x17AgACTAAPb3V0cHV0RGlyZWN0b3J5dAASTGphdmEvbGFuZy9TdHJpbmc7TAAPc291cmNlRGlyZWN0b3J5cQB+AAZ4cHQANC9ob21lL2FuZHJlYS9zY2FsYS1iaXRjb2luL3RhcmdldC9zY2FsYS0yLjExL2NsYXNzZXN0AAEv
+27 -> rO0ABXNyABV4c2J0aS5hcGkuQ29tcGlsYXRpb27t+uDDauigQgIAAkoACXN0YXJ0VGltZVsAB291dHB1dHN0ABpbTHhzYnRpL2FwaS9PdXRwdXRTZXR0aW5nO3hwAAABTYseFCV1cgAaW0x4c2J0aS5hcGkuT3V0cHV0U2V0dGluZzt/asLzp4elQgIAAHhwAAAAAXNyABd4c2J0aS5hcGkuT3V0cHV0U2V0dGluZ3rZmkd0+x17AgACTAAPb3V0cHV0RGlyZWN0b3J5dAASTGphdmEvbGFuZy9TdHJpbmc7TAAPc291cmNlRGlyZWN0b3J5cQB+AAZ4cHQANC9ob21lL2FuZHJlYS9zY2FsYS1iaXRjb2luL3RhcmdldC9zY2FsYS0yLjExL2NsYXNzZXN0AAEv
+28 -> rO0ABXNyABV4c2J0aS5hcGkuQ29tcGlsYXRpb27t+uDDauigQgIAAkoACXN0YXJ0VGltZVsAB291dHB1dHN0ABpbTHhzYnRpL2FwaS9PdXRwdXRTZXR0aW5nO3hwAAABTYsfpZZ1cgAaW0x4c2J0aS5hcGkuT3V0cHV0U2V0dGluZzt/asLzp4elQgIAAHhwAAAAAXNyABd4c2J0aS5hcGkuT3V0cHV0U2V0dGluZ3rZmkd0+x17AgACTAAPb3V0cHV0RGlyZWN0b3J5dAASTGphdmEvbGFuZy9TdHJpbmc7TAAPc291cmNlRGlyZWN0b3J5cQB+AAZ4cHQANC9ob21lL2FuZHJlYS9zY2FsYS1iaXRjb2luL3RhcmdldC9zY2FsYS0yLjExL2NsYXNzZXN0AAEv
+29 -> rO0ABXNyABV4c2J0aS5hcGkuQ29tcGlsYXRpb27t+uDDauigQgIAAkoACXN0YXJ0VGltZVsAB291dHB1dHN0ABpbTHhzYnRpL2FwaS9PdXRwdXRTZXR0aW5nO3hwAAABTYshBUd1cgAaW0x4c2J0aS5hcGkuT3V0cHV0U2V0dGluZzt/asLzp4elQgIAAHhwAAAAAXNyABd4c2J0aS5hcGkuT3V0cHV0U2V0dGluZ3rZmkd0+x17AgACTAAPb3V0cHV0RGlyZWN0b3J5dAASTGphdmEvbGFuZy9TdHJpbmc7TAAPc291cmNlRGlyZWN0b3J5cQB+AAZ4cHQANC9ob21lL2FuZHJlYS9zY2FsYS1iaXRjb2luL3RhcmdldC9zY2FsYS0yLjExL2NsYXNzZXN0AAEv
+30 -> rO0ABXNyABV4c2J0aS5hcGkuQ29tcGlsYXRpb27t+uDDauigQgIAAkoACXN0YXJ0VGltZVsAB291dHB1dHN0ABpbTHhzYnRpL2FwaS9PdXRwdXRTZXR0aW5nO3hwAAABTYtMrBR1cgAaW0x4c2J0aS5hcGkuT3V0cHV0U2V0dGluZzt/asLzp4elQgIAAHhwAAAAAXNyABd4c2J0aS5hcGkuT3V0cHV0U2V0dGluZ3rZmkd0+x17AgACTAAPb3V0cHV0RGlyZWN0b3J5dAASTGphdmEvbGFuZy9TdHJpbmc7TAAPc291cmNlRGlyZWN0b3J5cQB+AAZ4cHQANC9ob21lL2FuZHJlYS9zY2FsYS1iaXRjb2luL3RhcmdldC9zY2FsYS0yLjExL2NsYXNzZXN0AAEv
+31 -> rO0ABXNyABV4c2J0aS5hcGkuQ29tcGlsYXRpb27t+uDDauigQgIAAkoACXN0YXJ0VGltZVsAB291dHB1dHN0ABpbTHhzYnRpL2FwaS9PdXRwdXRTZXR0aW5nO3hwAAABTYtSQQ91cgAaW0x4c2J0aS5hcGkuT3V0cHV0U2V0dGluZzt/asLzp4elQgIAAHhwAAAAAXNyABd4c2J0aS5hcGkuT3V0cHV0U2V0dGluZ3rZmkd0+x17AgACTAAPb3V0cHV0RGlyZWN0b3J5dAASTGphdmEvbGFuZy9TdHJpbmc7TAAPc291cmNlRGlyZWN0b3J5cQB+AAZ4cHQANC9ob21lL2FuZHJlYS9zY2FsYS1iaXRjb2luL3RhcmdldC9zY2FsYS0yLjExL2NsYXNzZXN0AAEv
+32 -> rO0ABXNyABV4c2J0aS5hcGkuQ29tcGlsYXRpb27t+uDDauigQgIAAkoACXN0YXJ0VGltZVsAB291dHB1dHN0ABpbTHhzYnRpL2FwaS9PdXRwdXRTZXR0aW5nO3hwAAABTYtTDM11cgAaW0x4c2J0aS5hcGkuT3V0cHV0U2V0dGluZzt/asLzp4elQgIAAHhwAAAAAXNyABd4c2J0aS5hcGkuT3V0cHV0U2V0dGluZ3rZmkd0+x17AgACTAAPb3V0cHV0RGlyZWN0b3J5dAASTGphdmEvbGFuZy9TdHJpbmc7TAAPc291cmNlRGlyZWN0b3J5cQB+AAZ4cHQANC9ob21lL2FuZHJlYS9zY2FsYS1iaXRjb2luL3RhcmdldC9zY2FsYS0yLjExL2NsYXNzZXN0AAEv
+33 -> rO0ABXNyABV4c2J0aS5hcGkuQ29tcGlsYXRpb27t+uDDauigQgIAAkoACXN0YXJ0VGltZVsAB291dHB1dHN0ABpbTHhzYnRpL2FwaS9PdXRwdXRTZXR0aW5nO3hwAAABTYtcYCp1cgAaW0x4c2J0aS5hcGkuT3V0cHV0U2V0dGluZzt/asLzp4elQgIAAHhwAAAAAXNyABd4c2J0aS5hcGkuT3V0cHV0U2V0dGluZ3rZmkd0+x17AgACTAAPb3V0cHV0RGlyZWN0b3J5dAASTGphdmEvbGFuZy9TdHJpbmc7TAAPc291cmNlRGlyZWN0b3J5cQB+AAZ4cHQANC9ob21lL2FuZHJlYS9zY2FsYS1iaXRjb2luL3RhcmdldC9zY2FsYS0yLjExL2NsYXNzZXN0AAEv
+34 -> rO0ABXNyABV4c2J0aS5hcGkuQ29tcGlsYXRpb27t+uDDauigQgIAAkoACXN0YXJ0VGltZVsAB291dHB1dHN0ABpbTHhzYnRpL2FwaS9PdXRwdXRTZXR0aW5nO3hwAAABTYtc7YV1cgAaW0x4c2J0aS5hcGkuT3V0cHV0U2V0dGluZzt/asLzp4elQgIAAHhwAAAAAXNyABd4c2J0aS5hcGkuT3V0cHV0U2V0dGluZ3rZmkd0+x17AgACTAAPb3V0cHV0RGlyZWN0b3J5dAASTGphdmEvbGFuZy9TdHJpbmc7TAAPc291cmNlRGlyZWN0b3J5cQB+AAZ4cHQANC9ob21lL2FuZHJlYS9zY2FsYS1iaXRjb2luL3RhcmdldC9zY2FsYS0yLjExL2NsYXNzZXN0AAEv
+35 -> rO0ABXNyABV4c2J0aS5hcGkuQ29tcGlsYXRpb27t+uDDauigQgIAAkoACXN0YXJ0VGltZVsAB291dHB1dHN0ABpbTHhzYnRpL2FwaS9PdXRwdXRTZXR0aW5nO3hwAAABTYth6U11cgAaW0x4c2J0aS5hcGkuT3V0cHV0U2V0dGluZzt/asLzp4elQgIAAHhwAAAAAXNyABd4c2J0aS5hcGkuT3V0cHV0U2V0dGluZ3rZmkd0+x17AgACTAAPb3V0cHV0RGlyZWN0b3J5dAASTGphdmEvbGFuZy9TdHJpbmc7TAAPc291cmNlRGlyZWN0b3J5cQB+AAZ4cHQANC9ob21lL2FuZHJlYS9zY2FsYS1iaXRjb2luL3RhcmdldC9zY2FsYS0yLjExL2NsYXNzZXN0AAEv
+36 -> rO0ABXNyABV4c2J0aS5hcGkuQ29tcGlsYXRpb27t+uDDauigQgIAAkoACXN0YXJ0VGltZVsAB291dHB1dHN0ABpbTHhzYnRpL2FwaS9PdXRwdXRTZXR0aW5nO3hwAAABTYtm2lt1cgAaW0x4c2J0aS5hcGkuT3V0cHV0U2V0dGluZzt/asLzp4elQgIAAHhwAAAAAXNyABd4c2J0aS5hcGkuT3V0cHV0U2V0dGluZ3rZmkd0+x17AgACTAAPb3V0cHV0RGlyZWN0b3J5dAASTGphdmEvbGFuZy9TdHJpbmc7TAAPc291cmNlRGlyZWN0b3J5cQB+AAZ4cHQANC9ob21lL2FuZHJlYS9zY2FsYS1iaXRjb2luL3RhcmdldC9zY2FsYS0yLjExL2NsYXNzZXN0AAEv
+37 -> rO0ABXNyABV4c2J0aS5hcGkuQ29tcGlsYXRpb27t+uDDauigQgIAAkoACXN0YXJ0VGltZVsAB291dHB1dHN0ABpbTHhzYnRpL2FwaS9PdXRwdXRTZXR0aW5nO3hwAAABTYtq0tJ1cgAaW0x4c2J0aS5hcGkuT3V0cHV0U2V0dGluZzt/asLzp4elQgIAAHhwAAAAAXNyABd4c2J0aS5hcGkuT3V0cHV0U2V0dGluZ3rZmkd0+x17AgACTAAPb3V0cHV0RGlyZWN0b3J5dAASTGphdmEvbGFuZy9TdHJpbmc7TAAPc291cmNlRGlyZWN0b3J5cQB+AAZ4cHQANC9ob21lL2FuZHJlYS9zY2FsYS1iaXRjb2luL3RhcmdldC9zY2FsYS0yLjExL2NsYXNzZXN0AAEv
+38 -> rO0ABXNyABV4c2J0aS5hcGkuQ29tcGlsYXRpb27t+uDDauigQgIAAkoACXN0YXJ0VGltZVsAB291dHB1dHN0ABpbTHhzYnRpL2FwaS9PdXRwdXRTZXR0aW5nO3hwAAABTYyfwcN1cgAaW0x4c2J0aS5hcGkuT3V0cHV0U2V0dGluZzt/asLzp4elQgIAAHhwAAAAAXNyABd4c2J0aS5hcGkuT3V0cHV0U2V0dGluZ3rZmkd0+x17AgACTAAPb3V0cHV0RGlyZWN0b3J5dAASTGphdmEvbGFuZy9TdHJpbmc7TAAPc291cmNlRGlyZWN0b3J5cQB+AAZ4cHQANC9ob21lL2FuZHJlYS9zY2FsYS1iaXRjb2luL3RhcmdldC9zY2FsYS0yLjExL2NsYXNzZXN0AAEv
+39 -> rO0ABXNyABV4c2J0aS5hcGkuQ29tcGlsYXRpb27t+uDDauigQgIAAkoACXN0YXJ0VGltZVsAB291dHB1dHN0ABpbTHhzYnRpL2FwaS9PdXRwdXRTZXR0aW5nO3hwAAABTYyf0cx1cgAaW0x4c2J0aS5hcGkuT3V0cHV0U2V0dGluZzt/asLzp4elQgIAAHhwAAAAAXNyABd4c2J0aS5hcGkuT3V0cHV0U2V0dGluZ3rZmkd0+x17AgACTAAPb3V0cHV0RGlyZWN0b3J5dAASTGphdmEvbGFuZy9TdHJpbmc7TAAPc291cmNlRGlyZWN0b3J5cQB+AAZ4cHQANC9ob21lL2FuZHJlYS9zY2FsYS1iaXRjb2luL3RhcmdldC9zY2FsYS0yLjExL2NsYXNzZXN0AAEv
+40 -> rO0ABXNyABV4c2J0aS5hcGkuQ29tcGlsYXRpb27t+uDDauigQgIAAkoACXN0YXJ0VGltZVsAB291dHB1dHN0ABpbTHhzYnRpL2FwaS9PdXRwdXRTZXR0aW5nO3hwAAABTZGdxcd1cgAaW0x4c2J0aS5hcGkuT3V0cHV0U2V0dGluZzt/asLzp4elQgIAAHhwAAAAAXNyABd4c2J0aS5hcGkuT3V0cHV0U2V0dGluZ3rZmkd0+x17AgACTAAPb3V0cHV0RGlyZWN0b3J5dAASTGphdmEvbGFuZy9TdHJpbmc7TAAPc291cmNlRGlyZWN0b3J5cQB+AAZ4cHQANC9ob21lL2FuZHJlYS9zY2FsYS1iaXRjb2luL3RhcmdldC9zY2FsYS0yLjExL2NsYXNzZXN0AAEv
+41 -> rO0ABXNyABV4c2J0aS5hcGkuQ29tcGlsYXRpb27t+uDDauigQgIAAkoACXN0YXJ0VGltZVsAB291dHB1dHN0ABpbTHhzYnRpL2FwaS9PdXRwdXRTZXR0aW5nO3hwAAABTZGd0T11cgAaW0x4c2J0aS5hcGkuT3V0cHV0U2V0dGluZzt/asLzp4elQgIAAHhwAAAAAXNyABd4c2J0aS5hcGkuT3V0cHV0U2V0dGluZ3rZmkd0+x17AgACTAAPb3V0cHV0RGlyZWN0b3J5dAASTGphdmEvbGFuZy9TdHJpbmc7TAAPc291cmNlRGlyZWN0b3J5cQB+AAZ4cHQANC9ob21lL2FuZHJlYS9zY2FsYS1iaXRjb2luL3RhcmdldC9zY2FsYS0yLjExL2NsYXNzZXN0AAEv
+42 -> rO0ABXNyABV4c2J0aS5hcGkuQ29tcGlsYXRpb27t+uDDauigQgIAAkoACXN0YXJ0VGltZVsAB291dHB1dHN0ABpbTHhzYnRpL2FwaS9PdXRwdXRTZXR0aW5nO3hwAAABTZGqvjF1cgAaW0x4c2J0aS5hcGkuT3V0cHV0U2V0dGluZzt/asLzp4elQgIAAHhwAAAAAXNyABd4c2J0aS5hcGkuT3V0cHV0U2V0dGluZ3rZmkd0+x17AgACTAAPb3V0cHV0RGlyZWN0b3J5dAASTGphdmEvbGFuZy9TdHJpbmc7TAAPc291cmNlRGlyZWN0b3J5cQB+AAZ4cHQANC9ob21lL2FuZHJlYS9zY2FsYS1iaXRjb2luL3RhcmdldC9zY2FsYS0yLjExL2NsYXNzZXN0AAEv
+43 -> rO0ABXNyABV4c2J0aS5hcGkuQ29tcGlsYXRpb27t+uDDauigQgIAAkoACXN0YXJ0VGltZVsAB291dHB1dHN0ABpbTHhzYnRpL2FwaS9PdXRwdXRTZXR0aW5nO3hwAAABTZGqxDx1cgAaW0x4c2J0aS5hcGkuT3V0cHV0U2V0dGluZzt/asLzp4elQgIAAHhwAAAAAXNyABd4c2J0aS5hcGkuT3V0cHV0U2V0dGluZ3rZmkd0+x17AgACTAAPb3V0cHV0RGlyZWN0b3J5dAASTGphdmEvbGFuZy9TdHJpbmc7TAAPc291cmNlRGlyZWN0b3J5cQB+AAZ4cHQANC9ob21lL2FuZHJlYS9zY2FsYS1iaXRjb2luL3RhcmdldC9zY2FsYS0yLjExL2NsYXNzZXN0AAEv

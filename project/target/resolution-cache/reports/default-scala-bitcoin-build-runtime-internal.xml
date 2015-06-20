@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="ivy-report.xsl"?>
+<ivy-report version="1.0">
+	<info
+		organisation="default"
+		module="scala-bitcoin-build"
+		revision="0.1-SNAPSHOT"
+		extra-sbtVersion="0.13"
+		extra-scalaVersion="2.10"
+		conf="runtime-internal"
+		confs="compile, runtime, test, provided, optional, compile-internal, runtime-internal, test-internal, plugin, sources, docs, pom, scala-tool"
+		date="20150527231642"/>
+	<dependencies>
+		<module organisation="com.typesafe.sbt" name="sbt-start-script">
+			<revision name="0.10.0" status="release" pubdate="20130911085510" resolver="sbt-chain" artresolver="sbt-chain" extra-sbtVersion="0.13" extra-scalaVersion="2.10" downloaded="false" searched="false" default="false" conf="default(compile), compile" position="2">
+				<metadata-artifact status="no" details="" size="1749" time="0" location="/home/andrea/.ivy2/cache/scala_2.10/sbt_0.13/com.typesafe.sbt/sbt-start-script/ivy-0.10.0.xml" searched="false" origin-is-local="false" origin-location="http://repo.scala-sbt.org/scalasbt/sbt-plugin-releases/com.typesafe.sbt/sbt-start-script/scala_2.10/sbt_0.13/0.10.0/ivys/ivy.xml"/>
+				<caller organisation="default" name="scala-bitcoin-build" conf="optional, compile, runtime, runtime-internal" rev="0.10.0" rev-constraint-default="0.10.0" rev-constraint-dynamic="0.10.0" callerrev="0.1-SNAPSHOT" extra-sbtVersion="0.13" extra-scalaVersion="2.10"/>
+				<artifacts>
+					<artifact name="sbt-start-script" type="jar" ext="jar" status="no" details="" size="66180" time="0" location="/home/andrea/.ivy2/cache/scala_2.10/sbt_0.13/com.typesafe.sbt/sbt-start-script/jars/sbt-start-script-0.10.0.jar">
+						<origin-location is-local="false" location="http://repo.scala-sbt.org/scalasbt/sbt-plugin-releases/com.typesafe.sbt/sbt-start-script/scala_2.10/sbt_0.13/0.10.0/jars/sbt-start-script.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="default" name="global-plugins">
+			<revision name="0.0" status="integration" pubdate="20150527231639" resolver="inter-project" artresolver="inter-project" extra-sbtVersion="0.13" extra-scalaVersion="2.10" downloaded="false" searched="false" default="false" conf="default(compile), compile" position="0">
+				<metadata-artifact status="failed" details="" size="0" time="0" searched="false"/>
+				<caller organisation="default" name="scala-bitcoin-build" conf="optional, compile, runtime, runtime-internal" rev="0.0" rev-constraint-default="0.0" rev-constraint-dynamic="0.0" callerrev="0.1-SNAPSHOT" extra-sbtVersion="0.13" extra-scalaVersion="2.10"/>
+				<artifacts>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="me.lessis" name="np">
+			<revision name="0.2.0" status="release" pubdate="20130730201233" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://github.com/softprops/np" extra-sbtVersion="0.13" extra-scalaVersion="2.10" downloaded="false" searched="false" default="false" conf="default(compile), compile" position="1">
+				<license name="MIT" url="https://github.com/softprops/np/blob/0.2.0/LICENSE"/>
+				<metadata-artifact status="no" details="" size="1927" time="0" location="/home/andrea/.ivy2/cache/scala_2.10/sbt_0.13/me.lessis/np/ivy-0.2.0.xml" searched="false" origin-is-local="false" origin-location="https://repo.scala-sbt.org/scalasbt/sbt-plugin-releases/me.lessis/np/scala_2.10/sbt_0.13/0.2.0/ivys/ivy.xml"/>
+				<caller organisation="default" name="global-plugins" conf="compile" rev="0.2.0" rev-constraint-default="0.2.0" rev-constraint-dynamic="0.2.0" callerrev="0.0" extra-sbtVersion="0.13" extra-scalaVersion="2.10"/>
+				<artifacts>
+					<artifact name="np" type="jar" ext="jar" status="no" details="" size="41743" time="0" location="/home/andrea/.ivy2/cache/scala_2.10/sbt_0.13/me.lessis/np/jars/np-0.2.0.jar">
+						<origin-location is-local="false" location="https://repo.scala-sbt.org/scalasbt/sbt-plugin-releases/me.lessis/np/scala_2.10/sbt_0.13/0.2.0/jars/np.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+	</dependencies>
+</ivy-report>
