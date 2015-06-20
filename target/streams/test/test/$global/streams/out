@@ -1,7 +1,0 @@
-[0m[[0mdebug[0m] [0mRunning TaskDef(spikeTest.CompactNumberSpec, specs2 Specification fingerprint, false, [SuiteSelector])[0m
-[0m[[0mdebug[0m] [0mSummary for ScalaCheck not available.[0m
-[0m[[0mdebug[0m] [0mSummary for specs2 not available.[0m
-[0m[[31merror[0m] [0mError: Total 1, Failed 0, Errors 1, Passed 0[0m
-[0m[[31merror[0m] [0mError during tests:[0m
-[0m[[31merror[0m] [0m	spikeTest.CompactNumberSpec[0m
-[0m[[31merror[0m] [0m(test:[31mtest[0m) sbt.TestsFailedException: Tests unsuccessful[0m

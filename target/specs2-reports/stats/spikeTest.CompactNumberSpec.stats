@@ -1,6 +1,0 @@
-<spikeTest.CompactNumberSpec-results timestamp="1432562777178"><result location="spikeTest.CompactNumberSpec (CompactNumberSpec.scala:13)" id="-130085063"><stats time="105" expectations="1" errors="1" examples="1"></stats></result>
-</spikeTest.CompactNumberSpec-results>
-<spikeTest.CompactNumberSpec-stats timestamp="1432562777185"><stats time="19" expectations="1" errors="1" examples="1"></stats></spikeTest.CompactNumberSpec-stats>
-<spikeTest.CompactNumberSpec-results timestamp="1432562885656"><result location="spikeTest.CompactNumberSpec (CompactNumberSpec.scala:13)" id="-130085063"><stats time="90" expectations="1" errors="1" examples="1"></stats></result>
-</spikeTest.CompactNumberSpec-results>
-<spikeTest.CompactNumberSpec-stats timestamp="1432562885663"><stats time="19" expectations="1" errors="1" examples="1"></stats></spikeTest.CompactNumberSpec-stats>

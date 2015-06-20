@@ -1,8 +1,0 @@
-[0m[[0minfo[0m] [0mParserSpec[37m[0m[0m
-[0m[[0minfo[0m] [0m[37m[0m[37m[0m[0m
-[0m[[0minfo[0m] [0m[37m[0m[37mThe parser should[0m[37m[0m[0m
-[0m[[0minfo[0m] [0m[37m[0m[32m+[0m Parse a byte into an int[37m[0m[0m
-[0m[[0minfo[0m] [0m[37m[0m[37m[0m[0m
-[0m[[0minfo[0m] [0m[37m[0mTotal for specification ParserSpec[0m
-[0m[[0minfo[0m] [0m[36mFinished in 93 ms[0m[0m
-[0m[[0minfo[0m] [0m[36m[0m[36m1 example, 0 failure, 0 error[0m[0m
