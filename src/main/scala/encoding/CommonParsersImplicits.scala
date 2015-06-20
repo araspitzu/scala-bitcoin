@@ -5,7 +5,7 @@ import encoding.Parsing.{ParseSuccess, ParseResult, ByteReadable}
 /**
  * Created by andrea on 17/06/15.
  */
-package object CommonParsers {
+package object CommonParsersImplicits {
 
   implicit class HexString(hex:String){
     def hex2bytes = hex.sliding(2, 2).toArray.map(Integer.parseInt(_, 16).toByte)

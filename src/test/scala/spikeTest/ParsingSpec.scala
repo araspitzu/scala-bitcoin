@@ -17,7 +17,7 @@ class ParsingSpec extends Specification {
 
     "parse an uint8 as Short" in {
       import encoding.Parsing._
-      import encoding.CommonParsers._
+      import encoding.CommonParsersImplicits._
 
       val expected = 0xf2 //242
       val unit8bytes = "f2".hex2bytes
@@ -28,7 +28,7 @@ class ParsingSpec extends Specification {
 
     "parse an uint16 as Int" in {
       import encoding.Parsing._
-      import encoding.CommonParsers._
+      import encoding.CommonParsersImplicits._
 
       val expectedUint16:Int = 515
       val uint16bytes = "0203".hex2bytes
@@ -40,7 +40,7 @@ class ParsingSpec extends Specification {
 
     "parse an uint32 as Long" in {
       import encoding.Parsing._
-      import encoding.CommonParsers._
+      import encoding.CommonParsersImplicits._
 
       val expectedUint32:Long = 3294967295L
       val uint32bytes = "c46535ff".hex2bytes
@@ -51,7 +51,7 @@ class ParsingSpec extends Specification {
 
 //    "parse an uint64 as BigInt" in {
 //      import encoding.Parsing._
-//      import encoding.CommonParsers._
+//      import encoding.CommonParsersImplicits._
 //
 //      val uint64bytes = "0xc46535ff34f13f86".hex2bytes
 //
@@ -64,7 +64,7 @@ class ParsingSpec extends Specification {
       import domain.CompactNumber
       import domain.CompactInt
       import domain.CompactLong
-      import encoding.CommonParsers._
+      import encoding.CommonParsersImplicits._
 
       val expectedUint8 = 0xf2 //242
       val uint8bytes = "f2".hex2bytes
@@ -86,7 +86,7 @@ class ParsingSpec extends Specification {
       import encoding.Parsing._
       import domain.Outpoint
       import domain.TransactionInput._
-      import encoding.CommonParsers._
+      import encoding.CommonParsersImplicits._
 
       val expectedIndex:Long = 3294967295L
       val uint32bytes = "c46535ff"
@@ -106,7 +106,7 @@ class ParsingSpec extends Specification {
     }
 
     "parse a TransactionInput" in  {
-      import encoding.CommonParsers._
+      import encoding.CommonParsersImplicits._
       import encoding.Parsing._
       import domain.TransactionInput._
 
@@ -124,40 +124,6 @@ class ParsingSpec extends Specification {
 
       ris.get._1.previousOutput.index === 3294967295L
     }
-
-    "parse a list of byte" in  {
-      import encoding.Parsing._
-      import encoding.CommonParsers._
-
-
-       val bytes = Array(0xc4,0x65,0x35,0xff,0xc4,0x65,0x35,0xff,0xc4,0x65,0x35,0xff).map(_.toByte)
-
-       parseList[Byte](bytes,0,bytes.length).get._1.length === bytes.length
-
-    }
-
-
-
-//    "parse an uint64 as CompactBigInt" in {
-//      import encoding.Parsing._
-//      import domain.CompactNumber._
-//
-//      /**
-//       *  2^57 means in our byte array the 57th bit is set to 1
-//       *
-//       *  0000 0010 | 0000 0000 | 0000 0000 | 0000 0000 | 0000 0000 | 0000 0000 | 0000 0000 | 0000 0000
-//       *
-//       *  adding 515 results in bitewise OR operation thus
-//       *
-//       *  0000 0010 | 0000 0000 | 0000 0000 | 0000 0000 | 0000 0000 | 0000 0000 | 0000 0010 | 0000 0011
-//       *
-//       */
-//      val uint64bytes = Array(0x2, 0x0, 0x0, 0x0, 0x0, 0x0, 0x2, 0x3) map (_.toByte)
-//      val expectedUint64:BigInt = BigInt(uint64bytes)
-//
-//      parse[CompactBigInt](uint64bytes,0) === ParseSuccess(CompactBigInt(expectedUint64),8)
-//
-//    }.pendingUntilFixed("Fix uint64 parsing")
 
   }
 

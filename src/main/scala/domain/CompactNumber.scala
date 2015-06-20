@@ -1,8 +1,8 @@
 package domain
 
-import encoding.CommonParsers
+import encoding.CommonParsersImplicits
 import encoding.Parsing._
-import encoding.CommonParsers._
+import encoding.CommonParsersImplicits._
 /**
  * Created by andrea on 16/05/15.
  */
@@ -65,7 +65,7 @@ object CompactNumber {
 
   implicit val compactNumberByteReader = new {} with ByteReadable[CompactNumber] {
     override def read(bytes: Array[Byte], offset: Int): ParseResult[CompactNumber] = {
-      val (first:Short,byteUsed:Int) = CommonParsers.uint8ByteReader.read(bytes,offset) match {
+      val (first:Short,byteUsed:Int) = CommonParsersImplicits.uint8ByteReader.read(bytes,offset) match {
         case ParseSuccess(i,used) => (i,used)
         case ParseFailure(e,t) => throw t.get
       }

@@ -2,7 +2,7 @@ package domain
 
 import encoding.Parsing._
 import domain.CompactNumber._
-import encoding.CommonParsers._
+import encoding.CommonParsersImplicits._
 
 
 /**
