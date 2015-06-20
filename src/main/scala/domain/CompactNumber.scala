@@ -1,6 +1,6 @@
 package domain
 
-import encoding.{Parsing, CommonParsers}
+import encoding.CommonParsers
 import encoding.Parsing._
 import encoding.CommonParsers._
 /**
