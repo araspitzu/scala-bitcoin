@@ -70,7 +70,9 @@ object Parsing {
   }
 
   case class ParseSuccess[T](result: T,bytesUsed:Int) extends ParseResult[T]
-  case class ParseFailure(err: String, thr: Option[Throwable]) extends ParseResult[Nothing]
+  case class ParseFailure(err: String, thr: Option[Throwable]) extends ParseResult[Nothing] {
+    override def toString = err + (thr.map(_.getMessage)).getOrElse("")
+  }
 
     trait ByteReadable[T] {
       def read(bytes: Array[Byte], offset: Int): ParseResult[T]

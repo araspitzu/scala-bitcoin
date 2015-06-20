@@ -8,15 +8,7 @@ import encoding.Parsing.{ParseSuccess, ParseResult, ByteReadable}
 package object CommonParsers {
 
   implicit class HexString(hex:String){
-
-    def hex2bytes:Array[Byte] = {
-      val x = hex.indexOf('x')
-      if(x != -1)
-        hex.substring(x + 1).sliding(2, 2).toArray.map(Integer.parseInt(_, 16).toByte)
-      else
-        hex.sliding(2, 2).toArray.map(Integer.parseInt(_, 16).toByte)
-    }
-
+    def hex2bytes = hex.sliding(2, 2).toArray.map(Integer.parseInt(_, 16).toByte)
   }
 
   def bytes2hex(bytes: Array[Byte]): String = bytes.map("%02x".format(_)).mkString
@@ -34,7 +26,7 @@ package object CommonParsers {
   implicit val uint8ByteReader = new {} with ByteReadable[Short] {
     def read(bytes: Array[Byte], offset: Int):ParseResult[Short] = ParseSuccess(
       result = parseUint8(bytes,offset).toShort,
-      bytesUsed = 1 //uint8 uses 8bit = 1 bytes ...
+      bytesUsed = 1
     )
   }
 

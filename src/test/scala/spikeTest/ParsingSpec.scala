@@ -1,5 +1,6 @@
 package spikeTest
 
+import domain.TransactionInput
 import org.specs2.mutable.Specification
 
 /**
@@ -19,7 +20,7 @@ class ParsingSpec extends Specification {
       import encoding.CommonParsers._
 
       val expected = 0xf2 //242
-      val unit8bytes = "0xf2".hex2bytes
+      val unit8bytes = "f2".hex2bytes
 
       parse[Short](unit8bytes,0) === ParseSuccess(242,1)
 
@@ -30,7 +31,7 @@ class ParsingSpec extends Specification {
       import encoding.CommonParsers._
 
       val expectedUint16:Int = 515
-      val uint16bytes = "0x0203".hex2bytes
+      val uint16bytes = "0203".hex2bytes
 
 
       parse[Int](uint16bytes,0) === ParseSuccess(expectedUint16,2)
@@ -42,7 +43,7 @@ class ParsingSpec extends Specification {
       import encoding.CommonParsers._
 
       val expectedUint32:Long = 3294967295L
-      val uint32bytes = "0xc46535ff".hex2bytes
+      val uint32bytes = "c46535ff".hex2bytes
 
       parse[Long](uint32bytes,0) === ParseSuccess(expectedUint32,4)
 
@@ -66,13 +67,13 @@ class ParsingSpec extends Specification {
       import encoding.CommonParsers._
 
       val expectedUint8 = 0xf2 //242
-      val uint8bytes = "0xf2".hex2bytes
+      val uint8bytes = "f2".hex2bytes
 
       val expectedUint16:Int = 515
-      val uint16bytes = "0xfd0203".hex2bytes
+      val uint16bytes = "fd0203".hex2bytes
 
       val expectedUint32:Long = 3294967295L
-      val uint32bytes = "0xfec46535ff".hex2bytes
+      val uint32bytes = "fec46535ff".hex2bytes
 
 
       parse[CompactNumber](uint8bytes,0) === ParseSuccess(CompactInt(expectedUint8),1)
@@ -88,12 +89,10 @@ class ParsingSpec extends Specification {
       import encoding.CommonParsers._
 
       val expectedIndex:Long = 3294967295L
-      val uint32bytes = "0xc46535ff".hex2bytes
+      val uint32bytes = "c46535ff"
+      val hash = "86a73d7aad94571e040ae307e866b53605255baf85b9ffc874872b4c4586b069"
 
-      val hash:List[Int] = List(0xff,0xff,0xff,0xff,0xff,0xff,0xff,0xff,0xff,0xff,0xff,0xff,0xff,0xff,0xff,0xff,
-                                0xff,0xff,0xff,0xff,0xff,0xff,0xff,0xff,0xff,0xff,0xff,0xff,0xff,0xff,0xff,0xff)
-
-      val rawOutpoint:Array[Byte] = (hash.map(_.toByte) ++ (uint32bytes.map(_.toByte))).toArray
+      val rawOutpoint:Array[Byte] = (hash ++ uint32bytes).hex2bytes
 
       val ris = parse[Outpoint](rawOutpoint,0)
 
@@ -101,9 +100,29 @@ class ParsingSpec extends Specification {
 
       ris.get._2 === 36
 
-      outpoint.hash.length === hash.length
+      outpoint.hash.length === hash.length / 2
       outpoint.index === expectedIndex
 
+    }
+
+    "parse a TransactionInput" in  {
+      import encoding.CommonParsers._
+      import encoding.Parsing._
+      import domain.TransactionInput._
+
+
+      val rawOutpoint = "86a73d7aad94571e040ae307e866b53605255baf85b9ffc874872b4c4586b069c46535ff"
+      val scrLen = "0c"
+      val script = "b2c3ffb2c3ffb2c3ffb2c3efb2c3ffb2c3ffb2c3ffb2c3ff"
+      val seq = "c46535ff"
+
+      val rawTxIn = (rawOutpoint ++ scrLen ++ script ++ seq).hex2bytes
+
+      val ris =  parse[TransactionInput](rawTxIn,0)
+
+      System.err.println(ris)
+
+      ris.get._1.previousOutput.index === 3294967295L
     }
 
     "parse a list of byte" in  {
