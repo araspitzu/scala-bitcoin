@@ -1,6 +1,6 @@
 package spikeTest
 
-import domain.{Outpoint, CompactNumber, CompactLong, CompactInt, TransactionInput}
+import domain._
 import org.specs2.mutable.Specification
 import org.specs2.specification.Scope
 import encoding.CommonParsersImplicits._
@@ -24,6 +24,9 @@ class ParsingSpec extends Specification {
     val uint32:Long = 3294967295L
     val uint32bytes = "c46535ff"
 
+    val uint64bytes = "c46535ff34f13f86"
+    val uint64decimal = "14151776774302809990"
+
   }
 
   trait CompactNumberScope extends UnsignedIntegerScope {
@@ -36,6 +39,9 @@ class ParsingSpec extends Specification {
 
     val compactLong3294967295 = CompactLong(uint32)
     val compactLong3294967295bytes = "fe"+uint32bytes
+
+    val compactBigInt14151776774302809990 = CompactBigInt(BigInt(uint64decimal,10))
+    val compactBigInt14151776774302809990bytes = "ff"+uint64bytes
 
   }
 
@@ -54,27 +60,24 @@ class ParsingSpec extends Specification {
 
     }
 
-    "parse an uint32 as Long" in new UnsignedIntegerScope{
+    "parse an uint32 as Long" in new UnsignedIntegerScope {
 
       parse[Long](uint32bytes.hex2bytes,0) === ParseSuccess(uint32,4)
 
     }
 
-//    "parse an uint64 as BigInt" in {
-//      import encoding.Parsing._
-//      import encoding.CommonParsersImplicits._
-//
-//      val uint64bytes = "0xc46535ff34f13f86".hex2bytes
-//
-//      parse[BigInt](uint64bytes,0) === ParseSuccess(BigInt(uint64bytes),8)
-//
-//    }
+    "parse an uint64 as BigInt" in new UnsignedIntegerScope {
+
+      parse[BigInt](uint64bytes.hex2bytes,0) === ParseSuccess(BigInt(uint64decimal,10),8)
+
+    }
 
     "parse a CompactNumber using the proper type" in new CompactNumberScope{
 
       parse[CompactNumber](compactShort12bytes.hex2bytes,0) === ParseSuccess(compactShort12,1)
       parse[CompactNumber](compactInt515bytes.hex2bytes,0) === ParseSuccess(compactInt515,3)
       parse[CompactNumber](compactLong3294967295bytes.hex2bytes,0) === ParseSuccess(compactLong3294967295,5)
+      parse[CompactNumber](compactBigInt14151776774302809990bytes.hex2bytes,0) === ParseSuccess(compactBigInt14151776774302809990,9)
 
     }
 
