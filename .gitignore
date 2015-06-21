@@ -10,9 +10,10 @@ target/
 lib_managed/
 src_managed/
 project/boot/
+project/target/
 project/plugins/project/
 
 # Intellij idea
 .scala_dependencies
-.idea
+.idea/*
 *.iml
