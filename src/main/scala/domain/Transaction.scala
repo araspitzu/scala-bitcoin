@@ -9,12 +9,12 @@ import encoding.CommonParsersImplicits._
  * Created by andrea on 11/05/15.
  */
 case class Transaction(
-     version:Long,                   // uint32_t
-     nTxIn:CompactNumber,            // compactSize uint
-     txIn:List[TransactionInput],                 // Transaction inputs
-     nTxOut:CompactNumber,           //
-     txOut:List[Int],                //
-     lockTime:Long                   // uint32_t
+     version:Long,
+     nTxIn:CompactNumber,
+     txIn:List[TransactionInput],
+     nTxOut:CompactNumber,
+     txOut:List[TransactionOutput],
+     lockTime:Long
 )
 
 object Transaction {
@@ -29,14 +29,18 @@ object Transaction {
            case CompactBigInt(b) => b.toInt
          }).withOffset
          ntxout <- parse[CompactNumber](bytes,offset + used + used1 + used2)
-         //txout = List.empty[Int]
-         locktime <- parse[Long](bytes,offset + 3)
+         (txout,used3) <- parseList[TransactionOutput](bytes,offset + used + used1 + used2 + ntxin.originalSize, ntxin match {
+           case CompactInt(i) => i
+           case CompactLong(l) => l.toInt
+           case CompactBigInt(b) => b.toInt
+         }).withOffset
+         locktime <- parse[Long](bytes,offset + used + used1 + used2 + used3)
        } yield Transaction(
           version = vers,
           nTxIn = ntxin,
           txIn = txin,
           nTxOut = ntxout,
-          txOut = List.empty,
+          txOut = txout,
           lockTime = locktime
        )
    }
