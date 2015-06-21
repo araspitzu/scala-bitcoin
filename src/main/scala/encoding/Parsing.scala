@@ -47,7 +47,7 @@ object Parsing {
 //    }
 
     def map[U](f: T => U):ParseResult[U] = this match {
-      case ParseSuccess(result,used) => flatMap( r =>  ParseSuccess(f(r),used))
+      case ParseSuccess(result,used) => flatMap( r =>  ParseSuccess(f(r),0))
       case e:ParseFailure => e
     }
 

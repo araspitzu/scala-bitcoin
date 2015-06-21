@@ -104,9 +104,12 @@ class ParsingSpec extends Specification {
 
       val rawOutpoint = s"86a73d7aad94571e040ae307e866b53605255baf85b9ffc874872b4c4586b069$uint32bytes"
       val script = "b2c3ffb2c3ffb2c3ffb2c3ff"
+      val scrLen = compactShort12bytes
 
-      val hexTxIn = rawOutpoint ++ compactShort12bytes ++ script ++ uint32bytes
+      val hexTxIn = rawOutpoint ++ scrLen ++ script ++ uint32bytes
       val rawTxIn = hexTxIn.hex2bytes
+
+      val expectedLength = 36 + 1 + 12 + 4
 
       val ris =  parse[TransactionInput](rawTxIn,0)
 
@@ -117,7 +120,7 @@ class ParsingSpec extends Specification {
       txIn.sequence === uint32
       txIn.scriptLength === compactShort12
 
-    //  txInLength === rawTxIn.length
+      txInLength === expectedLength
 
     }
 
