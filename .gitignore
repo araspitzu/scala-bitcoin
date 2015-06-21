@@ -1,7 +1,10 @@
 *.class
 *.log
 
-# sbt specific
+# SBT ignore
+.cache
+.history
+.lib/
 dist/*
 target/
 lib_managed/
@@ -9,7 +12,7 @@ src_managed/
 project/boot/
 project/plugins/project/
 
-# Scala-IDE specific
+# Intellij idea
 .scala_dependencies
-.idea/
+.idea
 *.iml
