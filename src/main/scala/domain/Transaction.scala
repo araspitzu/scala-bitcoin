@@ -9,7 +9,7 @@ import encoding.CommonParsersImplicits._
  * Created by andrea on 11/05/15.
  */
 case class Transaction(
-     version:Long,
+     version:Long,                   //version is always 1
      nTxIn:CompactNumber,
      txIn:List[TransactionInput],
      nTxOut:CompactNumber,

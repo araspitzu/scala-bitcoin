@@ -44,6 +44,13 @@ package object CommonParsersImplicits {
     )
   }
 
+   val int64ByteReader = new {} with ByteReadable[Long] {
+    override def read(bytes: Array[Byte], offset:Int):ParseResult[Long] = ParseSuccess(
+      result = parseInt64LE(bytes,offset),
+      bytesUsed = 8
+    )
+  }
+
   implicit val uint64ByteReader = new {} with ByteReadable[BigInt] {
     override def read(bytes: Array[Byte], offset: Int): ParseResult[BigInt] = ParseSuccess(
       result = parseUint64LE(bytes,offset),
@@ -60,6 +67,17 @@ package object CommonParsersImplicits {
       ((bytes(offset + 2) & 0xffL) << 8) |
       ((bytes(offset + 1) & 0xffL) << 16) |
       ((bytes(offset + 0) & 0xffL) << 24)
+  }
+
+  private def parseInt64LE(bytes: Array[Byte], offset: Int): Long = {
+      ((bytes(offset + 1) & 0xffL) << 0) |
+      ((bytes(offset + 2) & 0xffL) << 8) |
+      ((bytes(offset + 3) & 0xffL) << 16) |
+      ((bytes(offset + 4) & 0xffL) << 24) |
+      ((bytes(offset + 5) & 0xffL) << 32) |
+      ((bytes(offset + 6) & 0xffL) << 40) |
+      ((bytes(offset + 7) & 0xffL) << 48) |
+      ((bytes(offset + 0) & 0xffL) << 56)
   }
 
   private def parseUint64LE(bytes: Array[Byte],offset:Int):BigInt = {
