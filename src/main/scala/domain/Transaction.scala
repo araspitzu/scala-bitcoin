@@ -29,7 +29,7 @@ object Transaction {
            case CompactBigInt(b) => b.toInt
          }).withOffset
          ntxout <- parse[CompactNumber](bytes,offset + used + used1 + used2)
-         (txout,used3) <- parseList[TransactionOutput](bytes,offset + used + used1 + used2 + ntxin.originalSize, ntxin match {
+         (txout,used3) <- parseList[TransactionOutput](bytes,offset + used + used1 + used2 + ntxout.originalSize, ntxout match {
            case CompactInt(i) => i
            case CompactLong(l) => l.toInt
            case CompactBigInt(b) => b.toInt
