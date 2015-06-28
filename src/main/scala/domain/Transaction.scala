@@ -21,7 +21,7 @@ object Transaction {
 
    implicit val transactionIsByteReadable = new {} with ByteReadable[Transaction]{
      def read(bytes: Array[Byte], offset: Int) = for {
-        (vers,used) <- parse[Long](bytes,offset).withOffset
+        (vers,used) <- parse[Long](bytes,offset)(uint32ByteReaderBE).withOffset
         (ntxin,used1) <- parse[CompactNumber](bytes,offset + used).withOffset
         (txin,used2) <- parseList[TransactionInput](bytes,offset + used + used1, ntxin match {
            case CompactInt(i) => i

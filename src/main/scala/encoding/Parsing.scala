@@ -88,6 +88,11 @@ object Parsing {
 
     def parse[T](bytes:Array[Byte],offset:Int)(implicit reader:ByteReadable[T]):ParseResult[T] = reader.safeRead(bytes,offset)
 
+    def parse[T](bytes:String)(implicit reader:ByteReadable[T]):ParseResult[T] = {
+      import encoding.CommonParsersImplicits._
+      parse[T](bytes.hex2bytes,0)
+    }
+
     def parseList[T](bytes:Array[Byte],offset:Int,numElem:Int)(implicit reader:ByteReadable[T]):ParseResult[List[T]] = {
       val list = seqParse[T](bytes,offset,numElem)
       if(list.length < numElem)
