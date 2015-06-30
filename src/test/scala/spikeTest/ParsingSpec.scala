@@ -149,11 +149,8 @@ class ParsingSpec extends Specification {
     val uint64bytes = "c46535ff34f13f86"
     val uint64decimal = "14151776774302809990"
 
-    val int64bytes = "6264010000000000"
-    val int64:Long = 91234L
-
-    val otherInt64bytes = "404b4c0000000000"
-    val otherInt64:Long = 5000000L //  0.05 BTC
+    val int64bytes = "404b4c0000000000"
+    val int64:Long = 5000000L //  0.05 BTC
 
   }
 
@@ -211,7 +208,7 @@ class ParsingSpec extends Specification {
 
     "parse an int64 as Long" in new UnsignedIntegerScope {
 
-      parse[Long](int64bytes.hex2bytes.reverse,0)(int64ByteReader) === ParseSuccess(int64,8)
+      parse[Long](int64bytes.hex2bytes,0)(int64ByteReader) === ParseSuccess(int64,8)
 
     }
 
@@ -269,7 +266,7 @@ class ParsingSpec extends Specification {
 
     "parse a TransactionOutput" in new CompactNumberScope {
 
-      val rawTxOut = bytes2hex(int64bytes.hex2bytes.reverse) ++ compactShort12bytes ++ "c46535ff34f13f863f863f86"
+      val rawTxOut = int64bytes ++ compactShort12bytes ++ "c46535ff34f13f863f863f86"
 
       val res = parse[TransactionOutput](rawTxOut.hex2bytes, 0)
 
@@ -283,18 +280,21 @@ class ParsingSpec extends Specification {
 
     "parse a Transaction" in new CompactNumberScope {
 
-      val reversedRawTx:Array[Byte] = rawSignedTxReversed.hex2bytes
+      val rawTx:Array[Byte] = rawSignedTxReversed.hex2bytes
 
-      val res = parse[Transaction](reversedRawTx,0)
+      val res = parse[Transaction](rawTx,0)
 
       println(res)
 
-      val tx = res.get._1
+      val tx:Transaction = res.get._1
       val txLength = res.get._2
 
       tx.version === 1L
       tx.nTxIn === CompactInt(5)
       tx.txIn.map(_.sequence) forall (_ == 4294967295L)
+      tx.nTxOut === CompactInt(5)
+      tx.txOut(0).value === 200000000L
+      tx.lockTime === 0L
 
     }
 

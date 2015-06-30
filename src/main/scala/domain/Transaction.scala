@@ -28,13 +28,13 @@ object Transaction {
            case CompactLong(l) => l.toInt
            case CompactBigInt(b) => b.toInt
          }).withOffset
-         ntxout <- parse[CompactNumber](bytes,offset + used + used1 + used2)
-         (txout,used3) <- parseList[TransactionOutput](bytes,offset + used + used1 + used2 + ntxout.originalSize, ntxout match {
+        (ntxout,used3) <- parse[CompactNumber](bytes,offset + used + used1 + used2).withOffset
+        (txout,used4) <- parseList[TransactionOutput](bytes,offset + used + used1 + used2 + used3, ntxout match {
            case CompactInt(i) => i
            case CompactLong(l) => l.toInt
            case CompactBigInt(b) => b.toInt
-         }).withOffset
-         locktime <- parse[Long](bytes,offset + used + used1 + used2 + used3)
+        }).withOffset
+        locktime <- parse[Long](bytes,offset + used + used1 + used2 + used3 + used4)
        } yield Transaction(
           version = vers,
           nTxIn = ntxin,

@@ -77,13 +77,13 @@ package object CommonParsersImplicits {
   }
 
   private def parseUint32BE(bytes: Array[Byte], offset: Int): Long = {
-      ((bytes(offset + 0) & 0xffL) << 0) |
-      ((bytes(offset + 3) & 0xffL) << 8) |
+      ((bytes(offset + 0) & 0xffL) << 0)  |
+      ((bytes(offset + 3) & 0xffL) << 8)  |
       ((bytes(offset + 2) & 0xffL) << 16) |
       ((bytes(offset + 1) & 0xffL) << 24)
   }
 
-  private def parseInt64LE(bytes: Array[Byte], offset: Int): Long = java.lang.Long.parseLong(bytes2hex(bytes.slice(offset,offset + 8)),16)
+  private def parseInt64LE(bytes: Array[Byte], offset: Int): Long = java.lang.Long.parseLong(bytes2hex(bytes.slice(offset,offset + 8).reverse),16)
 
   private def parseUint64LE(bytes: Array[Byte],offset:Int):BigInt = BigInt(bytes2hex(bytes.slice(offset,offset + 8)), 16)
 
