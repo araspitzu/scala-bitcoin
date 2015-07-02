@@ -23,17 +23,9 @@ object Transaction {
      def read(bytes: Array[Byte], offset: Int) = for {
         (vers,used) <- parse[Long](bytes,offset)(uint32ByteReaderBE).withOffset
         (ntxin,used1) <- parse[CompactNumber](bytes,offset + used).withOffset
-        (txin,used2) <- parseList[TransactionInput](bytes,offset + used + used1, ntxin match {
-           case CompactInt(i) => i
-           case CompactLong(l) => l.toInt
-           case CompactBigInt(b) => b.toInt
-         }).withOffset
+        (txin,used2) <- parseList[TransactionInput](bytes,offset + used + used1, ntxin.intValue).withOffset
         (ntxout,used3) <- parse[CompactNumber](bytes,offset + used + used1 + used2).withOffset
-        (txout,used4) <- parseList[TransactionOutput](bytes,offset + used + used1 + used2 + used3, ntxout match {
-           case CompactInt(i) => i
-           case CompactLong(l) => l.toInt
-           case CompactBigInt(b) => b.toInt
-        }).withOffset
+        (txout,used4) <- parseList[TransactionOutput](bytes,offset + used + used1 + used2 + used3, ntxout.intValue).withOffset
         locktime <- parse[Long](bytes,offset + used + used1 + used2 + used3 + used4)
        } yield Transaction(
           version = vers,

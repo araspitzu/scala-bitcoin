@@ -19,11 +19,7 @@ object TransactionOutput {
     override def read(bytes: Array[Byte], offset: Int): ParseResult[TransactionOutput] = for {
       (satoshis,used) <- parse[Long](bytes,offset)(int64ByteReader).withOffset
       (scrLen,used1) <- parse[CompactNumber](bytes,offset + used).withOffset
-      script <- parseList[Byte](bytes,offset + used + used1,scrLen match {
-        case CompactInt(i) => i
-        case CompactLong(l) => l.toInt
-        case CompactBigInt(b) => b.toInt
-      })
+      script <- parseList[Byte](bytes,offset + used + used1,scrLen.intValue)
     } yield TransactionOutput(
       value = satoshis,
       pk_script_length = scrLen,

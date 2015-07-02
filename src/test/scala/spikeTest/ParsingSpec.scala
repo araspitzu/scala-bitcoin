@@ -284,8 +284,6 @@ class ParsingSpec extends Specification {
 
       val res = parse[Transaction](rawTx,0)
 
-      println(res)
-
       val tx:Transaction = res.get._1
       val txLength = res.get._2
 

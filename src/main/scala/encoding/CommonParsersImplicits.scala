@@ -8,7 +8,7 @@ import encoding.Parsing.{ParseSuccess, ParseResult, ByteReadable}
 package object CommonParsersImplicits {
 
   implicit class HexString(hex:String){
-    def hex2bytes = hex.sliding(2, 2).toArray.map(Integer.parseInt(_, 16).toByte)
+    def hex2bytes:Array[Byte] = hex.sliding(2, 2).toArray.map(Integer.parseInt(_, 16).toByte)
   }
 
   def bytes2hex(bytes: Array[Byte]): String = bytes.map("%02x".format(_)).mkString

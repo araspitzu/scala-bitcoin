@@ -39,12 +39,7 @@ object TransactionInput {
     override def read(bytes: Array[Byte], offset: Int): ParseResult[TransactionInput] = for {
       (prevOut,used) <- parse[Outpoint](bytes,offset).withOffset
       (scrLen,used1) <- parse[CompactNumber](bytes,offset + used).withOffset
-      //FIXME
-      (script,used2) <- parseList[Byte](bytes,offset + used + used1,scrLen match {
-        case CompactInt(i) => i
-        case CompactLong(l) => l.toInt
-        case CompactBigInt(b) => b.intValue
-      }).withOffset
+      (script,used2) <- parseList[Byte](bytes,offset + used + used1,scrLen.intValue).withOffset
       seqNum <- parse[Long](bytes,offset + used + used1 + used2)
     } yield TransactionInput(
        previousOutput = prevOut,

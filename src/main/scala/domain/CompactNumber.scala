@@ -19,6 +19,24 @@ sealed trait CompactNumber{
     case _:CompactBigInt => 9
   }
 
+  def intValue:Int = this match {
+    case CompactInt(i) => i
+    case CompactLong(l) => l.toInt
+    case CompactBigInt(b) => b.toInt
+  }
+
+  def longValue:Long = this match {
+    case CompactInt(i) => i.toLong
+    case CompactLong(l) => l
+    case CompactBigInt(b) => b.toLong
+  }
+
+  def bigIntValue:BigInt = this match {
+    case CompactInt(i) => i
+    case CompactLong(l) => l
+    case CompactBigInt(b) => b
+  }
+
 }
 
 case class CompactInt(value:Int) extends CompactNumber
@@ -67,7 +85,7 @@ object CompactNumber {
     override def read(bytes: Array[Byte], offset: Int): ParseResult[CompactNumber] = {
       val (first:Short,byteUsed:Int) = CommonParsersImplicits.uint8ByteReader.read(bytes,offset) match {
         case ParseSuccess(i,used) => (i,used)
-        case ParseFailure(e,t) => throw t.get
+        case f:ParseFailure => f
       }
 
       if(first < 253)
