@@ -21,7 +21,7 @@ object TransactionInput {
 
   implicit val outpointByteReadable = new {} with ByteReadable[Outpoint] {
     override def read(bytes: Array[Byte], offset: Int): ParseResult[Outpoint] = {
-      parse[Long](bytes,offset + 32) match {
+      parse[Long](bytes,offset + 32)(uint32ByteReaderBE) match {
         case ParseSuccess(index,used) => ParseSuccess(
           result = Outpoint(
             hash = bytes.slice(offset,32),
@@ -40,7 +40,7 @@ object TransactionInput {
       (prevOut,used) <- parse[Outpoint](bytes,offset).withOffset
       (scrLen,used1) <- parse[CompactNumber](bytes,offset + used).withOffset
       (script,used2) <- parseList[Byte](bytes,offset + used + used1,scrLen.intValue).withOffset
-      seqNum <- parse[Long](bytes,offset + used + used1 + used2)
+      seqNum <- parse[Long](bytes,offset + used + used1 + used2)(uint32ByteReaderBE)
     } yield TransactionInput(
        previousOutput = prevOut,
        scriptLength = scrLen,
