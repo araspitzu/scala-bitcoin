@@ -9,8 +9,8 @@ import encoding.CommonParsersImplicits._
  */
 case class TransactionOutput(
    value:Long,  // int64_t   ->  number of sathoshis spent
-   pk_script_length:CompactNumber,
-   pk_script:Array[Byte]
+   pkScriptLength:CompactNumber,
+   pkScript:Script
 )
 
 object TransactionOutput {
@@ -19,11 +19,11 @@ object TransactionOutput {
     override def read(bytes: Array[Byte], offset: Int): ParseResult[TransactionOutput] = for {
       (satoshis,used) <- parse[Long](bytes,offset)(int64ByteReader).withOffset
       (scrLen,used1) <- parse[CompactNumber](bytes,offset + used).withOffset
-      script <- parseList[Byte](bytes,offset + used + used1,scrLen.intValue)
+      scriptData <- parseList[Byte](bytes,offset + used + used1,scrLen.intValue)
     } yield TransactionOutput(
       value = satoshis,
-      pk_script_length = scrLen,
-      pk_script = script.toArray
+      pkScriptLength = scrLen,
+      pkScript = Script(scriptData.toArray)
     )
   }
 

@@ -9,7 +9,7 @@ import domain.CompactNumber._
 case class Block(
   header:BlockHeader,
   nTx:CompactNumber,
-  txs:Array[Transaction]
+  txs:List[Transaction]
 )
 
 object Block {
@@ -18,11 +18,13 @@ object Block {
     override def read(bytes: Array[Byte], offset: Int): ParseResult[Block] = for {
       header <- parse[BlockHeader](bytes,offset)
       nTx <- parse[CompactNumber](bytes,offset + 80)
-      txs <- parseList[Transaction](bytes,offset + 80 + nTx.originalSize , nTx.intValue)
+      (coinbase,used) <- parse[Transaction](bytes,offset + 80 + nTx.originalSize).withOffset
+      if(coinbase.isCoinbase)
+      txs <- parseList[Transaction](bytes,offset + 80 + nTx.originalSize + used, nTx.intValue - 1 )
     } yield Block(
       header = header,
       nTx = nTx,
-      txs = txs.toArray
+      txs = coinbase :: txs
     )
   }
 

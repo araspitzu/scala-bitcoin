@@ -15,7 +15,11 @@ case class Transaction(
      nTxOut:CompactNumber,
      txOut:List[TransactionOutput],
      lockTime:Long
-)
+) {
+
+  def isCoinbase = true
+
+}
 
 object Transaction {
 

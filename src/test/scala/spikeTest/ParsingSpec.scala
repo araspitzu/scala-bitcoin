@@ -274,8 +274,8 @@ class ParsingSpec extends Specification {
       val txOut = res.get._1
 
       txOut.value === int64
-      txOut.pk_script_length === compactShort12
-      txOut.pk_script.length === 12
+      txOut.pkScriptLength === compactShort12
+      txOut.pkScript.length === 12
 
     }
 
@@ -327,6 +327,7 @@ class ParsingSpec extends Specification {
       block.txs.length === 3
       block.txs forall (_.version == 1)
       block.txs forall (_.nTxOut === CompactInt(5))
+      blockSize === rawBlock.length / 2
 
     }
   }
