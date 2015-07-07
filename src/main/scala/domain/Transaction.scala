@@ -17,7 +17,7 @@ case class Transaction(
      lockTime:Long
 ) {
 
-  def isCoinbase = true
+  def isCoinbase = true//txIn.length == 1
 
 }
 

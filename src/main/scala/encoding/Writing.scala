@@ -5,6 +5,10 @@ package encoding
  */
 object Writing {
 
+  trait ByteWritable{
 
+    def toByte:List[Byte]
+
+  }
 
 }

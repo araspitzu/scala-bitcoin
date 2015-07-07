@@ -1,6 +1,5 @@
 package domain
 
-import encoding.Parsing.{ParseSuccess, ParseResult, ByteReadable}
 
 /**
  * Created by andrea on 04/07/15.
