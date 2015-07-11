@@ -1,6 +1,7 @@
 package encoding
 
 import encoding.Parsing.{ParseSuccess, ParseResult, ByteReadable}
+import encoding.Writing.ByteWritable
 
 /**
  * Created by andrea on 17/06/15.
@@ -20,6 +21,10 @@ package object CommonParsersImplicits {
     )
   }
 
+  implicit val stringWritable = new {} with ByteWritable[String] {
+    override def byteFormat[String](b:String):List[Byte] = b.toString.hex2bytes.toList
+  }
+
   /**
    *  Byte readers for common numeric types
    */
@@ -30,11 +35,21 @@ package object CommonParsersImplicits {
     )
   }
 
+  implicit val uint8ByteWriter = new {} with ByteWritable[Short] {
+    override def byteFormat[Short](t: Short): List[Byte] = List()
+  }
+
   implicit val uint16ByteReader = new {} with ByteReadable[Int] {
     override def read(bytes: Array[Byte], offset: Int): ParseResult[Int] = ParseSuccess(
       result = parseUint16(bytes,offset),
       bytesUsed = 2
     )
+  }
+
+  implicit val uint16ByteWriter = new {} with ByteWritable[Int] {
+    override def byteFormat[Int](i: Int): List[Byte] = List(
+      i + 9
+    ).map(_.toByte)
   }
 
   val uint32ByteReaderBE = new {} with ByteReadable[Long] {
