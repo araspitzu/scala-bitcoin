@@ -3,6 +3,7 @@ package domain
 import encoding.Parsing._
 import domain.CompactNumber._
 import encoding.CommonParsersImplicits._
+import encoding.Writing.ByteWritable
 
 
 /**

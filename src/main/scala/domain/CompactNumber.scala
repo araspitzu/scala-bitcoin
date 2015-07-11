@@ -3,10 +3,12 @@ package domain
 import encoding.CommonParsersImplicits
 import encoding.Parsing._
 import encoding.CommonParsersImplicits._
+import encoding.Writing.ByteWritable
+
 /**
  * Created by andrea on 16/05/15.
  */
-sealed trait CompactNumber{
+sealed trait CompactNumber extends ByteWritable {
 
   /**
    * The number of byte originally used by this compact number in the transaction
@@ -35,6 +37,13 @@ sealed trait CompactNumber{
     case CompactInt(i) => i
     case CompactLong(l) => l
     case CompactBigInt(b) => b
+  }
+
+  override def byteFormat:List[Byte] = this match {
+    case CompactInt(i) if(i < 253) => uint8ByteFormat(i)
+    case CompactInt(i) => 253.toByte :: uint16ByteFormatBE(i)
+    case CompactLong(l) => 254.toByte :: uint32ByteFormatBE(l)
+    case CompactBigInt(b) => 0xff.toByte :: uint64ByteFormatBE(b)
   }
 
 }

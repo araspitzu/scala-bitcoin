@@ -2,6 +2,8 @@ package domain
 
 import encoding.Parsing._
 import encoding.CommonParsersImplicits._
+import encoding.Writing.ByteWritable
+
 /**
  * Created by andrea on 13/06/15.
  */
@@ -10,12 +12,22 @@ case class TransactionInput (
    scriptLength:CompactNumber,
    signatureScript:Array[Byte],
    sequence:Long
-)
+) extends ByteWritable {
+
+  override def byteFormat:List[Byte] = {
+    previousOutput.byteFormat ++ scriptLength.byteFormat ++ signatureScript.toList ++ uint32ByteFormatBE(sequence)
+  }
+
+}
 
 case class Outpoint(
    hash:Array[Byte],
    index:Long
-)
+) extends ByteWritable {
+
+  override def byteFormat:List[Byte] = hash.toList ++ uint32ByteFormatBE(index)
+
+}
 
 object TransactionInput {
 
