@@ -14,9 +14,12 @@ case class TransactionInput (
    sequence:Long
 ) extends ByteWritable {
 
-  override def byteFormat:List[Byte] = {
-    previousOutput.byteFormat ++ scriptLength.byteFormat ++ signatureScript.toList ++ uint32ByteFormatBE(sequence)
-  }
+  def byteFormat =
+    previousOutput.byteFormat ++
+    scriptLength.byteFormat ++
+    signatureScript.toList ++
+    uint32ByteFormatBE(sequence)
+
 
 }
 

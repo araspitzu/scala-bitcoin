@@ -16,9 +16,18 @@ case class Transaction(
      nTxOut:CompactNumber,
      txOut:List[TransactionOutput],
      lockTime:Long
-) {
+) extends ByteWritable {
 
   def isCoinbase = true//txIn.length == 1
+
+  def byteFormat =
+    uint32ByteFormatLE(version) ++
+    nTxIn.byteFormat ++
+    txIn.foldRight[List[Byte]](Nil)( (in,acc) => in.byteFormat ++ acc ) ++
+    nTxOut.byteFormat ++
+    txOut.foldRight[List[Byte]](Nil)( (in,acc) => in.byteFormat ++ acc ) ++
+    uint32ByteFormatBE(lockTime)
+
 
 }
 

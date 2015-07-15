@@ -20,7 +20,7 @@ object Parsing {
 
      def get:(T,Int) = this match {
       case ParseSuccess(result,used) => (result,used)
-      case e:ParseFailure => throw new RuntimeException("Value not parsed")
+      case e:ParseFailure => throw new RuntimeException(s"Value not parsed $e")
     }
 
     def getOrElse[U >: T](default: => U):(U,Int) = this match {

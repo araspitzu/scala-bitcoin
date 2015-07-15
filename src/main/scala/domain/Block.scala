@@ -2,6 +2,7 @@ package domain
 
 import encoding.Parsing._
 import domain.CompactNumber._
+import encoding.Writing.ByteWritable
 
 /**
  * Created by andrea on 02/07/15.
@@ -10,7 +11,14 @@ case class Block(
   header:BlockHeader,
   nTx:CompactNumber,
   txs:List[Transaction]
-)
+) extends ByteWritable {
+
+  def byteFormat =
+    header.byteFormat ++
+    nTx.byteFormat ++
+    txs.foldRight[List[Byte]](Nil)( (tx,acc) => tx.byteFormat ++ acc )
+
+}
 
 object Block {
 

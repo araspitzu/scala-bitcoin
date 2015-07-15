@@ -2,6 +2,8 @@ package domain
 
 import encoding.Parsing._
 import encoding.CommonParsersImplicits._
+import encoding.Writing.ByteWritable
+
 /**
  * Created by andrea on 02/07/15.
  *
@@ -14,7 +16,17 @@ case class BlockHeader(
   time:Long,
   nBits:Long,
   nonce:Long
-)
+) extends ByteWritable {
+
+  def byteFormat =
+    uint32ByteFormatLE(version) ++
+    prevHeaderHash ++
+    merkleRootHash ++
+    uint32ByteFormatLE(time) ++
+    uint32ByteFormatLE(nBits) ++
+    uint32ByteFormatLE(nonce)
+
+}
 
 object BlockHeader {
 

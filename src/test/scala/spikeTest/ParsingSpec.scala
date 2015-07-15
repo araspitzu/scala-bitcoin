@@ -318,8 +318,6 @@ class ParsingSpec extends Specification {
 
       val res = parse[Block](rawBlock.hex2bytes,0)
 
-      println(res)
-
       val block = res.get._1
       val blockSize = res.get._2
 

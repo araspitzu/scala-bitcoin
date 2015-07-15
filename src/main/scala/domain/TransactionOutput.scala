@@ -2,6 +2,7 @@ package domain
 
 import encoding.Parsing._
 import encoding.CommonParsersImplicits._
+import encoding.Writing.ByteWritable
 
 
 /**
@@ -11,7 +12,11 @@ case class TransactionOutput(
    value:Long,  // int64_t   ->  number of sathoshis spent
    pkScriptLength:CompactNumber,
    pkScript:Script
-)
+) extends ByteWritable {
+
+  override def byteFormat = int64ByteFormatLE(value) ++ pkScriptLength.byteFormat ++ pkScript.byteFormat
+
+}
 
 object TransactionOutput {
 
