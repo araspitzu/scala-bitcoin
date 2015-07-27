@@ -15,11 +15,11 @@ trait UnsignedIntegerScope extends Scope {
   val uint8bytes = "0c"
 
   val uint16:Int = 515
-  val uint16bytes = "0203"
+  val uint16bytes = "0302"
 
   val uint32:Long = 3294967295L
-  val uint32bytesLE = "c46535ff"
-  val uint32bytesBE = "ff3565c4"
+  val uint32bytesBE = "c46535ff"
+  val uint32bytesLE = "ff3565c4"
 
   val uint64bytes = "c46535ff34f13f86"
   val uint64decimal = "14151776774302809990"
@@ -188,7 +188,7 @@ class ParsingSpec extends Specification {
 
     "parse an uint32 in little endian order as Long" in new UnsignedIntegerScope {
 
-      parse[Long](uint32bytesLE.hex2bytes,0)(uint32ByteReaderBE) === ParseSuccess(uint32,4)
+      parse[Long](uint32bytesLE.hex2bytes,0)(uint32ByteReaderLE) === ParseSuccess(uint32,4)
 
     }
 
@@ -226,7 +226,7 @@ class ParsingSpec extends Specification {
       import domain.TransactionInput._
 
       val expectedIndex = uint32
-      val hash = "86a73d7aad94571e040ae307e866b53605255baf85b9ffc874872b4c4586b069"
+      val hash = "9277e65fd4d7fb51822403608ea9158f6dabb8e8b710460a9b71b4d3df3c9b99"
 
       val rawOutpoint:Array[Byte] = (hash ++ uint32bytesLE).hex2bytes
 
@@ -262,6 +262,19 @@ class ParsingSpec extends Specification {
       txIn.scriptLength === compactShort12
 
       txInLength === expectedLength
+
+    }
+
+    "parse a raw TxIn" in {
+      val rawTxIn = "6dbddb085b1d8af75184f0bc01fad58d1266e9b63b50881990e4b40d6aee3629000000008b483045022100f3581e1972ae8ac7c7367a7a253bc1135223adb9a468bb3a59233f45bc578380022059af01ca17d00e41837a1d58e97aa31bae584edec28d35bd96923690913bae9a0141049c02bfc97ef236ce6d8fe5d94013c721e915982acd2b12b65d9b7d59e20a842005f8fc4e02532e873d37b96f09d6d4511ada8f14042f46614a4c70c0f14beff5ffffffff"
+
+      val ris = parse[TransactionInput](rawTxIn.hex2bytes,0)
+
+      val txIn = ris.get._1
+
+      bytes2hex(txIn.scriptLength.byteFormat.toArray) === "8b"
+
+      bytes2hex(txIn.byteFormat.toArray) === rawTxIn
 
     }
 

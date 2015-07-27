@@ -18,18 +18,18 @@ case class Transaction(
      lockTime:Long
 ) extends ByteWritable {
 
-  def isCoinbase = true//txIn.length == 1
+  def isCoinbase = true //txIn.length == 1
 
   def byteFormat =
     uint32ByteFormatLE(version) ++
-    nTxIn.byteFormat ++
-    txIn.foldRight[List[Byte]](Nil)( (in,acc) => in.byteFormat ++ acc ) ++
-    nTxOut.byteFormat ++
-    txOut.foldRight[List[Byte]](Nil)( (in,acc) => in.byteFormat ++ acc ) ++
-    uint32ByteFormatBE(lockTime)
-
+      nTxIn.byteFormat ++
+      txIn.foldRight[List[Byte]](Nil)((in, acc) => in.byteFormat ++ acc) ++
+      nTxOut.byteFormat ++
+      txOut.foldRight[List[Byte]](Nil)((in, acc) => in.byteFormat ++ acc) ++
+      uint32ByteFormatBE(lockTime)
 
 }
+
 
 object Transaction {
 
@@ -40,7 +40,7 @@ object Transaction {
         (txin,used2) <- parseList[TransactionInput](bytes,offset + used + used1, ntxin.intValue).withOffset
         (ntxout,used3) <- parse[CompactNumber](bytes,offset + used + used1 + used2).withOffset
         (txout,used4) <- parseList[TransactionOutput](bytes,offset + used + used1 + used2 + used3, ntxout.intValue).withOffset
-        locktime <- parse[Long](bytes,offset + used + used1 + used2 + used3 + used4)(uint32ByteReaderBE)
+        locktime <- parse[Long](bytes,offset + used + used1 + used2 + used3 + used4)(uint32ByteReaderLE)
        } yield Transaction(
           version = vers,
           nTxIn = ntxin,

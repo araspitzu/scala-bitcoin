@@ -41,8 +41,8 @@ sealed trait CompactNumber extends ByteWritable {
 
   override def byteFormat:List[Byte] = this match {
     case CompactInt(i) if(i < 253) => uint8ByteFormat(i)
-    case CompactInt(i) => 253.toByte :: uint16ByteFormatBE(i)
-    case CompactLong(l) => 254.toByte :: uint32ByteFormatBE(l)
+    case CompactInt(i) => 253.toByte :: uint16ByteFormatLE(i)
+    case CompactLong(l) => 254.toByte :: uint32ByteFormatLE(l)
     case CompactBigInt(b) => 0xff.toByte :: uint64ByteFormatBE(b)
   }
 
@@ -68,7 +68,7 @@ object CompactNumber {
 
   implicit val compactLongByteReader = new {} with ByteReadable[CompactLong] {
     override def read(bytes: Array[Byte], offset: Int): ParseResult[CompactLong] = {
-      parse[Long](bytes,offset)(uint32ByteReaderBE) match {
+      parse[Long](bytes,offset)(uint32ByteReaderLE) match {
         case ParseSuccess(result,used) => {
           val clong = CompactLong(result)
           ParseSuccess(clong,clong.originalSize)
