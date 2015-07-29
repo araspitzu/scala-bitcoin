@@ -6,6 +6,8 @@ import org.specs2.specification.Scope
 import encoding.CommonParsersImplicits._
 import encoding.Parsing._
 
+import scala.reflect.io.File
+
 /**
  * Created by andrea on 25/05/15.
  */
@@ -222,7 +224,7 @@ class ParsingSpec extends Specification {
 
     }
 
-    "parse an Outpoint" in new CompactNumberScope {
+    "parse an Outpoint" in new UnsignedIntegerScope {
       import domain.TransactionInput._
 
       val expectedIndex = uint32
@@ -265,19 +267,6 @@ class ParsingSpec extends Specification {
 
     }
 
-    "parse a raw TxIn" in {
-      val rawTxIn = "6dbddb085b1d8af75184f0bc01fad58d1266e9b63b50881990e4b40d6aee3629000000008b483045022100f3581e1972ae8ac7c7367a7a253bc1135223adb9a468bb3a59233f45bc578380022059af01ca17d00e41837a1d58e97aa31bae584edec28d35bd96923690913bae9a0141049c02bfc97ef236ce6d8fe5d94013c721e915982acd2b12b65d9b7d59e20a842005f8fc4e02532e873d37b96f09d6d4511ada8f14042f46614a4c70c0f14beff5ffffffff"
-
-      val ris = parse[TransactionInput](rawTxIn.hex2bytes,0)
-
-      val txIn = ris.get._1
-
-      bytes2hex(txIn.scriptLength.byteFormat.toArray) === "8b"
-
-      bytes2hex(txIn.byteFormat.toArray) === rawTxIn
-
-    }
-
     "parse a TransactionOutput" in new CompactNumberScope {
 
       val rawTxOut = int64bytes ++ compactShort12bytes ++ "c46535ff34f13f863f863f86"
@@ -292,7 +281,7 @@ class ParsingSpec extends Specification {
 
     }
 
-    "parse a Transaction" in new CompactNumberScope {
+    "parse a Transaction" in {
 
       val res = parse[Transaction](rawTx.hex2bytes,0)
 
@@ -305,6 +294,26 @@ class ParsingSpec extends Specification {
       tx.nTxOut === CompactInt(5)
       tx.txOut(0).value === 200000000L
       tx.lockTime === 0L
+
+    }
+
+    "parse transaction 58d00055cae1c410cb57462c9d5d56a536284a5abc02a1ac54dd4f79cb731d3e" in {
+
+      val hex = scala.io.Source.fromFile(getClass.getResource("/58d00055cae1c410cb57462c9d5d56a536284a5abc02a1ac54dd4f79cb731d3e.hex").getFile).mkString
+
+      val parsed = parse[Transaction](hex.hex2bytes,0)
+
+      val tx = parsed.get._1
+
+      tx.version === 1
+      tx.nTxIn === CompactInt(3)
+      tx.nTxOut === CompactInt(2)
+      tx.txIn.length === 3
+      tx.txOut.length === 2
+
+      bytes2hex(tx.txIn.head.previousOutput.hash) === "c4b4dda5204f1796e65a5d740b87d2c4540c2a6bf85fd7e779ad4b789126b94d"
+
+      tx.txOut.head.value === 124000000
 
     }
 
@@ -341,6 +350,31 @@ class ParsingSpec extends Specification {
       block.txs forall (_.version == 1)
       block.txs forall (_.nTxOut === CompactInt(5))
       blockSize === rawBlock.length / 2
+
+    }
+
+    "parse block 000000000000000001f942eb4bfa0aeccb6a14c268f4c72d5fff17270da771b9" in {
+
+      val hex = scala.io.Source.fromFile(getClass.getResource("/000000000000000001f942eb4bfa0aeccb6a14c268f4c72d5fff17270da771b9.hex").getFile).mkString
+
+      val parsed = parse[Block](hex.hex2bytes,0)
+
+      val block = parsed.get._1
+
+      parsed.get._2 === hex.length / 2
+      block.nTx === CompactInt(1031)
+      block.txs.length === 1031
+
+      block.header.time === 1432723472
+      block.header.version === 2
+      bytes2hex(block.header.prevHeaderHash) === "66191da95594aeda1a98a19ff054a88a510754e2a4d93e0a0000000000000000"
+      bytes2hex(block.header.merkleRootHash) === "8485ae797312b2cb37dfb1aac11d7c5ad9dd84364bbe26ffa781853996587d9b"
+
+      val coinbase = block.txs.head
+
+      coinbase.nTxIn === CompactInt(1)
+      coinbase.txIn.length === 1
+      coinbase.txIn.head.previousOutput.hash forall (_ == 0)
 
     }
   }

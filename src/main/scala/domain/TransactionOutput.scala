@@ -14,7 +14,7 @@ case class TransactionOutput(
    pkScript:Script
 ) extends ByteWritable {
 
-  override def byteFormat = int64ByteFormatLE(value) ++ pkScriptLength.byteFormat ++ pkScript.byteFormat
+  override def byteFormat = uint64ByteFormatLE(value) ++ pkScriptLength.byteFormat ++ pkScript.byteFormat
 
 }
 

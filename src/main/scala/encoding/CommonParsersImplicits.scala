@@ -45,18 +45,18 @@ package object CommonParsersImplicits {
 
   def uint8ByteFormat(uint:Short):List[Byte] = uint8ByteFormat(uint.toInt)
 
-  def uint64ByteFormatBE(uint:BigInt):List[Byte] = List(
-    0xff & (uint >> 56) toByte,
-    0xff & (uint >> 48) toByte,
-    0xff & (uint >> 40) toByte,
-    0xff & (uint >> 32) toByte,
-    0xff & (uint >> 24) toByte,
-    0xff & (uint >> 16) toByte,
+  def uint64ByteFormatLE(uint:BigInt):List[Byte] = List(
+    0xff & uint toByte,
     0xff & (uint >> 8) toByte,
-    0xff & uint toByte
+    0xff & (uint >> 16) toByte,
+    0xff & (uint >> 24) toByte,
+    0xff & (uint >> 32) toByte,
+    0xff & (uint >> 40) toByte,
+    0xff & (uint >> 48) toByte,
+    0xff & (uint >> 56) toByte
   )
 
-  def int64ByteFormatLE(uint:Long):List[Byte] = List(
+  def uint64ByteFormatLE(uint:Long):List[Byte] = List(
     0xff & uint toByte,
     0xff & (uint >> 8) toByte,
     0xff & (uint >> 16) toByte,

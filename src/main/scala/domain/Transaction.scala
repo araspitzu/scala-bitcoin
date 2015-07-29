@@ -26,7 +26,7 @@ case class Transaction(
       txIn.foldRight[List[Byte]](Nil)((in, acc) => in.byteFormat ++ acc) ++
       nTxOut.byteFormat ++
       txOut.foldRight[List[Byte]](Nil)((in, acc) => in.byteFormat ++ acc) ++
-      uint32ByteFormatBE(lockTime)
+      uint32ByteFormatLE(lockTime)
 
 }
 

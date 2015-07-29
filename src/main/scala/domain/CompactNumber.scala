@@ -43,7 +43,7 @@ sealed trait CompactNumber extends ByteWritable {
     case CompactInt(i) if(i < 253) => uint8ByteFormat(i)
     case CompactInt(i) => 253.toByte :: uint16ByteFormatLE(i)
     case CompactLong(l) => 254.toByte :: uint32ByteFormatLE(l)
-    case CompactBigInt(b) => 0xff.toByte :: uint64ByteFormatBE(b)
+    case CompactBigInt(b) => 255.toByte :: uint64ByteFormatLE(b)
   }
 
 }
