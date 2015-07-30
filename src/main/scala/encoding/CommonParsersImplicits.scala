@@ -56,7 +56,7 @@ package object CommonParsersImplicits {
     0xff & (uint >> 56) toByte
   )
 
-  def uint64ByteFormatLE(uint:Long):List[Byte] = List(
+  def int64ByteFormatLE(uint:Long):List[Byte] = List(
     0xff & uint toByte,
     0xff & (uint >> 8) toByte,
     0xff & (uint >> 16) toByte,
@@ -126,6 +126,6 @@ package object CommonParsersImplicits {
 
   private def parseInt64LE(bytes: Array[Byte], offset: Int): Long = java.lang.Long.parseLong(bytes2hex(bytes.slice(offset,offset + 8).reverse),16)
 
-  private def parseUint64LE(bytes: Array[Byte],offset:Int):BigInt = BigInt(bytes2hex(bytes.slice(offset,offset + 8)), 16)
+  private def parseUint64LE(bytes: Array[Byte],offset:Int):BigInt = BigInt(bytes2hex(bytes.slice(offset,offset + 8).reverse), 16)
 
 }

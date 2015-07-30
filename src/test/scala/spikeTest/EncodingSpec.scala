@@ -1,15 +1,10 @@
 package spikeTest
 
-import java.io.File
-
 import domain._
-import org.specs2.matcher.MatchResult
 import org.specs2.mutable.Specification
 import encoding.CommonParsersImplicits._
 import encoding.Parsing._
 import domain.TransactionInput._
-
-import scala.reflect.io.File
 
 /**
  * Created by andrea on 7/11/15.
@@ -73,31 +68,20 @@ class EncodingSpec extends Specification {
 
     }
 
-    "encode a CompactNumber from block 0012310230" in {
-      val hex = "fd0704"
-
-      val ParseSuccess(compactInt,3) = parse[CompactNumber](hex.hex2bytes,0)
-
-      bytes2hex(compactInt.byteFormat.toArray) === hex
-
-    }
-
     "encode an Outpoint into byte" in {
 
       val hash = "86a73d7aad94571e040ae307e866b53605255baf85b9ffc874872b4c4586b069"
-      val index = 12345667L
 
       val outpoint = Outpoint(
         hash = hash.hex2bytes,
-        index
+        12345667L
       )
 
-      val ris = parse[Outpoint](outpoint.byteFormat.toArray,0)
+      val ParseSuccess(out,used) = parse[Outpoint](outpoint.byteFormat.toArray,0)
 
-      ris.get._2 === 36
-      bytes2hex(ris.get._1.hash) === hash
-      ris.get._1.index === index
-
+      used === 36
+      bytes2hex(out.hash) === hash
+      out.index === outpoint.index
     }
 
     "encode a TransactionInput into byte" in {
@@ -118,9 +102,7 @@ class EncodingSpec extends Specification {
         seqNum
       )
 
-      val ris = parse[TransactionInput](expectedTxIn.byteFormat.toArray,0)
-
-      val txIn = ris.get._1
+      val ParseSuccess(txIn,used) = parse[TransactionInput](expectedTxIn.byteFormat.toArray,0)
 
       txIn.sequence === expectedTxIn.sequence
       txIn.scriptLength === expectedTxIn.scriptLength
@@ -136,9 +118,7 @@ class EncodingSpec extends Specification {
         pkScript = Script("0c1c1e771a" hex2bytes)
       )
 
-      val ris = parse[TransactionOutput](expectedTxOut.byteFormat.toArray,0)
-
-      val txOut = ris.get._1
+      val ParseSuccess(txOut,used) = parse[TransactionOutput](expectedTxOut.byteFormat.toArray,0)
 
       expectedTxOut.value === txOut.value
       expectedTxOut.pkScriptLength === txOut.pkScriptLength
@@ -179,11 +159,9 @@ class EncodingSpec extends Specification {
       )
 
 
-      val ris = parse[Transaction](expectedTx.byteFormat.toArray,0)
+      val ParseSuccess(tx,used) = parse[Transaction](expectedTx.byteFormat.toArray,0)
 
-      val tx = ris.get._1
-
-      expectedTx.byteFormat.length === ris.get._2
+      expectedTx.byteFormat.length === used
       expectedTx.version === tx.version
       expectedTx.nTxIn === tx.nTxIn
       expectedTx.nTxOut === tx.nTxOut
@@ -194,7 +172,7 @@ class EncodingSpec extends Specification {
    "encode Transaction 58d00055cae1c410cb57462c9d5d56a536284a5abc02a1ac54dd4f79cb731d3e" in {
      val hex = scala.io.Source.fromFile(getClass.getResource("/58d00055cae1c410cb57462c9d5d56a536284a5abc02a1ac54dd4f79cb731d3e.hex").getFile).mkString
 
-     val tx = parse[Transaction](hex.hex2bytes,0).get._1
+     val ParseSuccess(tx,used) = parse[Transaction](hex.hex2bytes,0)
 
      bytes2hex(tx.byteFormat.toArray) === hex
    }
@@ -204,12 +182,11 @@ class EncodingSpec extends Specification {
       val rawBlockHeader = "02000000b6ff0b1b1680a2862a30ca44d346d9e8910d334beb48ca0c00000000000000009d10aa52ee949386ca9385695f04ede270dda20810decd12bc9b048aaab3147124d95a5430c31b18fe9f0864"
 
       val bal = "0200000066191da95594aeda1a98a19ff054a88a510754e2a4d93e0a00000000000000008485ae79"
-      val expectedBlockHeader = parse[BlockHeader](rawBlockHeader.hex2bytes,0).get._1
+      val ParseSuccess(expectedBlockHeader,expectedUsed) = parse[BlockHeader](rawBlockHeader.hex2bytes,0)
 
-      val ris = parse[BlockHeader](expectedBlockHeader.byteFormat.toArray,0)
-      val blockHeader = ris.get._1
+      val ParseSuccess(blockHeader,used) = parse[BlockHeader](expectedBlockHeader.byteFormat.toArray,0)
 
-      expectedBlockHeader.byteFormat.length === ris.get._2 and ris.get._2 === 80
+      expectedBlockHeader.byteFormat.length === used and used === 80 and used === expectedUsed
       expectedBlockHeader.version === blockHeader.version
       expectedBlockHeader.time === blockHeader.time
       expectedBlockHeader.nBits === blockHeader.nBits
@@ -233,12 +210,11 @@ class EncodingSpec extends Specification {
       val nTx = "01"
       val rawBlock = rawBlockHeader ++ nTx ++ tx
 
-      val expectedBlock = parse[Block](rawBlock.hex2bytes,0).get._1
+      val ParseSuccess(expectedBlock,expectedUsed) = parse[Block](rawBlock.hex2bytes,0)
 
       val ParseSuccess(block,used) = parse[Block](expectedBlock.byteFormat.toArray,0)
 
-      expectedBlock.byteFormat.length === used
-
+      expectedBlock.byteFormat.length === used and used === expectedUsed
       expectedBlock.nTx === block.nTx
       expectedBlock.header.nonce === block.header.nonce
       expectedBlock.txs.head.lockTime === block.txs.head.lockTime

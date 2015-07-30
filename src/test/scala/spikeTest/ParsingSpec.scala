@@ -20,10 +20,9 @@ trait UnsignedIntegerScope extends Scope {
   val uint16bytes = "0302"
 
   val uint32:Long = 3294967295L
-  val uint32bytesBE = "c46535ff"
   val uint32bytesLE = "ff3565c4"
 
-  val uint64bytes = "c46535ff34f13f86"
+  val uint64bytes = "863ff134ff3565c4"
   val uint64decimal = "14151776774302809990"
 
   val int64bytes = "404b4c0000000000"
@@ -200,15 +199,6 @@ class ParsingSpec extends Specification {
 
     }
 
-    "parse another uint64 as BigInt" in new UnsignedIntegerScope {
-
-      val rawUint64bytes = "000000012a05caf0"
-      val rawUint64decimal = "4999990000"
-
-      parse[BigInt](rawUint64bytes.hex2bytes,0) === ParseSuccess(BigInt(rawUint64decimal,10),8)
-
-    }
-
     "parse an int64 as Long" in new UnsignedIntegerScope {
 
       parse[Long](int64bytes.hex2bytes,0)(int64ByteReader) === ParseSuccess(int64,8)
@@ -232,12 +222,9 @@ class ParsingSpec extends Specification {
 
       val rawOutpoint:Array[Byte] = (hash ++ uint32bytesLE).hex2bytes
 
-      val ris = parse[Outpoint](rawOutpoint,0)
+      val ParseSuccess(outpoint,used) = parse[Outpoint](rawOutpoint,0)
 
-      val outpoint:Outpoint = ris.get._1
-
-      ris.get._2 === 36
-
+      used === 36
       outpoint.hash.length === hash.length / 2
       outpoint.index === expectedIndex
 
@@ -254,15 +241,11 @@ class ParsingSpec extends Specification {
 
       val expectedLength = 36 + 1 + 12 + 4
 
-      val ris =  parse[TransactionInput](rawTxIn,0)
-
-      val txIn = ris.get._1
-      val txInLength = ris.get._2
+      val ParseSuccess(txIn,txInLength) =  parse[TransactionInput](rawTxIn,0)
 
       txIn.previousOutput.index === uint32
       txIn.sequence === uint32
       txIn.scriptLength === compactShort12
-
       txInLength === expectedLength
 
     }
@@ -271,9 +254,7 @@ class ParsingSpec extends Specification {
 
       val rawTxOut = int64bytes ++ compactShort12bytes ++ "c46535ff34f13f863f863f86"
 
-      val res = parse[TransactionOutput](rawTxOut.hex2bytes, 0)
-
-      val txOut = res.get._1
+      val ParseSuccess(txOut,_) = parse[TransactionOutput](rawTxOut.hex2bytes, 0)
 
       txOut.value === int64
       txOut.pkScriptLength === compactShort12
@@ -283,10 +264,7 @@ class ParsingSpec extends Specification {
 
     "parse a Transaction" in {
 
-      val res = parse[Transaction](rawTx.hex2bytes,0)
-
-      val tx:Transaction = res.get._1
-      val txLength = res.get._2
+      val ParseSuccess(tx,txLength) = parse[Transaction](rawTx.hex2bytes,0)
 
       tx.version === 1L
       tx.nTxIn === CompactInt(5)
@@ -301,9 +279,7 @@ class ParsingSpec extends Specification {
 
       val hex = scala.io.Source.fromFile(getClass.getResource("/58d00055cae1c410cb57462c9d5d56a536284a5abc02a1ac54dd4f79cb731d3e.hex").getFile).mkString
 
-      val parsed = parse[Transaction](hex.hex2bytes,0)
-
-      val tx = parsed.get._1
+      val ParseSuccess(tx,_) = parse[Transaction](hex.hex2bytes,0)
 
       tx.version === 1
       tx.nTxIn === CompactInt(3)
@@ -321,10 +297,7 @@ class ParsingSpec extends Specification {
 
       val rawBlockHeader = "02000000b6ff0b1b1680a2862a30ca44d346d9e8910d334beb48ca0c00000000000000009d10aa52ee949386ca9385695f04ede270dda20810decd12bc9b048aaab3147124d95a5430c31b18fe9f0864"
 
-      val res = parse[BlockHeader](rawBlockHeader.hex2bytes,0)
-
-      val header = res.get._1
-      val length = res.get._2
+      val ParseSuccess(header,length) = parse[BlockHeader](rawBlockHeader.hex2bytes,0)
 
       header.version === 2
       header.time === 1415239972 //Unix timestamp
@@ -338,10 +311,7 @@ class ParsingSpec extends Specification {
 
       val rawBlock = rawBlockHeader ++ nTx ++ tx ++ tx ++ tx
 
-      val res = parse[Block](rawBlock.hex2bytes,0)
-
-      val block = res.get._1
-      val blockSize = res.get._2
+      val ParseSuccess(block, blockSize) = parse[Block](rawBlock.hex2bytes,0)
 
       block.header.version === 2
       block.header.time === 1415239972L
@@ -357,11 +327,9 @@ class ParsingSpec extends Specification {
 
       val hex = scala.io.Source.fromFile(getClass.getResource("/000000000000000001f942eb4bfa0aeccb6a14c268f4c72d5fff17270da771b9.hex").getFile).mkString
 
-      val parsed = parse[Block](hex.hex2bytes,0)
+      val ParseSuccess(block,used) = parse[Block](hex.hex2bytes,0)
 
-      val block = parsed.get._1
-
-      parsed.get._2 === hex.length / 2
+      used === hex.length / 2
       block.nTx === CompactInt(1031)
       block.txs.length === 1031
 
