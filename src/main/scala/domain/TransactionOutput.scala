@@ -23,12 +23,12 @@ object TransactionOutput {
   implicit val txOutByteReadable = new {} with ByteReadable[TransactionOutput] {
     override def read(bytes: Array[Byte], offset: Int): ParseResult[TransactionOutput] = for {
       (satoshis,used) <- parse[Long](bytes,offset)(int64ByteReader).withOffset
-      (scrLen,used1) <- parse[CompactNumber](bytes,offset + used).withOffset
-      scriptData <- parseList[Byte](bytes,offset + used + used1,scrLen.intValue)
+      scrLen <- parse[CompactNumber](bytes,offset + used)
+      scriptData <- parseBytes(bytes,offset + used + scrLen.originalSize ,scrLen.intValue)
     } yield TransactionOutput(
       value = satoshis,
       pkScriptLength = scrLen,
-      pkScript = Script(scriptData.toArray)
+      pkScript = Script(scriptData)
     )
   }
 

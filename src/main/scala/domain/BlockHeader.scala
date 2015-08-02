@@ -33,8 +33,8 @@ object BlockHeader {
   implicit val blockHeaderByteReadable = new {} with ByteReadable[BlockHeader] {
     override def read(bytes: Array[Byte], offset: Int): ParseResult[BlockHeader] = for {
       (version,used) <- parse[Long](bytes,offset)(uint32ByteReaderLE).withOffset
-      (prev_header_hash,used1) <- parseList[Byte](bytes, offset + used, 32).withOffset
-      (merkle_root_hash,used2) <- parseList[Byte](bytes, offset + used + used1, 32).withOffset
+      (prev_header_hash,used1) <- parseBytes(bytes, offset + used, 32).withOffset
+      (merkle_root_hash,used2) <- parseBytes(bytes, offset + used + used1, 32).withOffset
       (time,used3) <- parse[Long](bytes,offset + used + used1 + used2)(uint32ByteReaderLE).withOffset
       (nBits,used4) <- parse[Long](bytes,offset + used + used1 + used2 + used3)(uint32ByteReaderLE).withOffset
       nonce <- parse[Long](bytes,offset + used + used1 + used2 + used3 + used4)(uint32ByteReaderLE)

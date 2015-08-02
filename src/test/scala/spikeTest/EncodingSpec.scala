@@ -17,7 +17,7 @@ class EncodingSpec extends Specification {
 
       val bytes = uint8ByteFormat(uint8)
 
-      parse[Short](bytes.toArray,0) === ParseSuccess(uint8,1)
+      parse[Short](bytes,0) === ParseSuccess(uint8,1)
 
     }
 
@@ -25,7 +25,7 @@ class EncodingSpec extends Specification {
 
       val bytes = uint16ByteFormatLE(uint16)
 
-      parse[Int](bytes.toArray,0) === ParseSuccess(uint16,2)
+      parse[Int](bytes,0) === ParseSuccess(uint16,2)
 
     }
 
@@ -33,7 +33,7 @@ class EncodingSpec extends Specification {
 
       val bytes = uint32ByteFormatLE(uint32)
 
-      parse[Long](bytes.toArray,0)(uint32ByteReaderLE) === ParseSuccess(uint32,4)
+      parse[Long](bytes,0)(uint32ByteReaderLE) === ParseSuccess(uint32,4)
 
     }
 
@@ -42,7 +42,7 @@ class EncodingSpec extends Specification {
       val bigInt = BigInt(uint64decimal,10)
       val bytes = uint64ByteFormatLE(bigInt)
 
-      parse[BigInt](bytes.toArray,0) === ParseSuccess(bigInt,8)
+      parse[BigInt](bytes,0) === ParseSuccess(bigInt,8)
 
     }
 
@@ -50,7 +50,7 @@ class EncodingSpec extends Specification {
 
       val bytes = uint64ByteFormatLE(int64)
 
-      parse[Long](bytes.toArray,0)(int64ByteReader) === ParseSuccess(int64,8)
+      parse[Long](bytes,0)(int64ByteReader) === ParseSuccess(int64,8)
 
     }
 
@@ -61,10 +61,10 @@ class EncodingSpec extends Specification {
       val long3294967295bytes = compactLong3294967295.byteFormat
       val bigInt14151776774302809990bytes = compactBigInt14151776774302809990.byteFormat
 
-      parse[CompactNumber](short12bytes.toArray,0) === ParseSuccess(compactShort12,1)
-      parse[CompactNumber](int515bytes.toArray,0) === ParseSuccess(compactInt515,3)
-      parse[CompactNumber](long3294967295bytes.toArray,0) === ParseSuccess(compactLong3294967295,5)
-      parse[CompactNumber](bigInt14151776774302809990bytes.toArray,0) === ParseSuccess(compactBigInt14151776774302809990,9)
+      parse[CompactNumber](short12bytes,0) === ParseSuccess(compactShort12,1)
+      parse[CompactNumber](int515bytes,0) === ParseSuccess(compactInt515,3)
+      parse[CompactNumber](long3294967295bytes,0) === ParseSuccess(compactLong3294967295,5)
+      parse[CompactNumber](bigInt14151776774302809990bytes,0) === ParseSuccess(compactBigInt14151776774302809990,9)
 
     }
 
@@ -77,7 +77,7 @@ class EncodingSpec extends Specification {
         12345667L
       )
 
-      val ParseSuccess(out,used) = parse[Outpoint](outpoint.byteFormat.toArray,0)
+      val ParseSuccess(out,used) = parse[Outpoint](outpoint.byteFormat,0)
 
       used === 36
       bytes2hex(out.hash) === hash
@@ -102,7 +102,7 @@ class EncodingSpec extends Specification {
         seqNum
       )
 
-      val ParseSuccess(txIn,used) = parse[TransactionInput](expectedTxIn.byteFormat.toArray,0)
+      val ParseSuccess(txIn,used) = parse[TransactionInput](expectedTxIn.byteFormat,0)
 
       txIn.sequence === expectedTxIn.sequence
       txIn.scriptLength === expectedTxIn.scriptLength
@@ -118,7 +118,7 @@ class EncodingSpec extends Specification {
         pkScript = Script("0c1c1e771a" hex2bytes)
       )
 
-      val ParseSuccess(txOut,used) = parse[TransactionOutput](expectedTxOut.byteFormat.toArray,0)
+      val ParseSuccess(txOut,used) = parse[TransactionOutput](expectedTxOut.byteFormat,0)
 
       expectedTxOut.value === txOut.value
       expectedTxOut.pkScriptLength === txOut.pkScriptLength
@@ -152,14 +152,14 @@ class EncodingSpec extends Specification {
       val expectedTx = Transaction(
         version = 1,
         nTxIn = CompactInt(1),
-        txIn = List(expectedTxIn),
+        txIn = Array(expectedTxIn),
         nTxOut = CompactInt(1),
-        txOut = List(expectedTxOut),
+        txOut = Array(expectedTxOut),
         lockTime = 0
       )
 
 
-      val ParseSuccess(tx,used) = parse[Transaction](expectedTx.byteFormat.toArray,0)
+      val ParseSuccess(tx,used) = parse[Transaction](expectedTx.byteFormat,0)
 
       expectedTx.byteFormat.length === used
       expectedTx.version === tx.version
@@ -174,7 +174,7 @@ class EncodingSpec extends Specification {
 
      val ParseSuccess(tx,used) = parse[Transaction](hex.hex2bytes,0)
 
-     bytes2hex(tx.byteFormat.toArray) === hex
+     bytes2hex(tx.byteFormat) === hex
    }
 
     "encode a BlockHeader into bytes" in {
@@ -184,7 +184,7 @@ class EncodingSpec extends Specification {
       val bal = "0200000066191da95594aeda1a98a19ff054a88a510754e2a4d93e0a00000000000000008485ae79"
       val ParseSuccess(expectedBlockHeader,expectedUsed) = parse[BlockHeader](rawBlockHeader.hex2bytes,0)
 
-      val ParseSuccess(blockHeader,used) = parse[BlockHeader](expectedBlockHeader.byteFormat.toArray,0)
+      val ParseSuccess(blockHeader,used) = parse[BlockHeader](expectedBlockHeader.byteFormat,0)
 
       expectedBlockHeader.byteFormat.length === used and used === 80 and used === expectedUsed
       expectedBlockHeader.version === blockHeader.version
@@ -199,7 +199,7 @@ class EncodingSpec extends Specification {
 
       val ParseSuccess(header,used) = parse[BlockHeader](hex.hex2bytes,0)
 
-      bytes2hex(header.byteFormat.toArray) === hex
+      bytes2hex(header.byteFormat) === hex
 
     }
 
@@ -212,13 +212,13 @@ class EncodingSpec extends Specification {
 
       val ParseSuccess(expectedBlock,expectedUsed) = parse[Block](rawBlock.hex2bytes,0)
 
-      val ParseSuccess(block,used) = parse[Block](expectedBlock.byteFormat.toArray,0)
+      val ParseSuccess(block,used) = parse[Block](expectedBlock.byteFormat,0)
 
       expectedBlock.byteFormat.length === used and used === expectedUsed
       expectedBlock.nTx === block.nTx
       expectedBlock.header.nonce === block.header.nonce
       expectedBlock.txs.head.lockTime === block.txs.head.lockTime
-      bytes2hex(expectedBlock.byteFormat.toArray) === rawBlock
+      bytes2hex(expectedBlock.byteFormat) === rawBlock
 
     }
 
@@ -226,9 +226,9 @@ class EncodingSpec extends Specification {
       val hex = scala.io.Source.fromFile(getClass.getResource("/000000000000000001f942eb4bfa0aeccb6a14c268f4c72d5fff17270da771b9.hex").getFile).mkString
 
       val ParseSuccess(block,_) = parse[Block](hex.hex2bytes,0)
-      val ParseSuccess(block_parsed,_) = parse[Block](block.byteFormat.toArray,0)
+      val ParseSuccess(block_parsed,_) = parse[Block](block.byteFormat,0)
 
-      bytes2hex(block_parsed.byteFormat.toArray) === hex
+      bytes2hex(block_parsed.byteFormat) === hex
 
     }
 

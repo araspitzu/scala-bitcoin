@@ -10,13 +10,13 @@ import encoding.Writing.ByteWritable
 case class Block(
   header:BlockHeader,
   nTx:CompactNumber,
-  txs:List[Transaction]
+  txs:Array[Transaction]
 ) extends ByteWritable {
 
   def byteFormat =
     header.byteFormat ++
     nTx.byteFormat ++
-    txs.foldRight[List[Byte]](Nil)( (tx,acc) => tx.byteFormat ++ acc )
+    txs.foldRight[Array[Byte]](Array.emptyByteArray)( (tx,acc) => tx.byteFormat ++ acc )
 
 }
 
@@ -32,7 +32,7 @@ object Block {
     } yield Block(
       header = header,
       nTx = nTx,
-      txs = coinbase :: txs
+      txs = Array(coinbase) ++ txs
     )
   }
 

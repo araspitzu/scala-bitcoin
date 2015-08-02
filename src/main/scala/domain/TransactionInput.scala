@@ -17,7 +17,7 @@ case class TransactionInput (
   def byteFormat =
     previousOutput.byteFormat ++
     scriptLength.byteFormat ++
-    signatureScript.toList ++
+    signatureScript ++
     uint32ByteFormatLE(sequence)
 
 }
@@ -27,7 +27,7 @@ case class Outpoint(
    index:Long
 ) extends ByteWritable {
 
-  override def byteFormat:List[Byte] = hash.toList ++ uint32ByteFormatLE(index)
+  override def byteFormat:Array[Byte] = hash ++ uint32ByteFormatLE(index)
 
 }
 
@@ -53,7 +53,7 @@ object TransactionInput {
     override def read(bytes: Array[Byte], offset: Int): ParseResult[TransactionInput] = for {
       (prevOut,used) <- parse[Outpoint](bytes,offset).withOffset
       (scrLen,used1) <- parse[CompactNumber](bytes,offset + used).withOffset
-      (script,used2) <- parseList[Byte](bytes,offset + used + used1,scrLen.intValue).withOffset
+      (script,used2) <- parseBytes(bytes,offset + used + used1,scrLen.intValue).withOffset
       seqNum <- parse[Long](bytes,offset + used + used1 + used2)(uint32ByteReaderLE)
     } yield TransactionInput(
        previousOutput = prevOut,

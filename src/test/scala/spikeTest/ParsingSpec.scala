@@ -177,40 +177,40 @@ class ParsingSpec extends Specification {
 
     "parse an uint8 as Short" in new UnsignedIntegerScope{
 
-      parse[Short](uint8bytes.hex2bytes,0) === ParseSuccess(uint8,1)
+      parse[Short](uint8bytes) === ParseSuccess(uint8,1)
 
     }
 
     "parse an uint16 as Int" in new UnsignedIntegerScope{
 
-      parse[Int](uint16bytes.hex2bytes,0) === ParseSuccess(uint16,2)
+      parse[Int](uint16bytes) === ParseSuccess(uint16,2)
 
     }
 
     "parse an uint32 in little endian order as Long" in new UnsignedIntegerScope {
 
-      parse[Long](uint32bytesLE.hex2bytes,0)(uint32ByteReaderLE) === ParseSuccess(uint32,4)
+      parse[Long](uint32bytesLE)(uint32ByteReaderLE) === ParseSuccess(uint32,4)
 
     }
 
     "parse an uint64 as BigInt" in new UnsignedIntegerScope {
 
-      parse[BigInt](uint64bytes.hex2bytes,0) === ParseSuccess(BigInt(uint64decimal,10),8)
+      parse[BigInt](uint64bytes) === ParseSuccess(BigInt(uint64decimal,10),8)
 
     }
 
     "parse an int64 as Long" in new UnsignedIntegerScope {
 
-      parse[Long](int64bytes.hex2bytes,0)(int64ByteReader) === ParseSuccess(int64,8)
+      parse[Long](int64bytes)(int64ByteReader) === ParseSuccess(int64,8)
 
     }
 
     "parse a CompactNumber using the proper type" in new CompactNumberScope{
 
-      parse[CompactNumber](compactShort12bytes.hex2bytes,0) === ParseSuccess(compactShort12,1)
-      parse[CompactNumber](compactInt515bytes.hex2bytes,0) === ParseSuccess(compactInt515,3)
-      parse[CompactNumber](compactLong3294967295bytes.hex2bytes,0) === ParseSuccess(compactLong3294967295,5)
-      parse[CompactNumber](compactBigInt14151776774302809990bytes.hex2bytes,0) === ParseSuccess(compactBigInt14151776774302809990,9)
+      parse[CompactNumber](compactShort12bytes) === ParseSuccess(compactShort12,1)
+      parse[CompactNumber](compactInt515bytes) === ParseSuccess(compactInt515,3)
+      parse[CompactNumber](compactLong3294967295bytes) === ParseSuccess(compactLong3294967295,5)
+      parse[CompactNumber](compactBigInt14151776774302809990bytes) === ParseSuccess(compactBigInt14151776774302809990,9)
 
     }
 
@@ -220,9 +220,7 @@ class ParsingSpec extends Specification {
       val expectedIndex = uint32
       val hash = "9277e65fd4d7fb51822403608ea9158f6dabb8e8b710460a9b71b4d3df3c9b99"
 
-      val rawOutpoint:Array[Byte] = (hash ++ uint32bytesLE).hex2bytes
-
-      val ParseSuccess(outpoint,used) = parse[Outpoint](rawOutpoint,0)
+      val ParseSuccess(outpoint,used) = parse[Outpoint](hash ++ uint32bytesLE)
 
       used === 36
       outpoint.hash.length === hash.length / 2
@@ -237,11 +235,9 @@ class ParsingSpec extends Specification {
       val scrLen = compactShort12bytes
 
       val hexTxIn = rawOutpoint ++ scrLen ++ script ++ uint32bytesLE
-      val rawTxIn = hexTxIn.hex2bytes
-
       val expectedLength = 36 + 1 + 12 + 4
 
-      val ParseSuccess(txIn,txInLength) =  parse[TransactionInput](rawTxIn,0)
+      val ParseSuccess(txIn,txInLength) =  parse[TransactionInput](hexTxIn)
 
       txIn.previousOutput.index === uint32
       txIn.sequence === uint32
@@ -264,7 +260,7 @@ class ParsingSpec extends Specification {
 
     "parse a Transaction" in {
 
-      val ParseSuccess(tx,txLength) = parse[Transaction](rawTx.hex2bytes,0)
+      val ParseSuccess(tx,txLength) = parse[Transaction](rawTx)
 
       tx.version === 1L
       tx.nTxIn === CompactInt(5)
@@ -279,7 +275,7 @@ class ParsingSpec extends Specification {
 
       val hex = scala.io.Source.fromFile(getClass.getResource("/58d00055cae1c410cb57462c9d5d56a536284a5abc02a1ac54dd4f79cb731d3e.hex").getFile).mkString
 
-      val ParseSuccess(tx,_) = parse[Transaction](hex.hex2bytes,0)
+      val ParseSuccess(tx,_) = parse[Transaction](hex)
 
       tx.version === 1
       tx.nTxIn === CompactInt(3)
@@ -297,7 +293,7 @@ class ParsingSpec extends Specification {
 
       val rawBlockHeader = "02000000b6ff0b1b1680a2862a30ca44d346d9e8910d334beb48ca0c00000000000000009d10aa52ee949386ca9385695f04ede270dda20810decd12bc9b048aaab3147124d95a5430c31b18fe9f0864"
 
-      val ParseSuccess(header,length) = parse[BlockHeader](rawBlockHeader.hex2bytes,0)
+      val ParseSuccess(header,length) = parse[BlockHeader](rawBlockHeader)
 
       header.version === 2
       header.time === 1415239972 //Unix timestamp
@@ -311,7 +307,7 @@ class ParsingSpec extends Specification {
 
       val rawBlock = rawBlockHeader ++ nTx ++ tx ++ tx ++ tx
 
-      val ParseSuccess(block, blockSize) = parse[Block](rawBlock.hex2bytes,0)
+      val ParseSuccess(block, blockSize) = parse[Block](rawBlock)
 
       block.header.version === 2
       block.header.time === 1415239972L
@@ -327,7 +323,7 @@ class ParsingSpec extends Specification {
 
       val hex = scala.io.Source.fromFile(getClass.getResource("/000000000000000001f942eb4bfa0aeccb6a14c268f4c72d5fff17270da771b9.hex").getFile).mkString
 
-      val ParseSuccess(block,used) = parse[Block](hex.hex2bytes,0)
+      val ParseSuccess(block,used) = parse[Block](hex)
 
       used === hex.length / 2
       block.nTx === CompactInt(1031)

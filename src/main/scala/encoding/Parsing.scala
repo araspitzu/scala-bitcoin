@@ -1,5 +1,7 @@
 package encoding
 
+import scala.reflect.ClassTag
+import scala.util.control.ControlThrowable
 import scala.util.{Failure, Success, Try}
 
 /**
@@ -70,46 +72,63 @@ object Parsing {
   }
 
   case class ParseSuccess[T](result: T,bytesUsed:Int) extends ParseResult[T]
-  case class ParseFailure(err: String, thr: Option[Throwable]) extends ParseResult[Nothing]
+  case class ParseFailure(err: String, optThr: Option[Throwable]) extends ParseResult[Nothing] {
+    override def toString:String = optThr match {
+      case Some(thr) =>
+        val parserStackTrace = thr.getStackTrace.filter(_.getMethodName == "read").fold("\n ======= PARSER STACK TRACE =======")(_ + "\n" + _)
+        val exceptionStackTrace = thr.getStackTrace.take(10).fold("\n ======= ERROR AT =======")(_ + "\n" + _)
 
-    trait ByteReadable[T] {
-      def read(bytes: Array[Byte], offset: Int): ParseResult[T]
+        s"$err, reason: ${thr.getMessage} $parserStackTrace $exceptionStackTrace"
+      case None => err
+    }
+  }
 
-      def safeRead(bytes: Array[Byte], offset: Int):ParseResult[T] = Try {
-        read(bytes,offset)
-      } match {
-        case Success(t) => t
-        case Failure(thr) => ParseFailure(s"Error parsing ${this.getClass.toString}",Some(thr))
-      }
+  trait ByteReadable[T] {
+    def read(bytes: Array[Byte], offset: Int): ParseResult[T]
 
+    def safeRead(bytes: Array[Byte], offset: Int):ParseResult[T] = Try {
+      read(bytes,offset)
+    } match {
+      case Success(t) => t
+      case Failure(thr) => ParseFailure(s"Error parsing ${this.getClass.getName} at byte $offset",Some(thr))
     }
 
-    def parse[T](bytes:Array[Byte],offset:Int)(implicit reader:ByteReadable[T]):ParseResult[T] = reader.safeRead(bytes,offset)
+  }
 
-    def parse[T](bytes:String)(implicit reader:ByteReadable[T]):ParseResult[T] = {
-      import encoding.CommonParsersImplicits._
-      parse[T](bytes.hex2bytes,0)
-    }
+  case class ParseHalt(err:ParseFailure,remainingSteps:Int) extends ControlThrowable
 
-    def parseList[T](bytes:Array[Byte],offset:Int,numElem:Int)(implicit reader:ByteReadable[T]):ParseResult[List[T]] = {
-      val list = seqParse[T](bytes,offset,numElem)
-      if(list.length < numElem)
-        ParseFailure(s"Unable to parse $numElem elements, got only ${list.length}",None)
-      else
-        ParseSuccess(
-          result = list.map(_.get._1),
-          bytesUsed = list.foldLeft(0)( (acc,n) => acc + n.get._2)
-        )
-    }
+  def parse[T](bytes:Array[Byte],offset:Int)(implicit reader:ByteReadable[T]):ParseResult[T] = reader.safeRead(bytes,offset)
 
-    private def seqParse[T](bytes:Array[Byte],offset:Int,numElem:Int)(implicit reader:ByteReadable[T]):List[ParseResult[T]]= {
-      if(numElem > 0)
-        parse[T](bytes, offset) match {
-          case ParseSuccess(t,used) => ParseSuccess(t,used)::seqParse[T](bytes,offset + used, numElem -1)
-          case _:ParseFailure => Nil
+  def parse[T](bytes:String)(implicit reader:ByteReadable[T]):ParseResult[T] = {
+    import encoding.CommonParsersImplicits._
+    parse[T](bytes.hex2bytes,0)
+  }
+
+  def parseBytes(bytes:Array[Byte],offset:Int,numElem:Int):ParseResult[Array[Byte]] = ParseSuccess(
+    result = bytes.slice(offset,offset + numElem),
+    bytesUsed = numElem
+  )
+
+  def parseList[T](bytes:Array[Byte],offset:Int,numElem:Int)(implicit reader:ByteReadable[T], ct:ClassTag[T]):ParseResult[Array[T]] = try {
+    val (list,used) = seqParse[T](bytes,offset,numElem)
+    ParseSuccess(list.toArray,used)
+  } catch {
+    case halt:ParseHalt => halt.err.copy(err = s"${halt.err} at step ${numElem - halt.remainingSteps}")
+    case thr:Throwable => ParseFailure(s"Error while parsing list of type ${this.getClass.getName} at byte $offset",Some(thr))
+  }
+
+  private def seqParse[T](bytes:Array[Byte],offset:Int,remaining:Int)(implicit reader:ByteReadable[T]):(List[T],Int) = {
+    if(remaining > 0)
+      parse[T](bytes, offset) match {
+        case ParseSuccess(t,used) => {
+          val (list, usedAcc) = seqParse(bytes, offset + used, remaining - 1)
+          (t :: list, usedAcc + used)
         }
-      else
-        Nil
-    }
+        case e:ParseFailure => throw ParseHalt(e,remaining)
+      }
+    else
+      (List.empty,0)
+  }
+
 
   }

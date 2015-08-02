@@ -8,7 +8,7 @@ import encoding.Parsing.{ParseSuccess, ParseResult, ByteReadable}
 package object CommonParsersImplicits {
 
   implicit class HexString(hex:String){
-    def hex2bytes:Array[Byte] = hex.sliding(2, 2).toArray.map(Integer.parseInt(_, 16).toByte)
+    def hex2bytes:Array[Byte] = hex.sliding(2, 2).map(Integer.parseInt(_, 16).toByte).toArray
   }
 
   def bytes2hex(bytes: Array[Byte]): String = bytes.map("%02x".format(_)).mkString
@@ -17,35 +17,35 @@ package object CommonParsersImplicits {
   /**
    * Byte formatters for common types
    */
-  def uint32ByteFormatBE(uint:Long):List[Byte] = List(
+  def uint32ByteFormatBE(uint:Long):Array[Byte] = Array(
       0xff & (uint >> 24) toByte,
       0xff & (uint >> 16) toByte,
       0xff & (uint >> 8) toByte,
       0xff & uint toByte
   )
 
-  def uint32ByteFormatLE(uint:Long):List[Byte] = List(
+  def uint32ByteFormatLE(uint:Long):Array[Byte] = Array(
       0xff & uint toByte,
       0xff & (uint >> 8) toByte,
       0xff & (uint >> 16) toByte,
       0xff & (uint >> 24) toByte
   )
 
-  def uint16ByteFormatBE(uint:Int):List[Byte] = List(
+  def uint16ByteFormatBE(uint:Int):Array[Byte] = Array(
     0xff & (uint >> 8) toByte,
     0xff & uint toByte
   )
 
-  def uint16ByteFormatLE(uint:Int):List[Byte] = List(
+  def uint16ByteFormatLE(uint:Int):Array[Byte] = Array(
     0xff & uint toByte,
     0xff & (uint >> 8) toByte
   )
 
-  def uint8ByteFormat(uint:Int):List[Byte] = List(0xff & uint toByte)
+  def uint8ByteFormat(uint:Int):Array[Byte] = Array(0xff & uint toByte)
 
-  def uint8ByteFormat(uint:Short):List[Byte] = uint8ByteFormat(uint.toInt)
+  def uint8ByteFormat(uint:Short):Array[Byte] = uint8ByteFormat(uint.toInt)
 
-  def uint64ByteFormatLE(uint:BigInt):List[Byte] = List(
+  def uint64ByteFormatLE(uint:BigInt):Array[Byte] = Array(
     0xff & uint toByte,
     0xff & (uint >> 8) toByte,
     0xff & (uint >> 16) toByte,
@@ -56,7 +56,7 @@ package object CommonParsersImplicits {
     0xff & (uint >> 56) toByte
   )
 
-  def int64ByteFormatLE(uint:Long):List[Byte] = List(
+  def int64ByteFormatLE(uint:Long):Array[Byte] = Array(
     0xff & uint toByte,
     0xff & (uint >> 8) toByte,
     0xff & (uint >> 16) toByte,

@@ -12,20 +12,20 @@ import encoding.Writing.ByteWritable
 case class Transaction(
      version:Long,                   //version is always 1
      nTxIn:CompactNumber,
-     txIn:List[TransactionInput],
+     txIn:Array[TransactionInput],
      nTxOut:CompactNumber,
-     txOut:List[TransactionOutput],
+     txOut:Array[TransactionOutput],
      lockTime:Long
 ) extends ByteWritable {
 
   def isCoinbase = true //txIn.length == 1
 
   def byteFormat =
-    uint32ByteFormatLE(version) ++
+      uint32ByteFormatLE(version) ++
       nTxIn.byteFormat ++
-      txIn.foldRight[List[Byte]](Nil)((in, acc) => in.byteFormat ++ acc) ++
+      txIn.foldRight[Array[Byte]](Array.emptyByteArray)((in, acc) => in.byteFormat ++ acc) ++
       nTxOut.byteFormat ++
-      txOut.foldRight[List[Byte]](Nil)((in, acc) => in.byteFormat ++ acc) ++
+      txOut.foldRight[Array[Byte]](Array.emptyByteArray)((in, acc) => in.byteFormat ++ acc) ++
       uint32ByteFormatLE(lockTime)
 
 }

@@ -39,11 +39,11 @@ sealed trait CompactNumber extends ByteWritable {
     case CompactBigInt(b) => b
   }
 
-  override def byteFormat:List[Byte] = this match {
+  override def byteFormat:Array[Byte] = this match {
     case CompactInt(i) if(i < 253) => uint8ByteFormat(i)
-    case CompactInt(i) => 253.toByte :: uint16ByteFormatLE(i)
-    case CompactLong(l) => 254.toByte :: uint32ByteFormatLE(l)
-    case CompactBigInt(b) => 255.toByte :: uint64ByteFormatLE(b)
+    case CompactInt(i) => Array(253.toByte) ++ uint16ByteFormatLE(i)
+    case CompactLong(l) => Array(254.toByte) ++ uint32ByteFormatLE(l)
+    case CompactBigInt(b) => Array(255.toByte) ++ uint64ByteFormatLE(b)
   }
 
 }
