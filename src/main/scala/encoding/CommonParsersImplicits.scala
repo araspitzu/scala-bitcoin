@@ -71,13 +71,6 @@ package object CommonParsersImplicits {
   /**
    *  Byte readers for common numeric types
    */
-  implicit val byteReadable = new {} with ByteReadable[Byte] {
-    def read(bytes: Array[Byte], offset: Int):ParseResult[Byte] = ParseSuccess(
-      result = bytes(offset),
-      bytesUsed = 1
-    )
-  }
-
   implicit val uint8ByteReader = new {} with ByteReadable[Short] {
     def read(bytes: Array[Byte], offset: Int):ParseResult[Short] = ParseSuccess(
       result = parseUint8(bytes,offset).toShort,
@@ -92,7 +85,7 @@ package object CommonParsersImplicits {
     )
   }
 
-  val uint32ByteReaderLE = new {} with ByteReadable[Long] {
+  implicit val uint32ByteReaderLE = new {} with ByteReadable[Long] {
     override def read(bytes: Array[Byte], offset:Int):ParseResult[Long] = ParseSuccess(
       result = parseUint32LE(bytes,offset),
       bytesUsed = 4
@@ -118,10 +111,10 @@ package object CommonParsersImplicits {
   private def parseUint16LE(bytes: Array[Byte], offset: Int):Int = bytes(offset) & 0xff | (bytes(offset + 1) & 0xff) << 8
 
   private def parseUint32LE(bytes: Array[Byte], offset: Int): Long = {
-      ((bytes(offset + 0) & 0xffL) << 0)  |
-      ((bytes(offset + 1) & 0xffL) << 8)  |
-      ((bytes(offset + 2) & 0xffL) << 16) |
-      ((bytes(offset + 3) & 0xffL) << 24)
+      (bytes(offset + 0) & 0xffL) << 0  |
+      (bytes(offset + 1) & 0xffL) << 8  |
+      (bytes(offset + 2) & 0xffL) << 16 |
+      (bytes(offset + 3) & 0xffL) << 24
   }
 
   private def parseInt64LE(bytes: Array[Byte], offset: Int): Long = java.lang.Long.parseLong(bytes2hex(bytes.slice(offset,offset + 8).reverse),16)

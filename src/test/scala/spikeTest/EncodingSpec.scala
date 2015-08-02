@@ -172,7 +172,7 @@ class EncodingSpec extends Specification {
    "encode Transaction 58d00055cae1c410cb57462c9d5d56a536284a5abc02a1ac54dd4f79cb731d3e" in {
      val hex = scala.io.Source.fromFile(getClass.getResource("/58d00055cae1c410cb57462c9d5d56a536284a5abc02a1ac54dd4f79cb731d3e.hex").getFile).mkString
 
-     val ParseSuccess(tx,used) = parse[Transaction](hex.hex2bytes,0)
+     val ParseSuccess(tx,used) = parse[Transaction](hex)
 
      bytes2hex(tx.byteFormat) === hex
    }
@@ -182,7 +182,7 @@ class EncodingSpec extends Specification {
       val rawBlockHeader = "02000000b6ff0b1b1680a2862a30ca44d346d9e8910d334beb48ca0c00000000000000009d10aa52ee949386ca9385695f04ede270dda20810decd12bc9b048aaab3147124d95a5430c31b18fe9f0864"
 
       val bal = "0200000066191da95594aeda1a98a19ff054a88a510754e2a4d93e0a00000000000000008485ae79"
-      val ParseSuccess(expectedBlockHeader,expectedUsed) = parse[BlockHeader](rawBlockHeader.hex2bytes,0)
+      val ParseSuccess(expectedBlockHeader,expectedUsed) = parse[BlockHeader](rawBlockHeader)
 
       val ParseSuccess(blockHeader,used) = parse[BlockHeader](expectedBlockHeader.byteFormat,0)
 
@@ -197,7 +197,7 @@ class EncodingSpec extends Specification {
     "encode blockheader of block 000000000000000001f942eb4bfa0aeccb6a14c268f4c72d5fff17270da771b9" in {
       val hex = scala.io.Source.fromFile(getClass.getResource("/000000000000000001f942eb4bfa0aeccb6a14c268f4c72d5fff17270da771b9_header.hex").getFile).mkString
 
-      val ParseSuccess(header,used) = parse[BlockHeader](hex.hex2bytes,0)
+      val ParseSuccess(header,used) = parse[BlockHeader](hex)
 
       bytes2hex(header.byteFormat) === hex
 
@@ -210,7 +210,7 @@ class EncodingSpec extends Specification {
       val nTx = "01"
       val rawBlock = rawBlockHeader ++ nTx ++ tx
 
-      val ParseSuccess(expectedBlock,expectedUsed) = parse[Block](rawBlock.hex2bytes,0)
+      val ParseSuccess(expectedBlock,expectedUsed) = parse[Block](rawBlock)
 
       val ParseSuccess(block,used) = parse[Block](expectedBlock.byteFormat,0)
 
@@ -225,7 +225,7 @@ class EncodingSpec extends Specification {
     "encode Block 000000000000000001f942eb4bfa0aeccb6a14c268f4c72d5fff17270da771b9" in {
       val hex = scala.io.Source.fromFile(getClass.getResource("/000000000000000001f942eb4bfa0aeccb6a14c268f4c72d5fff17270da771b9.hex").getFile).mkString
 
-      val ParseSuccess(block,_) = parse[Block](hex.hex2bytes,0)
+      val ParseSuccess(block,_) = parse[Block](hex)
       val ParseSuccess(block_parsed,_) = parse[Block](block.byteFormat,0)
 
       bytes2hex(block_parsed.byteFormat) === hex

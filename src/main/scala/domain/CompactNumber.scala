@@ -68,7 +68,7 @@ object CompactNumber {
 
   implicit val compactLongByteReader = new {} with ByteReadable[CompactLong] {
     override def read(bytes: Array[Byte], offset: Int): ParseResult[CompactLong] = {
-      parse[Long](bytes,offset)(uint32ByteReaderLE) match {
+      parse[Long](bytes,offset) match {
         case ParseSuccess(result,used) => {
           val clong = CompactLong(result)
           ParseSuccess(clong,clong.originalSize)

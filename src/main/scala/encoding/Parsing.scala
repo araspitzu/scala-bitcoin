@@ -20,11 +20,6 @@ object Parsing {
       case e:ParseFailure => e
     }
 
-     def get:(T,Int) = this match {
-      case ParseSuccess(result,used) => (result,used)
-      case e:ParseFailure => throw new RuntimeException(s"Value not parsed $e")
-    }
-
     def getOrElse[U >: T](default: => U):(U,Int) = this match {
       case ParseSuccess(result,used) => (result,used)
       case e:ParseFailure =>(default,0)
@@ -117,6 +112,7 @@ object Parsing {
     case thr:Throwable => ParseFailure(s"Error while parsing list of type ${this.getClass.getName} at byte $offset",Some(thr))
   }
 
+  //TODO make this tail recursive
   private def seqParse[T](bytes:Array[Byte],offset:Int,remaining:Int)(implicit reader:ByteReadable[T]):(List[T],Int) = {
     if(remaining > 0)
       parse[T](bytes, offset) match {
