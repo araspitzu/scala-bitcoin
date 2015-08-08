@@ -1,5 +1,6 @@
 package domain
 
+import domain.Numbers.CompactNumber
 import encoding.Parsing._
 import encoding.CommonParsersImplicits._
 import encoding.Writing.ByteWritable

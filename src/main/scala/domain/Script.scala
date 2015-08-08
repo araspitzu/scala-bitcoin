@@ -1,6 +1,5 @@
 package domain
 
-import domain.Script.OP_CODES
 import encoding.Writing.ByteWritable
 
 
@@ -12,20 +11,34 @@ case class Script(bytes:Array[Byte]) extends ByteWritable {
 
   import domain.Script.OP_CODES._
 
+  val FALSE:Int = 0
+  val TRUE:Int = 1
+
   def length = bytes.length
   override def byteFormat = bytes
 
-  def execute = execute(bytes,List.empty)
+  def execute:Int = execute(bytes,List.empty)
 
   private def execute(script:Array[Byte],stack:List[List[Byte]]):Int = script.headOption.map { opcode =>
     opcode match {
       //push TRUE on the stack
       case OP_TRUE => execute(script.tail, (OP_TRUE::Nil)::stack  )
+      //push FALSE on the stack
+      case OP_TRUE => execute(script.tail, (OP_FALSE::Nil)::stack  )
+      //given OP_N,pushes N on the stack
+      case OP_0 => execute(script.tail, (0.toByte::Nil)::stack  )
+      case OP_1 => execute(script.tail, (1.toByte::Nil)::stack  )
       //does nothing
       case OP_NOP => execute(script.tail,stack)
       case _ => 2
     }
-  }.getOrElse(0)
+    //if the script is finished or empty script was given, evaluate the stack as number
+  } getOrElse {
+    stack.headOption.map { bytes:List[Byte] =>
+      1
+      //if the stack is empty
+    }.getOrElse(FALSE)
+  }
 
 }
 
@@ -108,7 +121,7 @@ object Script {
     val OP_NEGATE = 0x8f.toByte
     val OP_ABS = 0x90.toByte
     val OP_NOT = 0x91.toByte
-    val OP_0NOTEQUAL = 0x92.toByte
+    val OP_NOTEQUAL = 0x92.toByte
     val OP_ADD = 0x93.toByte
     val OP_SUB = 0x94.toByte
     //OP_MUL

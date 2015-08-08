@@ -13,7 +13,6 @@ package object CommonParsersImplicits {
 
   def bytes2hex(bytes: Array[Byte]): String = bytes.map("%02x".format(_)).mkString
 
-
   /**
    * Byte formatters for common types
    */
@@ -73,52 +72,41 @@ package object CommonParsersImplicits {
    */
   implicit val uint8ByteReader = new {} with ByteReadable[Short] {
     def read(bytes: Array[Byte], offset: Int):ParseResult[Short] = ParseSuccess(
-      result = parseUint8(bytes,offset).toShort,
+      result = (bytes(offset) & 0xff).toShort,
       bytesUsed = 1
     )
   }
 
   implicit val uint16ByteReader = new {} with ByteReadable[Int] {
     override def read(bytes: Array[Byte], offset: Int): ParseResult[Int] = ParseSuccess(
-      result = parseUint16LE(bytes,offset),
+      result = bytes(offset) & 0xff | (bytes(offset + 1) & 0xff) << 8 ,
       bytesUsed = 2
     )
   }
 
   implicit val uint32ByteReaderLE = new {} with ByteReadable[Long] {
     override def read(bytes: Array[Byte], offset:Int):ParseResult[Long] = ParseSuccess(
-      result = parseUint32LE(bytes,offset),
+      result =
+        (bytes(offset + 0) & 0xffL) << 0  |
+        (bytes(offset + 1) & 0xffL) << 8  |
+        (bytes(offset + 2) & 0xffL) << 16 |
+        (bytes(offset + 3) & 0xffL) << 24  ,
       bytesUsed = 4
     )
   }
 
   val int64ByteReader = new {} with ByteReadable[Long] {
     override def read(bytes: Array[Byte], offset:Int):ParseResult[Long] = ParseSuccess(
-      result = parseInt64LE(bytes,offset),
+      result = java.lang.Long.parseLong(bytes2hex(bytes.slice(offset,offset + 8).reverse),16),
       bytesUsed = 8
     )
   }
 
   implicit val uint64ByteReader = new {} with ByteReadable[BigInt] {
     override def read(bytes: Array[Byte], offset: Int): ParseResult[BigInt] = ParseSuccess(
-      result = parseUint64LE(bytes,offset),
+      result = BigInt(bytes2hex(bytes.slice(offset,offset + 8).reverse), 16),
       bytesUsed = 8
     )
   }
-
-  private def parseUint8(bytes: Array[Byte], offset: Int) = bytes(offset) & 0xff
-
-  private def parseUint16LE(bytes: Array[Byte], offset: Int):Int = bytes(offset) & 0xff | (bytes(offset + 1) & 0xff) << 8
-
-  private def parseUint32LE(bytes: Array[Byte], offset: Int): Long = {
-      (bytes(offset + 0) & 0xffL) << 0  |
-      (bytes(offset + 1) & 0xffL) << 8  |
-      (bytes(offset + 2) & 0xffL) << 16 |
-      (bytes(offset + 3) & 0xffL) << 24
-  }
-
-  private def parseInt64LE(bytes: Array[Byte], offset: Int): Long = java.lang.Long.parseLong(bytes2hex(bytes.slice(offset,offset + 8).reverse),16)
-
-  private def parseUint64LE(bytes: Array[Byte],offset:Int):BigInt = BigInt(bytes2hex(bytes.slice(offset,offset + 8).reverse), 16)
 
 }

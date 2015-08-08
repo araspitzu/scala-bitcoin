@@ -1,8 +1,8 @@
-package domain
+package domain.Numbers
 
 import encoding.CommonParsersImplicits
-import encoding.Parsing._
 import encoding.CommonParsersImplicits._
+import encoding.Parsing._
 import encoding.Writing.ByteWritable
 
 /**

@@ -1,5 +1,6 @@
-package spikeTest
+package serializationSpecs
 
+import domain.Numbers.{CompactInt, CompactNumber}
 import domain._
 import org.specs2.mutable.Specification
 import encoding.CommonParsersImplicits._
