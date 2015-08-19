@@ -1,6 +1,6 @@
 package serializationSpecs
 
-import domain.Numbers.{CompactInt, CompactNumber}
+import domain.Numbers.{MPINumber, CompactInt, CompactNumber}
 import domain._
 import org.specs2.mutable.Specification
 import encoding.CommonParsersImplicits._
@@ -51,7 +51,17 @@ class EncodingSpec extends Specification {
 
       val bytes = uint64ByteFormatLE(int64)
 
-      parse[Long](bytes,0)(int64ByteReader) === ParseSuccess(int64,8)
+      parse[Long](bytes,0)(int64ByteReaderLE) === ParseSuccess(int64,8)
+
+    }
+
+    "encode an MPINumber into byte" in {
+
+      val hex = "0000000109"
+
+      val ParseSuccess(mpi,used) = parse[MPINumber](hex.hex2bytes,0)
+
+      bytes2hex(mpi.byteFormat) === hex
 
     }
 

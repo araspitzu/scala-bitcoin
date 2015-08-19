@@ -1,6 +1,7 @@
 package serializationSpecs
 
-import domain.Numbers.{CompactBigInt, CompactLong, CompactInt, CompactNumber}
+import domain.Numbers._
+import domain.Numbers.MPINumber._
 import domain._
 import org.specs2.mutable.Specification
 import org.specs2.specification.Scope
@@ -21,7 +22,8 @@ trait UnsignedIntegerScope extends Scope {
   val uint32:Long = 3294967295L
   val uint32bytesLE = "ff3565c4"
 
-  val uint64bytes = "863ff134ff3565c4"
+  val uint64bytesLE = "863ff134ff3565c4"
+  val uint64bytesBE = "c46535ff34f13f86"
   val uint64decimal = "14151776774302809990"
 
   val int64bytes = "404b4c0000000000"
@@ -41,7 +43,7 @@ trait CompactNumberScope extends UnsignedIntegerScope {
   val compactLong3294967295bytes = "fe"+uint32bytesLE
 
   val compactBigInt14151776774302809990 = CompactBigInt(BigInt(uint64decimal,10))
-  val compactBigInt14151776774302809990bytes = "ff"+uint64bytes
+  val compactBigInt14151776774302809990bytes = "ff"+uint64bytesLE
 
 }
 
@@ -71,13 +73,13 @@ class ParsingSpec extends Specification {
 
     "parse an uint64 as BigInt" in new UnsignedIntegerScope {
 
-      parse[BigInt](uint64bytes) === ParseSuccess(BigInt(uint64decimal,10),8)
+      parse[BigInt](uint64bytesLE) === ParseSuccess(BigInt(uint64decimal,10),8)
 
     }
 
     "parse an int64 as Long" in new UnsignedIntegerScope {
 
-      parse[Long](int64bytes)(int64ByteReader) === ParseSuccess(int64,8)
+      parse[Long](int64bytes)(int64ByteReaderLE) === ParseSuccess(int64,8)
 
     }
 
@@ -88,6 +90,15 @@ class ParsingSpec extends Specification {
       parse[CompactNumber](compactLong3294967295bytes) === ParseSuccess(compactLong3294967295,5)
       parse[CompactNumber](compactBigInt14151776774302809990bytes) === ParseSuccess(compactBigInt14151776774302809990,9)
 
+    }
+
+    "parse an MPINumber" in new UnsignedIntegerScope {
+
+      val hex = "0000000970c46535ff34f13f86"
+      val ParseSuccess(mpi,used) = parse[MPINumber](hex.hex2bytes,0)
+
+      mpi.value === BigInt(uint64decimal,10)
+      used === 4 + 8
     }
 
     "parse an Outpoint" in new UnsignedIntegerScope {
