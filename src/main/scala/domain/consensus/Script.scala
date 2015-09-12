@@ -13,7 +13,9 @@ import scala.util.control.ControlThrowable
  * Created by andrea on 04/07/15.
  */
 
-case class ScriptError(msg:String) extends ControlThrowable
+case class ScriptError(msg:String) extends ControlThrowable {
+  override def toString:String = msg
+}
 object ScriptError {
   def apply(failure: ParseFailure):ScriptError = ScriptError(failure.err)
 }
@@ -44,19 +46,21 @@ case class Script(data: Array[Byte]) extends ByteWritable {
 
   def execute = exec.headOption map castToBool getOrElse false
 
-  private def exec:Stack = parsedScript.get.foldLeft[Stack](List.empty) {
-    case (stack,Right(data)) => data :: stack
-    case (stack,Left(op_code)) => op_code match {
-      case op_numeric if(op_numeric >= OP_0 && op_numeric <= OP_16) => Array(op_numeric.toByte) :: stack
-      case OP_DUP => stack.headOption.map( _ :: stack ).getOrElse( throw ScriptError("OP_DUP on empty stack") )
-      case OP_HASH160 => stack.headOption.map( Hash.sha256(_) :: stack ).getOrElse( throw ScriptError("OP_HASH160 on empty stack") )
+  private def exec:Stack = parsedScript match {
+    case None => List.empty
+    case Some(parsed) => parsed.foldLeft[Stack](List.empty) {
+      case (stack, Right(data)) => data :: stack
+      case (stack, Left(op_code)) => op_code match {
+        case op_numeric if (op_numeric >= OP_0 && op_numeric <= OP_16) => Array(op_numeric.toByte) :: stack
+        case OP_DUP => stack.headOption.map(_ :: stack).getOrElse(throw ScriptError("OP_DUP on empty stack"))
+        case OP_HASH160 => stack.headOption.map(Hash.sha256(_) :: stack).getOrElse(throw ScriptError("OP_HASH160 on empty stack"))
 
-      case x => throw ScriptError(s"Unknown opcode $x")
+        case x => throw ScriptError(s"Unknown opcode $x")
+      }
     }
+
   }
   private def parseScript(bytes:Array[Byte]):List[Either[OP_CODE,Array[Byte]]] = {
-   // import domain.consensus.Script.OP_CODES._
-
     // b & 0xff necessary to read it unsigned, see http://www.scala-lang.org/old/sites/default/files/linuxsoft_archives/docu/files/ScalaReference.pdf#Integer Literals
     bytes.headOption.map { _ & 0xff match {
       case b if(isOpPush(b)) => Right(bytes.slice(1, 1 + b)) :: parseScript(bytes.drop(1 + b))

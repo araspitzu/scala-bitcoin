@@ -1,6 +1,7 @@
 package domain
 
 import domain.Numbers.CompactNumber
+import domain.consensus.Script
 import encoding.Parsing._
 import encoding.CommonParsersImplicits._
 import encoding.Writing.ByteWritable
@@ -11,14 +12,14 @@ import encoding.Writing.ByteWritable
 case class TransactionInput (
    previousOutput:Outpoint,
    scriptLength:CompactNumber,
-   signatureScript:Array[Byte],
+   signatureScript:Script,
    sequence:Long
 ) extends ByteWritable {
 
   def byteFormat =
     previousOutput.byteFormat ++
     scriptLength.byteFormat ++
-    signatureScript ++
+    signatureScript.byteFormat ++
     uint32ByteFormatLE(sequence)
 
 }
@@ -54,12 +55,12 @@ object TransactionInput {
     override def read(bytes: Array[Byte], offset: Int): ParseResult[TransactionInput] = for {
       (prevOut,used) <- parse[Outpoint](bytes,offset).withOffset
       (scrLen,used1) <- parse[CompactNumber](bytes,offset + used).withOffset
-      (script,used2) <- parseBytes(bytes,offset + used + used1,scrLen.intValue).withOffset
+      (scriptData,used2) <- parseBytes(bytes,offset + used + used1,scrLen.intValue).withOffset
       seqNum <- parse[Long](bytes,offset + used + used1 + used2)(uint32ByteReaderLE)
     } yield TransactionInput(
        previousOutput = prevOut,
        scriptLength = scrLen,
-       signatureScript = script,
+       signatureScript = Script(scriptData),
        sequence = seqNum
      )
   }

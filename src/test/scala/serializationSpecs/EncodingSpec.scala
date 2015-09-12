@@ -100,7 +100,7 @@ class EncodingSpec extends Specification {
           index
         ),
         scriptLength = scrLen,
-        script.hex2bytes,
+        Script(script.hex2bytes),
         seqNum
       )
 
@@ -142,7 +142,7 @@ class EncodingSpec extends Specification {
           index
         ),
         scriptLength = scrLen,
-        script.hex2bytes,
+        Script(script.hex2bytes),
         seqNum
       )
       val expectedTxOut = TransactionOutput(

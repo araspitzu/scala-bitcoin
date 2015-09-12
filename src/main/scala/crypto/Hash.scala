@@ -12,6 +12,5 @@ object Hash {
 
   val sha256Digest = MessageDigest.getInstance("SHA256")
 
-
   def sha256(bytes: Array[Byte]) = sha256Digest.digest(bytes)
 }

@@ -1,6 +1,8 @@
 *.class
 *.log
 
+src/main/scala/playground/
+
 # SBT ignore
 .cache
 .history
