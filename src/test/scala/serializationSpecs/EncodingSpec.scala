@@ -117,7 +117,7 @@ class EncodingSpec extends Specification {
       val expectedTxOut = TransactionOutput(
         value = 35000,
         pkScriptLength = CompactInt(5),
-        pkScript = Script(List.empty)
+        pkScript = Script("0c1c1e771a" hex2bytes)
       )
 
       val ParseSuccess(txOut,used) = parse[TransactionOutput](expectedTxOut.byteFormat,0)
@@ -148,7 +148,7 @@ class EncodingSpec extends Specification {
       val expectedTxOut = TransactionOutput(
         value = 35000,
         pkScriptLength = CompactInt(5),
-        pkScript = Script(List.empty)
+        pkScript = Script("0c1c1e771a" hex2bytes)
       )
 
       val expectedTx = Transaction(

@@ -59,7 +59,7 @@ object TransactionInput {
     } yield TransactionInput(
        previousOutput = prevOut,
        scriptLength = scrLen,
-       signatureScript = script.toArray,
+       signatureScript = script,
        sequence = seqNum
      )
   }

@@ -125,7 +125,7 @@ class ParsingSpec extends Specification {
 
     "parse a TransactionOutput" in new CompactNumberScope {
 
-      val rawTxOut = int64bytes ++ compactShort12bytes ++ "c46535ff34f13f863f863f86"
+      val rawTxOut = int64bytes ++ compactShort12bytes ++ "76a914e7b369882ebdd4b5907012e3f3e98ab0fbafd01888ac"
 
       val ParseSuccess(txOut,_) = parse[TransactionOutput](rawTxOut.hex2bytes, 0)
 

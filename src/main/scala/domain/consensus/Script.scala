@@ -1,5 +1,6 @@
 package domain.consensus
 
+import crypto.Hash
 import domain.consensus.Script.{OP_CODES, OP_CODE}
 import encoding.CommonParsersImplicits._
 import encoding.Parsing._
@@ -18,37 +19,81 @@ object ScriptError {
 }
 
 
-case class Script(script:List[Either[OP_CODE,Array[Byte]]]) extends ByteWritable {
+case class Script(data: Array[Byte]) extends ByteWritable {
   import domain.consensus.Script.OP_CODES._
   type Stack = List[Array[Byte]]
 
-  def length:Int = script.map {
-    case Left(op_code) => 1
-    case Right(data) => data.length
-  }.sum
+  lazy val parsedScript: Option[List[Either[OP_CODE,Array[Byte]]]] = Try {
+    parseScript(data)
+  } match {
+    case Success(result) => Some(result)
+    case Failure(thr) => None
+  }
 
-  override def byteFormat:Array[Byte] = script.map {
-      case Left(op_code) => Array(op_code.toByte)
-      case Right(data) => data
-  }.flatten.toArray
+  def length:Int = data.length
 
+  override def byteFormat:Array[Byte] = data
 
-  override def toString = script map {
-    case Left(op_code) => op_code.toString + " "
-    case Right(data) => bytes2hex(data) + " "
-  } mkString
+  override def toString = parsedScript match {
+    case Some(list) => list map {
+      case Left(op_code) => op_code.toString + " "
+      case Right(data) => bytes2hex(data) + " "
+    } mkString
+    case None => "None"
+  }
 
   def execute = exec.headOption map castToBool getOrElse false
 
-  def exec:Stack = script.foldLeft[Stack](List.empty) {
+  private def exec:Stack = parsedScript.get.foldLeft[Stack](List.empty) {
     case (stack,Right(data)) => data :: stack
     case (stack,Left(op_code)) => op_code match {
-      case OP_0 => Array(OP_0.toByte) :: stack
-      case OP_1 => Array(OP_1.toByte) :: stack
+      case op_numeric if(op_numeric >= OP_0 && op_numeric <= OP_16) => Array(op_numeric.toByte) :: stack
       case OP_DUP => stack.headOption.map( _ :: stack ).getOrElse( throw ScriptError("OP_DUP on empty stack") )
+      case OP_HASH160 => stack.headOption.map( Hash.sha256(_) :: stack ).getOrElse( throw ScriptError("OP_HASH160 on empty stack") )
+
       case x => throw ScriptError(s"Unknown opcode $x")
     }
   }
+  private def parseScript(bytes:Array[Byte]):List[Either[OP_CODE,Array[Byte]]] = {
+   // import domain.consensus.Script.OP_CODES._
+
+    // b & 0xff necessary to read it unsigned, see http://www.scala-lang.org/old/sites/default/files/linuxsoft_archives/docu/files/ScalaReference.pdf#Integer Literals
+    bytes.headOption.map { _ & 0xff match {
+      case b if(isOpPush(b)) => Right(bytes.slice(1, 1 + b)) :: parseScript(bytes.drop(1 + b))
+      case b => OP_CODES(b) match {
+        case OP_PUSHDATA1 => parse[Short](bytes.tail,0) match {
+          case ParseSuccess(len,used) => Right(bytes.slice(1 + used, 1 + used + len)) :: parseScript(bytes.drop(1 + used + len))
+          case f:ParseFailure => throw ScriptError(f)
+        }
+        case OP_PUSHDATA2 => parse[Int](bytes.tail,0) match {
+          case ParseSuccess(len,used) => Right(bytes.slice(1 + used, 1 + used + len)) :: parseScript(bytes.drop(1 + used + len))
+          case f:ParseFailure => throw ScriptError(f)
+        }
+        case OP_PUSHDATA4 => parse[Long](bytes.tail,0) match {
+          case ParseSuccess(len,used) => Right(bytes.slice(1 + used, 1 + used + len.toInt)) :: parseScript(bytes.drop(1 + used + len.toInt))
+          case f:ParseFailure => throw ScriptError(f)
+        }
+        case OP_CAT |
+             OP_SUBSTR |
+             OP_LEFT |
+             OP_RIGHT |
+             OP_INVERT |
+             OP_AND |
+             OP_OR |
+             OP_XOR |
+             OP_2MUL |
+             OP_2DIV |
+             OP_MUL |
+             OP_DIV |
+             OP_MOD |
+             OP_LSHIFT  => throw ScriptError("Encountered disabled OPCODE")
+        case op_n => Left(op_n) :: parseScript(bytes.tail)
+      }
+    }
+    } getOrElse Nil
+  }
+
+  private def isOpPush(b:Int) = b > 0x00 && b < 0x4c
 
   private def castToBool(data: Array[Byte]): Boolean = data.exists( b =>
     b.toInt != 0 &&
@@ -67,57 +112,6 @@ object Script {
   // Threshold for nLockTime: below this value it is interpreted as block number,
   // otherwise as UNIX timestamp.
   val LOCKTIME_THRESHOLD = 500000000 // Tue Nov  5 00:53:20 1985 UTC
-
-  implicit val scriptByteReadable = new {} with ByteReadable[Script] {
-    override def read(bytes: Array[Byte], offset: Int): ParseResult[Script] = Try{
-      parseScript(bytes)
-    } match {
-      case Success(parsed) => ParseSuccess(Script(parsed), bytes.length) //TODO
-      case Failure(err:ScriptError) => ParseFailure(err.msg, None)
-      case Failure(thr) => ParseFailure("Unable to parse script", Some(thr))
-    }
-  }
-
-  private def parseScript(bytes:Array[Byte]):List[Either[OP_CODE,Array[Byte]]] = {
-    import domain.consensus.Script.OP_CODES._
-
-    // b & 0xff necessary to read it unsigned, see http://www.scala-lang.org/old/sites/default/files/linuxsoft_archives/docu/files/ScalaReference.pdf#Integer Literals
-    bytes.headOption.map { _ & 0xff match {
-       case b if(isOpPush(b)) => Right(bytes.slice(1, 1 + b)) :: parseScript(bytes.drop(1 + b))
-       case b => OP_CODES(b) match {
-       case OP_PUSHDATA1 => parse[Short](bytes.tail,0) match {
-         case ParseSuccess(len,used) => Right(bytes.slice(1 + used, 1 + used + len)) :: parseScript(bytes.drop(1 + used + len))
-         case f:ParseFailure => throw ScriptError(f)
-       }
-       case OP_PUSHDATA2 => parse[Int](bytes.tail,0) match {
-         case ParseSuccess(len,used) => Right(bytes.slice(1 + used, 1 + used + len)) :: parseScript(bytes.drop(1 + used + len))
-         case f:ParseFailure => throw ScriptError(f)
-       }
-       case OP_PUSHDATA4 => parse[Long](bytes.tail,0) match {
-         case ParseSuccess(len,used) => Right(bytes.slice(1 + used, 1 + used + len.toInt)) :: parseScript(bytes.drop(1 + used + len.toInt))
-         case f:ParseFailure => throw ScriptError(f)
-       }
-       case OP_CAT |
-         OP_SUBSTR |
-           OP_LEFT |
-          OP_RIGHT |
-         OP_INVERT |
-            OP_AND |
-             OP_OR |
-            OP_XOR |
-           OP_2MUL |
-           OP_2DIV |
-            OP_MUL |
-            OP_DIV |
-            OP_MOD |
-         OP_LSHIFT  => throw ScriptError("Encountered disabled OPCODE")
-       case op_n => Left(op_n) :: parseScript(bytes.tail)
-      }
-     }
-    } getOrElse Nil
-  }
-
-  def isOpPush(b:Int) = b > 0x00 && b < 0x4c
 
   case object OP_CODES extends Enumeration {
 
