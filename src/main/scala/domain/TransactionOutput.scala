@@ -1,5 +1,6 @@
 package domain
 
+import domain.consensus.Script
 import domain.Numbers.CompactNumber
 import encoding.Parsing._
 import encoding.CommonParsersImplicits._
@@ -25,11 +26,11 @@ object TransactionOutput {
     override def read(bytes: Array[Byte], offset: Int): ParseResult[TransactionOutput] = for {
       (satoshis,used) <- parse[Long](bytes,offset)(int64ByteReaderLE).withOffset
       scrLen <- parse[CompactNumber](bytes,offset + used)
-      scriptData <- parseBytes(bytes,offset + used + scrLen.originalSize ,scrLen.intValue)
+      script <- parse[Script](bytes.slice(offset + used + scrLen.originalSize, offset + used + scrLen.originalSize + scrLen.intValue), 0)  //parseBytes(bytes,offset + used + scrLen.originalSize ,scrLen.intValue)
     } yield TransactionOutput(
       value = satoshis,
       pkScriptLength = scrLen,
-      pkScript = Script(scriptData)
+      pkScript = script//Script(scriptData)
     )
   }
 

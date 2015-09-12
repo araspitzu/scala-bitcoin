@@ -1,7 +1,6 @@
 package serializationSpecs
 
 import domain.Numbers._
-import domain.Numbers.MPINumber._
 import domain._
 import org.specs2.mutable.Specification
 import org.specs2.specification.Scope
@@ -90,15 +89,6 @@ class ParsingSpec extends Specification {
       parse[CompactNumber](compactLong3294967295bytes) === ParseSuccess(compactLong3294967295,5)
       parse[CompactNumber](compactBigInt14151776774302809990bytes) === ParseSuccess(compactBigInt14151776774302809990,9)
 
-    }
-
-    "parse an MPINumber" in new UnsignedIntegerScope {
-
-      val hex = "0000000970c46535ff34f13f86"
-      val ParseSuccess(mpi,used) = parse[MPINumber](hex.hex2bytes,0)
-
-      mpi.value === BigInt(uint64decimal,10)
-      used === 4 + 8
     }
 
     "parse an Outpoint" in new UnsignedIntegerScope {

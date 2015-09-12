@@ -1,6 +1,7 @@
 package serializationSpecs
 
-import domain.Numbers.{MPINumber, CompactInt, CompactNumber}
+import domain.consensus.Script
+import domain.Numbers.{CompactInt, CompactNumber}
 import domain._
 import org.specs2.mutable.Specification
 import encoding.CommonParsersImplicits._
@@ -52,16 +53,6 @@ class EncodingSpec extends Specification {
       val bytes = uint64ByteFormatLE(int64)
 
       parse[Long](bytes,0)(int64ByteReaderLE) === ParseSuccess(int64,8)
-
-    }
-
-    "encode an MPINumber into byte" in {
-
-      val hex = "0000000109"
-
-      val ParseSuccess(mpi,used) = parse[MPINumber](hex.hex2bytes,0)
-
-      bytes2hex(mpi.byteFormat) === hex
 
     }
 
@@ -126,14 +117,14 @@ class EncodingSpec extends Specification {
       val expectedTxOut = TransactionOutput(
         value = 35000,
         pkScriptLength = CompactInt(5),
-        pkScript = Script("0c1c1e771a" hex2bytes)
+        pkScript = Script(List.empty)
       )
 
       val ParseSuccess(txOut,used) = parse[TransactionOutput](expectedTxOut.byteFormat,0)
 
       expectedTxOut.value === txOut.value
       expectedTxOut.pkScriptLength === txOut.pkScriptLength
-      bytes2hex(expectedTxOut.pkScript.bytes) === bytes2hex(txOut.pkScript.bytes)
+      bytes2hex(expectedTxOut.pkScript.byteFormat) === bytes2hex(txOut.pkScript.byteFormat)
 
     }
 
@@ -157,7 +148,7 @@ class EncodingSpec extends Specification {
       val expectedTxOut = TransactionOutput(
         value = 35000,
         pkScriptLength = CompactInt(5),
-        pkScript = Script("0c1c1e771a" hex2bytes)
+        pkScript = Script(List.empty)
       )
 
       val expectedTx = Transaction(
