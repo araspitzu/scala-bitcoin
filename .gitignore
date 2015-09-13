@@ -1,7 +1,7 @@
 *.class
 *.log
 
-src/main/scala/playground/
+src/main/scala/playground/*
 
 # SBT ignore
 .cache

@@ -54,11 +54,14 @@ case class Script(data: Array[Byte]) extends ByteWritable {
         case op_numeric if (op_numeric >= OP_0 && op_numeric <= OP_16) => Array(op_numeric.toByte) :: stack
         case OP_DUP => stack.headOption.map(_ :: stack).getOrElse(throw ScriptError("OP_DUP on empty stack"))
         case OP_HASH160 => stack.headOption.map(Hash.sha256(_) :: stack).getOrElse(throw ScriptError("OP_HASH160 on empty stack"))
-
+        case OP_ADD => {
+          val a = ScriptNumber(stack.head, false)
+          val b = ScriptNumber(stack.tail.head, false)
+          ScriptNumber(a.int + b.int).byteFormat :: stack
+        }
         case x => throw ScriptError(s"Unknown opcode $x")
       }
     }
-
   }
   private def parseScript(bytes:Array[Byte]):List[Either[OP_CODE,Array[Byte]]] = {
     // b & 0xff necessary to read it unsigned, see http://www.scala-lang.org/old/sites/default/files/linuxsoft_archives/docu/files/ScalaReference.pdf#Integer Literals
