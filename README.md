@@ -1,14 +1,13 @@
-https://travis-ci.org/araspitzu/scala-bitcoin.svg
-
-[![Build Status](https://travis-ci.org/araspitzu/scala-bitcoin.svg)](https://travis-ci.org/araspitzu/scala-bitcoin)
+Master: [![Build Status](https://travis-ci.org/araspitzu/scala-bitcoin.svg)](https://travis-ci.org/araspitzu/scala-bitcoin)
 
 # scala-bitcoin
 Bitcoin protocol implementation in Scala
 
+
 Goal of the project:
 
-Provide an alternative to the official client
-Be easily deployable and configurable
-User friendly & nice UI
-Modularization of the codebase 
+Provide an alternative to the official client <br/>
+Be easily deployable and configurable <br/>
+User friendly & nice UI <br/>
+Modular codebase <br/>
 
