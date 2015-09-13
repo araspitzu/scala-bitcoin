@@ -7,7 +7,8 @@ Bitcoin protocol implementation in Scala
 Goal of the project:
 
 Provide an alternative to the official client <br/>
-Be easily deployable and configurable <br/>
+Stay up-to-date with latest version of the protocol <br/>
+Be easily deployable on IaaS solutions (Docker, AWS, Google App Engine, Heroku, etc)<br/>
 User friendly & nice UI <br/>
 Modular codebase <br/>
 
