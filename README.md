@@ -1,5 +1,7 @@
 https://travis-ci.org/araspitzu/scala-bitcoin.svg
 
+[![Build Status](https://travis-ci.org/araspitzu/scala-bitcoin.svg)](https://travis-ci.org/araspitzu/scala-bitcoin)
+
 # scala-bitcoin
 Bitcoin protocol implementation in Scala
 
