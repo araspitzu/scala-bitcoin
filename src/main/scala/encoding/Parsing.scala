@@ -35,13 +35,11 @@ object Parsing {
       case e:ParseFailure => e
     }
 
-
-    //SHOULD BE def withFilter(test: T => Boolean):Iterator[ParseResult[T]]
-//    def withFilter(test: T => Boolean):Iterator[ParseResult[T]] = new Iterator[ParseResult[T]]{
-//      override def hasNext: Boolean = ???
-//
-//      override def next() = ???
-//    }
+    //TODO make this lazy
+    def withFilter(test: T => Boolean):ParseResult[T] = this match {
+      case ParseSuccess(result,used) if(test(result)) => ParseSuccess(result,used)
+      case e:ParseFailure => e
+    }
 
     def map[U](f: T => U):ParseResult[U] = this match {
       case ParseSuccess(result,used) => flatMap( r =>  ParseSuccess(f(r),0))
@@ -65,6 +63,14 @@ object Parsing {
     }
 
   }
+
+  //implicit class LiftWithFilter[T](input: ParseResult[T]) extends WithFilter(input, _ => true)
+
+//  case class WithFilter[T](input: ParseResult[T], p: T => Boolean) {
+//    def map[U](f: T => U): ParseResult[U] = input.filter(p).map(f)
+//    def flatMap[U](f: T => ParseResult[U]): ParseResult[U] = input.filter(p).flatMap(f)
+//    def withFilter(q: T => Boolean): WithFilter[T] = WithFilter(input, t => p(t) && q(t))
+//  }
 
   case class ParseSuccess[T](result: T,bytesUsed:Int) extends ParseResult[T]
   case class ParseFailure(err: String, optThr: Option[Throwable]) extends ParseResult[Nothing] {
@@ -127,4 +133,4 @@ object Parsing {
   }
 
 
-  }
+}

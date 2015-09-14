@@ -1,6 +1,6 @@
 package domain.consensus
 
-import crypto.Hash
+import crypto.Hash._
 import domain.consensus.ScriptObject.OP_CODES
 import domain.consensus.ScriptObject.OP_CODES._
 import encoding.CommonParsersImplicits._
@@ -42,17 +42,16 @@ case class Script(data: Array[Byte]) extends ByteWritable {
   def verify(input:Script):Boolean = (for {
     sigScript <- input.parseScript
     pubkeyScript <- parseScript
-  } yield run(sigScript ++ pubkeyScript)).getOrElse(false)
+  } yield eval(sigScript ++ pubkeyScript)).getOrElse(false)
 
-  private def run(script:ParsedScript):Boolean = {
-    exec(script).headOption map castToBool getOrElse false
-  }
+  private def eval(script:ParsedScript):Boolean =
+    run(script).headOption map castToBool getOrElse false
 
-  def print(stack: Stack) = stack.foreach{ el =>
+  def print(stack: Stack) = stack.foreach { el =>
     println(s" | ${bytes2hex(el)} |")
   }
 
-  private def exec(script:ParsedScript, initialStack: Stack = List.empty):Stack = script.foldLeft[Stack](initialStack) {
+  private def run(script:ParsedScript, initialStack: Stack = List.empty):Stack = script.foldLeft[Stack](initialStack) {
     case (stack, Right(data)) => data :: stack
     case (stack, Left(op_code)) => op_code match {
       case op_numeric if (op_numeric >= OP_0 && op_numeric <= OP_16) =>
@@ -61,11 +60,18 @@ case class Script(data: Array[Byte]) extends ByteWritable {
       case OP_DUP => topOrFail(stack, op_code){ top =>
         top :: stack
       }
+      // Crypto OP_CODES
+      case OP_SHA1 => topOrFail(stack, op_code) { top =>
+        sha1(top) :: stack.drop(1)
+      }
+      case OP_SHA256 => topOrFail(stack, op_code) { top =>
+        sha256(top) :: stack.drop(1)
+      }
       case OP_HASH256 => topOrFail(stack, op_code) { top =>
-        Hash.sha256(top) :: stack.drop(1)
+        hash256(top) :: stack.drop(1)
       }
       case OP_HASH160 => topOrFail(stack, op_code) { top =>
-        Hash.hash160(top) :: stack.drop(1)
+        hash160(top) :: stack.drop(1)
       }
       case OP_EQUAL |
            OP_EQUALVERIFY => pop2OrFail(stack, op_code){ (a, b) =>
@@ -81,9 +87,13 @@ case class Script(data: Array[Byte]) extends ByteWritable {
           ScriptObject.OP_FALSE :: stack.drop(2)
       }
       case OP_CHECKSIG |
-           OP_CHECKSIGVERIFY => pop2OrFail(stack, op_code) { (a, b) =>
+           OP_CHECKSIGVERIFY => pop2OrFail(stack, op_code) { (pubKey, sigBytes) =>
 
         //TODO
+        val subsetScript = script.dropWhile(_ == Left(OP_CODESEPARATOR)).diff(List(Right(sigBytes)))
+
+
+
         ScriptObject.OP_TRUE :: stack.drop(2)
       }
       case OP_ADD => pop2OrFail(stack, op_code) { (a, b) =>
