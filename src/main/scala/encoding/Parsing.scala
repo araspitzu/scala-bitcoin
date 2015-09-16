@@ -30,16 +30,12 @@ object Parsing {
       case _ => None
     }
 
-    def filter(test: T => Boolean):ParseResult[T] = this match {
+    private def filter(test: T => Boolean):ParseResult[T] = this match {
       case ParseSuccess(result,used) if(test(result)) => ParseSuccess(result,used)
       case e:ParseFailure => e
     }
 
-    //TODO make this lazy
-    def withFilter(test: T => Boolean):ParseResult[T] = this match {
-      case ParseSuccess(result,used) if(test(result)) => ParseSuccess(result,used)
-      case e:ParseFailure => e
-    }
+    def withFilter(test: T => Boolean) = new WithFilter(test)
 
     def map[U](f: T => U):ParseResult[U] = this match {
       case ParseSuccess(result,used) => flatMap( r =>  ParseSuccess(f(r),0))
@@ -62,15 +58,23 @@ object Parsing {
       case e:ParseFailure => e
     }
 
+    /**
+     * Provides monadic filtering interface
+     * @param p the predicate for the test
+     */
+    protected[encoding] class WithFilter(p: T => Boolean) {
+      def map[U](f: T => U): ParseResult[U] = filter(p).map(f)
+      def flatMap[U](f: T => ParseResult[U]): ParseResult[U] = filter(p).flatMap(f)
+      def foreach[U](f: T => U): Unit = filter(p) match {
+        case ParseSuccess(t, used) => f(t)
+        case f:ParseFailure => ()
+      }
+      def withFilter(q: T => Boolean): WithFilter = new WithFilter(x => p(x) && q(x))
+    }
+
+
   }
 
-  //implicit class LiftWithFilter[T](input: ParseResult[T]) extends WithFilter(input, _ => true)
-
-//  case class WithFilter[T](input: ParseResult[T], p: T => Boolean) {
-//    def map[U](f: T => U): ParseResult[U] = input.filter(p).map(f)
-//    def flatMap[U](f: T => ParseResult[U]): ParseResult[U] = input.filter(p).flatMap(f)
-//    def withFilter(q: T => Boolean): WithFilter[T] = WithFilter(input, t => p(t) && q(t))
-//  }
 
   case class ParseSuccess[T](result: T,bytesUsed:Int) extends ParseResult[T]
   case class ParseFailure(err: String, optThr: Option[Throwable]) extends ParseResult[Nothing] {
