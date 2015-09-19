@@ -1,6 +1,7 @@
 package domain.consensus
 
 import crypto.Hash._
+import crypto.TransactionSignature
 import domain.consensus.ScriptObject.OP_CODES
 import domain.consensus.ScriptObject.OP_CODES._
 import encoding.CommonParsersImplicits._
@@ -89,8 +90,13 @@ case class Script(data: Array[Byte]) extends ByteWritable {
       case OP_CHECKSIG |
            OP_CHECKSIGVERIFY => pop2OrFail(stack, op_code) { (pubKey, sigBytes) =>
 
+        val txSig = TransactionSignature(sigBytes, false)
+
         //TODO
-        val subsetScript = script.dropWhile(_ == Left(OP_CODESEPARATOR)).diff(List(Right(sigBytes)))
+        val subsetScript =
+          script
+            .dropWhile(_ == Left(OP_CODESEPARATOR)) //start from last OP_CODESEPARATOR
+            .diff(List(Right(sigBytes))) //
 
 
 

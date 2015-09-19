@@ -25,7 +25,7 @@ object ScriptObject {
     implicit def toByte(opcode:ScriptObject.OP_CODES.Value):Byte = opcode.id.toByte
 
     val OP_0 = Value(0x00, "OP_0")
-    //TODO N/A = 0x01 - 0x4b OPCODE  emulating VarNumber, the number itself is the length of the data to push
+    //0x01 - 0x4b OPCODE  emulating VarNumber, the number itself is the length of the data to push
 
     val OP_1 = Value(0x51, "OP_1")
     val OP_2 = Value(0x52, "OP_2")
