@@ -1,6 +1,8 @@
 package domain
 
+import crypto.TransactionSignature.SigHashFlags
 import domain.Numbers.CompactNumber
+import domain.consensus.Script
 import encoding.Parsing._
 import CompactNumber._
 import encoding.CommonParsersImplicits._
@@ -29,6 +31,12 @@ case class Transaction(
       txOut.foldRight[Array[Byte]](Array.emptyByteArray)((in, acc) => in.byteFormat ++ acc) ++
       uint32ByteFormatLE(lockTime)
 
+  def hashForSignature(inputIndex: Int, scriptBytes: Array[Byte], sigFlag: Byte) = {
+    val transactionInput = txIn(inputIndex).copy(signatureScript = Script(scriptBytes))
+
+
+
+  }
 }
 
 

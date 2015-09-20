@@ -92,11 +92,14 @@ case class Script(data: Array[Byte]) extends ByteWritable {
 
         val txSig = TransactionSignature(sigBytes, false)
 
-        //TODO
         val subsetScript =
           script
-            .dropWhile(_ == Left(OP_CODESEPARATOR)) //start from last OP_CODESEPARATOR
-            .diff(List(Right(sigBytes))) //
+            .dropWhile(_ != Left(OP_CODESEPARATOR)) //start from last OP_CODESEPARATOR
+            .drop(1)                                //drop OP_CODESEPARATOR as well
+            .filterNot {                            //remove sigBytes from script
+            case Right(data) => data.deep == sigBytes.deep
+            case _ => false
+          }
 
 
 
@@ -166,7 +169,7 @@ case class Script(data: Array[Byte]) extends ByteWritable {
              OP_LSHIFT  => throw ScriptError("Encountered disabled OPCODE")
         case op_n => Left(op_n) :: parseScript(bytes.tail)
       }
-    }
+     }
     } getOrElse Nil
   }
 
