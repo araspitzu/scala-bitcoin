@@ -3,13 +3,19 @@ package domain.consensus
 /**
  * Created by andrea on 13/09/15.
  */
-object ScriptObject {
+package object ScriptObject {
 
   val MAX_SCRIPT_ELEMENT_SIZE = 520 // bytes
 
   // Threshold for nLockTime: below this value it is interpreted as block number,
   // otherwise as UNIX timestamp.
   val LOCKTIME_THRESHOLD = 500000000 // Tue Nov  5 00:53:20 1985 UTC
+
+  case object SigHashFlags extends Enumeration {
+    val SIGHASH_ALL = Value(1, "SIGHASH_ALL")
+    val SIGHASH_NONE = Value(2, "SIGHASH_NONE")
+    val SIGHASH_SINGLE = Value(3, "SIGHASH_SINGLE")
+  }
 
   val OP_TRUE = Array(1.toByte)
   val OP_FALSE = Array(0.toByte)

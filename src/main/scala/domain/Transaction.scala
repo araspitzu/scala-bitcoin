@@ -1,6 +1,5 @@
 package domain
 
-import crypto.TransactionSignature.SigHashFlags
 import domain.Numbers.CompactNumber
 import domain.consensus.Script
 import encoding.Parsing._
