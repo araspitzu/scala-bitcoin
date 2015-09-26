@@ -64,6 +64,26 @@ case class Script(data: Array[Byte]) extends ByteWritable with VersionedChecksum
     case None => "None"
   }
 
+  def isSendToAddress:Boolean = parseScript.getOrElse(false) match {
+    case Left(OP_DUP) ::
+         Left(OP_HASH160) ::
+         Right(data) ::
+         Left(OP_EQUALVERIFY) ::
+         Left(OP_CHECKSIG) :: Nil => true
+    case _ => false
+  }
+
+  /**
+   * See <a href="https://github.com/bitcoin/bips/blob/master/bip-0016.mediawiki">BIP 16</a>
+   * @return
+   */
+  def isPayToScriptHash:Boolean = {
+    bytes.length == 23 &&
+    OP_CODES(bytes(0) & 0xff) == OP_HASH160 &&
+    (bytes(1) & 0xff) == 0x14  &&
+    OP_CODES(bytes(22) & 0xff) == OP_EQUAL
+  }
+
   def verify(input:Script):Boolean = (for {
     sigScript <- input.parseScript
     pubkeyScript <- parseScript
@@ -75,6 +95,15 @@ case class Script(data: Array[Byte]) extends ByteWritable with VersionedChecksum
   def print(stack: Stack) = stack.foreach { el =>
     println(s" | ${bytes2hex(el)} |")
   }
+
+  def getPubKeyHash:Array[Byte] = parseScript.map { script =>
+    if(isSendToAddress)
+      script(2).bytes
+    else if(isPayToScriptHash)
+      script(1).bytes
+    else
+      throw ScriptError("Script not in scriptPubKey form")
+  }.getOrElse(throw ScriptError("Could not parse script"))
 
   def getPubKey:Array[Byte] = {
 

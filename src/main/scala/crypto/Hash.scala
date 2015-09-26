@@ -8,15 +8,9 @@ import org.bouncycastle.crypto.digests.RIPEMD160Digest
  */
 object Hash {
 
-  val bcJceProvider = new BouncyCastleProvider
-  val bcProviderIndex = Security.addProvider(bcJceProvider)
+  def sha1(bytes: Array[Byte]): Array[Byte] = MessageDigest.getInstance("SHA1").digest(bytes)
 
-  protected[crypto] val sha256Digest = MessageDigest.getInstance("SHA256")
-  protected[crypto] val sha1Digest = MessageDigest.getInstance("SHA1")
-
-  def sha1(bytes: Array[Byte]): Array[Byte] = sha1Digest.digest(bytes)
-
-  def sha256(bytes: Array[Byte]):Array[Byte] = sha256Digest.digest(bytes)
+  def sha256(bytes: Array[Byte]):Array[Byte] = MessageDigest.getInstance("SHA256").digest(bytes)
 
   def ripemd160(bytes: Array[Byte]):Array[Byte] = {
     val ripemd160Digest = new RIPEMD160Digest
@@ -27,6 +21,7 @@ object Hash {
   }
 
   def sha256Twice(input: Array[Byte], offset: Int, length: Int): Array[Byte] = {
+    val sha256Digest = MessageDigest.getInstance("SHA256")
     sha256Digest.update(input, offset, length)
     sha256Digest.digest(sha256Digest.digest)
   }
