@@ -8,9 +8,9 @@ import org.bouncycastle.crypto.digests.RIPEMD160Digest
  */
 object Hash {
 
-  def sha1(bytes: Array[Byte]): Array[Byte] = MessageDigest.getInstance("SHA1").digest(bytes)
+  def sha1(bytes: Array[Byte]): Array[Byte] = MessageDigest.getInstance("SHA-1").digest(bytes)
 
-  def sha256(bytes: Array[Byte]):Array[Byte] = MessageDigest.getInstance("SHA256").digest(bytes)
+  def sha256(bytes: Array[Byte]):Array[Byte] = MessageDigest.getInstance("SHA-256").digest(bytes)
 
   def ripemd160(bytes: Array[Byte]):Array[Byte] = {
     val ripemd160Digest = new RIPEMD160Digest
@@ -21,7 +21,7 @@ object Hash {
   }
 
   def sha256Twice(input: Array[Byte], offset: Int, length: Int): Array[Byte] = {
-    val sha256Digest = MessageDigest.getInstance("SHA256")
+    val sha256Digest = MessageDigest.getInstance("SHA-256")
     sha256Digest.update(input, offset, length)
     sha256Digest.digest(sha256Digest.digest)
   }

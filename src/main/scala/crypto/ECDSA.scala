@@ -10,9 +10,8 @@ import org.bouncycastle.jce.ECNamedCurveTable
 /**
  * Created by andrea on 13/09/15.
  */
-object ECDSA {
+object ECDSA extends CryptoInitialization {
 
-  val i = Hash.bcProviderIndex
   val ecGenSpec = new ECGenParameterSpec("secp256k1")
   val keyPairGenerator = KeyPairGenerator.getInstance("ECDSA", "BC")
   val curveParams = ECNamedCurveTable.getParameterSpec("secp256k1")

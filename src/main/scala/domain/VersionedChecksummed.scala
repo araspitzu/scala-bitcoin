@@ -1,5 +1,6 @@
 package domain
 
+import crypto.CryptoInitialization
 import crypto.Hash._
 import encoding.CommonParsersImplicits._
 /**
