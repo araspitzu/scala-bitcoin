@@ -22,11 +22,27 @@ object ScriptError {
   def apply(failure: ParseFailure):ScriptError = ScriptError(failure.err)
 }
 
+case class Chunk(value: Either[OP_CODES.Value, Array[Byte]]) {
+
+  def length = value match {
+    case Left(op_code) => op_code.id
+    case Right(data) => data.length
+  }
+
+  def bytes:Array[Byte] = value match {
+    case Left(op_code) => Array(op_code.toByte)
+    case Right(data) => data
+  }
+
+}
 
 case class Script(data: Array[Byte]) extends ByteWritable {
   type OP_CODE = OP_CODES.Value
   type Stack = List[Array[Byte]]
-  type ParsedScript = List[Either[OP_CODE,Array[Byte]]]
+  type ChunkP = Either[OP_CODE, Array[Byte]]
+  type ParsedScript = List[ChunkP]
+
+
 
   def length:Int = data.length
 
@@ -50,6 +66,25 @@ case class Script(data: Array[Byte]) extends ByteWritable {
 
   def print(stack: Stack) = stack.foreach { el =>
     println(s" | ${bytes2hex(el)} |")
+  }
+
+  def getPubKey:Array[Byte] = {
+
+    val parsed = parseScript.getOrElse(throw ScriptError("Could not parse script"))
+
+    if(parsed.length != 2)
+      throw ScriptError(s"Malformed script for getPubKey, expected size 2 got ${parsed.length}")
+
+    val chunk0 = Chunk(parsed.head)
+    val chunk1 = Chunk(parsed.tail.head)
+
+    if(chunk0.length > 2 && chunk1.length > 2)
+      chunk1.bytes
+    else if(chunk1.value == Left(OP_CHECKSIG) && chunk0.length > 2)
+      chunk0.bytes
+    else
+      throw ScriptError("Malformed script")
+
   }
 
   private def run(script:ParsedScript, initialStack: Stack = List.empty):Stack = script.foldLeft[Stack](initialStack) {

@@ -1,3 +1,4 @@
+import crypto.Hash
 import domain.Transaction
 import domain.consensus.Script
 import org.specs2.mutable.Specification
@@ -28,10 +29,16 @@ class ScriptSpec extends Specification {
       script.toString === "3045022045666fd6805ab5264acdc3d2fcbffc27d0482ef1e0d5dcdb958b18db50767f05022100f53d0fd0ce7951f45beaaa835fbcf503a167026a685aed83c54dddceafdd58a401 0270f83fc138312056466b13236680642afcffd493fe1866cc74baddee2cf79ba3 "
     }
 
-    "validate a script " in {
-      val scriptSig = "3044022072149fdcb18c84dee0fa59606025c62a31174dd10e9c7c638c80947c18c07c840220760d14535d575ab29b47613b04aac1644628356e0a7ed36514f2bd56feed3e3201".hex2bytes
-      val scriptPubKey = "OP_DUP OP_HASH160 5b30b9d8b477bdf7da957266160fac75ded8615b OP_EQUALVERIFY OP_CHECKSIG"
-      1 === 1
+    "extract a pubkey from scripSig" in {
+
+      val scriptBytes = "47304402202b4da291cc39faf8433911988f9f49fc5c995812ca2f94db61468839c228c3e90220628bff3ff32ec95825092fa051cba28558a981fcf59ce184b14f2e215e69106701410414b38f4be3bb9fa0f4f32b74af07152b2f2f630bc02122a491137b6c523e46f18a0d5034418966f93dfc37cc3739ef7b2007213a302b7fba161557f4ad644a1c".hex2bytes
+
+      val script = Script(scriptBytes)
+
+      val hash = Hash.hash160(script.getPubKey)
+
+      bytes2hex(hash) === "mkFQohBpy2HDXrCwyMrYL5RtfrmeiuuPY2"
+
     }
 
     "validate a script in tx 58d00055cae1c410cb57462c9d5d56a536284a5abc02a1ac54dd4f79cb731d3e" in {

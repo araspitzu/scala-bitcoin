@@ -11,8 +11,8 @@ object Hash {
   val bcJceProvider = new BouncyCastleProvider
   val bcProviderIndex = Security.addProvider(bcJceProvider)
 
-  private val sha256Digest = MessageDigest.getInstance("SHA256")
-  private val sha1Digest = MessageDigest.getInstance("SHA1")
+  protected[crypto] val sha256Digest = MessageDigest.getInstance("SHA256")
+  protected[crypto] val sha1Digest = MessageDigest.getInstance("SHA1")
 
   implicit def sha1(bytes: Array[Byte]): Array[Byte] = sha1Digest.digest(bytes)
 

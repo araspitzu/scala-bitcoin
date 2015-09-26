@@ -217,7 +217,7 @@ class EncodingSpec extends Specification {
       val ParseSuccess(block,used) = parse[Block](expectedBlock.byteFormat,0)
 
       expectedBlock.byteFormat.length === used and used === expectedUsed
-      expectedBlock.nTx === block.nTx
+      expectedBlock.numTransaction === block.numTransaction
       expectedBlock.header.nonce === block.header.nonce
       expectedBlock.txs.head.lockTime === block.txs.head.lockTime
       bytes2hex(expectedBlock.byteFormat) === rawBlock

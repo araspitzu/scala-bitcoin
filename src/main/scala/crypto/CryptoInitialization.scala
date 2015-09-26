@@ -1,7 +1,12 @@
-import crypto.Hash
+package crypto
+
+import java.security.Security
+import org.bouncycastle.jce.provider.BouncyCastleProvider
 
 trait CryptoInitialization {
 
-  private val bcProviderIndex = Hash.bcProviderIndex
+  if(!Security.getProviders.exists(_.getName == "BC"))
+    Security.addProvider(new BouncyCastleProvider)
+
 
 }

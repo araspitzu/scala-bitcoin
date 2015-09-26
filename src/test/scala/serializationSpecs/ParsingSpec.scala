@@ -188,7 +188,7 @@ class ParsingSpec extends Specification {
 
       block.header.version === 2
       block.header.time === 1415239972L
-      block.nTx === CompactInt(3)
+      block.numTransaction === CompactInt(3)
       block.txs.length === 3
       block.txs forall (_.version == 1)
       block.txs forall (_.nTxOut === CompactInt(5))
@@ -203,7 +203,7 @@ class ParsingSpec extends Specification {
       val ParseSuccess(block,used) = parse[Block](hex)
 
       used === hex.length / 2
-      block.nTx === CompactInt(1031)
+      block.numTransaction === CompactInt(1031)
       block.txs.length === 1031
 
       block.header.time === 1432723472

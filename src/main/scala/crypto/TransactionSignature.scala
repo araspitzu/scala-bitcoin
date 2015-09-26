@@ -3,9 +3,7 @@ package crypto
 /**
  * Created by andrea on 18/09/15.
  */
-case class TransactionSignature(r: BigInt, s: BigInt, sigHashFlags: Byte) {
-
-}
+case class TransactionSignature(r: BigInt, s: BigInt, sigHashFlags: Byte)
 
 object TransactionSignature {
 
@@ -22,6 +20,7 @@ object TransactionSignature {
       return false
 
     val hashType: Int = signature(signature.length - 1) & ~(0x80)
+    //TODO
     if (hashType < (1 /* <- Transaction.SigHash.ALL.ordinal*/ + 1) || hashType > (/*Transaction.SigHash.SINGLE.ordinal*/ + 1))
       return false
     if ((signature(0) & 0xff) != 0x30 || (signature(1) & 0xff) != signature.length - 3)
