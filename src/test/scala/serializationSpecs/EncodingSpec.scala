@@ -7,6 +7,7 @@ import org.specs2.mutable.Specification
 import encoding.CommonParsersImplicits._
 import encoding.Parsing._
 import domain.TransactionInput._
+import crypto.Hash._
 
 /**
  * Created by andrea on 7/11/15.
@@ -14,6 +15,37 @@ import domain.TransactionInput._
 class EncodingSpec extends Specification {
 
   "Domain objects" should {
+
+    "encode bytes in base58" in {
+
+      val helloWorldBytes = "Hello World".getBytes
+      base58encode(helloWorldBytes) === "JxF12TrwUP45BMd"
+
+      val bigIntBytes = BigInt(3471844090L).toByteArray
+      base58encode(bigIntBytes) === "16Ho7Hs"
+
+      val zeroBytes = Array(0.toByte)
+      base58encode(zeroBytes) === "1"
+
+      val zeroByte5times =  Array(0.toByte,0.toByte,0.toByte,0.toByte,0.toByte)
+      base58encode(zeroByte5times) === "11111"
+
+    }
+
+    "encode bytes with checksum and version in base58" in {
+
+      val helloWorld = "Hello World".getBytes
+
+      val helloHash160 = hash160(helloWorld)
+
+      val versionedChecksummed = new {} with VersionedChecksummed {
+        val bytes = helloHash160
+        val version = 111
+      }
+
+      versionedChecksummed.toBase58 === "mxqVBges55Hex1W4Ga1tQ8X2TegvkAac7v"
+
+    }
 
     "encode an uint8 into byte" in new UnsignedIntegerScope {
 

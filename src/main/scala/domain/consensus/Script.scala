@@ -2,6 +2,7 @@ package domain.consensus
 
 import crypto.Hash._
 import crypto.TransactionSignature
+import domain.VersionedChecksummed
 import domain.consensus.ScriptObject.OP_CODES
 import domain.consensus.ScriptObject.OP_CODES._
 import encoding.CommonParsersImplicits._
@@ -22,27 +23,34 @@ object ScriptError {
   def apply(failure: ParseFailure):ScriptError = ScriptError(failure.err)
 }
 
-case class Chunk(value: Either[OP_CODES.Value, Array[Byte]]) {
+case class Script(data: Array[Byte]) extends ByteWritable with VersionedChecksummed {
+  //super
+  val bytes = data
+  val version = 111//TODO use config
 
-  def length = value match {
-    case Left(op_code) => op_code.id
-    case Right(data) => data.length
-  }
 
-  def bytes:Array[Byte] = value match {
-    case Left(op_code) => Array(op_code.toByte)
-    case Right(data) => data
-  }
-
-}
-
-case class Script(data: Array[Byte]) extends ByteWritable {
   type OP_CODE = OP_CODES.Value
   type Stack = List[Array[Byte]]
-  type ChunkP = Either[OP_CODE, Array[Byte]]
-  type ParsedScript = List[ChunkP]
+  type Chunk = Either[OP_CODE, Array[Byte]]
+  type ParsedScript = List[Chunk]
 
+  /**
+   * Utility class adding functionalities to the Chunk type
+   * @param value the chunk to be "enriched"
+   */
+  implicit class EnrichedChunk(value: Chunk) {
 
+    def length = value match {
+      case Left(op_code) => op_code.id
+      case Right(data) => data.length
+    }
+
+    def bytes:Array[Byte] = value match {
+      case Left(op_code) => Array(op_code.toByte)
+      case Right(data) => data
+    }
+
+  }
 
   def length:Int = data.length
 
@@ -75,12 +83,12 @@ case class Script(data: Array[Byte]) extends ByteWritable {
     if(parsed.length != 2)
       throw ScriptError(s"Malformed script for getPubKey, expected size 2 got ${parsed.length}")
 
-    val chunk0 = Chunk(parsed.head)
-    val chunk1 = Chunk(parsed.tail.head)
+    val chunk0 = parsed.head
+    val chunk1 = parsed.tail.head
 
     if(chunk0.length > 2 && chunk1.length > 2)
       chunk1.bytes
-    else if(chunk1.value == Left(OP_CHECKSIG) && chunk0.length > 2)
+    else if(chunk1 == Left(OP_CHECKSIG) && chunk0.length > 2)
       chunk0.bytes
     else
       throw ScriptError("Malformed script")

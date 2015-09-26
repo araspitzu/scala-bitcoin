@@ -1,5 +1,5 @@
 import crypto.Hash
-import domain.Transaction
+import domain.{Address, Transaction}
 import domain.consensus.Script
 import org.specs2.mutable.Specification
 import encoding.CommonParsersImplicits._
@@ -37,9 +37,12 @@ class ScriptSpec extends Specification {
 
       val hash = Hash.hash160(script.getPubKey)
 
-      bytes2hex(hash) === "mkFQohBpy2HDXrCwyMrYL5RtfrmeiuuPY2"
 
-    }
+      Address(hash).toBase58 === "mkFQohBpy2HDXrCwyMrYL5RtfrmeiuuPY2"
+
+      }
+
+
 
     "validate a script in tx 58d00055cae1c410cb57462c9d5d56a536284a5abc02a1ac54dd4f79cb731d3e" in {
       //val  hex = scala.io.Source.fromFile(getClass.getResource("/58d00055cae1c410cb57462c9d5d56a536284a5abc02a1ac54dd4f79cb731d3e.hex").getFile).mkString

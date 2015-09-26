@@ -1,20 +1,79 @@
 package encoding
 
-import encoding.Parsing.{ParseSuccess, ParseResult, ByteReadable}
+import Parsing.{ParseSuccess, ParseResult, ByteReadable}
 
 /**
  * Created by andrea on 17/06/15.
  */
 package object CommonParsersImplicits {
 
+  val alphabet:Array[Char] = "123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz".toCharArray
+  val encodedZero:Char = alphabet.head
+
+
   implicit class HexString(hex:String){
     def hex2bytes:Array[Byte] = hex.sliding(2, 2).map(Integer.parseInt(_, 16).toByte).toArray
   }
 
+  /**
+   *
+   * @param bytes
+   * @return
+   */
+  def base58encode(bytes: Array[Byte]):String = {
+    if(bytes.length == 0)
+      return ""
+
+    //count leading zeros
+    var zeros = bytes.count(_ == 0)
+
+    //the resulting char array, upper bound
+    val encoded = new Array[Char](bytes.length * 2)
+
+    val copy = java.util.Arrays.copyOf(bytes, bytes.length)
+    var outputStart = encoded.length
+    var inputStart = zeros
+    while(inputStart < bytes.length){
+      outputStart -= 1
+      encoded(outputStart) = alphabet(divmod(bytes, inputStart, 256, 58))
+      if(bytes(inputStart) == 0)
+        inputStart += 1
+    }
+
+    while (outputStart < encoded.length && encoded(outputStart) == encodedZero)
+      outputStart += 1
+
+    zeros -= 1
+    while(zeros >= 0){
+      outputStart -= 1
+      encoded(outputStart) = encodedZero
+      zeros -=  1
+    }
+
+    new String(encoded, outputStart, encoded.length - outputStart)
+  }
+
   def bytes2hex(bytes: Array[Byte]): String = bytes.map("%02x".format(_)).mkString
 
+  private def divmod(number: Array[Byte], firstDigit: Int, base: Int, divisor: Int) = {
+    var remainder: Int = 0
+
+    var i: Int = firstDigit
+    while (i < number.length) {
+
+      val digit: Int = number(i).toInt & 0xFF
+      val temp: Int = remainder * base + digit
+      number(i) = (temp / divisor).toByte
+      remainder = temp % divisor
+
+      i += 1
+
+    }
+
+    remainder.toByte
+  }
   /**
-   * Byte formatters for common types
+   * Byte formatters for common types, uint[length]ByteFormat[bit_order]
    */
   def uint32ByteFormatBE(uint:Long):Array[Byte] = Array(
       0xff & (uint >> 24) toByte,
@@ -68,7 +127,7 @@ package object CommonParsersImplicits {
 
 
   /**
-   *  Byte readers for common numeric types
+   *  Byte readers for common numeric types, uint[length]ByteReader[bit_order]
    */
   implicit val uint8ByteReader = new {} with ByteReadable[Short] {
     def read(bytes: Array[Byte], offset: Int):ParseResult[Short] = ParseSuccess(
