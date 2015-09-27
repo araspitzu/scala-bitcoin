@@ -23,12 +23,7 @@ object ScriptError {
   def apply(failure: ParseFailure):ScriptError = ScriptError(failure.err)
 }
 
-case class Script(data: Array[Byte]) extends ByteWritable with VersionedChecksummed {
-  //super
-  val bytes = data
-  val version = 111//TODO use config
-
-
+case class Script(bytes: Array[Byte]) extends ByteWritable {
   type OP_CODE = OP_CODES.Value
   type Stack = List[Array[Byte]]
   type Chunk = Either[OP_CODE, Array[Byte]]
@@ -52,14 +47,14 @@ case class Script(data: Array[Byte]) extends ByteWritable with VersionedChecksum
 
   }
 
-  def length:Int = data.length
+  def length:Int = bytes.length
 
-  override def byteFormat:Array[Byte] = data
+  override def byteFormat:Array[Byte] = bytes
 
   override def toString = parseScript match {
     case Some(list) => list map {
       case Left(op_code) => op_code.toString + " "
-      case Right(data) => bytes2hex(data) + " "
+      case Right(data) => data.bytes2hex + " "
     } mkString
     case None => "None"
   }
@@ -93,7 +88,7 @@ case class Script(data: Array[Byte]) extends ByteWritable with VersionedChecksum
     run(script).headOption map castToBool getOrElse false
 
   def print(stack: Stack) = stack.foreach { el =>
-    println(s" | ${bytes2hex(el)} |")
+    println(s" | ${el.bytes2hex} |")
   }
 
   def getPubKeyHash:Array[Byte] = parseScript.map { script =>
@@ -124,9 +119,9 @@ case class Script(data: Array[Byte]) extends ByteWritable with VersionedChecksum
 
   }
 
-  private def run(script:ParsedScript, initialStack: Stack = List.empty):Stack = script.foldLeft[Stack](initialStack) {
-    case (stack, Right(data)) => data :: stack
-    case (stack, Left(op_code)) => op_code match {
+  private def run(script:ParsedScript, initialStack: Stack = List.empty):Stack = script.zipWithIndex.foldLeft[Stack](initialStack) {
+    case ( stack, (Right(data), index) ) => data :: stack
+    case ( stack, (Left(op_code), index) ) => op_code match {
       case op_numeric if (op_numeric >= OP_0 && op_numeric <= OP_16) =>
         Array(op_numeric.toByte) :: stack
 
@@ -149,7 +144,7 @@ case class Script(data: Array[Byte]) extends ByteWritable with VersionedChecksum
       case OP_EQUAL |
            OP_EQUALVERIFY => pop2OrFail(stack, op_code){ (a, b) =>
 
-        if (bytes2hex(a) == bytes2hex(b))
+        if (a.bytes2hex == b.bytes2hex)
           if(op_code == OP_EQUALVERIFY)
             stack.drop(2)
           else
@@ -172,8 +167,6 @@ case class Script(data: Array[Byte]) extends ByteWritable with VersionedChecksum
             case Right(data) => data.deep == sigBytes.deep
             case _ => false
           }
-
-
 
         ScriptObject.OP_TRUE :: stack.drop(2)
       }
@@ -202,7 +195,7 @@ case class Script(data: Array[Byte]) extends ByteWritable with VersionedChecksum
   }
 
   def parseScript: Option[ParsedScript] = Try {
-    parseScript(data)
+    parseScript(bytes)
   } match {
     case Success(result) => Some(result)
     case Failure(thr) => None

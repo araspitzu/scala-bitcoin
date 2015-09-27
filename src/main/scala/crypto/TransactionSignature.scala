@@ -1,9 +1,11 @@
 package crypto
 
+import domain.consensus.ScriptObject.SigHash
+
 /**
  * Created by andrea on 18/09/15.
  */
-case class TransactionSignature(r: BigInt, s: BigInt, sigHashFlags: Byte)
+case class TransactionSignature(r: BigInt, s: BigInt, sigHashFlags: SigHash.Value)
 
 object TransactionSignature {
 
@@ -12,7 +14,7 @@ object TransactionSignature {
       throw new IllegalArgumentException("Signature encoding is not canonical.")
 
     val ecSig = ECSignature.decodeFromDER(bytes)
-    TransactionSignature(ecSig.r, ecSig.s, bytes.last)
+    TransactionSignature(ecSig.r, ecSig.s, SigHash(bytes.last))
   }
 
   def isEncodingCanonical (signature: Array[Byte]):Boolean = {
@@ -21,7 +23,7 @@ object TransactionSignature {
 
     val hashType: Int = signature(signature.length - 1) & ~(0x80)
     //TODO
-    if (hashType < (1 /* <- Transaction.SigHash.ALL.ordinal*/ + 1) || hashType > (/*Transaction.SigHash.SINGLE.ordinal*/ + 1))
+    if (hashType < (1 + SigHash.SIGHASH_ALL.id + 1) || hashType > (SigHash.SIGHASH_SINGLE.id + 1))
       return false
     if ((signature(0) & 0xff) != 0x30 || (signature(1) & 0xff) != signature.length - 3)
       return false

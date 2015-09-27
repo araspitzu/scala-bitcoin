@@ -2,6 +2,7 @@ package domain
 
 import domain.Numbers.CompactNumber
 import domain.consensus.Script
+import domain.consensus.ScriptObject.SigHash
 import encoding.Parsing._
 import CompactNumber._
 import encoding.CommonParsersImplicits._
@@ -30,12 +31,24 @@ case class Transaction(
       txOut.foldRight[Array[Byte]](Array.emptyByteArray)((in, acc) => in.byteFormat ++ acc) ++
       uint32ByteFormatLE(lockTime)
 
-  def hashForSignature(inputIndex: Int, scriptBytes: Array[Byte], sigFlag: Byte) = {
-    val transactionInput = txIn(inputIndex).copy(signatureScript = Script(scriptBytes))
+  /**
+   * <p>Calculates a signature hash from this transaction, that is, a hash of a simplified form of it. How exactly the transaction
+   * is simplified is specified by the type and anyoneCanPay parameters.</p>
+   *
+   * When signing a P2SH outpu the redeemScript should be the script encoded into the scriptSig field, for normal transactions,
+   * it's the scriptPubKey of the output you're signing for.</p>
+   *
+   * @param inputIndex input the signature is being calculated for. Tx signatures are always relative to an input.
+   * @param redeemScript the bytes that should be in the given input during signing.
+   * @param sigHash Should be SigHash.ALL
+   * @param anyoneCanPay should be false.
+   */
+  def hashForSignature(inputIndex: Int,
+                       redeemScript: Array[Byte],
+                       sigHash: SigHash.Value,
+                       anyoneCanPay: Boolean): Array[Byte] = ???
 
 
-
-  }
 }
 
 

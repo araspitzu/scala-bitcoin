@@ -10,6 +10,13 @@ package object CommonParsersImplicits {
   val alphabet:Array[Char] = "123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz".toCharArray
   val encodedZero:Char = alphabet.head
 
+  implicit class ByteVector(bytes: Array[Byte]) {
+
+    def bytes2hex: String = bytes.map("%02x".format(_)).mkString
+
+    def toBase58 = base58encode(bytes)
+
+  }
 
   implicit class HexString(hex:String){
     def hex2bytes:Array[Byte] = hex.sliding(2, 2).map(Integer.parseInt(_, 16).toByte).toArray
@@ -52,8 +59,6 @@ package object CommonParsersImplicits {
 
     new String(encoded, outputStart, encoded.length - outputStart)
   }
-
-  def bytes2hex(bytes: Array[Byte]): String = bytes.map("%02x".format(_)).mkString
 
   private def divmod(number: Array[Byte], firstDigit: Int, base: Int, divisor: Int) = {
     var remainder: Int = 0
@@ -167,14 +172,14 @@ package object CommonParsersImplicits {
 
   val int64ByteReaderLE = new {} with ByteReadable[Long] {
     override def read(bytes: Array[Byte], offset:Int):ParseResult[Long] = ParseSuccess(
-      result = java.lang.Long.parseLong(bytes2hex(bytes.slice(offset,offset + 8).reverse),16),
+      result = java.lang.Long.parseLong(bytes.slice(offset,offset + 8).reverse.bytes2hex,16),
       bytesUsed = 8
     )
   }
 
   implicit val uint64ByteReaderLE = new {} with ByteReadable[BigInt] {
     override def read(bytes: Array[Byte], offset: Int): ParseResult[BigInt] = ParseSuccess(
-      result = BigInt(bytes2hex(bytes.slice(offset,offset + 8).reverse), 16),
+      result = BigInt(bytes.slice(offset,offset + 8).reverse.bytes2hex, 16),
       bytesUsed = 8
     )
   }

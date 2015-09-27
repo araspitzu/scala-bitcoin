@@ -11,7 +11,7 @@ package object ScriptObject {
   // otherwise as UNIX timestamp.
   val LOCKTIME_THRESHOLD = 500000000 // Tue Nov  5 00:53:20 1985 UTC
 
-  case object SigHashFlags extends Enumeration {
+  case object SigHash extends Enumeration {
     val SIGHASH_ALL = Value(1, "SIGHASH_ALL")
     val SIGHASH_NONE = Value(2, "SIGHASH_NONE")
     val SIGHASH_SINGLE = Value(3, "SIGHASH_SINGLE")

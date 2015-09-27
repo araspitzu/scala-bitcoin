@@ -40,7 +40,6 @@ class EncodingSpec extends Specification {
 
       val versionedChecksummed = new {} with VersionedChecksummed {
         val bytes = helloHash160
-        val version = 111
       }
 
       versionedChecksummed.toBase58 === "mxqVBges55Hex1W4Ga1tQ8X2TegvkAac7v"
@@ -114,7 +113,7 @@ class EncodingSpec extends Specification {
       val ParseSuccess(out,used) = parse[Outpoint](outpoint.byteFormat,0)
 
       used === 36
-      bytes2hex(out.hash) === hash
+      out.hash.bytes2hex === hash
       out.index === outpoint.index
     }
 
@@ -156,7 +155,7 @@ class EncodingSpec extends Specification {
 
       expectedTxOut.value === txOut.value
       expectedTxOut.pkScriptLength === txOut.pkScriptLength
-      bytes2hex(expectedTxOut.pkScript.byteFormat) === bytes2hex(txOut.pkScript.byteFormat)
+      expectedTxOut.pkScript.byteFormat.bytes2hex === txOut.pkScript.byteFormat.bytes2hex
 
     }
 
@@ -208,7 +207,7 @@ class EncodingSpec extends Specification {
 
      val ParseSuccess(tx,used) = parse[Transaction](hex)
 
-     bytes2hex(tx.byteFormat) === hex
+     tx.byteFormat.bytes2hex === hex
    }
 
     "encode a BlockHeader into bytes" in {
@@ -233,7 +232,7 @@ class EncodingSpec extends Specification {
 
       val ParseSuccess(header,used) = parse[BlockHeader](hex)
 
-      bytes2hex(header.byteFormat) === hex
+      header.byteFormat.bytes2hex === hex
 
     }
 
@@ -252,7 +251,7 @@ class EncodingSpec extends Specification {
       expectedBlock.numTransaction === block.numTransaction
       expectedBlock.header.nonce === block.header.nonce
       expectedBlock.txs.head.lockTime === block.txs.head.lockTime
-      bytes2hex(expectedBlock.byteFormat) === rawBlock
+      expectedBlock.byteFormat.bytes2hex === rawBlock
 
     }
 
@@ -262,7 +261,7 @@ class EncodingSpec extends Specification {
       val ParseSuccess(block,_) = parse[Block](hex)
       val ParseSuccess(block_parsed,_) = parse[Block](block.byteFormat,0)
 
-      bytes2hex(block_parsed.byteFormat) === hex
+      block_parsed.byteFormat.bytes2hex === hex
 
     }
 

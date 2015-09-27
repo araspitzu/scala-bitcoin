@@ -160,7 +160,7 @@ class ParsingSpec extends Specification {
       tx.txIn.length === 3
       tx.txOut.length === 2
 
-      bytes2hex(tx.txIn.head.previousOutput.hash) === "c4b4dda5204f1796e65a5d740b87d2c4540c2a6bf85fd7e779ad4b789126b94d"
+      tx.txIn.head.previousOutput.hash.bytes2hex === "c4b4dda5204f1796e65a5d740b87d2c4540c2a6bf85fd7e779ad4b789126b94d"
 
       tx.txOut.head.value === 124000000
 
@@ -208,8 +208,8 @@ class ParsingSpec extends Specification {
 
       block.header.time === 1432723472
       block.header.version === 2
-      bytes2hex(block.header.prevHeaderHash) === "66191da95594aeda1a98a19ff054a88a510754e2a4d93e0a0000000000000000"
-      bytes2hex(block.header.merkleRootHash) === "8485ae797312b2cb37dfb1aac11d7c5ad9dd84364bbe26ffa781853996587d9b"
+      block.header.prevHeaderHash.bytes2hex === "66191da95594aeda1a98a19ff054a88a510754e2a4d93e0a0000000000000000"
+      block.header.merkleRootHash.bytes2hex === "8485ae797312b2cb37dfb1aac11d7c5ad9dd84364bbe26ffa781853996587d9b"
 
       val coinbase = block.txs.head
 

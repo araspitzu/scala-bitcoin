@@ -1,6 +1,6 @@
 package domain
 
-import crypto.CryptoInitialization
+import Conf.TxConfig
 import crypto.Hash._
 import encoding.CommonParsersImplicits._
 /**
@@ -9,7 +9,7 @@ import encoding.CommonParsersImplicits._
 trait VersionedChecksummed {
 
   val bytes:Array[Byte]
-  val version:Int
+  val version:Int = TxConfig.VERSION
 
   /**
    * Returns the base-58 encoded String representation of this
@@ -17,7 +17,7 @@ trait VersionedChecksummed {
    *
    * [1-byte version][data][4-byte checksum]
    */
-  def toBase58 = {
+  def toBase58:String = {
 
     val resultBytes = new Array[Byte](1 + bytes.length + 4)
     resultBytes(0) = version.toByte

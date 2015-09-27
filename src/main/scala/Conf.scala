@@ -3,12 +3,19 @@ import com.typesafe.config.ConfigFactory
 /**
  * Created by andrea on 13/06/15.
  */
-object Conf {
+package object Conf {
 
   private val config = ConfigFactory.load
 
   object TxConfig {
-    val max_script_size = config.getInt("core.tx.SCRIPT_MAX_SIZE")
+    val VERSION = config.getInt("core.tx.VERSION")
+    require(VERSION >= 0 && VERSION < 256)
   }
+
+  object ScriptConfig {
+    val MAX_SIZE = config.getInt("core.script.MAX_SIZE")
+  }
+
+
 
 }
