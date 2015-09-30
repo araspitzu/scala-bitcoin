@@ -27,8 +27,8 @@ case class ECKeyPair(priv: BigInt, pub: ECPoint) extends CryptoInitialization {
 
 object ECKeyPair extends CryptoInitialization {
 
-  val curveName = "secp256k1"
-  val ecSpec = ECNamedCurveTable.getParameterSpec(curveName)
+  val CURVE_NAME = "secp256k1"
+  val ecSpec = ECNamedCurveTable.getParameterSpec(CURVE_NAME)
   val domainParam = new ECDomainParameters(
     ecSpec.getCurve,
     ecSpec.getG,

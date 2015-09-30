@@ -1,8 +1,11 @@
 package domain.consensus
 
+import java.security.NoSuchAlgorithmException
+
+import Conf.ScriptConfig._
 import crypto.Hash._
-import crypto.TransactionSignature
-import domain.VersionedChecksummed
+import crypto.{ECKeyPair, TransactionSignature}
+import domain.{Transaction, VersionedChecksummed}
 import domain.consensus.ScriptObject.OP_CODES
 import domain.consensus.ScriptObject.OP_CODES._
 import encoding.CommonParsersImplicits._
@@ -79,13 +82,13 @@ case class Script(bytes: Array[Byte]) extends ByteWritable {
     OP_CODES(bytes(22) & 0xff) == OP_EQUAL
   }
 
-  def verify(input:Script):Boolean = (for {
+  def verify(txContainingThis:Transaction, input:Script):Boolean = (for {
     sigScript <- input.parseScript
     pubkeyScript <- parseScript
-  } yield eval(sigScript ++ pubkeyScript)).getOrElse(false)
+  } yield eval(txContainingThis, sigScript ++ pubkeyScript)).getOrElse(false)
 
-  private def eval(script:ParsedScript):Boolean =
-    run(script).headOption map castToBool getOrElse false
+  private def eval(txContainingThis:Transaction, script:ParsedScript):Boolean =
+    run(txContainingThis, script).headOption map castToBool getOrElse false
 
   def print(stack: Stack) = stack.foreach { el =>
     println(s" | ${el.bytes2hex} |")
@@ -119,8 +122,15 @@ case class Script(bytes: Array[Byte]) extends ByteWritable {
 
   }
 
-  private def run(script:ParsedScript, initialStack: Stack = List.empty):Stack = script.zipWithIndex.foldLeft[Stack](initialStack) {
-    case ( stack, (Right(data), index) ) => data :: stack
+  private def run(txContainingThis: Transaction,
+                  script:ParsedScript,
+                  initialStack: Stack = List.empty):Stack = script.zipWithIndex.foldLeft[Stack](initialStack) {
+
+    case ( stack, (Right(data), index) ) =>
+      if(data.length > MAX_SCRIPT_ELEMENT_SIZE)
+        throw ScriptError(s"Data push exceeded $MAX_SCRIPT_ELEMENT_SIZE bytes")
+
+      data :: stack
     case ( stack, (Left(op_code), index) ) => op_code match {
       case op_numeric if (op_numeric >= OP_0 && op_numeric <= OP_16) =>
         Array(op_numeric.toByte) :: stack
@@ -157,16 +167,32 @@ case class Script(bytes: Array[Byte]) extends ByteWritable {
       case OP_CHECKSIG |
            OP_CHECKSIGVERIFY => pop2OrFail(stack, op_code) { (pubKey, sigBytes) =>
 
-        val txSig = TransactionSignature(sigBytes, false)
+
+        val lastCodeSepLocation =
+          index -                                           //this position minus the difference from
+          script                                            //here to last OP_CODESEPARATOR
+            .dropRight(script.length - index)               //drop what's after this position
+            .reverse                                        //start from this position
+            .indexOf(Left(OP_CODESEPARATOR))                //index of the first found
 
         val subsetScript =
           script
-            .dropWhile(_ != Left(OP_CODESEPARATOR)) //start from last OP_CODESEPARATOR
-            .drop(1)                                //drop OP_CODESEPARATOR as well
-            .filterNot {                            //remove sigBytes from script
+            .drop(lastCodeSepLocation + 1)                  //drop the part before last OP_CODESEPARATOR and the opcode itself
+            .filterNot {                                    //remove sigBytes from script
             case Right(data) => data.deep == sigBytes.deep
             case _ => false
           }
+
+        Try {
+          val txSig = TransactionSignature(sigBytes)
+          val sigHash = ???
+
+        } match {
+          case Success(value) =>
+          case Failure(ScriptError(errMsg)) =>
+          case Failure(nsa:NoSuchAlgorithmException) => throw ScriptError(nsa.getMessage)
+          case Failure(thr) =>
+        }
 
         ScriptObject.OP_TRUE :: stack.drop(2)
       }

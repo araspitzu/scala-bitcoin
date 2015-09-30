@@ -15,6 +15,7 @@ package object ScriptObject {
     val SIGHASH_ALL = Value(1, "SIGHASH_ALL")
     val SIGHASH_NONE = Value(2, "SIGHASH_NONE")
     val SIGHASH_SINGLE = Value(3, "SIGHASH_SINGLE")
+    val SIGHASH_ANYONECANPAY = Value(0x80, "SIGHASH_ANYONECANPAY")
   }
 
   val OP_TRUE = Array(1.toByte)

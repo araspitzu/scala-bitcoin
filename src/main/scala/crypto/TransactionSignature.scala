@@ -9,8 +9,8 @@ case class TransactionSignature(r: BigInt, s: BigInt, sigHashFlags: SigHash.Valu
 
 object TransactionSignature {
 
-  def apply(bytes: Array[Byte], canonical: Boolean): TransactionSignature= {
-    if(canonical && !isEncodingCanonical(bytes))
+  def apply(bytes: Array[Byte]): TransactionSignature= {
+    if(!isEncodingCanonical(bytes))
       throw new IllegalArgumentException("Signature encoding is not canonical.")
 
     val ecSig = ECSignature.decodeFromDER(bytes)

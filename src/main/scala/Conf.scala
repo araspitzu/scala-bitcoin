@@ -14,6 +14,7 @@ package object Conf {
 
   object ScriptConfig {
     val MAX_SIZE = config.getInt("core.script.MAX_SIZE")
+    val MAX_SCRIPT_ELEMENT_SIZE = config.getInt("core.script.MAX_SCRIPT_ELEMENT_SIZE")
   }
 
 
