@@ -1,8 +1,7 @@
 package domain
 
 import domain.Numbers.CompactNumber
-import domain.consensus.Script
-import domain.consensus.ScriptObject.SigHash
+import domain.consensus.ScriptObject._
 import encoding.Parsing._
 import CompactNumber._
 import encoding.CommonParsersImplicits._
@@ -13,7 +12,7 @@ import encoding.Writing.ByteWritable
  * Created by andrea on 11/05/15.
  */
 case class Transaction(
-     version:Long,                   //version is always 1
+     version:Long,
      nTxIn:CompactNumber,
      txIn:Array[TransactionInput],
      nTxOut:CompactNumber,
@@ -21,6 +20,7 @@ case class Transaction(
      lockTime:Long
 ) extends ByteWritable {
 
+  //TODO
   def isCoinbase = true //txIn.length == 1
 
   def byteFormat =
@@ -46,7 +46,18 @@ case class Transaction(
   def hashForSignature(inputIndex: Int,
                        redeemScript: Array[Byte],
                        sigHash: SigHash.Value,
-                       anyoneCanPay: Boolean): Array[Byte] = ???
+                       anyoneCanPay: Boolean): Array[Byte] = {
+
+    if(inputIndex >= txIn.length)
+      return  uint256one
+
+    if( (sigHash.id & 0x1f) == SigHash.SIGHASH_SINGLE.id )
+      if(inputIndex >= txOut.length)
+        return uint256one
+
+
+    ???
+  }
 
 
 }

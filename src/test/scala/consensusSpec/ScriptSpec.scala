@@ -14,14 +14,14 @@ class ScriptSpec extends Specification {
       val bytes = scriptPubKey.hex2bytes
       val script = Script(bytes)
 
-      script.toString === "OP_DUP OP_HASH160 33e81a941e64cda12c6a299ed322ddbdd03f8d0e OP_EQUALVERIFY OP_CHECKSIG "
+      script.toString === "OP_DUP OP_HASH160 33e81a941e64cda12c6a299ed322ddbdd03f8d0e OP_EQUALVERIFY OP_CHECKSIG"
     }
 
     "parse a scriptSig" in {
       val bytes =  "483045022045666fd6805ab5264acdc3d2fcbffc27d0482ef1e0d5dcdb958b18db50767f05022100f53d0fd0ce7951f45beaaa835fbcf503a167026a685aed83c54dddceafdd58a401210270f83fc138312056466b13236680642afcffd493fe1866cc74baddee2cf79ba3".hex2bytes
       val script = Script(bytes)
 
-      script.toString === "3045022045666fd6805ab5264acdc3d2fcbffc27d0482ef1e0d5dcdb958b18db50767f05022100f53d0fd0ce7951f45beaaa835fbcf503a167026a685aed83c54dddceafdd58a401 0270f83fc138312056466b13236680642afcffd493fe1866cc74baddee2cf79ba3 "
+      script.toString === "3045022045666fd6805ab5264acdc3d2fcbffc27d0482ef1e0d5dcdb958b18db50767f05022100f53d0fd0ce7951f45beaaa835fbcf503a167026a685aed83c54dddceafdd58a401 0270f83fc138312056466b13236680642afcffd493fe1866cc74baddee2cf79ba3"
     }
 
     "extract the pubkey from scriptPubKey" in {

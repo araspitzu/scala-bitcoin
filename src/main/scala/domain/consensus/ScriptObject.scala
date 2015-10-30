@@ -1,5 +1,6 @@
 package domain.consensus
 
+import encoding.CommonParsersImplicits._
 /**
  * Created by andrea on 13/09/15.
  */
@@ -11,6 +12,7 @@ package object ScriptObject {
   // otherwise as UNIX timestamp.
   val LOCKTIME_THRESHOLD = 500000000 // Tue Nov  5 00:53:20 1985 UTC
 
+  /** Signature hash types/flags */
   case object SigHash extends Enumeration {
     val SIGHASH_ALL = Value(1, "SIGHASH_ALL")
     val SIGHASH_NONE = Value(2, "SIGHASH_NONE")
@@ -20,6 +22,8 @@ package object ScriptObject {
 
   val OP_TRUE = Array(1.toByte)
   val OP_FALSE = Array(0.toByte)
+
+  val uint256one = "0000000000000000000000000000000000000000000000000000000000000001".hex2bytes
 
   case object OP_CODES extends Enumeration {
 

@@ -43,7 +43,7 @@ case class Script(bytes: Array[Byte]) extends ByteWritable {
       case Right(data) => data.length
     }
 
-    def bytes:Array[Byte] = value match {
+    def byteFormat:Array[Byte] = value match {
       case Left(op_code) => Array(op_code.toByte)
       case Right(data) => data
     }
@@ -54,13 +54,13 @@ case class Script(bytes: Array[Byte]) extends ByteWritable {
 
   override def byteFormat:Array[Byte] = bytes
 
-  override def toString = parseScript match {
+  override def toString:String = (parseScript match {
     case Some(list) => list map {
       case Left(op_code) => op_code.toString + " "
       case Right(data) => data.bytes2hex + " "
     } mkString
     case None => "None"
-  }
+  }) dropRight 1
 
   def isSendToAddress:Boolean = parseScript.getOrElse(false) match {
     case Left(OP_DUP) ::
@@ -96,9 +96,9 @@ case class Script(bytes: Array[Byte]) extends ByteWritable {
 
   def getPubKeyHash:Array[Byte] = parseScript.map { script =>
     if(isSendToAddress)
-      script(2).bytes
+      script(2).byteFormat
     else if(isPayToScriptHash)
-      script(1).bytes
+      script(1).byteFormat
     else
       throw ScriptError("Script not in scriptPubKey form")
   }.getOrElse(throw ScriptError("Could not parse script"))
@@ -114,9 +114,9 @@ case class Script(bytes: Array[Byte]) extends ByteWritable {
     val chunk1 = parsed.tail.head
 
     if(chunk0.length > 2 && chunk1.length > 2)
-      chunk1.bytes
+      chunk1.byteFormat
     else if(chunk1 == Left(OP_CHECKSIG) && chunk0.length > 2)
-      chunk0.bytes
+      chunk0.byteFormat
     else
       throw ScriptError("Malformed script")
 
@@ -183,9 +183,11 @@ case class Script(bytes: Array[Byte]) extends ByteWritable {
             case _ => false
           }
 
+        val subsetScriptBytes = subsetScript.flatMap(_.byteFormat).toArray
+
         Try {
           val txSig = TransactionSignature(sigBytes)
-          val sigHash = ???
+          val sigHash = txContainingThis.hashForSignature(0, subsetScriptBytes, txSig.sigHashFlags, false)
 
         } match {
           case Success(value) =>

@@ -9,6 +9,11 @@ case class TransactionSignature(r: BigInt, s: BigInt, sigHashFlags: SigHash.Valu
 
 object TransactionSignature {
 
+  /**
+   * There is no option to force non canonical signatures, see BIP-62
+   * @param bytes
+   * @return
+   */
   def apply(bytes: Array[Byte]): TransactionSignature= {
     if(!isEncodingCanonical(bytes))
       throw new IllegalArgumentException("Signature encoding is not canonical.")
