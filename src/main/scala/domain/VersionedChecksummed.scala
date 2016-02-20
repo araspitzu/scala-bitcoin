@@ -9,7 +9,7 @@ import encoding.CommonParsersImplicits._
 trait VersionedChecksummed {
 
   val bytes:Array[Byte]
-  val version:Int = TxConfig.VERSION
+  val version:Byte = TxConfig.VERSION.toByte
 
   /**
    * Returns the base-58 encoded String representation of this
@@ -20,13 +20,13 @@ trait VersionedChecksummed {
   def toBase58:String = {
 
     val resultBytes = new Array[Byte](1 + bytes.length + 4)
-    resultBytes(0) = version.toByte
+    resultBytes(0) = version
 
     System.arraycopy(bytes, 0, resultBytes, 1, bytes.length)
     val checksum = sha256Twice(resultBytes, 0, bytes.length + 1)
 
     System.arraycopy(checksum, 0, resultBytes, bytes.length + 1, 4)
-    base58encode(resultBytes)
+    resultBytes.toBase58
   }
 
 }

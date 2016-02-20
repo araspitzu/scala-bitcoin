@@ -22,12 +22,15 @@ package object CommonParsersImplicits {
     def hex2bytes:Array[Byte] = hex.sliding(2, 2).map(Integer.parseInt(_, 16).toByte).toArray
   }
 
+  implicit class RichByte(byte:Byte){
+    def unsigned:Int = byte & 0xff
+  }
   /**
    *
    * @param bytes
    * @return
    */
-  def base58encode(bytes: Array[Byte]):String = {
+  private def base58encode(bytes: Array[Byte]):String = {
     if(bytes.length == 0)
       return ""
 
@@ -92,11 +95,6 @@ package object CommonParsersImplicits {
       0xff & (uint >> 8) toByte,
       0xff & (uint >> 16) toByte,
       0xff & (uint >> 24) toByte
-  )
-
-  def uint16ByteFormatBE(uint:Int):Array[Byte] = Array(
-    0xff & (uint >> 8) toByte,
-    0xff & uint toByte
   )
 
   def uint16ByteFormatLE(uint:Int):Array[Byte] = Array(

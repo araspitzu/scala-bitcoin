@@ -18,17 +18,12 @@ class EncodingSpec extends Specification {
 
     "encode bytes in base58" in {
 
-      val helloWorldBytes = "Hello World".getBytes
-      base58encode(helloWorldBytes) === "JxF12TrwUP45BMd"
-
-      val bigIntBytes = BigInt(3471844090L).toByteArray
-      base58encode(bigIntBytes) === "16Ho7Hs"
-
-      val zeroBytes = Array(0.toByte)
-      base58encode(zeroBytes) === "1"
+     "Hello World".getBytes.toBase58 === "JxF12TrwUP45BMd"
+      BigInt(3471844090L).toByteArray.toBase58 === "16Ho7Hs"
+      Array(0.toByte).toBase58 === "1"
 
       val zeroByte5times =  Array(0.toByte,0.toByte,0.toByte,0.toByte,0.toByte)
-      base58encode(zeroByte5times) === "11111"
+      zeroByte5times.toBase58 === "11111"
 
     }
 
@@ -214,7 +209,6 @@ class EncodingSpec extends Specification {
 
       val rawBlockHeader = "02000000b6ff0b1b1680a2862a30ca44d346d9e8910d334beb48ca0c00000000000000009d10aa52ee949386ca9385695f04ede270dda20810decd12bc9b048aaab3147124d95a5430c31b18fe9f0864"
 
-      val bal = "0200000066191da95594aeda1a98a19ff054a88a510754e2a4d93e0a00000000000000008485ae79"
       val ParseSuccess(expectedBlockHeader,expectedUsed) = parse[BlockHeader](rawBlockHeader)
 
       val ParseSuccess(blockHeader,used) = parse[BlockHeader](expectedBlockHeader.byteFormat,0)

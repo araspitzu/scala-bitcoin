@@ -27,18 +27,6 @@ sealed trait CompactNumber extends ByteWritable {
     case CompactBigInt(b) => b.toInt
   }
 
-  def longValue:Long = this match {
-    case CompactInt(i) => i.toLong
-    case CompactLong(l) => l
-    case CompactBigInt(b) => b.toLong
-  }
-
-  def bigIntValue:BigInt = this match {
-    case CompactInt(i) => i
-    case CompactLong(l) => l
-    case CompactBigInt(b) => b
-  }
-
   override def byteFormat:Array[Byte] = this match {
     case CompactInt(i) if(i < 253) => uint8ByteFormat(i)
     case CompactInt(i) => Array(253.toByte) ++ uint16ByteFormatLE(i)

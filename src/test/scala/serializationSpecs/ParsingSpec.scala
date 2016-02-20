@@ -163,6 +163,7 @@ class ParsingSpec extends Specification {
       tx.txIn.head.previousOutput.hash.bytes2hex === "c4b4dda5204f1796e65a5d740b87d2c4540c2a6bf85fd7e779ad4b789126b94d"
 
       tx.txOut.head.value === 124000000
+      tx.txOut.tail.head.value === 187078
 
     }
 

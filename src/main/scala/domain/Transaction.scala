@@ -32,11 +32,11 @@ case class Transaction(
       uint32ByteFormatLE(lockTime)
 
   /**
-   * <p>Calculates a signature hash from this transaction, that is, a hash of a simplified form of it. How exactly the transaction
-   * is simplified is specified by the type and anyoneCanPay parameters.</p>
+   * Calculates a signature hash from this transaction, that is, a hash of a simplified form of it. How exactly the transaction
+   * is simplified is specified by the type and anyoneCanPay parameters.
    *
-   * When signing a P2SH outpu the redeemScript should be the script encoded into the scriptSig field, for normal transactions,
-   * it's the scriptPubKey of the output you're signing for.</p>
+   * When signing a P2SH output the redeemScript should be the script encoded into the scriptSig field, for normal transactions,
+   * it's the scriptPubKey of the output you're signing for.
    *
    * @param inputIndex input the signature is being calculated for. Tx signatures are always relative to an input.
    * @param redeemScript the bytes that should be in the given input during signing.

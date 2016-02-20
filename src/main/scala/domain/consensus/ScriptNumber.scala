@@ -20,12 +20,6 @@ case class ScriptNumber(int:BigInt) extends ByteWritable {
 
     var result = if(length == bytes.length) bytes else Array(0x00.toByte) ++ bytes
 
-//    if (length != bytes.length) {
-//      result = new Array[Byte](length)
-//      System.arraycopy(bytes, 0, result, 1, bytes.length)
-//    } else {
-//      result = bytes
-//    }
     if (isNegative)
       result(0) = (result(0).toInt | 0x80).toByte
 

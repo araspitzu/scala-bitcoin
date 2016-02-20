@@ -229,9 +229,9 @@ case class Script(bytes: Array[Byte]) extends ByteWritable {
     case Failure(thr) => None
   }
 
-  private def parseScript(bytes:Array[Byte]):ParsedScript = {
-    // b & 0xff necessary to read it unsigned, see http://www.scala-lang.org/old/sites/default/files/linuxsoft_archives/docu/files/ScalaReference.pdf#Integer Literals
-    bytes.headOption.map { _ & 0xff match {
+  private def parseScript(bytes:Array[Byte]):ParsedScript = bytes.headOption match {
+    case None => List.empty[Chunk]
+    case Some(byte) => byte unsigned match {
       case b if(isOpPush(b)) => Right(bytes.slice(1, 1 + b)) :: parseScript(bytes.drop(1 + b))
       case b => OP_CODES(b) match {
         case OP_PUSHDATA1 => parse[Short](bytes.tail,0) match {
@@ -263,10 +263,9 @@ case class Script(bytes: Array[Byte]) extends ByteWritable {
         case op_n => Left(op_n) :: parseScript(bytes.tail)
       }
      }
-    } getOrElse Nil
   }
 
-  private def isOpPush(b:Int) = b > 0x00 && b < 0x4c
+  private def isOpPush(b:Int) = b > 0x00 && b < 0x4c //0x00 until 0x4c contains b
 
   private def castToBool(data: Array[Byte]): Boolean = data.exists( b =>
     b.toInt != 0 &&
