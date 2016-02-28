@@ -11,6 +11,7 @@ object TransactionSignature {
 
   /**
    * There is no option to force non canonical signatures, see BIP-62
+   * BIP-62 has not been merged, we rely on segwit to address tx malleability
    * @param bytes
    * @return
    */

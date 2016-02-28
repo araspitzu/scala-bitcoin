@@ -30,12 +30,12 @@ object Parsing {
       case _ => None
     }
 
-    private def filter(test: T => Boolean):ParseResult[T] = this match {
-      case ParseSuccess(result,used) if(test(result)) => ParseSuccess(result,used)
+    private def filter(p: T => Boolean):ParseResult[T] = this match {
+      case ParseSuccess(result,used) if(p(result)) => ParseSuccess(result,used)
       case e:ParseFailure => e
     }
 
-    def withFilter(test: T => Boolean) = new WithFilter(test)
+    def withFilter(p: T => Boolean) = new WithFilter(p)
 
     def map[U](f: T => U):ParseResult[U] = this match {
       case ParseSuccess(result,used) => flatMap( r =>  ParseSuccess(f(r),0))

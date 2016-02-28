@@ -37,6 +37,8 @@ case class Transaction(
    *
    * When signing a P2SH output the redeemScript should be the script encoded into the scriptSig field, for normal transactions,
    * it's the scriptPubKey of the output you're signing for.
+    *
+    * See reference client at src/script/interpreter.cpp line:1109
    *
    * @param inputIndex input the signature is being calculated for. Tx signatures are always relative to an input.
    * @param redeemScript the bytes that should be in the given input during signing.
@@ -49,7 +51,7 @@ case class Transaction(
                        anyoneCanPay: Boolean): Array[Byte] = {
 
     if(inputIndex >= txIn.length)
-      return  uint256one
+      return uint256one
 
     if( (sigHash.id & 0x1f) == SigHash.SIGHASH_SINGLE.id )
       if(inputIndex >= txOut.length)

@@ -59,7 +59,7 @@ case class Script(bytes: Array[Byte]) extends ByteWritable {
       case Left(op_code) => op_code.toString + " "
       case Right(data) => data.bytes2hex + " "
     } mkString
-    case None => "None"
+    case None => "None!"
   }) dropRight 1
 
   def isSendToAddress:Boolean = parseScript.getOrElse(false) match {
@@ -82,13 +82,13 @@ case class Script(bytes: Array[Byte]) extends ByteWritable {
     OP_CODES(bytes(22) & 0xff) == OP_EQUAL
   }
 
-  def verify(txContainingThis:Transaction, input:Script):Boolean = (for {
+  def verify(txContainingThis:Transaction, txInputIndex:Int, input:Script):Boolean = (for {
     sigScript <- input.parseScript
     pubkeyScript <- parseScript
-  } yield eval(txContainingThis, sigScript ++ pubkeyScript)).getOrElse(false)
+  } yield eval(txContainingThis,txInputIndex, sigScript ++ pubkeyScript)).getOrElse(false)
 
-  private def eval(txContainingThis:Transaction, script:ParsedScript):Boolean =
-    run(txContainingThis, script).headOption map castToBool getOrElse false
+  private def eval(txContainingThis:Transaction, txInputIndex:Int, script:ParsedScript):Boolean =
+    run(txContainingThis, txInputIndex,  script).headOption map castToBool getOrElse false
 
   def print(stack: Stack) = stack.foreach { el =>
     println(s" | ${el.bytes2hex} |")
@@ -123,6 +123,7 @@ case class Script(bytes: Array[Byte]) extends ByteWritable {
   }
 
   private def run(txContainingThis: Transaction,
+                  txInputIndex:Int,
                   script:ParsedScript,
                   initialStack: Stack = List.empty):Stack = script.zipWithIndex.foldLeft[Stack](initialStack) {
 
@@ -187,7 +188,7 @@ case class Script(bytes: Array[Byte]) extends ByteWritable {
 
         Try {
           val txSig = TransactionSignature(sigBytes)
-          val sigHash = txContainingThis.hashForSignature(0, subsetScriptBytes, txSig.sigHashFlags, false)
+          val sigHash = txContainingThis.hashForSignature(txInputIndex, subsetScriptBytes, txSig.sigHashFlags, false)
 
         } match {
           case Success(value) =>
@@ -230,7 +231,7 @@ case class Script(bytes: Array[Byte]) extends ByteWritable {
   }
 
   private def parseScript(bytes:Array[Byte]):ParsedScript = bytes.headOption match {
-    case None => List.empty[Chunk]
+    case None => List.empty[Chunk] //TODO throw exception ?
     case Some(byte) => byte unsigned match {
       case b if(isOpPush(b)) => Right(bytes.slice(1, 1 + b)) :: parseScript(bytes.drop(1 + b))
       case b => OP_CODES(b) match {
