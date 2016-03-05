@@ -4,6 +4,7 @@ import domain.Numbers.CompactNumber
 import encoding.Parsing._
 import CompactNumber._
 import encoding.Writing.ByteWritable
+import encoding.CommonParsersImplicits._
 
 /**
  * Created by andrea on 02/07/15.
@@ -11,13 +12,13 @@ import encoding.Writing.ByteWritable
 case class Block(
   header:BlockHeader,
   numTransaction:CompactNumber,
-  txs:Array[Transaction]
+  transactions:Array[Transaction]
 ) extends ByteWritable {
 
   def byteFormat =
     header.byteFormat ++
     numTransaction.byteFormat ++
-    txs.foldRight[Array[Byte]](Array.emptyByteArray)( (tx,acc) => tx.byteFormat ++ acc )
+    transactions.byteFormat
 
 }
 
@@ -33,7 +34,7 @@ object Block {
     } yield Block(
       header = header,
       numTransaction = nTx,
-      txs = Array(coinbase) ++ txs
+      transactions = Array(coinbase) ++ txs
     )
   }
 

@@ -14,9 +14,9 @@ import encoding.Writing.ByteWritable
 case class Transaction(
      version:Long,
      nTxIn:CompactNumber,
-     txIn:Array[TransactionInput],
+     inputs:Array[TransactionInput],
      nTxOut:CompactNumber,
-     txOut:Array[TransactionOutput],
+     outputs:Array[TransactionOutput],
      lockTime:Long
 ) extends ByteWritable {
 
@@ -26,9 +26,9 @@ case class Transaction(
   def byteFormat =
       uint32ByteFormatLE(version) ++
       nTxIn.byteFormat ++
-      txIn.foldRight[Array[Byte]](Array.emptyByteArray)((in, acc) => in.byteFormat ++ acc) ++
+      inputs.byteFormat ++
       nTxOut.byteFormat ++
-      txOut.foldRight[Array[Byte]](Array.emptyByteArray)((in, acc) => in.byteFormat ++ acc) ++
+      outputs.byteFormat ++
       uint32ByteFormatLE(lockTime)
 
   /**
@@ -50,11 +50,11 @@ case class Transaction(
                        sigHash: SigHash.Value,
                        anyoneCanPay: Boolean): Array[Byte] = {
 
-    if(inputIndex >= txIn.length)
+    if(inputIndex >= inputs.length)
       return uint256one
 
     if( (sigHash.id & 0x1f) == SigHash.SIGHASH_SINGLE.id )
-      if(inputIndex >= txOut.length)
+      if(inputIndex >= outputs.length)
         return uint256one
 
 
@@ -68,6 +68,10 @@ case class Transaction(
 object Transaction {
 
    implicit val transactionIsByteReadable = new {} with ByteReadable[Transaction]{
+     def merda(implicit pippo:String) = {
+
+     }
+
      def read(bytes: Array[Byte], offset: Int) = for {
         (vers,used) <- parse[Long](bytes,offset)(uint32ByteReaderLE).withOffset
         (ntxin,used1) <- parse[CompactNumber](bytes,offset + used).withOffset
@@ -78,9 +82,9 @@ object Transaction {
        } yield Transaction(
           version = vers,
           nTxIn = ntxin,
-          txIn = txin,
+          inputs = txin,
           nTxOut = ntxout,
-          txOut = txout,
+          outputs = txout,
           lockTime = locktime
        )
    }

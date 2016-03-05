@@ -1,7 +1,10 @@
 package domain.consensus
 
-import
 import encoding.CommonParsersImplicits._
+import encoding.Parsing.ParseFailure
+
+import scala.util.control.ControlThrowable
+
 /**
  * Created by andrea on 13/09/15.
  */
@@ -143,6 +146,13 @@ package object ScriptObject {
     val OP_PUBKEYHASH = Value(0xfd, "OP_PUBKEYHASH")
     val OP_PUBKEY = Value(0xfe, "OP_PUBKEY")
     val OP_INVALIDOPCODE = Value(0xff, "OP_INVALIDOPCODE")
+  }
+
+  case class ScriptError(msg:String) extends ControlThrowable {
+    override def toString:String = msg
+  }
+  object ScriptError {
+    def apply(failure: ParseFailure):ScriptError = ScriptError(failure.err)
   }
 
 }

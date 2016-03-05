@@ -180,9 +180,9 @@ class EncodingSpec extends Specification {
       val expectedTx = Transaction(
         version = 1,
         nTxIn = CompactInt(1),
-        txIn = Array(expectedTxIn),
+        inputs = Array(expectedTxIn),
         nTxOut = CompactInt(1),
-        txOut = Array(expectedTxOut),
+        outputs = Array(expectedTxOut),
         lockTime = 0
       )
 
@@ -244,7 +244,7 @@ class EncodingSpec extends Specification {
       expectedBlock.byteFormat.length === used and used === expectedUsed
       expectedBlock.numTransaction === block.numTransaction
       expectedBlock.header.nonce === block.header.nonce
-      expectedBlock.txs.head.lockTime === block.txs.head.lockTime
+      expectedBlock.transactions.head.lockTime === block.transactions.head.lockTime
       expectedBlock.byteFormat.bytes2hex === rawBlock
 
     }

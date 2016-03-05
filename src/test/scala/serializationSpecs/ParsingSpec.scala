@@ -141,9 +141,9 @@ class ParsingSpec extends Specification {
 
       tx.version === 1L
       tx.nTxIn === CompactInt(5)
-      tx.txIn.map(_.sequence) forall (_ == 4294967295L)
+      tx.inputs.map(_.sequence) forall (_ == 4294967295L)
       tx.nTxOut === CompactInt(5)
-      tx.txOut(0).value === 200000000L
+      tx.outputs(0).value === 200000000L
       tx.lockTime === 0L
 
     }
@@ -157,13 +157,13 @@ class ParsingSpec extends Specification {
       tx.version === 1
       tx.nTxIn === CompactInt(3)
       tx.nTxOut === CompactInt(2)
-      tx.txIn.length === 3
-      tx.txOut.length === 2
+      tx.inputs.length === 3
+      tx.outputs.length === 2
 
-      tx.txIn.head.previousOutput.hash.bytes2hex === "c4b4dda5204f1796e65a5d740b87d2c4540c2a6bf85fd7e779ad4b789126b94d"
+      tx.inputs.head.previousOutput.hash.bytes2hex === "c4b4dda5204f1796e65a5d740b87d2c4540c2a6bf85fd7e779ad4b789126b94d"
 
-      tx.txOut.head.value === 124000000
-      tx.txOut.tail.head.value === 187078
+      tx.outputs.head.value === 124000000
+      tx.outputs.tail.head.value === 187078
 
     }
 
@@ -190,9 +190,9 @@ class ParsingSpec extends Specification {
       block.header.version === 2
       block.header.time === 1415239972L
       block.numTransaction === CompactInt(3)
-      block.txs.length === 3
-      block.txs forall (_.version == 1)
-      block.txs forall (_.nTxOut === CompactInt(5))
+      block.transactions.length === 3
+      block.transactions forall (_.version == 1)
+      block.transactions forall (_.nTxOut === CompactInt(5))
       blockSize === rawBlock.length / 2
 
     }
@@ -205,18 +205,18 @@ class ParsingSpec extends Specification {
 
       used === hex.length / 2
       block.numTransaction === CompactInt(1031)
-      block.txs.length === 1031
+      block.transactions.length === 1031
 
       block.header.time === 1432723472
       block.header.version === 2
       block.header.prevHeaderHash.bytes2hex === "66191da95594aeda1a98a19ff054a88a510754e2a4d93e0a0000000000000000"
       block.header.merkleRootHash.bytes2hex === "8485ae797312b2cb37dfb1aac11d7c5ad9dd84364bbe26ffa781853996587d9b"
 
-      val coinbase = block.txs.head
+      val coinbase = block.transactions.head
 
       coinbase.nTxIn === CompactInt(1)
-      coinbase.txIn.length === 1
-      coinbase.txIn.head.previousOutput.hash forall (_ == 0)
+      coinbase.inputs.length === 1
+      coinbase.inputs.head.previousOutput.hash forall (_ == 0)
 
     }
   }

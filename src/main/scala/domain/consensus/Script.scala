@@ -6,31 +6,28 @@ import crypto.Hash._
 import crypto.{ECKeyPair, TransactionSignature}
 import domain.{Transaction, VersionedChecksummed}
 import domain.consensus.ScriptObject._
+import domain.consensus.ScriptObject.ScriptError
 import domain.consensus.ScriptObject.OP_CODES
 import domain.consensus.ScriptObject.OP_CODES._
 import encoding.CommonParsersImplicits._
 import encoding.Parsing._
 import encoding.Writing.ByteWritable
 import scala.util.{Failure, Success, Try}
-import scala.util.control.ControlThrowable
-
 
 /**
  * Created by andrea on 04/07/15.
  */
-
-case class ScriptError(msg:String) extends ControlThrowable {
-  override def toString:String = msg
-}
-object ScriptError {
-  def apply(failure: ParseFailure):ScriptError = ScriptError(failure.err)
-}
-
 case class Script(bytes: Array[Byte]) extends ByteWritable {
   type OP_CODE = OP_CODES.Value
   type Stack = List[Array[Byte]]
   type Chunk = Either[OP_CODE, Array[Byte]]
   type ParsedScript = List[Chunk]
+
+  implicit class EnrichedStack(stack:Stack){
+    def print(stack: Stack) = stack.foreach { el =>
+      println(s" | ${el.bytes2hex} |")
+    }
+  }
 
   /**
    * Utility class adding functionalities to the Chunk type
@@ -90,9 +87,7 @@ case class Script(bytes: Array[Byte]) extends ByteWritable {
   private def eval(txContainingThis:Transaction, txInputIndex:Int, script:ParsedScript):Boolean =
     run(txContainingThis, txInputIndex,  script).headOption map castToBool getOrElse false
 
-  def print(stack: Stack) = stack.foreach { el =>
-    println(s" | ${el.bytes2hex} |")
-  }
+
 
   def getPubKeyHash:Array[Byte] = parseScript.map { script =>
     if(isSendToAddress)

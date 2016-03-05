@@ -1,6 +1,7 @@
 package encoding
 
 import Parsing.{ParseSuccess, ParseResult, ByteReadable}
+import encoding.Writing.ByteWritable
 
 /**
  * Created by andrea on 17/06/15.
@@ -9,6 +10,12 @@ package object CommonParsersImplicits {
 
   val alphabet:Array[Char] = "123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz".toCharArray
   val encodedZero:Char = alphabet.head
+
+  implicit class EnrichedArray[T <: ByteWritable](array:Array[T]) extends ByteWritable {
+    override def byteFormat: Array[Byte] = {
+      array.foldRight[Array[Byte]](Array.emptyByteArray)((tx, acc) => tx.byteFormat ++ acc )
+    }
+  }
 
   implicit class ByteVector(bytes: Array[Byte]) {
 
