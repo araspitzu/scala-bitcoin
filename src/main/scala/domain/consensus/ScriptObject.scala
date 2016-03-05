@@ -1,12 +1,13 @@
 package domain.consensus
 
+import
 import encoding.CommonParsersImplicits._
 /**
  * Created by andrea on 13/09/15.
  */
 package object ScriptObject {
 
-  val MAX_SCRIPT_ELEMENT_SIZE = 520 // bytes
+  val MAX_SCRIPT_ELEMENT_SIZE = Conf.ScriptConfig.MAX_SCRIPT_ELEMENT_SIZE
 
   // Threshold for nLockTime: below this value it is interpreted as block number,
   // otherwise as UNIX timestamp.

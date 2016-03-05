@@ -2,10 +2,10 @@ package domain.consensus
 
 import java.security.NoSuchAlgorithmException
 
-import Conf.ScriptConfig._
 import crypto.Hash._
 import crypto.{ECKeyPair, TransactionSignature}
 import domain.{Transaction, VersionedChecksummed}
+import domain.consensus.ScriptObject._
 import domain.consensus.ScriptObject.OP_CODES
 import domain.consensus.ScriptObject.OP_CODES._
 import encoding.CommonParsersImplicits._
@@ -163,7 +163,7 @@ case class Script(bytes: Array[Byte]) extends ByteWritable {
         else if(op_code == OP_EQUALVERIFY)
           throw ScriptError("Invalid script, OP_EQUALVERIFY not passed")
         else
-          ScriptObject.OP_FALSE :: stack.drop(2)
+          OP_FALSE :: stack.drop(2)
       }
       case OP_CHECKSIG |
            OP_CHECKSIGVERIFY => pop2OrFail(stack, op_code) { (pubKey, sigBytes) =>
@@ -197,7 +197,7 @@ case class Script(bytes: Array[Byte]) extends ByteWritable {
           case Failure(thr) =>
         }
 
-        ScriptObject.OP_TRUE :: stack.drop(2)
+        OP_TRUE :: stack.drop(2)
       }
       case OP_ADD => pop2OrFail(stack, op_code) { (a, b) =>
         val op1 = ScriptNumber(a, false)
