@@ -8,7 +8,7 @@ object SomeBuild extends Build {
   import Resolvers._
 
   val name = "core"
-  lazy val api = Project(
+  lazy val scalaBitcoin = Project(
     name, file("."),
     settings = buildSettings ++ Seq(
       resolvers := repositories,
@@ -25,7 +25,7 @@ object SomeBuild extends Build {
 object BuildSettings {
   val buildOrganization = "scala-bitcoin"
   val buildVersion = "0.0.1"
-  val buildScalaVersion = "2.11.6"
+  val buildScalaVersion = "2.11.7"
   val buildSbtVersion = "0.13.8"
 
   val buildSettings = Defaults.coreDefaultSettings ++ Seq(
@@ -90,12 +90,11 @@ object ShellPrompt {
       getOrElse "-" stripPrefix "## "
     )
 
-  val buildShellPrompt = {
-    (state: State) => {
+  val buildShellPrompt = (state: State) => {
       val currProject = Project.extract(state).currentProject.id
       "%s:%s:%s> ".format(
         currProject, currBranch, BuildSettings.buildVersion
       )
-    }
   }
+
 }

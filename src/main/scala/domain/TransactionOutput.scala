@@ -3,7 +3,7 @@ package domain
 import domain.consensus.Script
 import domain.Numbers.CompactNumber
 import encoding.Parsing._
-import encoding.CommonParsersImplicits._
+import encoding.CommonByteConverters._
 import encoding.Writing.ByteWritable
 
 

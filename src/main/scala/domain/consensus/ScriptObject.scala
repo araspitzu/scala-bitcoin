@@ -1,8 +1,7 @@
 package domain.consensus
 
-import encoding.CommonParsersImplicits._
+import encoding.EnrichedTypes._
 import encoding.Parsing.ParseFailure
-
 import scala.util.control.ControlThrowable
 
 /**

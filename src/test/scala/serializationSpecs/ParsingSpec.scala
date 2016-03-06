@@ -4,7 +4,8 @@ import domain.Numbers._
 import domain._
 import org.specs2.mutable.Specification
 import org.specs2.specification.Scope
-import encoding.CommonParsersImplicits._
+import encoding.CommonByteConverters._
+import encoding.EnrichedTypes._
 import encoding.Parsing._
 
 /**

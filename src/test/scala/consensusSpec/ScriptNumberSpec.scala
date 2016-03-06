@@ -1,7 +1,7 @@
 package consensusSpec
 
 import domain.consensus.{ScriptNumber, Script}
-import encoding.CommonParsersImplicits._
+import encoding.EnrichedTypes._
 import org.specs2.mutable.Specification
 /**
  * Created by andrea on 05/09/15.

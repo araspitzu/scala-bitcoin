@@ -105,7 +105,7 @@ object Parsing {
   def parse[T](bytes:Array[Byte],offset:Int)(implicit reader:ByteReadable[T]):ParseResult[T] = reader.safeRead(bytes,offset)
 
   def parse[T](bytes:String)(implicit reader:ByteReadable[T]):ParseResult[T] = {
-    import encoding.CommonParsersImplicits._
+    import encoding.EnrichedTypes._
     parse[T](bytes.hex2bytes,0)
   }
 

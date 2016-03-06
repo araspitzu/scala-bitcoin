@@ -4,7 +4,8 @@ import domain.Numbers.CompactNumber
 import domain.consensus.ScriptObject._
 import encoding.Parsing._
 import CompactNumber._
-import encoding.CommonParsersImplicits._
+import encoding.CommonByteConverters._
+import encoding.EnrichedTypes._
 import encoding.Writing.ByteWritable
 
 

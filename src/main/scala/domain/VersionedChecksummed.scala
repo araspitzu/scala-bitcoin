@@ -2,7 +2,7 @@ package domain
 
 import Conf.TxConfig
 import crypto.Hash._
-import encoding.CommonParsersImplicits._
+import encoding.EnrichedTypes._
 /**
  * Created by andrea on 26/09/15.
  */

@@ -1,6 +1,7 @@
 package crypto
 
 import domain.consensus.ScriptObject.SigHash
+import encoding.EnrichedTypes._
 
 /**
  * Created by andrea on 18/09/15.
@@ -17,7 +18,7 @@ object TransactionSignature {
    */
   def apply(bytes: Array[Byte]): TransactionSignature= {
     if(!isEncodingCanonical(bytes))
-      throw new IllegalArgumentException("Signature encoding is not canonical.")
+      throw new IllegalArgumentException(s"Signature encoding is not canonical: ${bytes.bytes2hex}")
 
     val ecSig = ECSignature.decodeFromDER(bytes)
     TransactionSignature(ecSig.r, ecSig.s, SigHash(bytes.last))

@@ -2,7 +2,7 @@ import crypto.Hash._
 import domain.{VersionedChecksummed, Address, Transaction}
 import domain.consensus.Script
 import org.specs2.mutable.Specification
-import encoding.CommonParsersImplicits._
+import encoding.EnrichedTypes._
 
 class ScriptSpec extends Specification {
 

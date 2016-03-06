@@ -9,7 +9,8 @@ import domain.consensus.ScriptObject._
 import domain.consensus.ScriptObject.ScriptError
 import domain.consensus.ScriptObject.OP_CODES
 import domain.consensus.ScriptObject.OP_CODES._
-import encoding.CommonParsersImplicits._
+import encoding.CommonByteConverters._
+import encoding.EnrichedTypes._
 import encoding.Parsing._
 import encoding.Writing.ByteWritable
 import scala.util.{Failure, Success, Try}
@@ -22,12 +23,6 @@ case class Script(bytes: Array[Byte]) extends ByteWritable {
   type Stack = List[Array[Byte]]
   type Chunk = Either[OP_CODE, Array[Byte]]
   type ParsedScript = List[Chunk]
-
-  implicit class EnrichedStack(stack:Stack){
-    def print(stack: Stack) = stack.foreach { el =>
-      println(s" | ${el.bytes2hex} |")
-    }
-  }
 
   /**
    * Utility class adding functionalities to the Chunk type
@@ -47,19 +42,24 @@ case class Script(bytes: Array[Byte]) extends ByteWritable {
 
   }
 
+  lazy val parsedScript: ParsedScript = Try {
+     parseScript(bytes)
+    } match {
+     case Success(result) => result
+     case Failure(parseError:ScriptError) => throw parseError
+     case Failure(thr) => throw new ScriptError(thr.getMessage)
+    }
+
   def length:Int = bytes.length
 
   override def byteFormat:Array[Byte] = bytes
 
-  override def toString:String = (parseScript match {
-    case Some(list) => list map {
-      case Left(op_code) => op_code.toString + " "
-      case Right(data) => data.bytes2hex + " "
-    } mkString
-    case None => "None!"
-  }) dropRight 1
+  override def toString:String = parsedScript.map {
+    case Left(op_code) => op_code.toString + " "
+    case Right(data) => data.bytes2hex + " "
+  }.mkString.dropRight(1)
 
-  def isSendToAddress:Boolean = parseScript.getOrElse(false) match {
+  def isSendToAddress:Boolean = parsedScript match {
     case Left(OP_DUP) ::
          Left(OP_HASH160) ::
          Right(data) ::
@@ -79,41 +79,34 @@ case class Script(bytes: Array[Byte]) extends ByteWritable {
     OP_CODES(bytes(22) & 0xff) == OP_EQUAL
   }
 
-  def verify(txContainingThis:Transaction, txInputIndex:Int, input:Script):Boolean = (for {
-    sigScript <- input.parseScript
-    pubkeyScript <- parseScript
-  } yield eval(txContainingThis,txInputIndex, sigScript ++ pubkeyScript)).getOrElse(false)
-
   private def eval(txContainingThis:Transaction, txInputIndex:Int, script:ParsedScript):Boolean =
     run(txContainingThis, txInputIndex,  script).headOption map castToBool getOrElse false
 
 
 
-  def getPubKeyHash:Array[Byte] = parseScript.map { script =>
+  def getPubKeyHash:Array[Byte] = {
     if(isSendToAddress)
-      script(2).byteFormat
+      parsedScript(2).byteFormat
     else if(isPayToScriptHash)
-      script(1).byteFormat
+      parsedScript(1).byteFormat
     else
-      throw ScriptError("Script not in scriptPubKey form")
-  }.getOrElse(throw ScriptError("Could not parse script"))
+      throw new ScriptError("Script not in scriptPubKey form")
+  }
 
   def getPubKey:Array[Byte] = {
 
-    val parsed = parseScript.getOrElse(throw ScriptError("Could not parse script"))
+    if(parsedScript.length != 2)
+      throw new ScriptError(s"Malformed script for getPubKey, expected size 2 got ${parsedScript.length}")
 
-    if(parsed.length != 2)
-      throw ScriptError(s"Malformed script for getPubKey, expected size 2 got ${parsed.length}")
-
-    val chunk0 = parsed.head
-    val chunk1 = parsed.tail.head
+    val chunk0 = parsedScript.head
+    val chunk1 = parsedScript.tail.head
 
     if(chunk0.length > 2 && chunk1.length > 2)
       chunk1.byteFormat
     else if(chunk1 == Left(OP_CHECKSIG) && chunk0.length > 2)
       chunk0.byteFormat
     else
-      throw ScriptError("Malformed script")
+      throw new ScriptError("Malformed script")
 
   }
 
@@ -124,7 +117,7 @@ case class Script(bytes: Array[Byte]) extends ByteWritable {
 
     case ( stack, (Right(data), index) ) =>
       if(data.length > MAX_SCRIPT_ELEMENT_SIZE)
-        throw ScriptError(s"Data push exceeded $MAX_SCRIPT_ELEMENT_SIZE bytes")
+        throw new ScriptError(s"Data push exceeded $MAX_SCRIPT_ELEMENT_SIZE bytes")
 
       data :: stack
     case ( stack, (Left(op_code), index) ) => op_code match {
@@ -156,7 +149,7 @@ case class Script(bytes: Array[Byte]) extends ByteWritable {
           else
             ScriptObject.OP_TRUE :: stack.drop(2)
         else if(op_code == OP_EQUALVERIFY)
-          throw ScriptError("Invalid script, OP_EQUALVERIFY not passed")
+          throw new ScriptError("Invalid script, OP_EQUALVERIFY not passed")
         else
           OP_FALSE :: stack.drop(2)
       }
@@ -188,7 +181,7 @@ case class Script(bytes: Array[Byte]) extends ByteWritable {
         } match {
           case Success(value) =>
           case Failure(ScriptError(errMsg)) =>
-          case Failure(nsa:NoSuchAlgorithmException) => throw ScriptError(nsa.getMessage)
+          case Failure(nsa:NoSuchAlgorithmException) => throw new ScriptError(nsa.getMessage)
           case Failure(thr) =>
         }
 
@@ -199,30 +192,23 @@ case class Script(bytes: Array[Byte]) extends ByteWritable {
         val op2 = ScriptNumber(b, false)
         ScriptNumber(op1.int + op2.int).byteFormat :: stack.drop(2)
       }
-      case x => throw ScriptError(s"Unknown opcode $x")
+      case x => throw new ScriptError(s"Unknown opcode $x")
     }
   }
 
   private def pop2OrFail(stack: Stack, op_code: OP_CODE)(f: (Array[Byte], Array[Byte]) => Stack): Stack = {
     stack match {
       case top::subTop::tail => f(top, subTop)
-      case top::Nil => throw ScriptError(s"Not enough arguments for $op_code")
-      case Nil => throw ScriptError(s"$op_code on empty stack")
+      case top::Nil => throw new ScriptError(s"Not enough arguments for $op_code")
+      case Nil => throw new ScriptError(s"$op_code on empty stack")
     }
   }
 
   private def topOrFail(stack: Stack, op_code: OP_CODE)(f: Array[Byte] => Stack):Stack = {
     stack.headOption match {
       case Some(top) => f(top)
-      case None => throw ScriptError(s"$op_code on empty stack")
+      case None => throw new ScriptError(s"$op_code on empty stack")
     }
-  }
-
-  def parseScript: Option[ParsedScript] = Try {
-    parseScript(bytes)
-  } match {
-    case Success(result) => Some(result)
-    case Failure(thr) => None
   }
 
   private def parseScript(bytes:Array[Byte]):ParsedScript = bytes.headOption match {
@@ -255,7 +241,7 @@ case class Script(bytes: Array[Byte]) extends ByteWritable {
              OP_MUL |
              OP_DIV |
              OP_MOD |
-             OP_LSHIFT  => throw ScriptError("Encountered disabled OPCODE")
+             OP_LSHIFT  => throw new ScriptError("Encountered disabled OPCODE")
         case op_n => Left(op_n) :: parseScript(bytes.tail)
       }
      }

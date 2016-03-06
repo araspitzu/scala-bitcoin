@@ -4,7 +4,8 @@ import domain.consensus.Script
 import domain.Numbers.{CompactInt, CompactNumber}
 import domain._
 import org.specs2.mutable.Specification
-import encoding.CommonParsersImplicits._
+import encoding.CommonByteConverters._
+import encoding.EnrichedTypes._
 import encoding.Parsing._
 import domain.TransactionInput._
 import crypto.Hash._

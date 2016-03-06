@@ -4,7 +4,7 @@ import domain.Numbers.CompactNumber
 import encoding.Parsing._
 import CompactNumber._
 import encoding.Writing.ByteWritable
-import encoding.CommonParsersImplicits._
+import encoding.EnrichedTypes._
 
 /**
  * Created by andrea on 02/07/15.
