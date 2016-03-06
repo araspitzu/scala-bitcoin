@@ -61,14 +61,14 @@ package object CommonByteConverters {
    */
   implicit val uint8ByteReader = new {} with ByteReadable[Short] {
     def read(bytes: Array[Byte], offset: Int):ParseResult[Short] = ParseSuccess(
-      result = (bytes(offset) & 0xff).toShort,
+      result = (bytes(offset).unsigned).toShort,
       bytesUsed = 1
     )
   }
 
   implicit val uint16ByteReaderLE = new {} with ByteReadable[Int] {
     override def read(bytes: Array[Byte], offset: Int): ParseResult[Int] = ParseSuccess(
-      result = bytes(offset) & 0xff | (bytes(offset + 1) & 0xff) << 8 ,
+      result = bytes(offset).unsigned | (bytes(offset + 1).unsigned) << 8 ,
       bytesUsed = 2
     )
   }

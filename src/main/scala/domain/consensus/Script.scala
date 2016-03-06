@@ -74,9 +74,9 @@ case class Script(bytes: Array[Byte]) extends ByteWritable {
    */
   def isPayToScriptHash:Boolean = {
     bytes.length == 23 &&
-    OP_CODES(bytes(0) & 0xff) == OP_HASH160 &&
-    (bytes(1) & 0xff) == 0x14  &&
-    OP_CODES(bytes(22) & 0xff) == OP_EQUAL
+    OP_CODES(bytes(0) unsigned) == OP_HASH160 &&
+    (bytes(1) unsigned) == 0x14  &&
+    OP_CODES(bytes(22) unsigned) == OP_EQUAL
   }
 
   private def eval(txContainingThis:Transaction, txInputIndex:Int, script:ParsedScript):Boolean =
@@ -252,7 +252,7 @@ case class Script(bytes: Array[Byte]) extends ByteWritable {
   private def castToBool(data: Array[Byte]): Boolean = data.exists( b =>
     b.toInt != 0 &&
       !( b == data.last &&
-        (b.toInt & 0xff) == 0x80 )
+        (b unsigned) == 0x80 )
   )
 
 }
