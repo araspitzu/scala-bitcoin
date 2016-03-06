@@ -1,30 +1,42 @@
 package crypto
 
 import java.security.{KeyPair, SecureRandom, KeyPairGenerator}
-import java.security.spec.ECGenParameterSpec
 
-import org.bouncycastle.asn1.x9.X9ECParameters
+import crypto.ECSignature.ECSignature
+import org.bouncycastle.asn1.sec.SECNamedCurves
+import org.bouncycastle.crypto.params.{ECDomainParameters, ECPublicKeyParameters}
 import org.bouncycastle.crypto.signers.ECDSASigner
-import org.bouncycastle.jce.ECNamedCurveTable
 
 /**
  * Created by andrea on 13/09/15.
  */
 object ECDSA extends CryptoInitialization {
 
-  val ecGenSpec = new ECGenParameterSpec("secp256k1")
-  val keyPairGenerator = KeyPairGenerator.getInstance("ECDSA", "BC")
-  val curveParams = ECNamedCurveTable.getParameterSpec("secp256k1")
-
-
-  keyPairGenerator.initialize(ecGenSpec, new SecureRandom)
-
-  def getKeyPair:KeyPair = keyPairGenerator.generateKeyPair
-
+  val ecParams = SECNamedCurves.getByName("secp256k1")
+  val curve = new ECDomainParameters(
+    ecParams.getCurve,
+    ecParams.getG,
+    ecParams.getN,
+    ecParams.getH
+  )
 
   object ECDSASigner {
 
-    val signer = new ECDSASigner
+    def verify(data:Array[Byte], sig:TransactionSignature, pubKey:Array[Byte]): Boolean =
+      verify(data, (sig.r, sig.s), pubKey)
+
+
+    private def verify(data:Array[Byte], signature: ECSignature, pubKey:Array[Byte]):Boolean = {
+
+      val (r, s) = signature
+
+      val signer = new ECDSASigner
+      val params = new ECPublicKeyParameters(curve.getCurve.decodePoint(pubKey), curve)
+
+      signer.init(false, params)
+      signer.verifySignature(data, r.bigInteger, s.bigInteger)
+    }
+
   }
 
 }

@@ -18,11 +18,6 @@ import org.bouncycastle.math.ec.ECPoint
  */
 case class ECKeyPair(priv: BigInt, pub: ECPoint) extends CryptoInitialization {
 
-  /**
-   * Signs given hash
-   * @param hash
-   */
-  def sign(hash:Array[Byte]):ECSignature = ???
 }
 
 object ECKeyPair extends CryptoInitialization {

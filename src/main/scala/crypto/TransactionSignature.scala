@@ -20,8 +20,8 @@ object TransactionSignature {
     if(!isEncodingCanonical(bytes))
       throw new IllegalArgumentException(s"Signature encoding is not canonical: ${bytes.bytes2hex}")
 
-    val ecSig = ECSignature.decodeFromDER(bytes)
-    TransactionSignature(ecSig.r, ecSig.s, SigHash(bytes.last))
+    val (r, s) = ECSignature.decodeFromDER(bytes)
+    TransactionSignature(r, s, SigHash(bytes.last))
   }
 
   def isEncodingCanonical (signature: Array[Byte]):Boolean = {

@@ -7,9 +7,11 @@ import org.bouncycastle.asn1.{DERInteger, DERSequence, DERSequenceGenerator, ASN
 /**
  * Created by andrea on 14/09/15.
  */
-case class ECSignature(r: BigInt, s: BigInt) {
+object ECSignature {
 
-  def toByteDER:Array[Byte] = {
+  type ECSignature = (BigInt, BigInt)
+
+  def toByteDER(r: BigInt, s: BigInt):Array[Byte] = {
     val bos = new ByteArrayOutputStream(72)
     val seq = new DERSequenceGenerator(bos)
     seq.addObject(new ASN1InputStream(r.toByteArray).readObject)
@@ -18,10 +20,6 @@ case class ECSignature(r: BigInt, s: BigInt) {
     bos.toByteArray
   }
 
-}
-
-object ECSignature {
-
   def decodeFromDER(bytes: Array[Byte]) = {
     val derObject = new ASN1InputStream(bytes).readObject
     val derSequence = derObject.asInstanceOf[DERSequence]
@@ -29,7 +27,7 @@ object ECSignature {
     val r = derSequence.getObjectAt(0).asInstanceOf[DERInteger]
     val s = derSequence.getObjectAt(1).asInstanceOf[DERInteger]
 
-    ECSignature(r.getPositiveValue, s.getPositiveValue)
+    (r.getPositiveValue, s.getPositiveValue)
   }
 
 }

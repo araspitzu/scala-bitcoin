@@ -2,8 +2,9 @@ package domain.consensus
 
 import java.security.NoSuchAlgorithmException
 
+import crypto.ECDSA.ECDSASigner
 import crypto.Hash._
-import crypto.{ECKeyPair, TransactionSignature}
+import crypto.{ECDSA, ECKeyPair, TransactionSignature}
 import domain.{Transaction, VersionedChecksummed}
 import domain.consensus.ScriptObject._
 import domain.consensus.ScriptObject.ScriptError
@@ -79,10 +80,29 @@ case class Script(bytes: Array[Byte]) extends ByteWritable {
     OP_CODES(bytes(22) unsigned) == OP_EQUAL
   }
 
-  private def eval(txContainingThis:Transaction, txInputIndex:Int, script:ParsedScript):Boolean =
-    run(txContainingThis, txInputIndex,  script).headOption map castToBool getOrElse false
+  private def checkSignature(transaction: Transaction,
+                             inputIndex:Int,
+                             lastCodeSepLocation:Int,
+                             script:ParsedScript,
+                             sigBytes:Array[Byte],
+                             pubKey:Array[Byte]):Boolean = {
 
+    val subsetScript =
+      script
+        .drop(lastCodeSepLocation + 1)                  //drop the part before last OP_CODESEPARATOR and the opcode itself
+        .filterNot {                                    //remove sigBytes from script
+        case Right(data) => data.deep == sigBytes.deep
+        case _ => false
+      }
 
+    val subsetScriptBytes = subsetScript.flatMap(_.byteFormat).toArray
+
+    val txSig = TransactionSignature(sigBytes)
+
+    val sigHash = transaction.hashForSignature(inputIndex, subsetScriptBytes, txSig.sigHashFlags, false)
+
+    ECDSASigner.verify(sigHash, txSig, pubKey)
+  }
 
   def getPubKeyHash:Array[Byte] = {
     if(isSendToAddress)
@@ -111,7 +131,7 @@ case class Script(bytes: Array[Byte]) extends ByteWritable {
   }
 
   private def run(txContainingThis: Transaction,
-                  txInputIndex:Int,
+                  indexOfInput:Int,
                   script:ParsedScript,
                   initialStack: Stack = List.empty):Stack = script.zipWithIndex.foldLeft[Stack](initialStack) {
 
@@ -164,28 +184,13 @@ case class Script(bytes: Array[Byte]) extends ByteWritable {
             .reverse                                        //start from this position
             .indexOf(Left(OP_CODESEPARATOR))                //index of the first found
 
-        val subsetScript =
-          script
-            .drop(lastCodeSepLocation + 1)                  //drop the part before last OP_CODESEPARATOR and the opcode itself
-            .filterNot {                                    //remove sigBytes from script
-            case Right(data) => data.deep == sigBytes.deep
-            case _ => false
-          }
+        val sigValid = checkSignature(txContainingThis, indexOfInput, lastCodeSepLocation, script, sigBytes, pubKey)
 
-        val subsetScriptBytes = subsetScript.flatMap(_.byteFormat).toArray
+        if(op_code == OP_CHECKSIGVERIFY && !sigValid)
+            throw new ScriptError("Script code OP_CHECKSIGVERIFY failed")
 
-        Try {
-          val txSig = TransactionSignature(sigBytes)
-          val sigHash = txContainingThis.hashForSignature(txInputIndex, subsetScriptBytes, txSig.sigHashFlags, false)
+        (if(sigValid) OP_TRUE else OP_FALSE) :: stack.drop(2)
 
-        } match {
-          case Success(value) =>
-          case Failure(ScriptError(errMsg)) =>
-          case Failure(nsa:NoSuchAlgorithmException) => throw new ScriptError(nsa.getMessage)
-          case Failure(thr) =>
-        }
-
-        OP_TRUE :: stack.drop(2)
       }
       case OP_ADD => pop2OrFail(stack, op_code) { (a, b) =>
         val op1 = ScriptNumber(a, false)
