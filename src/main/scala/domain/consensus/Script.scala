@@ -4,7 +4,7 @@ import java.security.NoSuchAlgorithmException
 
 import crypto.ECDSA.ECDSASigner
 import crypto.Hash._
-import crypto.{ECDSA, ECKeyPair, TransactionSignature}
+import crypto.{ECDSA, TransactionSignature}
 import domain.{Transaction, VersionedChecksummed}
 import domain.consensus.ScriptObject._
 import domain.consensus.ScriptObject.ScriptError
@@ -97,7 +97,7 @@ case class Script(bytes: Array[Byte]) extends ByteWritable {
 
     val subsetScriptBytes = subsetScript.flatMap(_.byteFormat).toArray
 
-    val txSig = TransactionSignature(sigBytes)
+    val txSig = TransactionSignature.decode(sigBytes)
 
     val sigHash = transaction.hashForSignature(inputIndex, subsetScriptBytes, txSig.sigHashFlags, false)
 

@@ -1,12 +1,13 @@
 package crypto
 
+import crypto.ECSignature.ECSignature
 import domain.consensus.ScriptObject.SigHash
 import encoding.EnrichedTypes._
 
 /**
  * Created by andrea on 18/09/15.
  */
-case class TransactionSignature(r: BigInt, s: BigInt, sigHashFlags: SigHash.Value)
+case class TransactionSignature(ecSig: ECSignature, sigHashFlags: SigHash.Value)
 
 object TransactionSignature {
 
@@ -16,12 +17,13 @@ object TransactionSignature {
    * @param bytes
    * @return
    */
-  def apply(bytes: Array[Byte]): TransactionSignature= {
+  def decode(bytes: Array[Byte]): TransactionSignature= {
     if(!isEncodingCanonical(bytes))
       throw new IllegalArgumentException(s"Signature encoding is not canonical: ${bytes.bytes2hex}")
 
-    val (r, s) = ECSignature.decodeFromDER(bytes)
-    TransactionSignature(r, s, SigHash(bytes.last))
+    val sig = ECSignature.decodeFromDER(bytes)
+
+    TransactionSignature(sig, SigHash(bytes.last))
   }
 
   def isEncodingCanonical (signature: Array[Byte]):Boolean = {

@@ -1,7 +1,7 @@
 import sbt.Keys._
 import sbt._
 
-object SomeBuild extends Build {
+object TheBuild extends Build {
 
   import BuildSettings._
   import Dependencies._
