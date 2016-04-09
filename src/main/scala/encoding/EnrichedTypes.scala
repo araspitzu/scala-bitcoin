@@ -31,6 +31,7 @@ package object EnrichedTypes {
   implicit class RichByte(byte:Byte){
     def unsigned:Int = byte & 0xff
   }
+
   /**
     *
     * @param bytes
@@ -70,21 +71,21 @@ package object EnrichedTypes {
   }
 
   private def divmod(number: Array[Byte], firstDigit: Int, base: Int, divisor: Int) = {
-    var remainder: Int = 0
+    var reminder: Int = 0
 
     var i: Int = firstDigit
     while (i < number.length) {
 
       val digit: Int = number(i).toInt & 0xFF
-      val temp: Int = remainder * base + digit
+      val temp: Int = reminder * base + digit
       number(i) = (temp / divisor).toByte
-      remainder = temp % divisor
+      reminder = temp % divisor
 
       i += 1
 
     }
 
-    remainder.toByte
+    reminder.toByte
   }
 
 }
