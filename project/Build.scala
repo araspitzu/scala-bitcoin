@@ -1,25 +1,24 @@
 import sbt.Keys._
 import sbt._
 
-object RootBuild extends Build {
+object TheBuild extends Build {
 
   import BuildSettings._
-  import Resolvers._
   import Dependencies._
+  import Resolvers._
 
-  lazy val core = (project in file("core")).
-    settings(buildSettings ++ Seq(
-      resolvers := repositories,
-      libraryDependencies ++= dependencies
-    ))
-
-
-  val name = "scala-bitcoin"
+  val name = "core"
   lazy val scalaBitcoin = Project(
     name, file("."),
-    settings = buildSettings
-  ).dependsOn(core)
+    settings = buildSettings ++ Seq(
+      resolvers := repositories,
+      libraryDependencies ++= dependencies
+    )
+  )
 
+  def currentGitBranch = {
+    "git rev-parse --abbrev-ref HEAD".lines_!.mkString.replaceAll("/", "-").replaceAll("heads-", "")
+  }
 
 }
 
@@ -38,33 +37,6 @@ object BuildSettings {
     javaOptions += "-Xmx1G",
     shellPrompt := ShellPrompt.buildShellPrompt
   )
-}
-
-
-// Shell prompt which show the current project,
-// git branch and build version
-object ShellPrompt {
-
-  object devnull extends ProcessLogger {
-    def info(s: => String) {}
-
-    def error(s: => String) {}
-
-    def buffer[T](f: => T): T = f
-  }
-
-  def currBranch = (
-    ("git status -sb" lines_! devnull headOption)
-      getOrElse "-" stripPrefix "## "
-    )
-
-  val buildShellPrompt = (state: State) => {
-      val currProject = Project.extract(state).currentProject.id
-      "%s:%s:%s> ".format(
-        currProject, currBranch, BuildSettings.buildVersion
-      )
-  }
-
 }
 
 object Resolvers {
@@ -99,4 +71,30 @@ object Dependencies {
   )
 
   val dependencies = crypto ++ akka ++ logging ++ testing
+}
+
+// Shell prompt which show the current project,
+// git branch and build version
+object ShellPrompt {
+
+  object devnull extends ProcessLogger {
+    def info(s: => String) {}
+
+    def error(s: => String) {}
+
+    def buffer[T](f: => T): T = f
+  }
+
+  def currBranch = (
+    ("git status -sb" lines_! devnull headOption)
+      getOrElse "-" stripPrefix "## "
+    )
+
+  val buildShellPrompt = (state: State) => {
+      val currProject = Project.extract(state).currentProject.id
+      "%s:%s:%s> ".format(
+        currProject, currBranch, BuildSettings.buildVersion
+      )
+  }
+
 }
